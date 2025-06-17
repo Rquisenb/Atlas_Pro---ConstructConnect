@@ -41,6 +41,10 @@
   </div>
 </div>
 
+{% require_js %}
+  <script src="{{ get_asset_url('../Three Column Card Grid Custom Animation.module/module.js') }}"></script>
+{% end_require_js %}
+
 {% if module.card_search.enabled %}
   {% require_js %}
     <script>

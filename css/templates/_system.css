@@ -1,0 +1,347 @@
+/* Error pages */
+.kl-error-page {
+  padding: 100px 0;
+  text-align: center;
+}
+
+.kl-error-page__preheader {
+  font-family: {{theme.typography.preheader.font}}, sans-serif;
+  font-size: {{theme.typography.preheader.size}}{{theme.typography.preheader.size_unit}};
+  font-weight: bold;
+  color: {{theme.typography.preheader.color}};
+  display: block;
+  margin: 0 0 0.5rem;
+}
+
+.kl-error-page__heading {
+  margin: 0 0 1rem;
+}
+
+/* System pages */
+.systems-page__content {
+  margin: 0 auto;
+  max-width: 620px;
+  padding: 120px 20px;
+}
+
+.systems-page .success {
+  color: #34A853;
+  font-weight: bold;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.systems-page h1 {
+  margin: 0 0 4rem;
+  text-align: center;
+}
+
+@media screen and (max-width: 360px) {
+  .systems-page h1 {
+    margin: 0 0 2rem;
+    font-size: 2rem;
+  }
+}
+
+.systems-page--membership {
+  background-image: url({{get_asset_url("../../images/Hero-Background-2.svg")}});
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.systems-page--membership h1 {
+  margin: 0 0 1rem;
+}
+
+.systems-page--membership p {
+  margin: 0 0 3rem;
+  text-align: center;
+}
+
+.systems-page--membership form .hs-submit input, .systems-page--membership form input[type="submit"] {
+  width: 100%;
+}
+
+.systems-page--subscription-confirmation h1 {
+  display: none;
+  margin: 0 0 1.5rem;
+}
+
+.systems-page--subscription-confirmation h2 {
+  color: #3A3A3A;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.systems-page--subscription-confirmation .page-header {
+  text-align: center;
+  margin: 0 0 2rem;
+}
+
+.systems-page--subscription-preferences .page-header {
+  text-align: center;
+  margin: 0 0 2rem;
+}
+
+.systems-page--subscription-preferences h1 {
+  margin: 0 0 1.5rem;
+}
+
+.systems-page--subscription-preferences h2 {
+  color: #3A3A3A;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.systems-page--subscription-preferences .email-prefs {
+  padding: 32px;
+  border: 1px solid #DAE3F9;
+  box-shadow: 0px 11px 30px rgba({{theme.cards.box_shadow_light.color|convert_rgb}}, {{theme.cards.box_shadow_light.opacity != null ? theme.cards.box_shadow_light.opacity / 100 : 1}});
+  border-radius: 10px;
+}
+
+.systems-page--subscription-preferences .email-prefs p, .systems-page--subscription-preferences .email-prefs span, .systems-page--subscription-preferences .email-prefs label {
+  font-size: 0.875rem;
+  line-height: 1rem;
+  vertical-align: text-top;
+  font-weight: normal;
+}
+
+@media screen and (max-width: 360px) {
+  .systems-page--subscription-preferences .email-prefs {
+    padding: 18px;
+  }
+}
+
+.systems-page--subscription-preferences input[type="checkbox"] {
+  margin-right: 12px;
+}
+
+.systems-page__preheader {
+  font-family: {{theme.typography.preheader.font}}, sans-serif;
+  font-size: {{theme.typography.preheader.size}}{{theme.typography.preheader.size_unit}};
+  font-weight: bold;
+  color: {{theme.typography.preheader.color}};
+  display: block;
+  margin: 0 0 0.5rem;
+  text-align: center;
+}
+
+.systems-page form {
+  position: relative;
+}
+
+.systems-page form .hs-form-field {
+  position: relative;
+}
+
+.systems-page form .form-input-validation-message ul {
+  padding: 0;
+}
+
+.systems-page form .form-input-validation-message label {
+  color: #929292;
+  font-size: 0.875rem;
+  font-weight: normal;
+}
+
+.systems-page form .hs-login-widget-show-password,
+.systems-page form .hs-register-widget-show-password,
+.systems-page form .hs-reset-widget-show-password {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: {{theme.global_colors.primary_color.color}};
+}
+
+.systems-page form .hs-login-widget-show-password:hover, .systems-page form .hs-login-widget-show-password:focus,
+.systems-page form .hs-register-widget-show-password:hover,
+.systems-page form .hs-register-widget-show-password:focus,
+.systems-page form .hs-reset-widget-show-password:hover,
+.systems-page form .hs-reset-widget-show-password:focus {
+  color: {{theme.global_colors.primary_color.color}};
+  text-decoration: none;
+}
+
+.systems-page form #hs_login_reset {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: block;
+  margin: 1rem 0 0;
+  z-index: 1;
+  color: {{theme.global_colors.primary_color.color}};
+  font-size: 0.875rem;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+}
+
+.systems-page form input {
+  max-width: 100%;
+}
+
+.systems-page .form-container {
+  max-width: 380px;
+  margin: 0 auto 3rem;
+}
+
+.systems-page .form-container .label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: bold;
+  margin: 0 0 0.75rem;
+}
+
+#email-prefs-form .header {
+  background-color: transparent;
+}
+
+/* Password prompt */
+.password-prompt input[type=password] {
+  display: block;
+  height: auto !important;
+  margin-bottom: 1.4rem;
+}
+
+/* Backup unsubscribe */
+.backup-unsubscribe h3 {
+  font-size: 0.875rem;
+  font-weight: bold !important;
+  line-height: 1rem;
+  margin: 0 0 0.75rem;
+}
+
+.backup-unsubscribe #email-prefs-form {
+  padding: 42px 32px;
+  border: 1px solid #DAE3F9;
+  box-shadow: 0px 11px 30px rgba({{theme.cards.box_shadow_light.color|convert_rgb}}, {{theme.cards.box_shadow_light.opacity != null ? theme.cards.box_shadow_light.opacity / 100 : 1}});
+  border-radius: 10px;
+}
+
+.backup-unsubscribe #email-prefs-form div {
+  padding-bottom: 0 !important;
+}
+
+@media screen and (max-width: 360px) {
+  .backup-unsubscribe #email-prefs-form {
+    padding: 32px 18px;
+  }
+}
+
+.backup-unsubscribe input[type=email] {
+  margin-bottom: 1.5rem;
+  padding: 0.7rem !important;
+  font-size: 0.875rem !important;
+  border: 1px solid #DADADA;
+}
+
+/* Search pages */
+.hs-search-field {
+  max-width: 750px;
+}
+
+.hs-search-field input[type=text] {
+  padding-right: 48px;
+}
+
+.hs-search-field__bar:not(.hs-search-field__bar--button-inline) {
+  position: relative;
+}
+
+.hs-search-field__bar:not(.hs-search-field__bar--button-inline):after {
+  content: '';
+  background-image: url("data:image/svg+xml,%3Csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M11 19a8 8 0 100-16 8 8 0 000 16zM21 21l-4-4' stroke='%23C6C6C6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 50%;
+  right: 18px;
+  transform: translateY(-50%);
+}
+
+.hs-search-field__suggestions {
+  background-color: #FFF;
+  max-width: 360px;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  transform: translateY(8px);
+  border-radius: 9px;
+  width: 100%;
+}
+
+.hs-search-field__suggestions a, .hs-search-field__suggestions #results-for {
+  padding: 8px 16px;
+}
+
+.hs-search-field--open .hs-search-field__suggestions {
+  border: 1px solid #dedede !important;
+}
+
+.kl-search-results {
+  padding: 80px 0;
+}
+
+.hs-search-results {
+  margin-top: 3.5rem;
+}
+
+.hs-search-results__featured-image {
+  margin-bottom: 1rem;
+}
+
+.hs-search-results__featured-image img {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+}
+
+.hs-search-results__title {
+  color: {{theme.global_colors.text_color.color}};
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: {{theme.global_fonts.secondary_font.font}}, sans-serif;
+}
+
+.hs-search-results__title:hover, .hs-search-results__title:focus {
+  color: {{theme.global_colors.primary_color.color}};
+  text-decoration: none;
+}
+
+.hs-search-results__description {
+  padding-top: 1.25rem;
+  margin: 0 0 2.5rem;
+}
+
+.hs-search-results__pagination a {
+  color: {{theme.global_colors.text_color.color}};
+  font-family: {{theme.global_fonts.secondary_font.font}}, sans-serif;
+  font-weight: bold;
+}
+
+.hs-search-results__listing {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -20px !important;
+}
+
+.hs-search-results__listing li {
+  flex-basis: calc(100% / 2);
+  padding: 0 20px !important;
+}
+
+@media screen and (max-width: 620px) {
+  .hs-search-results__listing li {
+    flex-basis: 100%;
+  }
+}
+
+.hs-search-highlight {
+  font-weight: bold;
+}

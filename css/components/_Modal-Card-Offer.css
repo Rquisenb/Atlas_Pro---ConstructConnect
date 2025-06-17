@@ -1,0 +1,128 @@
+.kl-offer-modal {
+  position: fixed;
+  z-index: 12;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 64px 16px;
+  visibility: hidden;
+  overscroll-behavior: contain;
+}
+
+.kl-offer-modal__overlay {
+  content: '';
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 12;
+  opacity: 0;
+  transition: all .25s ease-in-out;
+  visibility: hidden;
+}
+
+.kl-offer-modal__close {
+  position: absolute;
+  z-index: 13;
+  top: 25px;
+  right: 25px;
+  display: block;
+  background: white;
+  padding: 4px;
+}
+
+@media screen and (max-width: 768px) {
+  .kl-offer-modal__close {
+    top: 0;
+    right: 0;
+  }
+}
+
+.kl-offer-modal__close svg {
+  display: block;
+}
+
+.kl-offer-modal__wrapper {
+  overflow: hidden;
+  position: relative;
+  background: white;
+  display: flex;
+}
+
+@media screen and (max-width: 768px) {
+  .kl-offer-modal__wrapper {
+    display: block;
+  }
+}
+
+.kl-offer-modal__container {
+  max-width: 980px;
+  width: 100%;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 13;
+  transition: top .25s ease-in-out;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.kl-offer-modal:target {
+  visibility: visible;
+}
+
+.kl-offer-modal:target .kl-offer-modal__overlay {
+  opacity: .5;
+  visibility: visible;
+}
+
+.kl-offer-modal:target .kl-offer-modal__container {
+  visibility: visible;
+  opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .kl-offer-modal__close {
+    top: 8px;
+    right: 8px;
+  }
+}
+
+.kl-offer-modal__wrapper {
+  padding: 48px 64px;
+}
+
+@media screen and (max-width: 480px) {
+  .kl-offer-modal__wrapper {
+    padding: 32px;
+  }
+}
+
+.kl-offer-modal__wrapper--center {
+  align-items: center;
+}
+
+.kl-offer-modal__wrapper--bottom {
+  align-items: flex-end;
+}
+
+.kl-offer-modal__content {
+  flex-basis: 400px;
+  flex-grow: 1;
+}
+
+.kl-offer-modal__form {
+  margin-left: 36px;
+  flex-basis: 50%;
+  flex-grow: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .kl-offer-modal__form {
+    margin: 36px 0 0;
+  }
+}

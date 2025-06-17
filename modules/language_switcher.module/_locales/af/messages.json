@@ -1,0 +1,472 @@
+{
+  "add_chevron_down.label" : {
+    "message" : "Voeg afwaartse chevron by",
+    "description" : "",
+    "placeholders" : null
+  },
+  "custom_icon.label" : {
+    "message" : "Pasgemaakte ikoon",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.label" : {
+    "message" : "Verstekteks",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.select_your_language.default" : {
+    "message" : "Kies jou taal",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.select_your_language.label" : {
+    "message" : "Kies jou taal",
+    "description" : "",
+    "placeholders" : null
+  },
+  "display_mode.choices.hybrid" : {
+    "message" : "Hibried",
+    "description" : "",
+    "placeholders" : null
+  },
+  "display_mode.choices.localized" : {
+    "message" : "Gelokaliseer",
+    "description" : "",
+    "placeholders" : null
+  },
+  "display_mode.choices.pagelang" : {
+    "message" : "Bladsytaal",
+    "description" : "",
+    "placeholders" : null
+  },
+  "display_mode.help_text" : {
+    "message" : "Laat jou toe om die taal te kies waarin jou webwerfbladsye vertoon word. <a href='https://knowledge.hubspot.com/website-pages/create-pages-in-multiple-languages#add-a-language-switcher-to-your-template' target='blank' rel='noopener noreferrer'>Kom meer te wete</a>",
+    "description" : "",
+    "placeholders" : null
+  },
+  "display_mode.label" : {
+    "message" : "Vertoonmodus",
+    "description" : "",
+    "placeholders" : null
+  },
+  "display_mode.placeholder" : {
+    "message" : "Soek",
+    "description" : "",
+    "placeholders" : null
+  },
+  "icon.label" : {
+    "message" : "Ikoon",
+    "description" : "",
+    "placeholders" : null
+  },
+  "icon_options.choices.custom_icon" : {
+    "message" : "Pasgemaakte ikoon",
+    "description" : "",
+    "placeholders" : null
+  },
+  "icon_options.choices.icon" : {
+    "message" : "Ikoon",
+    "description" : "",
+    "placeholders" : null
+  },
+  "icon_options.choices.none" : {
+    "message" : "Geen",
+    "description" : "",
+    "placeholders" : null
+  },
+  "icon_options.label" : {
+    "message" : "Ikoonopsies",
+    "description" : "",
+    "placeholders" : null
+  },
+  "name" : {
+    "message" : "Taalwisselaar",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_alignment.alignment.label" : {
+    "message" : "Belyning",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_alignment.label" : {
+    "message" : "Belyning",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_background.color.label" : {
+    "message" : "Kleur",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_background.label" : {
+    "message" : "Agtergrond",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_border.border.label" : {
+    "message" : "Raam",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_border.label" : {
+    "message" : "Raam",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_chevron.color.label" : {
+    "message" : "Kleur",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_chevron.label" : {
+    "message" : "Chevron",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_chevron.size.help_text" : {
+    "message" : "Grootte van die chevronikoon.",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_chevron.size.label" : {
+    "message" : "Grootte",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_chevron.spacing.help_text" : {
+    "message" : "Spasiëring tussen die chevron en knoppieteks.",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_chevron.spacing.label" : {
+    "message" : "Spasiëring",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_corner.label" : {
+    "message" : "Hoek",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_corner.radius.label" : {
+    "message" : "Radius",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_hover.group_background.color.label" : {
+    "message" : "Kleur",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_hover.group_background.label" : {
+    "message" : "Agtergrond",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_hover.group_border.border.label" : {
+    "message" : "Raam",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_hover.group_border.label" : {
+    "message" : "Raam",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_hover.group_chevron.color.label" : {
+    "message" : "Kleur",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_hover.group_chevron.label" : {
+    "message" : "Chevron",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_hover.group_icon.color.label" : {
+    "message" : "Kleur",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_hover.group_icon.label" : {
+    "message" : "Ikoon",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_hover.group_text.font.label" : {
+    "message" : "Font",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_hover.group_text.label" : {
+    "message" : "Teks",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_hover.label" : {
+    "message" : "Sweef",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_icon.color.label" : {
+    "message" : "Kleur",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_icon.label" : {
+    "message" : "Ikoon",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_icon.size.label" : {
+    "message" : "Grootte",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_icon.spacing.help_text" : {
+    "message" : "Spasiëring tussen die ikoon en knoppieteks.",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_icon.spacing.label" : {
+    "message" : "Spasiëring",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_spacing.label" : {
+    "message" : "Spasiëring",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_spacing.spacing.label" : {
+    "message" : "Spasiëring",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_text.font.label" : {
+    "message" : "Font",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_text.label" : {
+    "message" : "Teks",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_text.transform.choices.capitalize" : {
+    "message" : "Hoofletters",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_text.transform.choices.lowercase" : {
+    "message" : "Kleinletters",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_text.transform.choices.uppercase" : {
+    "message" : "Hoofletters",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_text.transform.label" : {
+    "message" : "Transformeer",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_text.transform.placeholder" : {
+    "message" : "Geen",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.label" : {
+    "message" : "Knoppie",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_alignment.alignment.label" : {
+    "message" : "Belyning",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_alignment.label" : {
+    "message" : "Belyning",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_background.color.label" : {
+    "message" : "Kleur",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_background.label" : {
+    "message" : "Agtergrond",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_border.border.label" : {
+    "message" : "Raam",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_border.label" : {
+    "message" : "Raam",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_box_shadow.add_box_shadow.label" : {
+    "message" : "Voeg blokskaduwee by",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_box_shadow.blur_radius.help_text" : {
+    "message" : "Beheer die wasigheid van die skaduwee. 'n Groter waarde maak die skaduwee groter en ligter. Negatiewe waardes word nie toegelaat nie.",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_box_shadow.blur_radius.label" : {
+    "message" : "Wasigheidsradius",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_box_shadow.color.help_text" : {
+    "message" : "Beheer die kleur van die skaduwee.",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_box_shadow.color.label" : {
+    "message" : "Kleur",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_box_shadow.label" : {
+    "message" : "Blokskaduwee",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_box_shadow.offset_x.help_text" : {
+    "message" : "Spesifiseer die horisontale posisie van die skaduwee. Negatiewe waardes skuif die skaduwee links. Positiewe waardes skuif die skaduwee regs.",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_box_shadow.offset_x.label" : {
+    "message" : "Ordinaat x",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_box_shadow.offset_y.help_text" : {
+    "message" : "Spesifiseer die vertikale posisie van die skaduwee. Negatiewe waardes skuif die skaduwee op. Positiewe waardes skuif die skaduwee af.",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_box_shadow.offset_y.label" : {
+    "message" : "Ordinaat y",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_box_shadow.spread_radius.help_text" : {
+    "message" : "Verstel die algehele grootte van die skaduwee. Positiewe waardes vergroot die skaduwee. Negatiewe waardes laat die skaduwee krimp.",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_box_shadow.spread_radius.label" : {
+    "message" : "Verspreidingsradius",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_corner.label" : {
+    "message" : "Hoek",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_corner.radius.label" : {
+    "message" : "Radius",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_hover.group_background.color.label" : {
+    "message" : "Kleur",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_hover.group_background.label" : {
+    "message" : "Agtergrond",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_hover.group_text.font.label" : {
+    "message" : "Font",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_hover.group_text.label" : {
+    "message" : "Teks",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_hover.label" : {
+    "message" : "Sweef",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_spacing.label" : {
+    "message" : "Spasiëring",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_spacing.margin.help_text" : {
+    "message" : "Verstel die grens tussen die aftrekkieslys en die knoppie.",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_spacing.margin.label" : {
+    "message" : "Boonste grens",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_text.font.label" : {
+    "message" : "Font",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_text.label" : {
+    "message" : "Teks",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_text.transform.choices.capitalize" : {
+    "message" : "Hoofletters",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_text.transform.choices.lowercase" : {
+    "message" : "Kleinletters",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_text.transform.choices.uppercase" : {
+    "message" : "Hoofletters",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_text.transform.label" : {
+    "message" : "Transformeer",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_text.transform.placeholder" : {
+    "message" : "Geen",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.label" : {
+    "message" : "Aftrekkieslys",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.label" : {
+    "message" : "Style",
+    "description" : "",
+    "placeholders" : null
+  }
+}

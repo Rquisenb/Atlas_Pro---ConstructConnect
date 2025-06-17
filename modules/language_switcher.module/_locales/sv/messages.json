@@ -1,0 +1,472 @@
+{
+  "add_chevron_down.label" : {
+    "message" : "Lägg till nedåtpekande vinkel",
+    "description" : "",
+    "placeholders" : null
+  },
+  "custom_icon.label" : {
+    "message" : "Anpassa ikon",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.label" : {
+    "message" : "Standardtext",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.select_your_language.default" : {
+    "message" : "Välj ditt språk",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.select_your_language.label" : {
+    "message" : "Välj ditt språk",
+    "description" : "",
+    "placeholders" : null
+  },
+  "display_mode.choices.hybrid" : {
+    "message" : "Hybrid",
+    "description" : "",
+    "placeholders" : null
+  },
+  "display_mode.choices.localized" : {
+    "message" : "Lokaliserad",
+    "description" : "",
+    "placeholders" : null
+  },
+  "display_mode.choices.pagelang" : {
+    "message" : "Sidans språk",
+    "description" : "",
+    "placeholders" : null
+  },
+  "display_mode.help_text" : {
+    "message" : "Låter dig välja på vilket språk dina sidors språk ska visas på din webbplats. <a href='https://knowledge.hubspot.com/website-pages/create-pages-in-multiple-languages#add-a-language-switcher-to-your-template' target='blank' rel='noopener noreferrer'>Läs mer</a>",
+    "description" : "",
+    "placeholders" : null
+  },
+  "display_mode.label" : {
+    "message" : "Visningsläge",
+    "description" : "",
+    "placeholders" : null
+  },
+  "display_mode.placeholder" : {
+    "message" : "Sök",
+    "description" : "",
+    "placeholders" : null
+  },
+  "icon.label" : {
+    "message" : "Ikon",
+    "description" : "",
+    "placeholders" : null
+  },
+  "icon_options.choices.custom_icon" : {
+    "message" : "Anpassa ikon",
+    "description" : "",
+    "placeholders" : null
+  },
+  "icon_options.choices.icon" : {
+    "message" : "Ikon",
+    "description" : "",
+    "placeholders" : null
+  },
+  "icon_options.choices.none" : {
+    "message" : "Ingen",
+    "description" : "",
+    "placeholders" : null
+  },
+  "icon_options.label" : {
+    "message" : "Symbolalternativ",
+    "description" : "",
+    "placeholders" : null
+  },
+  "name" : {
+    "message" : "Språkomkopplare",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_alignment.alignment.label" : {
+    "message" : "Justering",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_alignment.label" : {
+    "message" : "Justering",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_background.color.label" : {
+    "message" : "Färg",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_background.label" : {
+    "message" : "Bakgrund",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_border.border.label" : {
+    "message" : "Kant",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_border.label" : {
+    "message" : "Kant",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_chevron.color.label" : {
+    "message" : "Färg",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_chevron.label" : {
+    "message" : "Vinkel",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_chevron.size.help_text" : {
+    "message" : "Storleken på vinkelikonen.",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_chevron.size.label" : {
+    "message" : "Storlek",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_chevron.spacing.help_text" : {
+    "message" : "Utrymme mellan vinkeln och knapptexten.",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_chevron.spacing.label" : {
+    "message" : "Mellanslag",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_corner.label" : {
+    "message" : "Hörn",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_corner.radius.label" : {
+    "message" : "Radie",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_hover.group_background.color.label" : {
+    "message" : "Färg",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_hover.group_background.label" : {
+    "message" : "Bakgrund",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_hover.group_border.border.label" : {
+    "message" : "Kant",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_hover.group_border.label" : {
+    "message" : "Kant",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_hover.group_chevron.color.label" : {
+    "message" : "Färg",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_hover.group_chevron.label" : {
+    "message" : "Vinkel",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_hover.group_icon.color.label" : {
+    "message" : "Färg",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_hover.group_icon.label" : {
+    "message" : "Ikon",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_hover.group_text.font.label" : {
+    "message" : "Teckensnitt",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_hover.group_text.label" : {
+    "message" : "Text",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_hover.label" : {
+    "message" : "Sväva",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_icon.color.label" : {
+    "message" : "Färg",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_icon.label" : {
+    "message" : "Ikon",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_icon.size.label" : {
+    "message" : "Storlek",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_icon.spacing.help_text" : {
+    "message" : "Utrymme mellan ikonen och knapptexten.",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_icon.spacing.label" : {
+    "message" : "Mellanslag",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_spacing.label" : {
+    "message" : "Mellanslag",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_spacing.spacing.label" : {
+    "message" : "Mellanslag",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_text.font.label" : {
+    "message" : "Teckensnitt",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_text.label" : {
+    "message" : "Text",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_text.transform.choices.capitalize" : {
+    "message" : "Stora bokstäver",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_text.transform.choices.lowercase" : {
+    "message" : "Små bokstäver",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_text.transform.choices.uppercase" : {
+    "message" : "Versal",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_text.transform.label" : {
+    "message" : "Omvandla",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_text.transform.placeholder" : {
+    "message" : "Ingen",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.label" : {
+    "message" : "Knapp",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_alignment.alignment.label" : {
+    "message" : "Justering",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_alignment.label" : {
+    "message" : "Justering",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_background.color.label" : {
+    "message" : "Färg",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_background.label" : {
+    "message" : "Bakgrund",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_border.border.label" : {
+    "message" : "Kant",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_border.label" : {
+    "message" : "Kant",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_box_shadow.add_box_shadow.label" : {
+    "message" : "Lägg till skuggning av ruta",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_box_shadow.blur_radius.help_text" : {
+    "message" : "Reglerar skuggans suddighet. Ett större värde gör skuggan större och ljusare. Negativa värden medges ej.",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_box_shadow.blur_radius.label" : {
+    "message" : "Radie för utsuddning",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_box_shadow.color.help_text" : {
+    "message" : "Reglerar färgen på skuggan.",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_box_shadow.color.label" : {
+    "message" : "Färg",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_box_shadow.label" : {
+    "message" : "Skuggning av ruta",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_box_shadow.offset_x.help_text" : {
+    "message" : "Specificerar det liggande läget på skuggan. Negativa värden förskjuter skuggan åt väster. Positiva värden förskjuter skuggan åt höger.",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_box_shadow.offset_x.label" : {
+    "message" : "Förskjutning x",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_box_shadow.offset_y.help_text" : {
+    "message" : "Specificerar det stående läget på skuggan. Negativa värden förskjuter skuggan uppåt. Positiva värden förskjuter skuggan nedåt.",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_box_shadow.offset_y.label" : {
+    "message" : "Förskjutning y",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_box_shadow.spread_radius.help_text" : {
+    "message" : "Justerar den övergripade storleken på skuggan. Positiva värden får skuggan att bli större. Negativa värden får skuggan att bli mindre.",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_box_shadow.spread_radius.label" : {
+    "message" : "Radie för spridning",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_corner.label" : {
+    "message" : "Hörn",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_corner.radius.label" : {
+    "message" : "Radie",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_hover.group_background.color.label" : {
+    "message" : "Färg",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_hover.group_background.label" : {
+    "message" : "Bakgrund",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_hover.group_text.font.label" : {
+    "message" : "Teckensnitt",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_hover.group_text.label" : {
+    "message" : "Text",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_hover.label" : {
+    "message" : "Sväva",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_spacing.label" : {
+    "message" : "Mellanslag",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_spacing.margin.help_text" : {
+    "message" : "Justerar marginalen mellan rullgardinen och knappen.",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_spacing.margin.label" : {
+    "message" : "Marginal i toppen",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_text.font.label" : {
+    "message" : "Teckensnitt",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_text.label" : {
+    "message" : "Text",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_text.transform.choices.capitalize" : {
+    "message" : "Stora bokstäver",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_text.transform.choices.lowercase" : {
+    "message" : "Små bokstäver",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_text.transform.choices.uppercase" : {
+    "message" : "Versal",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_text.transform.label" : {
+    "message" : "Omvandla",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_text.transform.placeholder" : {
+    "message" : "Ingen",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.label" : {
+    "message" : "Rullgardinsmeny",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.label" : {
+    "message" : "Stilar",
+    "description" : "",
+    "placeholders" : null
+  }
+}

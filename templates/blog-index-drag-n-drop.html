@@ -1,0 +1,67 @@
+<!--
+  templateType: blog_listing
+  isAvailableForNewContent: true
+  label: Blog listing Drag and Drop
+  screenshotPath: ../images/template-previews/blog-index.png
+-->
+{% extends './layouts/base.html' %}
+
+{% include '../modules/macros.html' %}
+
+{% block body %}
+
+<main class="body-container-wrapper">
+{% dnd_area 'dnd_area' class="body-container body-container--home", label="Main Section" %}
+
+	{% include_dnd_partial path='../sections/hero-banner-2.html' %}
+	{% dnd_section 
+		padding={
+			"top" : "40px",
+			"left" : "0px",
+			"right" : "0px",
+			"bottom" : "20px"
+		}
+	%}	
+		{% dnd_column width=8, offset=0%}
+			{% dnd_row %}
+				{% dnd_module path='../modules/Blog Tags.module' %}	
+				{% end_dnd_module %}
+			{% end_dnd_row %}
+		{% end_dnd_column %}
+		{% dnd_column width=4, offset=8 %}
+			{% dnd_row %}
+				{% dnd_module path='@hubspot/search_input' label='Search' %}	
+				{% end_dnd_module %}
+			{% end_dnd_row %}
+		{% end_dnd_column %}
+	{% end_dnd_section %}	
+	{% dnd_section 
+		padding={
+			"top" : "40px",
+			"left" : "0px",
+			"right" : "0px",
+			"bottom" : "20px"
+		}
+	%}
+		{% dnd_module path='../modules/Blog Posts.module' %}	
+		{% end_dnd_module %}
+	{% end_dnd_section %}
+	{% dnd_section 
+		max_width=1920,
+		padding={
+			"top" : "0px",
+			"left" : "0px",
+			"right" : "0px",
+			"bottom" : "0px"
+		}
+	%}
+		{% dnd_module path='../modules/Global Blog Subscribe.module' %}	
+		{% end_dnd_module %}
+	{% end_dnd_section %}
+
+{% end_dnd_area %}
+
+</main>
+
+{% endblock body %}
+

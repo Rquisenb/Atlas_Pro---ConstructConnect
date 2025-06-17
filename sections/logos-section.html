@@ -1,0 +1,22 @@
+<!--
+ templateType: section
+ label: Logos Section
+ description: "Section used for Logos in basic landing page"
+ isAvailableForNewContent: true
+ screenshotPath: ../images/section-previews/logos-section.png
+-->
+{% dnd_section background_color={ r: 248, g: 245, b: 240, a: 1 } %}
+
+  {% dnd_module path='../modules/Logo Soup'
+  image=[ 
+    { 'src': get_asset_url('../images/Microsoft.svg') },
+    { 'src': get_asset_url('../images/HubSpot.svg') },
+    { 'src': get_asset_url('../images/Google.svg') },
+    { 'src': get_asset_url('../images/Figma.svg') },
+    { 'src': get_asset_url('../images/Slack.svg') },
+    { 'src': get_asset_url('../images/Amazon.svg') }
+  ]
+  %}
+  {% end_dnd_module %}
+
+{% end_dnd_section %}

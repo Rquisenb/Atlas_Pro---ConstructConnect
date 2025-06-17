@@ -1,0 +1,253 @@
+[ {
+  "id" : "74e4ecd0-460c-1894-652f-c7eae00a442a",
+  "name" : "animation",
+  "label" : "Animation on scroll",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "animation.enabled",
+    "name" : "enabled",
+    "label" : "Enabled",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "1549cd32-c29d-d91c-1407-32eb877d2589",
+    "name" : "effect",
+    "label" : "Effect",
+    "required" : true,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "fade", "Fade" ], [ "fade-up", "Fade up" ], [ "fade-down", "Fade down" ], [ "fade-left", "Fade left" ], [ "fade-right", "Fade right" ], [ "fade-up-right", "Fade up right" ], [ "fade-up-left", "Fade up left" ], [ "fade-down-right", "Fade down right" ], [ "fade-down-left", "Fade down left" ], [ "flip-up", "Flip up" ], [ "flip-down", "Flip down" ], [ "flip-left", "Flip left" ], [ "flip-right", "Flip right" ], [ "slide-up", "Slide up" ], [ "slide-down", "Slide down" ], [ "slide-left", "Slide left" ], [ "slide-right", "Slide right" ], [ "zoom-in", "Zoom in" ], [ "zoom-in-up", "Zoom in up" ], [ "zoom-in-down", "Zoom in down" ], [ "zoom-in-left", "Zoom in left" ], [ "zoom-in-right", "Zoom in right" ], [ "zoom-out", "Zoom out" ], [ "zoom-out-up", "Zoom out up" ], [ "zoom-out-down", "Zoom out down" ], [ "zoom-out-left", "Zoom out left" ], [ "zoom-out-right", "Zoom out right" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "fade-up"
+  }, {
+    "id" : "a881ff50-25b5-9c5f-48fc-b1a57d8aaa72",
+    "name" : "offset",
+    "label" : "Offset",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "min" : 0,
+    "step" : 1,
+    "suffix" : "px",
+    "type" : "number",
+    "display_width" : null,
+    "default" : 120
+  }, {
+    "id" : "8ac66be6-a7be-7760-8618-fa5459338fe2",
+    "name" : "delay",
+    "label" : "Delay",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "min" : 0,
+    "step" : 1,
+    "suffix" : "ms",
+    "type" : "number",
+    "display_width" : null,
+    "default" : 0
+  }, {
+    "id" : "156aba08-89f6-1ba7-c726-c8d98283008b",
+    "name" : "duration",
+    "label" : "Duration",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "min" : 0,
+    "step" : 1,
+    "suffix" : "ms",
+    "type" : "number",
+    "display_width" : null,
+    "default" : 400
+  }, {
+    "id" : "fd9c8c6b-3933-fe38-1936-0317acb3af84",
+    "name" : "easing",
+    "label" : "Easing",
+    "required" : true,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "linear", "Linear" ], [ "ease", "Ease" ], [ "ease-in", "Ease in" ], [ "ease-out", "Ease out" ], [ "ease-in-out", "Ease in out" ], [ "ease-in-back", "Ease in back" ], [ "ease-out-back", "Ease out back" ], [ "ease-in-out-back", "Ease in out back" ], [ "ease-in-sine", "Ease in sine" ], [ "ease-out-sine", "Ease out sine" ], [ "ease-in-out-sine", "Ease in out sine" ], [ "ease-in-quad", "Ease in quad" ], [ "ease-out-quad", "Ease out quad" ], [ "ease-in-out-quad", "Ease in out quad" ], [ "ease-in-cubic", "Ease in cubic" ], [ "ease-out-cubic", "Ease out cubic" ], [ "ease-in-out-cubic", "Ease in out cubic" ], [ "ease-in-quart", "Ease in quart" ], [ "ease-out-quart", "Ease out quart" ], [ "ease-in-out-quart", "Ease in out quart" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "ease-in-out"
+  }, {
+    "id" : "a635b0a2-5bac-f2f1-4b5c-00d9392cebaf",
+    "name" : "mirror",
+    "label" : "Mirror",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "6f28a452-eca3-4578-7486-cf04112d7b91",
+    "name" : "once",
+    "label" : "Once",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "44a08d30-02c9-4ac8-1c36-9000337d097c",
+    "name" : "anchor_placement",
+    "label" : "Anchor placement",
+    "required" : true,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "top-bottom", "Top-bottom" ], [ "top-center", "Top-center" ], [ "top-top", "Top top" ], [ "center-bottom", "Center bottom" ], [ "center-center", "Center center" ], [ "center-top", "Center top" ], [ "bottom-bottom", "Bottom bottom" ], [ "bottom-center", "Bottom center" ], [ "bottom-top", "Bottom top" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "top-bottom"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "enabled" : false,
+    "effect" : "fade-up",
+    "offset" : 120,
+    "delay" : 0,
+    "duration" : 400,
+    "easing" : "ease-in-out",
+    "mirror" : true,
+    "once" : false,
+    "anchor_placement" : "top-bottom"
+  }
+}, {
+  "id" : "038c62fa-db88-a2a9-b58e-f4d3b1a63755",
+  "name" : "show_menu",
+  "label" : "Show Menu",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : false
+}, {
+  "id" : "9a4acb80-fd16-4801-b10d-530eb49d0ef1",
+  "name" : "title",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Contents"
+}, {
+  "id" : "d58b554e-a860-45f7-5d65-8fee4a518e19",
+  "name" : "anchors",
+  "label" : "Anchors",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "5f9cb982-6016-736a-3775-227c2e99a0b9",
+    "name" : "anchor_text",
+    "label" : "Anchor Text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : ""
+  }, {
+    "id" : "fea420db-2c1d-1a8e-bdbe-de6d1c35776d",
+    "name" : "anchor_link",
+    "label" : "Anchor Link",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : ""
+  }, {
+    "id" : "3cab1606-c698-938a-45cf-50c3e968bb1c",
+    "name" : "child_anchors",
+    "label" : "Child Anchors",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : null
+    },
+    "children" : [ {
+      "id" : "b64540a0-ed07-bb92-9e1d-bb7c2f9cbbc0",
+      "name" : "anchor_text",
+      "label" : "Anchor Text",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : ""
+    }, {
+      "id" : "d9da8976-469f-918e-b3be-8fc88357ad02",
+      "name" : "anchor_link",
+      "label" : "Anchor Link",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : ""
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "anchor_text" : "",
+      "anchor_link" : ""
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "anchor_text" : "",
+    "anchor_link" : "",
+    "child_anchors" : {
+      "anchor_text" : "",
+      "anchor_link" : ""
+    }
+  }
+} ]

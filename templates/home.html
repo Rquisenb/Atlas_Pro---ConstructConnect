@@ -1,0 +1,41 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Home
+  screenshotPath: ../images/template-previews/home.png
+-->
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+<main class="body-container-wrapper">
+
+  {% dnd_area 'dnd_area' class='body-container body-container--home', label='Main section' %}
+
+    {% include_dnd_partial path='../sections/hero-banner-2.html' %}
+
+    {% include_dnd_partial path='../sections/two-column-section-1.html' %}
+
+    {% include_dnd_partial path='../sections/product-features.html' %}
+
+    {# Testimonials #}
+    {% include_dnd_partial path='../sections/testimonials-section.html' %}
+
+    {% include_dnd_partial path='../sections/logos-section.html' %}
+
+    {% include_dnd_partial path='../sections/card-slider.html' %}
+
+    {# Offer Section #}
+    {% include_dnd_partial path='../sections/offer-section.html' %}
+    
+    {# Sales Section #}
+    {% include_dnd_partial path='../sections/plans-section.html' %}
+
+    {# FAQ Section #}
+    {% include_dnd_partial path='../sections/faq-section.html' %}
+
+    {# Blog Subscribe section #}
+    {% include_dnd_partial path='../sections/blog-subscribe.html' %}
+
+  {% end_dnd_area %}
+</main>
+{% endblock body %}

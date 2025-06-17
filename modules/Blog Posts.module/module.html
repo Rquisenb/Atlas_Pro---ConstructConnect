@@ -1,0 +1,93 @@
+{% import '../macros.html' %}
+
+{# Check out macros.html file to see how this module is implemented #}
+{% call render_animation(module.animation) %}
+      <section class="blog-index">
+        {# Blog listing #}
+        {% for content in contents %}
+        {# On the blog listing page, the first post will be featured above older posts #}
+
+        <article class="blog-index__post-wrapper">
+          <div class="blog-index__post">
+            {% if content.featured_image and group.use_featured_image_in_summary %}
+            <a class="blog-index__post-image" 
+               style="background-image: url('{{ content.featured_image }}');" 
+               href="{{ content.absolute_url }}">
+            </a>
+            {% endif %}
+            <div class="blog-index__post-content">
+              <div>
+                {% set featured_tag = content.topic_list | first %}
+                {% if featured_tag %}
+                <span class="blog-index__post-preheader">{{ featured_tag }}</span>
+                {% endif %}
+                <h3><a href="{{ content.absolute_url }}">{{ content.name }}</a></h3>
+                {% if content_group.show_summary_in_listing %}
+                <p>{{ content.meta_description | default(content.post_summary, true) | truncatehtml(150, '...', false) }}</p>
+                {% endif %}
+              </div>
+              <div class="blog-index__post-meta">
+                <span class="blog-index__post-author">
+                  {{ content.blog_post_author }}
+                </span>
+                <span class="blog-index__post-date">
+                  {{ content.publish_date | datetimeformat('%b %e, %Y') }}
+                </span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        {% endfor %}
+        {# End blog listing #}
+
+      </section>
+
+      {# Blog pagination #}
+      {% if contents.total_page_count > 1 %}
+      {% set page_index = current_page_num > 0 ? current_page_num : 1 %}
+      <div class="blog-pagination">
+        {# Previous button #}
+
+        {# First #}
+        {% if page_index >= 3 %}
+        <a href="{{ blog_page_link(1) }}" class="blog-pagination__link">1</a>
+        <span class="blog-pagination__ellipsis">...</span>
+        {% endif %}
+
+        {% if page_index > 1 %}
+        <a href="{{ blog_page_link(page_index - 1) }}"
+           class="blog-pagination__link">
+          {{ page_index - 1 }}
+        </a>
+        {% endif %}
+
+        <a href="{{ blog_page_link(page_index) }}"
+           class="blog-pagination__link blog-pagination__link--active">
+          {{ page_index }}
+        </a>
+
+        {% if page_index != contents.total_page_count %}
+        <a href="{{ blog_page_link(page_index + 1) }}"
+           class="blog-pagination__link" >
+           {{ page_index + 1 }}
+        </a>
+          {% endif %}
+
+          {# Last #}
+          {% if contents.total_page_count - page_index > 1 %}
+          <div>
+            <span class="blog-pagination__ellipsis">...</span>
+            <a href="{{ blog_page_link(contents.total_page_count) }}"
+               class="blog-pagination__link" >
+               {{ contents.total_page_count }}
+            </a>
+          </div>
+          {% endif %}
+
+          {# Next button #}
+      </div>
+
+      {% endif %}
+      {# End blog pagination #}
+{% endcall %}

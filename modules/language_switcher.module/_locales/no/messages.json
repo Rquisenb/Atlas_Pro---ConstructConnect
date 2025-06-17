@@ -1,0 +1,472 @@
+{
+  "add_chevron_down.label" : {
+    "message" : "Legg til vinkel ned",
+    "description" : "",
+    "placeholders" : null
+  },
+  "custom_icon.label" : {
+    "message" : "Egendefinert ikon",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.label" : {
+    "message" : "Standard tekst",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.select_your_language.default" : {
+    "message" : "Velg språk",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.select_your_language.label" : {
+    "message" : "Velg språk",
+    "description" : "",
+    "placeholders" : null
+  },
+  "display_mode.choices.hybrid" : {
+    "message" : "Hybrid",
+    "description" : "",
+    "placeholders" : null
+  },
+  "display_mode.choices.localized" : {
+    "message" : "Lokalisert",
+    "description" : "",
+    "placeholders" : null
+  },
+  "display_mode.choices.pagelang" : {
+    "message" : "Språk på siden",
+    "description" : "",
+    "placeholders" : null
+  },
+  "display_mode.help_text" : {
+    "message" : "Lar deg velge på hvilket språk språkene på siden din vises på nettsiden din. <a href='https://knowledge.hubspot.com/website-pages/create-pages-in-multiple-languages#add-a-language-switcher-to-your-template' target='blank' rel='noopener noreferrer'>Finn ut mer</a>",
+    "description" : "",
+    "placeholders" : null
+  },
+  "display_mode.label" : {
+    "message" : "Visningsmodus",
+    "description" : "",
+    "placeholders" : null
+  },
+  "display_mode.placeholder" : {
+    "message" : "Søk",
+    "description" : "",
+    "placeholders" : null
+  },
+  "icon.label" : {
+    "message" : "Ikon",
+    "description" : "",
+    "placeholders" : null
+  },
+  "icon_options.choices.custom_icon" : {
+    "message" : "Egendefinert ikon",
+    "description" : "",
+    "placeholders" : null
+  },
+  "icon_options.choices.icon" : {
+    "message" : "Ikon",
+    "description" : "",
+    "placeholders" : null
+  },
+  "icon_options.choices.none" : {
+    "message" : "Ingen",
+    "description" : "",
+    "placeholders" : null
+  },
+  "icon_options.label" : {
+    "message" : "Ikonalternativer",
+    "description" : "",
+    "placeholders" : null
+  },
+  "name" : {
+    "message" : "Språkveksler",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_alignment.alignment.label" : {
+    "message" : "Innretting",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_alignment.label" : {
+    "message" : "Innretting",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_background.color.label" : {
+    "message" : "Farge",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_background.label" : {
+    "message" : "Bakgrunn",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_border.border.label" : {
+    "message" : "Kant",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_border.label" : {
+    "message" : "Kant",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_chevron.color.label" : {
+    "message" : "Farge",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_chevron.label" : {
+    "message" : "Vinkel",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_chevron.size.help_text" : {
+    "message" : "Størrelsen på vinkelikonet.",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_chevron.size.label" : {
+    "message" : "Størrelse",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_chevron.spacing.help_text" : {
+    "message" : "Mellomrom mellom vinkelen og knappeteksten.",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_chevron.spacing.label" : {
+    "message" : "Avstand",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_corner.label" : {
+    "message" : "Hjørne",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_corner.radius.label" : {
+    "message" : "Radius",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_hover.group_background.color.label" : {
+    "message" : "Farge",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_hover.group_background.label" : {
+    "message" : "Bakgrunn",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_hover.group_border.border.label" : {
+    "message" : "Kant",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_hover.group_border.label" : {
+    "message" : "Kant",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_hover.group_chevron.color.label" : {
+    "message" : "Farge",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_hover.group_chevron.label" : {
+    "message" : "Vinkel",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_hover.group_icon.color.label" : {
+    "message" : "Farge",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_hover.group_icon.label" : {
+    "message" : "Ikon",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_hover.group_text.font.label" : {
+    "message" : "Skrifttype",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_hover.group_text.label" : {
+    "message" : "Tekst",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_hover.label" : {
+    "message" : "Pekerfølsom",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_icon.color.label" : {
+    "message" : "Farge",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_icon.label" : {
+    "message" : "Ikon",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_icon.size.label" : {
+    "message" : "Størrelse",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_icon.spacing.help_text" : {
+    "message" : "Mellomrom mellom ikonet og knappeteksten.",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_icon.spacing.label" : {
+    "message" : "Avstand",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_spacing.label" : {
+    "message" : "Avstand",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_spacing.spacing.label" : {
+    "message" : "Avstand",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_text.font.label" : {
+    "message" : "Skrifttype",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_text.label" : {
+    "message" : "Tekst",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_text.transform.choices.capitalize" : {
+    "message" : "Stor forbokstav",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_text.transform.choices.lowercase" : {
+    "message" : "Små bokstaver",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_text.transform.choices.uppercase" : {
+    "message" : "Store bokstaver",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_text.transform.label" : {
+    "message" : "Transformer",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_text.transform.placeholder" : {
+    "message" : "Ingen",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.label" : {
+    "message" : "Knapp",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_alignment.alignment.label" : {
+    "message" : "Innretting",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_alignment.label" : {
+    "message" : "Innretting",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_background.color.label" : {
+    "message" : "Farge",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_background.label" : {
+    "message" : "Bakgrunn",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_border.border.label" : {
+    "message" : "Kant",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_border.label" : {
+    "message" : "Kant",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_box_shadow.add_box_shadow.label" : {
+    "message" : "Legg til boksskygge",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_box_shadow.blur_radius.help_text" : {
+    "message" : "Styrer uklarheten på skyggen. Høyere verdi gjør skyggen større og lysere. Negative verdier er ikke tillatt.",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_box_shadow.blur_radius.label" : {
+    "message" : "Radius for uklarhet",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_box_shadow.color.help_text" : {
+    "message" : "Styrer fargen på skyggen.",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_box_shadow.color.label" : {
+    "message" : "Farge",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_box_shadow.label" : {
+    "message" : "Boksskygge",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_box_shadow.offset_x.help_text" : {
+    "message" : "Spesifiserer den horisontale posisjonen til skyggen. Negative verdier skyver skyggen mot venstre. Positive verdier skyver skyggen mot høyre.",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_box_shadow.offset_x.label" : {
+    "message" : "Forskyvning x",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_box_shadow.offset_y.help_text" : {
+    "message" : "Spesifiserer den vertikale posisjonen til skyggen. Negative verdier skyver skyggen oppover. Positive verdier skyver skyggen nedover.",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_box_shadow.offset_y.label" : {
+    "message" : "Forskyvning y",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_box_shadow.spread_radius.help_text" : {
+    "message" : "Justerer den generelle størrelsen på skyggen. Positive verdier gjør skyggen større. Negative verdier gjør skyggen mindre.",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_box_shadow.spread_radius.label" : {
+    "message" : "Spredningsradius",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_corner.label" : {
+    "message" : "Hjørne",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_corner.radius.label" : {
+    "message" : "Radius",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_hover.group_background.color.label" : {
+    "message" : "Farge",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_hover.group_background.label" : {
+    "message" : "Bakgrunn",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_hover.group_text.font.label" : {
+    "message" : "Skrifttype",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_hover.group_text.label" : {
+    "message" : "Tekst",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_hover.label" : {
+    "message" : "Pekerfølsom",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_spacing.label" : {
+    "message" : "Avstand",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_spacing.margin.help_text" : {
+    "message" : "Justerer margen mellom rullegardinmenyen og knappen",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_spacing.margin.label" : {
+    "message" : "Toppmarg",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_text.font.label" : {
+    "message" : "Skrifttype",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_text.label" : {
+    "message" : "Tekst",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_text.transform.choices.capitalize" : {
+    "message" : "Stor forbokstav",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_text.transform.choices.lowercase" : {
+    "message" : "Små bokstaver",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_text.transform.choices.uppercase" : {
+    "message" : "Store bokstaver",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_text.transform.label" : {
+    "message" : "Transformer",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_text.transform.placeholder" : {
+    "message" : "Ingen",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.label" : {
+    "message" : "Rullegardinmeny",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.label" : {
+    "message" : "Stiler",
+    "description" : "",
+    "placeholders" : null
+  }
+}

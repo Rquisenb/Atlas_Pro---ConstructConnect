@@ -1,0 +1,38 @@
+{% import '../macros.html' %}
+
+{% set class = 'kl-offer-modal__wrapper' %}
+
+{% if module.vertical_alignment == 'center' %}
+  {% set class = class ~ ' %s--center'|format(class) %}
+{% elif module.vertical_alignment == 'right' %}
+  {% set class = class ~ ' %s--bottom'|format(class) %}
+{% endif %}
+
+<div class="kl-offer-modal" id="{{ module.html_id }}">
+  <a class="kl-offer-modal__overlay" href="#/"></a>
+  <div class="kl-offer-modal__container">
+    <a class="kl-offer-modal__close" href="#/">
+      <svg width="11" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.5 1L.5 11M.5 1l10 10" stroke="#929292" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <div class="{{ class }}">
+
+      <div class="kl-offer-modal__content">
+        {{ kl_rich_text(module.richtext) }}
+      </div>
+
+      {% if module.form.enabled %}
+        <div class="kl-offer-modal__form">
+          {% form
+            form_to_use="{{ module.form.selector.form_id }}"
+            response_response_type="{{ module.form.selector.response_type }}"
+            response_message="{{ module.form.selector.message }}"
+            response_redirect_id="{{ module.form.selector.redirect_id }}"
+            response_redirect_url="{{module.form.selector.redirect_url}}"
+            gotowebinar_webinar_key="{{ module.form.selector.gotowebinar_webinar_key }}"
+          %}
+        </div>
+      {% endif %}
+
+    </div>
+  </div>
+</div>

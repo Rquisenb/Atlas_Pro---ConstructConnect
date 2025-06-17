@@ -1,0 +1,26 @@
+{% import '../macros.html' %}
+
+{# Check out macros.html file to see how this module is implemented #}
+{% call render_animation(module.animation) %}
+<div class="kl-movable-wrapper">
+	<div class="kl-movable kl-movable__{{name}}">
+		<div class="kl-row">
+			{% for column in module.columns%}
+			<div class="kl-column">
+			  {{ kl_rich_text(column) }}
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+{% endcall %}
+{% require_css %}
+<style>
+	.kl-movable__{{name}}{
+		transform: translate(-50%, {{module.translation_value}}%);
+	}
+	.kl-movable__{{name}}{
+		max-width: {{module.max_width}}px;
+	}
+</style>
+{% end_require_css %}

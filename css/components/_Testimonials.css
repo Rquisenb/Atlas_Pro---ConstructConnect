@@ -1,0 +1,90 @@
+.kl-testimonials {
+  display: flex;
+}
+
+@media screen and (max-width: 920px) {
+  .kl-testimonials {
+    display: block;
+  }
+}
+
+.kl-testimonial {
+  padding: 18px 25px 25px;
+  border: 0.5px solid rgba({{theme.cards.border_color.color|convert_rgb}}, {{theme.cards.border_color.opacity != null ? theme.cards.border_color.opacity / 100 : 1}});
+  box-shadow: 0px 11px 30px rgba({{theme.cards.box_shadow.color|convert_rgb}}, {{theme.cards.box_shadow.opacity != null ? theme.cards.box_shadow.opacity / 100 : 1}});
+  border-radius: {{theme.cards.border_radius}}px;
+  background-color: rgba({{theme.cards.background.color|convert_rgb}}, {{theme.cards.background.opacity != null ? theme.cards.background.opacity / 100 : 1}});
+  flex-grow: 1;
+  flex-basis: 300px;
+  display:flex;/*edit*/
+  flex-direction: column;/*edit*/
+  justify-content: flex-start;/*edit*/
+}
+
+.kl-testimonial + .kl-testimonial {
+  margin-left: 64px;
+}
+
+@media screen and (max-width: 1024px) {
+  .kl-testimonial + .kl-testimonial {
+    margin-left: 16px;
+  }
+  .kl-hero-02__content {
+   padding: 0 30px;
+  }
+}
+
+@media screen and (max-width: 920px) {
+  .kl-testimonial + .kl-testimonial {
+    margin: 16px 0 0;
+  }
+}
+
+@media screen and (max-width:768px) {
+  .kl-hero-02__content {
+   padding: 0 20px;
+  }
+}
+
+.kl-testimonial__quote {
+  margin: 0 0 25px;
+}
+
+.kl-testimonial__quote svg {
+  fill: {{theme.global_colors.primary_color.color}};
+  height: 32px;
+  max-height: 32px;
+}
+
+.kl-testimonial__content {
+  font-weight: 500;
+}
+
+.kl-testimonial__footer {
+  display: flex;
+  align-items: center;
+  margin-top:auto;/*edit*/
+}
+
+.kl-testimonial__footer img {
+  display: block;
+  object-fit: cover;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  margin: 0 16px 0 0;
+}
+
+.kl-testimonial__author {
+  font-weight: bold;
+}
+
+.kl-testimonial__author span {
+  font-family: {{theme.typography.preheader.font}}, sans-serif;
+  font-size: {{theme.typography.preheader.size}}{{theme.typography.preheader.size_unit}};
+  font-weight: bold;
+  color: {{theme.typography.preheader.color}};
+  display: block;
+  font-size: 0.75rem;
+  margin: 0 0 8px;
+}

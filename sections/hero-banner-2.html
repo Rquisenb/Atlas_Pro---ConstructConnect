@@ -1,0 +1,17 @@
+<!--
+  templateType: section
+  isAvailableForNewContent: true
+  label: Hero Banner 2
+  description: "Hero Banner 02 module"
+  screenshotPath: ../images/section-previews/hero-banner-2.png
+-->
+{% dnd_section full_width=True, padding={ top: 0, right: 0, bottom: 0, left: 0  },
+  background_image={
+    'backgroundPosition': 'MIDDLE_CENTER',
+    'backgroundSize': 'cover',
+    'imageUrl': get_asset_url('../images/Hero-Background-2.svg')
+  }
+%}
+  {% dnd_module path="../modules/Hero Banner 02", label="Hero Banner" %}
+  {% end_dnd_module %}
+{% end_dnd_section %}

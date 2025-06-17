@@ -1,0 +1,35 @@
+/* Table */
+table {
+  background-color: rgba({{theme.tables.body_background_color.color|convert_rgb}}, {{theme.tables.body_background_color.opacity != null ? theme.tables.body_background_color.opacity / 100 : 1}});
+  border: 1px solid {{theme.tables.border_color.color}};
+  border-collapse: collapse;
+  margin-bottom: 1.4rem;
+  overflow-wrap: break-word;
+}
+
+tbody + tbody {
+  border-top: 2px solid {{theme.tables.border_color.color}};
+}
+
+/* Table Cells */
+th,
+td {
+  border: 1px solid {{theme.tables.border_color.color}};
+  color: {{theme.tables.body_text_color.color}};
+  padding: 0.75rem;
+  vertical-align: top;
+}
+
+/* Table Header */
+thead th,
+thead td {
+  background-color: rgba({{theme.tables.header_background_color.color|convert_rgb}}, {{theme.tables.header_background_color.opacity != null ? theme.tables.header_background_color.opacity / 100 : 1}});
+  color: {{theme.tables.header_text_color.color}};
+  vertical-align: bottom;
+}
+
+/* Table footer */
+tfoot td {
+  background-color: rgba({{theme.tables.footer_background_color.color|convert_rgb}}, {{theme.tables.footer_background_color.opacity != null ? theme.tables.footer_background_color.opacity / 100 : 1}});
+  color: {{theme.tables.footer_text_color.color}};
+}

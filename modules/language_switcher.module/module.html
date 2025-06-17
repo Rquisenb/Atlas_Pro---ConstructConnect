@@ -1,0 +1,302 @@
+{# Language switcher - version 1 #}
+
+{% set button = module.styles.group_button %}
+{% set menu = module.styles.group_dropdown %}
+{% set languages = language_variants(module.display_mode) %}
+{% set activeLanguage = languages|selectattr('isActive', true)|first %}
+
+{% macro build_module_styles() %}
+  {% require_css %}
+  <style>
+  {% scope_css %}
+    .hs-language-switcher {
+      text-align: {{ button.group_alignment.alignment.horizontal_align|lower }};
+    }
+
+    .hs-language-switcher__button {
+      {% if button.group_background.color.color %}
+        background-color: rgba({{ button.group_background.color.color|convert_rgb }}, {{ button.group_background.color.opacity / 100 }});
+      {% endif %}
+      {{ button.group_border.border.css }}
+      {% if button.group_corner.radius %}
+        border-radius: {{ button.group_corner.radius ~ 'px' }};
+      {% endif %}
+
+      {% if
+        button.group_spacing.spacing.padding.left.value
+        or button.group_spacing.spacing.padding.right.value
+        or button.group_spacing.spacing.padding.top.value
+        or button.group_spacing.spacing.padding.bottom.value
+      %}
+        padding-left: {{ button.group_spacing.spacing.padding.left.value|default(0, true) ~ "px" }};
+        padding-bottom: {{ button.group_spacing.spacing.padding.bottom.value|default(0, true) ~ "px" }};
+        padding-top: {{ button.group_spacing.spacing.padding.top.value|default(0, true) ~ "px" }};
+        padding-right: {{ button.group_spacing.spacing.padding.right.value|default(0, true) ~ "px" }};
+      {% endif %}
+    }
+
+    .hs-language-switcher__current-language {
+      {{ button.group_text.font.css }}
+      {% if button.group_text.transform %}
+        text-transform: {{ button.group_text.transform }};
+      {% endif %}
+    }
+
+    .hs-language-switcher__inner-wrapper {
+      margin-top: {{ button.group_spacing.spacing.margin.top.value|default(0, true) ~ "px"}};
+      margin-bottom: {{ button.group_spacing.spacing.margin.bottom.value|default(0, true) ~ "px" }};
+    }
+
+    .hs-language-switcher__button:hover,
+    .hs-language-switcher.menu-open .hs-language-switcher__button {
+      {{ button.group_hover.group_text.font.css }}
+      {% if button.group_hover.group_background.color.color %}
+        background-color: rgba({{ button.group_hover.group_background.color.color|convert_rgb }}, {{ button.group_hover.group_background.color.opacity / 100 }});
+      {% endif %}
+      {{ button.group_hover.group_border.border.css }}
+    }
+
+    {% if module.add_chevron_down %}
+      .hs-language-switcher__icon--dropdown {
+        margin-left: {{ button.group_chevron.spacing ~ "px" }};
+        margin-right: 0;
+        display: block;
+        width: {{ button.group_chevron.size ~ "px" }};
+        height: auto;
+        fill: rgba({{ button.group_chevron.color.color|convert_rgb }}, {{ button.group_chevron.color.opacity / 100 }});
+        transition: transform .2s ease;
+      }
+      .hs-language-switcher__icon--dropdown.active {
+        transform: rotate(180deg);
+      }
+      {% if button.group_hover.group_chevron.color.color %}
+        .hs-language-switcher__button:hover .hs-language-switcher__icon--dropdown {
+          fill: rgba({{ button.group_hover.group_chevron.color.color|convert_rgb }}, {{ button.group_hover.group_chevron.color.opacity / 100 }});
+        }
+      {% endif %}
+    {% endif %}
+
+    {# (Globe) Icon styles #}
+    {% if module.icon_options == "custom_icon" and module.custom_icon.src %}
+      .hs-language-switcher__icon--custom {
+        width: {{ button.group_icon.size ~ "px" }};
+        max-width: 40px;
+        height: auto;
+        margin-right: {{ button.group_icon.spacing ~ "px" }};
+      }
+       @media screen and (max-width: 767px) {
+        .hs-language-switcher__icon--custom {
+          margin-right: 0;
+        }
+      }
+    {% endif %}
+
+    {% if (module.icon_options == "icon" and module.icon) or (module.icon_options == "custom_icon" and module.custom_icon.src )%}
+      .hs-language-switcher__icon {
+        display: flex;
+        height: auto;
+        width: {{ button.group_icon.size ~ "px" }};
+        fill: rgba({{ button.group_icon.color.color|convert_rgb }}, {{ button.group_icon.color.opacity / 100 }});
+        margin-right: {{ button.group_icon.spacing ~ "px" }};
+      }
+
+      .hs-language-switcher__icon > svg {
+        width: {{ button.group_icon.size ~ "px" }};
+        height: auto;
+      }
+
+      .hs-language-switcher__inner-wrapper:hover .hs-language-switcher__icon,
+      .hs-language-switcher.menu-open .hs-language-switcher__icon {
+        {% if button.group_hover.group_icon.color.color %}
+          fill: rgba({{ button.group_hover.group_icon.color.color|convert_rgb }}, {{ button.group_hover.group_icon.color.opacity / 100 }});
+        {% endif %}
+      }
+    {% endif %}
+
+    {% if module.icon_options == "none" or not module.icon_options %}
+      .hs-language-switcher__icon {
+        display: none;
+        height: auto;
+        fill: rgba({{ button.group_icon.color.color|convert_rgb }}, {{ button.group_icon.color.opacity / 100 }});
+        width: {{ button.group_icon.size ~ "px" }};
+      }
+    {% endif %}
+
+    @media screen and (max-width: 767px) {
+      .hs-language-switcher__current-language {
+        display: none;
+      }
+      .hs-language-switcher__icon {
+          display: flex;
+          margin-right: 0;
+        }
+      {# mobile menu alignment classes #}
+      .hs-language-switcher__menu.hs--align-left {
+        left: 0;
+        right: initial;
+        transform: translateX(0);
+      }
+      .hs-language-switcher__menu.hs--align-right {
+        left: initial;
+        right: 0;
+        transform: translateX(0);
+      }
+      .hs-language-switcher__menu.hs--align-center {
+        left: 50%;
+        right: initial;
+        transform: translateX(-50%);
+      }
+    }
+
+    {# Menu Options #}
+
+    .hs-language-switcher__menu {
+      {% if menu.group_background.color.color %}
+        background-color: rgba({{ menu.group_background.color.color|convert_rgb }}, {{ menu.group_background.color.opacity / 100 }});
+      {% endif %}
+      {{ menu.group_border.border.css }}
+      {% if menu.group_box_shadow.add_box_shadow %}
+        box-shadow: {{ menu.group_box_shadow.offset_x ~ "px" }} {{ menu.group_box_shadow.offset_y ~ "px" }} {{ menu.group_box_shadow.blur_radius ~ "px" }} {{ menu.group_box_shadow.spread_radius ~ "px" }} rgba({{ menu.group_box_shadow.color.color|convert_rgb }}, {{ menu.group_box_shadow.color.opacity / 100 }});
+      {% endif %}
+      {% if menu.group_corner.radius %}
+        border-radius: {{ menu.group_corner.radius ~ 'px' }};
+      {% endif %}
+      {% if menu.group_spacing.margin %}
+        margin-top: {{ menu.group_spacing.margin ~ 'px' }};
+      {% endif %}
+      {% if menu.group_alignment.alignment.horizontal_align == "RIGHT" %}
+        right: 0;
+      {% elif menu.group_alignment.alignment.horizontal_align == "CENTER" %}
+        left: 50%;
+        transform: translateX(-50%);
+      {% else %}
+        left: 0;
+      {% endif %}
+    }
+
+    .hs-language-switcher__item {
+      {% if menu.group_spacing.item_spacing.css %}
+        {{ menu.group_spacing.item_spacing.css }}
+      {% endif %}
+    }
+
+    .hs-language-switcher__item a {
+      text-align: {{ menu.group_text.text_alignment.horizontal_align|lower }};
+      {{ menu.group_text.font.css }}
+      {% if menu.group_text.transform %}
+        text-transform: {{ menu.group_text.transform }};
+      {% endif %}
+    }
+
+    .hs-language-switcher__item:focus,
+    .hs-language-switcher__item.active,
+    .hs-language-switcher__menu.mousemove .hs-language-switcher__item:hover {
+      {% if menu.group_hover.group_background.color.color %}
+        background: rgba({{ menu.group_hover.group_background.color.color|convert_rgb }}, {{ menu.group_hover.group_background.color.opacity / 100 }});
+      {% endif %}
+    }
+
+    .hs-language-switcher__item:focus a,
+    .hs-language-switcher__item.active a,
+    .hs-language-switcher__menu.mousemove .hs-language-switcher__item:hover a {
+      {{ menu.group_hover.group_text.font.css }}
+    }
+
+    {#
+      Set width for absolutely positioned menu
+      ensures that the menu will always be visible and not sipill over
+      on mobile screens down to 320px;
+     #}
+    @media(max-width: 450px) {
+      .hs-language-switcher__menu {
+        width: 280px;
+        max-width: 280px;
+      }
+      .hs-language-switcher__item a {
+        white-space: normal;
+      }
+    }
+
+  {% end_scope_css %}
+  </style>
+  {% end_require_css %}
+{% endmacro %}
+
+
+{% macro build_custom_icon() %}
+	{% set sizeAttrs = 'width="{{ button.group_icon.size|escape_attr }}" height="{{ button.group_icon.size|escape_attr }}"' %}
+  {% set image_src = resize_image_url(module.custom_icon.src, 0, 0, 50) %}
+	 {% set loadingAttr = module.custom_icon.loading != 'disabled' ? 'loading="{{ module.custom_icon.loading|escape_attr }}"' : '' %}
+	  <img class="hs-language-switcher__icon--custom" src="{{ image_src|escape_url }}" alt="{{ module.custom_icon.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+{% endmacro %}
+
+{% macro build_chevron_down() %}
+  <svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="hs-language-switcher__icon--dropdown" aria-hidden="true">
+    <g>
+      <path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path>
+    </g>
+  </svg>
+{% endmacro %}
+
+{% macro add_icon() %}
+  {% if module.icon_options == "custom_icon" and module.custom_icon.src %}
+    {{ build_custom_icon() }}
+  {% else %}
+    {% if module.icon_options == "icon" and  module.icon.unicode %}
+      {% set icon_unicode = module.icon.unicode %}
+      {% set icon_name = module.icon.name %}
+      {% set icon_type = module.icon.type %}
+    {% else %}
+      {# Default glob icon #}
+      {% set icon_unicode = 'f0ac'%}
+      {% set icon_name = 'globe' %}
+      {% set icon_type = "solid" %}
+    {% endif %}
+
+    {% icon
+      extra_classes='hs-language-switcher__icon'
+      name='{{ icon_name }}'
+      purpose='decorative'
+      style='{{ icon_type }}'
+      title='{{ icon_name }}'
+      unicode='{{ icon_unicode }}'
+    %}
+  {% endif %}
+{% endmacro %}
+
+
+{#
+  When page is first created, languages will be null. After the language for the page is set,
+  languages will contain one language, so both checks are required
+#}
+{% if is_in_editor && (!languages || languages|length <= 1) %}
+  {% editor_placeholder %}
+{% elif languages|length >= 2  %}
+  {{- build_module_styles() -}}
+  <nav class="hs-language-switcher" aria-label="{{ module.default_text.select_your_language|escape_attr }}">
+    <div class="hs-language-switcher__inner-wrapper">
+      <button
+        class="hs-language-switcher__button"
+        aria-label="{{ activeLanguage.languageDisplayName|escape_attr }}"
+        aria-expanded="false">
+        <span aria-hidden="true" class="hs-language-switcher__label">
+          {{ add_icon() }}
+          <span class="hs-language-switcher__current-language">{{ activeLanguage.languageDisplayName|escape_html }}</span>
+          {{ build_chevron_down() if module.add_chevron_down }}
+        </span>
+      </button>
+
+      <ul class="hs-language-switcher__menu" role="menu">
+        {% for language in languages %}
+          <li class="hs-language-switcher__item" role="menuitem">
+            <a
+              lang="{{ language.languageCode|escape_attr }}"
+              hreflang="{{ language.languageCode|escape_attr }}"
+              href="{{ language.localizedUrl|escape_url }}"
+              data-value="{{ language.languageDisplayName|escape_attr }}">{{ language.languageDisplayName|escape_html }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </nav>
+{% endif %}

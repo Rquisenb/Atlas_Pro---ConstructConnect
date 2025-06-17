@@ -1,0 +1,144 @@
+{% import '../macros.html' %}
+
+{% macro render_navbar_button(btn) -%}
+
+  {% if btn.style == 'inherit' %}
+    {{ render_button(btn, 'kl-navbar__button') }}
+  {% else %}
+    {{ render_button(btn) }}
+  {% endif %}
+
+{%- endmacro %}
+
+<header class="kl-header" id="kl-header">
+  {% if module.enable_top_bar %}
+    <!-- HTML to show when checked -->
+    <div class="kl-top-navbar">
+      <div class="content-wrapper">
+        <span class="kl-top-navbar-content">{{ module.top_bar.top_bar_content }} {% cta guid="{{ module.top_bar.top_bar_cta }}" %}</span>
+        {% menu id="{{ module.top_bar.top_bar_navigation }}" %}
+      </div>
+    </div>
+  {% endif %}
+  <nav class="kl-navbar content-wrapper">
+    {% if module.logo.image.src %}
+      {% call render_link(module.logo) %}
+        {{ render_image(module.logo.image, 'kl-navbar__logo') }}
+      {% endcall %}
+    {% endif %}
+    <div class="kl-navbar__mobile">
+      {% if module.language_switcher %}
+        {% language_switcher "language_switcher" 
+          overrideable=false, 
+          display_mode='localized', 
+          label='Language Switcher' 
+        %}
+      {% endif %}
+      {% if module.menu %}
+      <button class="hamburger hamburger--squeeze kl-navbar__hamburger" type="button">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
+      {% endif %}
+    </div>
+    <div class="kl-navbar__content">
+      <ul class="kl-navbar__menu">
+        {% for item in module.menu %}
+          <li class="kl-navbar__item {% if item.display_in_editor == true %}kl-navbar__item--active{% endif %}">
+            {% set className = 'kl-navbar__button kl-navbar__dropdown' %}
+            {% if not item.submenu %} <!-- If statement for just a link -->
+              {% set className = className ~ ' kl-navbar__leaf' %}
+            {% endif %}
+            {% call render_link(item, className) %}
+              <span>{{ item.title }}</span>
+            {% endcall %}
+            {% if item.submenu %} <!-- If statement for panel -->
+            <div class="kl-navbar__panel" style="">
+              <div class="kl-navbar__panel-wrapper">
+                <div class="panel-main">
+                  <div class="panel-menu">
+                    {% menu id="{{ item.submenu }}" %}
+                    {% if item.show_bottom_section %}
+                      <div class="panel-bottom-section">
+                        {% inline_rich_text field="bottom_section.bottom_section_text" value="{{ item.bottom_section.bottom_section_text }}" %}
+                      </div>
+                    {% endif %}
+                  </div>
+                  {% if item.enable_side_content %}
+                  <div class="panel-side-content">
+                    {% inline_rich_text field="panel_side_content" value="{{ item.panel_side_content }}" %}
+                  </div>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+      <div class="kl-navbar__end">
+        {% if module.language_switcher %}
+          {% language_switcher "language_switcher" 
+            overrideable=false, 
+            display_mode='localized', 
+            label='Language Switcher' 
+          %}
+        {% endif %}
+        {{ render_navbar_button(module.primary_cta) }}
+        {{ render_navbar_button(module.secondary_cta) }}
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="kl-header-placeholder"></div>
+
+{% require_css %}
+<style>  
+  .kl-top-navbar {
+    {{ module.style.top_bar_spacing.css }} 
+    {% if module.style.top_bar.background.background_type == "color" %}
+       background:{{ module.style.top_bar.background.background_color.color }};
+    {% endif %}
+    {% if module.style.top_bar.background.background_type == "gradient" %}
+      background:{{ module.style.top_bar.background.gradient_field.css }};
+    {% endif %}
+    {% if module.style.top_bar.background.background_type == "image" %}
+      {{ module.style.top_bar.background.backgroundimage_field.css }};
+    {% endif %}
+  }
+  .kl-top-navbar-content {
+    {{ module.style.top_bar.font_field.css }}
+    {{ module.style.menu.gap.css }}
+    gap:{{ module.style.menu.gap }}px;
+   }
+  
+  .kl-top-navbar .hs_cos_wrapper > div > ul >.hs-menu-item > a { 
+    {{ module.style.menu.menu_font.css }}
+    {{ module.style.menu_nav_spacing.css }}
+  }
+  .panel-side-content {
+    {{ module.style.side_panel.panel_spacing.css }}
+    {% if module.style.side_panel.panel_background_type == "color" %}
+       background:{{ module.style.side_panel.panel_color.color }};
+    {% endif %}
+    {% if module.style.side_panel.panel_background_type == "gradient" %}
+      background:{{ module.style.side_panel.panel_gradient.css }};
+    {% endif %}
+    {% if module.style.side_panel.panel_background_type == "image" %}
+      {{ module.style.side_panel.panel_background_image.css }};
+    {% endif %}
+    {% if module.style.side_panel.border_color.color %}
+      border-left:solid {{ module.style.side_panel.border_color.color }};
+      border-left-width:{{ module.style.side_panel.border_width }}px;
+    {% endif %}
+  }
+  .panel-bottom-section {
+    {% if module.style.bottom_section_top_border.border_color.color %}
+      border-top:solid {{ module.style.bottom_section_top_border.border_color.color }};
+      border-top-width:{{ module.style.bottom_section_top_border.border_width }}px;
+    {% endif %}
+    {{ module.style.bottom_section_spacing.css }}
+  } 
+</style>
+{% end_require_css %}

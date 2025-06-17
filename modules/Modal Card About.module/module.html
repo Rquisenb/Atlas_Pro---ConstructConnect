@@ -1,0 +1,40 @@
+{% import '../macros.html' %}
+
+<div class="kl-about-modal" id="{{ module.html_id }}">
+  <a class="kl-about-modal__overlay" href="#/"></a>
+  <div class="kl-about-modal__container">
+    <a class="kl-about-modal__close" href="#/">
+      <svg width="11" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.5 1L.5 11M.5 1l10 10" stroke="#929292" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <div class="kl-about-modal__wrapper">
+
+      {% if module.image.src %}
+      <div class="kl-about-modal__image">
+        {{ render_image(module.image) }}
+      </div>
+      {% endif %}
+
+      <div class="kl-about-modal__content">
+        <div class="kl-about-modal__header">{{ module.header }}</div>
+        <div class="kl-about-modal__body">{{ module.content }}</div>
+        <div class="kl-about-modal__social">
+          {% for item in module.social %}
+
+            {% set anchor = { 'type': 'link', 'link': item.link } %}
+
+            {% call render_link(anchor) %}
+              {% icon
+                name="{{ item.icon.name }}"
+                style="{{ item.icon.type }}"
+                unicode="{{ item.icon.unicode }}"
+                icon_set="{{ item.icon.icon_set }}"
+              %}
+            {% endcall %}
+
+          {% endfor %}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

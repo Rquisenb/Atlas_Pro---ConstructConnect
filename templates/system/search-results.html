@@ -1,0 +1,18 @@
+<!--
+  templateType: search_results_page
+  isAvailableForNewContent: true
+  label: Atlas - search results
+  screenshotPath: ../../images/template-previews/search-results.png
+-->
+{% extends '../layouts/base.html' %}
+
+{% block body %}
+<main class="body-container-wrapper">
+  <section class="content-wrapper">
+    <div class="kl-search-results">
+      {% module 'site_search' path='@hubspot/search_input', label='Search' %}
+      {% module 'search_results' path='@hubspot/search_results' %}
+    </div>
+  </section>
+</main>
+{% endblock body %}

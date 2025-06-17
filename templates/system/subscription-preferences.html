@@ -1,0 +1,28 @@
+<!--
+  templateType: email_subscription_preferences_page
+  isAvailableForNewContent: true
+  label: Atlas - email subscription preferences
+  screenshotPath: ../../images/template-previews/subscription-preferences.png
+-->
+{% extends '../layouts/base.html' %}
+
+{% block body %}
+<main class="body-container-wrapper">
+
+  <section class="systems-page systems-page--subscription-preferences">
+
+    <div class="systems-page__content">
+
+      <span class="systems-page__preheader">UPDATE</span>
+
+      {% module 'subscription_preferences'
+        path='@hubspot/email_subscriptions',
+        button_text='UPDATE'
+      %}
+
+    </div>
+
+  </section>
+
+</main>
+{% endblock body %}

@@ -1,0 +1,472 @@
+{
+  "add_chevron_down.label" : {
+    "message" : "Додати шеврон вниз",
+    "description" : "",
+    "placeholders" : null
+  },
+  "custom_icon.label" : {
+    "message" : "Користувацький значок",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.label" : {
+    "message" : "Текст за замовчуванням",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.select_your_language.default" : {
+    "message" : "Виберіть свою мову",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.select_your_language.label" : {
+    "message" : "Виберіть свою мову",
+    "description" : "",
+    "placeholders" : null
+  },
+  "display_mode.choices.hybrid" : {
+    "message" : "Гібридний",
+    "description" : "",
+    "placeholders" : null
+  },
+  "display_mode.choices.localized" : {
+    "message" : "Локалізовано",
+    "description" : "",
+    "placeholders" : null
+  },
+  "display_mode.choices.pagelang" : {
+    "message" : "Мова сторінки",
+    "description" : "",
+    "placeholders" : null
+  },
+  "display_mode.help_text" : {
+    "message" : "Дозволяє вибрати, якою мовою відображатимуться сторінки на вашому вебсайті. <a href='https://knowledge.hubspot.com/website-pages/create-pages-in-multiple-languages#add-a-language-switcher-to-your-template' target='blank' rel='noopener noreferrer'>Дізнатися більше</a>",
+    "description" : "",
+    "placeholders" : null
+  },
+  "display_mode.label" : {
+    "message" : "Режим показу",
+    "description" : "",
+    "placeholders" : null
+  },
+  "display_mode.placeholder" : {
+    "message" : "Пошук",
+    "description" : "",
+    "placeholders" : null
+  },
+  "icon.label" : {
+    "message" : "Значок",
+    "description" : "",
+    "placeholders" : null
+  },
+  "icon_options.choices.custom_icon" : {
+    "message" : "Користувацький значок",
+    "description" : "",
+    "placeholders" : null
+  },
+  "icon_options.choices.icon" : {
+    "message" : "Значок",
+    "description" : "",
+    "placeholders" : null
+  },
+  "icon_options.choices.none" : {
+    "message" : "Немає",
+    "description" : "",
+    "placeholders" : null
+  },
+  "icon_options.label" : {
+    "message" : "Варіанти значків",
+    "description" : "",
+    "placeholders" : null
+  },
+  "name" : {
+    "message" : "Перемикач мови",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_alignment.alignment.label" : {
+    "message" : "Вирівнювання",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_alignment.label" : {
+    "message" : "Вирівнювання",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_background.color.label" : {
+    "message" : "Колір",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_background.label" : {
+    "message" : "Фон",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_border.border.label" : {
+    "message" : "Межа",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_border.label" : {
+    "message" : "Межа",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_chevron.color.label" : {
+    "message" : "Колір",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_chevron.label" : {
+    "message" : "Шеврон",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_chevron.size.help_text" : {
+    "message" : "Розмір позначки шеврона.",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_chevron.size.label" : {
+    "message" : "Розмір",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_chevron.spacing.help_text" : {
+    "message" : "Відстань між шевроном і текстом кнопки.",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_chevron.spacing.label" : {
+    "message" : "Інтервал",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_corner.label" : {
+    "message" : "Кут",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_corner.radius.label" : {
+    "message" : "Радіус",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_hover.group_background.color.label" : {
+    "message" : "Колір",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_hover.group_background.label" : {
+    "message" : "Фон",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_hover.group_border.border.label" : {
+    "message" : "Межа",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_hover.group_border.label" : {
+    "message" : "Межа",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_hover.group_chevron.color.label" : {
+    "message" : "Колір",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_hover.group_chevron.label" : {
+    "message" : "Шеврон",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_hover.group_icon.color.label" : {
+    "message" : "Колір",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_hover.group_icon.label" : {
+    "message" : "Значок",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_hover.group_text.font.label" : {
+    "message" : "Шрифт",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_hover.group_text.label" : {
+    "message" : "Текст",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_hover.label" : {
+    "message" : "При наведенні",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_icon.color.label" : {
+    "message" : "Колір",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_icon.label" : {
+    "message" : "Значок",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_icon.size.label" : {
+    "message" : "Розмір",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_icon.spacing.help_text" : {
+    "message" : "Відстань між значком і текстом кнопки.",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_icon.spacing.label" : {
+    "message" : "Інтервал",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_spacing.label" : {
+    "message" : "Інтервал",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_spacing.spacing.label" : {
+    "message" : "Інтервал",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_text.font.label" : {
+    "message" : "Шрифт",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_text.label" : {
+    "message" : "Текст",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_text.transform.choices.capitalize" : {
+    "message" : "Усі великі літери",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_text.transform.choices.lowercase" : {
+    "message" : "Малі літери",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_text.transform.choices.uppercase" : {
+    "message" : "Великі літери",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_text.transform.label" : {
+    "message" : "Перетворити",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.group_text.transform.placeholder" : {
+    "message" : "Немає",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_button.label" : {
+    "message" : "Кнопка",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_alignment.alignment.label" : {
+    "message" : "Вирівнювання",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_alignment.label" : {
+    "message" : "Вирівнювання",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_background.color.label" : {
+    "message" : "Колір",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_background.label" : {
+    "message" : "Фон",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_border.border.label" : {
+    "message" : "Межа",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_border.label" : {
+    "message" : "Межа",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_box_shadow.add_box_shadow.label" : {
+    "message" : "Додати тінь від поля",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_box_shadow.blur_radius.help_text" : {
+    "message" : "Контролює розмиття тіні. Більше значення робить тінь більшою та світлішою. Від’ємні значення не допускаються.",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_box_shadow.blur_radius.label" : {
+    "message" : "Радіус розмиття",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_box_shadow.color.help_text" : {
+    "message" : "Контролює колір тіні.",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_box_shadow.color.label" : {
+    "message" : "Колір",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_box_shadow.label" : {
+    "message" : "ТІнь від поля",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_box_shadow.offset_x.help_text" : {
+    "message" : "Задає горизонтальне положення тіні. Від’ємні значення зміщують тінь ліворуч. Додатні значення — праворуч.",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_box_shadow.offset_x.label" : {
+    "message" : "Зміщення по осі x",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_box_shadow.offset_y.help_text" : {
+    "message" : "Задає вертикальне положення тіні. Від’ємні значення зміщують тінь угору. Додатні значення — униз.",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_box_shadow.offset_y.label" : {
+    "message" : "Зміщення по осі y",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_box_shadow.spread_radius.help_text" : {
+    "message" : "Регулює загальний розмір тіні. Позитивні значення розширюють тінь. Від’ємні значення зменшують тінь.",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_box_shadow.spread_radius.label" : {
+    "message" : "Радіус поширення",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_corner.label" : {
+    "message" : "Кут",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_corner.radius.label" : {
+    "message" : "Радіус",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_hover.group_background.color.label" : {
+    "message" : "Колір",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_hover.group_background.label" : {
+    "message" : "Фон",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_hover.group_text.font.label" : {
+    "message" : "Шрифт",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_hover.group_text.label" : {
+    "message" : "Текст",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_hover.label" : {
+    "message" : "При наведенні",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_spacing.label" : {
+    "message" : "Інтервал",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_spacing.margin.help_text" : {
+    "message" : "Налаштовує відступ між спадним переліком і кнопкою.",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_spacing.margin.label" : {
+    "message" : "Верхня межа",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_text.font.label" : {
+    "message" : "Шрифт",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_text.label" : {
+    "message" : "Текст",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_text.transform.choices.capitalize" : {
+    "message" : "Усі великі літери",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_text.transform.choices.lowercase" : {
+    "message" : "Малі літери",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_text.transform.choices.uppercase" : {
+    "message" : "Великі літери",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_text.transform.label" : {
+    "message" : "Перетворити",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.group_text.transform.placeholder" : {
+    "message" : "Немає",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.group_dropdown.label" : {
+    "message" : "Спадне меню",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.label" : {
+    "message" : "Стилі",
+    "description" : "",
+    "placeholders" : null
+  }
+}

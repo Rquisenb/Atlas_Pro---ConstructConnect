@@ -1,0 +1,366 @@
+<!--
+  templateType: "none"
+  isAvailableForNewContent: false
+-->
+{% import './payment_macro.html' %}
+
+{# Macro to render a background color properly #}
+{% macro render_color(color) -%}
+  rgba({{color.color|convert_rgb}}, {{color.opacity != null ? color.opacity / 100 : 1}})
+{%- endmacro %}
+
+{# Macro to render an anchor tag from a group with a link field #}
+{% macro render_link(anchor, classes, style, force) -%}
+
+  {% set attrs = {} %}
+
+  {% if anchor.type == 'href' %}
+    {% set attrs = { 'href': anchor.href | default('#', true) } %}
+
+  {% elif anchor.type == 'link' %}
+
+    {% set attrs = { 'href': anchor.link.url.href | default('#', true) } %}
+
+    {% if anchor.link.url.type is equalto "EMAIL_ADDRESS" %}
+      {% do attrs.update({ 'href': 'mailto:' + attrs['href'] }) %}
+    {% endif %}
+
+    {% set rel = [] %}
+
+    {% if anchor.link.no_follow %}
+      {% do rel.append("nofollow") %}
+    {% endif %}
+
+    {% if anchor.link.open_in_new_tab %}
+      {% do rel.append("noopener") %}
+      {% do attrs.update({ 'target': '_blank' }) %}
+    {% endif %}
+
+    {% if rel %}
+      {% do attrs.update({ 'rel': rel|join(' ') }) %}
+    {% endif %}
+
+  {% endif %}
+
+  {% if classes %}
+    {% do attrs.update({ 'class': classes }) %}
+  {% endif %}
+
+  {% set styles = [] %}
+
+  {% if anchor.type == 'none' %}
+    {% do styles.append('pointer-events: none') %}
+  {% endif %}
+
+  {% if style %}
+    {% do styles.append(style) %}
+  {% endif %}
+
+  {% if styles %}
+    {% do attrs.update({ 'style': styles|join('; ') }) %}
+  {% endif %}
+
+  {% if anchor.type != 'none' or force %}
+    <a {{ attrs|xmlattr }}>{{ caller() }}</a>
+  {% else %}
+    {{ caller() }}
+  {% endif %}
+
+{%- endmacro %}
+
+{# Macro to render a image from a image field #}
+{% macro render_image(image, classes, default_src) -%}
+
+  {% set attrs = { width: image.width, height: image.height } %}
+
+  {% if image.size_type == 'auto' %}
+    {% set attrs = { style: 'max-width: 100%; height: auto;' } %}
+
+  {% elif image.size_type == 'auto_custom_max' %}
+    {% set attrs = { 
+      width: '100%', height: 'auto', 
+      style: 'max-width: %spx; max-height: %spx'|format(image.max_width, image.max_height)
+    } %}
+  {% endif %}
+
+  {% if image.loading != 'disabled' %}
+    {% do attrs.update({ 'loading': image.loading }) %}
+  {% endif %}
+
+  {% if classes %}
+    {% do attrs.update({ 'class': classes }) %}
+  {% endif %}
+
+  <img src="{{ image.src|default(default_src, true) }}" 
+       alt="{{ image.alt }}" 
+       {{ attrs|xmlattr }} />
+
+{%- endmacro %}
+
+{# Macro to render a button from a module field #}
+{% macro render_button(btn, overwrite_class, suffix='button') -%}
+
+  {% set href = btn.link | default('#', true) %}
+
+  {% if overwrite_class %}
+    {% set class = overwrite_class %}
+
+  {% else %}
+	  {# This will control the clases for the button or CTA#}
+  	{% if btn.type == 'cta'%}
+		{% set class = 'button_cta' %}
+	{% else %}
+		{% set class = 'button' %}
+	{% endif %}
+	{# This will control the classes for the styling #}
+    {% if btn.style == 'outlined' %}
+      {% set class = class ~ ' button--outlined' %}
+    {% elif btn.style == 'arrow' %}
+      {% set class = class ~ ' button--arrow' %}
+    {% endif %}
+
+  {% endif %}
+
+  {% set class = class ~ ' %s__%s'|format(name, suffix) %}
+ 
+  {% require_css %}
+  <style>
+    {% if btn.background.overwrite %}
+	  {% if btn.type == 'btn' or btn.type == 'payment' %}
+		  .{{ name }}__{{ suffix }} {
+			background-color: {{ render_color(btn.background.color) }} !important;
+		  }
+	  {% elif btn.type == 'cta' %}
+		  .{{ name }}__{{ suffix }} a {
+			background-color: {{ render_color(btn.background.color) }} !important;
+		  }
+	  {% endif %}
+    {% endif %}
+
+    {% if btn.background_hover.overwrite %}
+	  {% if btn.type == 'btn' or btn.type == 'payment' %}
+		  .{{ name }}__{{ suffix }}:hover {
+			background-color: {{ render_color(btn.background_hover.color) }} !important;
+		  }
+	  {% elif btn.type == 'cta' %}
+		  .{{ name }}__{{ suffix }} a:hover {
+			background-color: {{ render_color(btn.background_hover.color) }} !important;
+		  }
+	  {% endif %}
+    {% endif %}
+
+    {% if btn.text_color.overwrite %}
+	  {% if btn.type == 'btn' or btn.type == 'payment' %}
+      .{{ name }}__{{ suffix }} {
+        color: {{ render_color(btn.text_color.color) }} !important;
+      }
+	  {% elif btn.type == 'cta' %}
+      .{{ name }}__{{ suffix }} a {
+        color: {{ render_color(btn.text_color.color) }} !important;
+      }
+	  {% endif %}
+    {% endif %}
+
+    {% if btn.text_hover_color.overwrite %}
+	  {% if btn.type == 'btn' or btn.type == 'payment' %}
+      .{{ name }}__{{ suffix }}:hover {
+        color: {{ render_color(btn.text_hover_color.color) }} !important;
+      }
+	  {% elif btn.type == 'cta' %}
+      .{{ name }}__{{ suffix }}:hover a {
+        color: {{ render_color(btn.text_hover_color.color) }} !important;
+      }
+	  {% endif %}
+    {% endif %}
+
+    {% if btn.border.overwrite %}
+	  {% if btn.type == 'btn' or btn.type == 'payment' %}
+      .{{ name }}__{{ suffix }} {
+        border-color: {{ render_color(btn.border.color) }} !important;
+      }
+	  {% elif btn.type == 'cta' %}
+      .{{ name }}__{{ suffix }} a {
+        border-color: {{ render_color(btn.border.color) }} !important;
+      }
+	  {% endif %}
+    {% endif %}
+
+    {% if btn.border_hover.overwrite %}
+	  {% if btn.type == 'btn' or btn.type == 'payment' %}
+      .{{ name }}__{{ suffix }}:hover {
+        border-color: {{ render_color(btn.border_hover.color) }} !important;
+      }
+	  {% elif btn.type == 'cta' %}
+      .{{ name }}__{{ suffix }} a:hover {
+        border-color: {{ render_color(btn.border_hover.color) }} !important;
+      }
+	  {% endif %}
+    {% endif %}
+
+  </style>
+  {% end_require_css %}
+
+  {% if btn.type == 'cta' and btn.cta %}
+    
+    <div class="{{ class }}">
+      {% cta guid="{{ btn.cta }}" %}
+    </div>
+
+  {% elif btn.type == 'btn' %}
+    {% call render_link(btn.anchor, class) %}
+  
+      <span>{{ btn.text }}</span>
+    {% endcall %}
+  {%  elif btn.type == 'payment' and btn.payment_group.payment %}
+      {% call render_payment(btn.payment_group, class) %}
+        <span>{{ btn.text }}</span>
+      {% endcall %}
+  {% endif %}
+
+{%- endmacro %}
+
+
+
+{# Macro to render custom rich text module from module fields #}
+{% macro kl_rich_text(module) -%}
+
+  {% set class = 'kl-rich-text' %}
+
+  {% if module.alignment == 'center' %}
+    {% set class = class ~ ' kl-rich-text--center' %}
+  {% elif module.alignment == 'right' %}
+    {% set class = class ~ ' kl-rich-text--right' %}
+  {% endif %}
+
+  {% if module.custom_bullet_list.enable %}
+    {% set class = class ~ ' kl-rich-text--custom-list-styles' %}
+  {% endif %}
+
+  {% set max_width = 'max-width: ' ~ module.max_width.value ~ 'px;' %}
+
+  <div class="{{ class }}" id="{{name}}"
+    {% if module.max_width and module.max_width.enabled %} style="{{ max_width }}" {% endif %}>
+
+    {% if module.preheader %}
+      <span class="kl-rich-text__preheader" 
+            {% if module.preheader_color.overwrite %}style="color: {{ render_color(module.preheader_color.color) }}"{% endif %}>
+        {{ module.preheader }}
+      </span>
+    {% endif %}
+
+    <div>{{ module.content }}</div>
+
+    {% if module.primary_cta.type != 'none' or module.secondary_cta.type != 'none' %}
+      <div class="kl-rich-text__buttons">
+        {{ render_button(module.primary_cta, suffix='primary_cta') }}
+        {{ render_button(module.secondary_cta, suffix='secondary_cta') }}
+      </div>
+    {% endif %}
+
+    {% if module.form.enabled %}
+      <div class="kl-rich-text__form">
+        {% form
+          form_to_use="{{ module.form.selector.form_id }}"
+          response_response_type="{{ module.form.selector.response_type }}"
+          response_message="{{ module.form.selector.message }}"
+          response_redirect_id="{{ module.form.selector.redirect_id }}"
+          response_redirect_url="{{module.form.selector.redirect_url}}"
+          gotowebinar_webinar_key="{{ module.form.selector.gotowebinar_webinar_key }}"
+        %}
+      </div>
+    {% endif %}
+  </div>
+
+{%- endmacro %}
+
+{% macro render_animation(animation) -%}
+
+  {% if not animation.enabled %}
+    {{ caller() }}
+  {% else %}
+    <div
+      data-aos="{{ animation.effect }}"
+      data-aos-offset="{{ animation.offset }}"
+      data-aos-delay="{{ animation.delay }}"
+      data-aos-duration="{{ animation.duration }}"
+      data-aos-easing="{{ animation.easing }}"
+      {% if animation.mirror %}data-aos-mirror="{{ animation.mirror }}"{% endif %}
+      {% if animation.once %}data-aos-once="{{ animation.once }}"{% endif %}
+      data-aos-anchor-placement="{{ animation.anchor_placement }}"
+      >
+      {{ caller() }}
+    </div>
+  {% endif %}
+
+{%- endmacro %}
+
+{% macro render_glide_slider(glide) -%}
+
+{% set attrs = {} %}
+{% do attrs.update({ 'data-type': glide.type }) %}
+
+{% if glide.start_at -%}
+  {% do attrs.update({ 'data-start-at': glide.start_at }) %}
+{%- endif %}
+
+{% if glide.per_view -%}
+  {% do attrs.update({ 'data-per-view': glide.per_view }) %}
+{%- endif %}
+
+{% if glide.focus_at_center -%}
+  {% do attrs.update({ 'data-focus-at': "center" }) %}
+{%- endif %}
+
+{% if glide.gap -%}
+  {% do attrs.update({ 'data-gap': glide.gap }) %}
+{%- endif %}
+
+{% if glide.autoplay -%}
+  {% do attrs.update({ 'data-autoplay': true }) %}
+{%- endif %}
+
+{% if glide.autoplay and glide.autoplay_duration -%}
+  {% do attrs.update({ 'data-autoplay': glide.autoplay_duration }) %}
+{%- endif %}
+
+{% if not glide.pause_on_hover -%}
+  {% do attrs.update({ 'data-hoverpause': false }) %}
+{%- endif %}
+
+{% if not glide.keyboard -%}
+  {% do attrs.update({ 'data-keyboard': false }) %}
+{%- endif %}
+
+{% if glide.bound -%}
+  {% do attrs.update({ 'data-bound': true }) %}
+{%- endif %}
+
+{% if glide.animation_duration -%}
+  {% do attrs.update({ 'data-animation-duration': glide.animation_duration }) %}
+{%- endif %}
+
+{% if not glide.rewind -%}
+  {% do attrs.update({ 'data-rewind': false }) %}
+{%- endif %}
+
+{% if glide.rewind and glide.rewind_duration -%}
+  {% do attrs.update({ 'data-rewind-duration': glide.rewind_duration }) %}
+{%- endif %}
+
+{% if glide.animation_timing -%}
+  {% do attrs.update({ 'data-animation-timing-func': glide.animation_timing }) %}
+{%- endif %}
+
+{% if glide.direction -%}
+  {% do attrs.update({ 'data-direction': glide.direction }) %}
+{%- endif %}
+
+{% if glide.peek -%}
+  {% do attrs.update({ 'data-peek': glide.peek }) %}
+{%- endif %}
+
+<div class="glide" id="glide-{{ name }}" {{ attrs|xmlattr }}>
+  {{ caller() }}
+</div>
+
+{%- endmacro %}

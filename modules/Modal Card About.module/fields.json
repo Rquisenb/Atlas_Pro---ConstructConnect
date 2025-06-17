@@ -1,0 +1,117 @@
+[ {
+  "id" : "67240338-239b-256f-34ad-23e6efdf9dee",
+  "name" : "html_id",
+  "label" : "HTML ID",
+  "required" : true,
+  "locked" : false,
+  "validation_regex" : "[a-z0-9\\-]+",
+  "validation_error_message" : "Id must contain only lowercase letters, numbers and hyphens.",
+  "placeholder" : "unique-identifier",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : ""
+}, {
+  "id" : "e368dd89-0f97-c563-548b-bb2ddbf23a99",
+  "name" : "header",
+  "label" : "Header",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<h3>Amanda Smith</h3>\n<h4>FOUNDER, CEO & EXECUTIVE CHAIRMAN</h4>"
+}, {
+  "id" : "6a0cdb5d-4d96-bce0-c5b0-53148aa6ed7a",
+  "name" : "content",
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>"
+}, {
+  "id" : "9aeb0316-cb0c-9548-c3e2-83d1246a12dc",
+  "name" : "social",
+  "label" : "Social",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 1
+  },
+  "children" : [ {
+    "id" : "61a6b620-098d-323b-5a8d-e752a45e4e0f",
+    "name" : "icon",
+    "label" : "Icon",
+    "required" : false,
+    "locked" : false,
+    "icon_set" : "fontawesome-6.4.2",
+    "type" : "icon",
+    "display_width" : null,
+    "default" : {
+      "name" : "LinkedIn In",
+      "unicode" : "f0e1",
+      "type" : "REGULAR"
+    }
+  }, {
+    "id" : "2c327e8c-baaa-9b19-28e4-39b98a8aa854",
+    "name" : "link",
+    "label" : "Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "icon" : {
+      "name" : "LinkedIn In",
+      "unicode" : "f0e1",
+      "type" : "REGULAR"
+    },
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  } ]
+}, {
+  "id" : "554ec33b-01cb-7503-4cd0-c4660f8d8d2d",
+  "name" : "image",
+  "label" : "Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : true,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "",
+    "alt" : null,
+    "loading" : "lazy"
+  }
+} ]

@@ -1,0 +1,21 @@
+.kl-logo-slider__slide {
+  display: flex;
+  height: auto !important;
+}
+
+.kl-logo-slider__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.kl-logo-slider__item a {
+  width: 100%;
+  display: block;
+}
+
+.kl-logo-slider__item img {
+  width: 100%;
+  display: block;
+}

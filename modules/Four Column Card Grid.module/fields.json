@@ -1,0 +1,279 @@
+[ {
+  "id" : "540577ee-bd53-4b82-3898-3c7fe35d0267",
+  "name" : "cards",
+  "label" : "Cards",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 3
+  },
+  "children" : [ {
+    "id" : "6de5bf95-ff1b-7dff-4e26-1a58cf32408d",
+    "name" : "image",
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "disabled"
+    }
+  }, {
+    "id" : "018534d3-9b60-6ba5-7ee7-ac931512f443",
+    "name" : "preheader",
+    "label" : "Preheader",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "display_width" : null
+  }, {
+    "id" : "174299bf-5c1f-fa32-da81-e8fa8586d9b9",
+    "name" : "content",
+    "label" : "Content",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<h3>Mike Northfield</h3>\n<p>Associate CMO<br>Product Lead</p>"
+  }, {
+    "id" : "primary_cta.anchor",
+    "name" : "anchor",
+    "label" : "Anchor",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "primary_cta.anchor.type",
+      "name" : "type",
+      "label" : "Type",
+      "required" : true,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "href", "Custom Link" ], [ "link", "HubSpot Link" ], [ "none", "None" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "href"
+    }, {
+      "id" : "primary_cta.anchor.link",
+      "name" : "link",
+      "label" : "Link",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "primary_cta.anchor.type",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "link",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION" ],
+      "show_advanced_rel_options" : false,
+      "type" : "link",
+      "display_width" : null,
+      "default" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }, {
+      "id" : "primary_cta.anchor.href",
+      "name" : "href",
+      "label" : "Href",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "visibility" : {
+        "controlling_field" : "primary_cta.anchor.type",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "href",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "placeholder" : "#",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "#"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "type" : "href",
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "href" : "#"
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "image" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "disabled"
+    },
+    "preheader" : "EBOOK",
+    "content" : "<h4>How to create your first marketing dashboard</h4>"
+  }, {
+    "image" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "disabled"
+    },
+    "preheader" : "EBOOK",
+    "content" : "<h4>5 steps to managing effective KPIs for your SaaS marketing team</h4>"
+  }, {
+    "image" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "disabled"
+    },
+    "preheader" : "VIDEO",
+    "content" : "<h4>SaaS Marketing Best Practices: 4 Red Flags</h4>"
+  }, {
+    "image" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "disabled"
+    },
+    "preheader" : "DEMO",
+    "content" : "<h4>The SaaS Sales & Marketing Acronym Bible</h4>"
+  } ]
+}, {
+  "id" : "5fe937e0-d297-ec05-4cbe-30c4df9b528c",
+  "name" : "overwrite_spacing",
+  "label" : "Overwrite Spacing",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : false
+}, {
+  "id" : "18422b4a-afa4-dc5f-fad3-05dd2a509fce",
+  "name" : "spacing",
+  "label" : "Spacing",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "5fe937e0-d297-ec05-4cbe-30c4df9b528c",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "display" : "text",
+  "min" : 0,
+  "step" : 1,
+  "type" : "number",
+  "display_width" : null,
+  "default" : 24
+}, {
+  "id" : "card_search",
+  "name" : "card_search",
+  "label" : "Card Search",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "card_search.enabled",
+    "name" : "enabled",
+    "label" : "Enabled",
+    "inline_help_text" : "Enable text search for cards in this Card Grid",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "card_search.search_label",
+    "name" : "search_label",
+    "label" : "Search Input Label",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "visibility" : {
+      "controlling_field" : "card_search.enabled",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Search Cards"
+  }, {
+    "id" : "card_search.no_match_message",
+    "name" : "no_match_message",
+    "label" : "Empty results message",
+    "help_text" : "This is the message that will display when there are no results that match the current search text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "visibility" : {
+      "controlling_field" : "card_search.enabled",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Nothing found."
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "enabled" : false,
+    "search_label" : "Search Cards",
+    "no_match_message" : "Nothing found."
+  }
+} ]

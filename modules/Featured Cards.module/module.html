@@ -1,0 +1,75 @@
+{% import '../macros.html' %}
+
+{% macro render_card(card) %}
+
+  {% set sizeAttrs = 'width="{{ card.image.width }}" height="{{ card.image.height }}"' %}
+
+  {% if card.image.size_type == 'auto' %}
+    {% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+  {% elif card.image.size_type == 'auto_custom_max' %}
+    {% set sizeAttrs = 'width="100%" height="auto" style="max-width: {{ card.image.max_width }}px; max-height: {{ card.image.max_height }}px"' %}
+  {% endif %}
+
+  <div class="kl-featured-card">
+
+    <div class="kl-featured-card__body">
+      <div class="kl-featured-card__text">
+        {% if card.preheader %}
+          <span class="kl-featured-card__preheader">
+            {{ card.preheader }}
+          </span>
+        {% endif %}
+
+        <div class="kl-featured-card__content">
+          {{ card.content }}
+        </div>
+      </div>
+
+      {{ render_button(card.button) }}
+    </div>
+
+    {% if card.image.src %}
+      <div class="kl-featured-card__image" {{ sizeAttrs }}>
+        {% if card.button.type == 'btn' %}
+          {% call render_link(card.button.anchor) %}
+            <img src="{{ card.image.src }}" alt="{{ card.image.alt }}">
+          {% endcall %}
+        {% else %}
+          <img src="{{ card.image.src }}" alt="{{ card.image.alt }}">
+        {% endif %}
+      </div>
+    {% endif %}
+
+  </div>
+
+{% endmacro %}
+
+{% call render_animation(module.animation) %}
+<div class="kl-featured-cards">
+
+  {% set first_card = module.cards | first %}
+
+  <div class="kl-featured-cards__wrapper">
+
+    {% if first_card %}
+
+      <div class="kl-featured-cards__card-wrapper">
+        {{ render_card(first_card) }}
+      </div>
+
+      <div class="kl-featured-cards__column">
+        {% for card in module.cards %}
+          {% if not loop.first %}
+          <div class="kl-featured-cards__card-wrapper">
+            {{ render_card(card) }}
+          </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+    {% endif %}
+
+  </div>
+
+</div>
+{% endcall %}

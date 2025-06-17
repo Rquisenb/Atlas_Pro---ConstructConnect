@@ -1,0 +1,61 @@
+.kl-rich-text__preheader {
+  font-family: {{theme.typography.preheader.font}}, sans-serif;
+  font-size: {{theme.typography.preheader.size}}{{theme.typography.preheader.size_unit}};
+  font-weight: bold;
+  color: {{theme.typography.preheader.color}};
+  display: block;
+  margin: 0 0 .75rem;
+}
+
+.kl-rich-text img {
+  max-width: 100%;
+}
+
+.kl-rich-text h1 {
+  color: {{theme.global_colors.text_color.color}};
+}
+
+.kl-rich-text p {
+  margin: 0 0 1rem;
+}
+
+.kl-rich-text p:last-child {
+  margin: 0 0 2rem;
+}
+
+.kl-rich-text__buttons {
+  margin: -10px;
+}
+
+.kl-rich-text__buttons .button, .kl-rich-text__buttons .button_cta {
+  margin: 10px;
+}
+
+@media screen and (max-width: 480px) {
+  .kl-rich-text__buttons .button, .kl-rich-text__buttons .button_cta {
+    display: block;
+  }
+}
+
+.kl-rich-text__form {
+  max-width: 600px;
+}
+
+.kl-rich-text--center {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.kl-rich-text--center .kl-rich-text__form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.kl-rich-text--right {
+  text-align: right;
+  margin: 0 0 0 auto;
+}
+
+.kl-rich-text--right .kl-rich-text__form {
+  margin: 0 0 0 auto;
+}

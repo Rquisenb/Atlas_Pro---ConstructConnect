@@ -1,0 +1,26 @@
+<!--
+ templateType: section
+ label: Two Column Section
+ description: "Section used for Two column basic landing page"
+ isAvailableForNewContent: true
+ screenshotPath: ../images/section-previews/two-column-section-1.png
+-->
+{% dnd_section background_color={ r: 248, g: 250, b: 252, a: 1 }, vertical_alignment='MIDDLE' %}
+
+  {% dnd_module path='../modules/Custom Rich Text', offset=0, width=6,
+    preheader='BIG PICTURE',
+    primary_cta={ type: 'btn', style: 'filled', text: "LET'S CHAT" },
+    secondary_cta={ type: 'btn', style: 'arrow', text: "LEAR MORE" },
+  %}
+    {% module_attribute 'content' %}
+      <h2>Create impact with real data</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <p>Ultricies leo integer malesuada nunc vel risus commodo viverra. At erat pellentesque adipiscing commodo elit at.</p>
+    {% end_module_attribute %}
+  {% end_dnd_module %}
+
+  {% dnd_module path='@hubspot/image', offset=6, width=6, horizontal_alignment='CENTER'
+    img={ 'alt': 'Results', 'size_type': 'auto', 'src': get_asset_url('../images/Statistics.svg') }, %}
+  {% end_dnd_module %}
+
+{% end_dnd_section %}

@@ -1,0 +1,11 @@
+{% import '../macros.html' %}
+
+<div class="kl-timeline">
+  {% for entry in module.entries %}
+    {% call render_animation(module.animation) %}
+    <div class="kl-timeline__entry kl-timeline__entry--{% cycle 'odd','even' %}{% if loop.last %} kl-timeline__entry--last {% endif %}">
+      {{ entry }}
+    </div>
+    {% endcall %}
+  {% endfor %}
+</div>

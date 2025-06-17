@@ -1,0 +1,24 @@
+<!--
+  templateType: section
+  isAvailableForNewContent: true
+  label: Hero Banner
+  description: "Hero Banner 01 module"
+  screenshotPath: ../images/section-previews/hero-banner-1.png
+-->
+{% dnd_section padding={ 'top': 150, 'bottom': 150 }, max_width=620, background_image={ 
+  'backgroundPosition': 'MIDDLE_CENTER',
+  'backgroundSize': 'cover',
+  'imageUrl': get_asset_url('../images/Hero-Background.svg')
+} %}
+
+  {# Heading #}
+  {% dnd_module path='@hubspot/rich_text', label='Header', horizontal_alignment='CENTER' %}
+    {% module_attribute 'html' %}
+      <div style="text-align: center;">
+        <h1>Empowering teams with concrete marketing results</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </div>
+    {% end_module_attribute %}
+  {% end_dnd_module %}
+
+{% end_dnd_section %}

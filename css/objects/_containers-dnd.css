@@ -1,0 +1,58 @@
+.content-wrapper {
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: {{theme.spacing.max_width}}px;
+}
+
+@media screen and (min-width: 1500px) {
+  .content-wrapper {
+    padding: 0;
+  }
+}
+
+.dnd-section,
+.content-wrapper--vertical-spacing {
+  padding: {{theme.spacing.vertical_spacing}}px 30px;
+}
+
+.dnd-section > .row-fluid {
+  margin: 0 auto;
+  max-width: {{theme.spacing.max_width}}px;
+}
+
+.dnd-section .dnd-column {
+  padding: 0 20px;
+}
+
+@media (max-width: 767px) {
+  .dnd-section .dnd-column {
+    padding: 0;
+  }
+}
+
+/* For global DND areas */
+.kl-dnd-header:before {
+  content: '';
+  position: relative;
+  display: block;
+  height: 100%;
+}
+
+.kl-dnd-header-area {
+  z-index: 99;
+  position: fixed;
+  width: 100%;
+  /* Specifically for the header navbar */
+}
+
+.kl-dnd-header-area header.kl-header {
+  position: relative;
+}
+
+.kl-dnd-header-area div.kl-header-placeholder {
+  height: 0;
+}
+
+.kl-dnd-header-spacer {
+  height: 100px;
+}

@@ -1,0 +1,19 @@
+{% import '../macros.html' %}
+
+{% call render_animation(module.animation) %}
+<div class="kl-faq">
+  {% for entry in module.entries %}
+    <div class="kl-faq__entry">
+      <div class="kl-faq__header">
+        <h3>{{ entry.title }}</h3>
+        <div class="kl-faq__icon"></div>
+      </div>
+      <div class="kl-faq__description">
+        <div class="kl-faq__inner">
+          {{ entry.description }}
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+{% endcall %}

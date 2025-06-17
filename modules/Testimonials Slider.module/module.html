@@ -1,0 +1,106 @@
+{% import '../macros.html' %}
+
+{{ require_css("https://unpkg.com/@glidejs/glide@3.4.1/dist/css/glide.core.min.css") }}
+{{ require_js("https://unpkg.com/@glidejs/glide@3.4.1/dist/glide.min.js", "footer") }}
+
+{% call render_animation(module.animation) %}
+<div class="kl-testimonial-slider-wrapper" id="{{name}}">
+	<div class="glide kl-testimonial-slider">
+		<div class="glide__track" data-glide-el="track">
+			<ul class="glide__slides">
+				{% for item in module.testimonials %}
+
+				{# This will help with the styling for specific cards #}
+				{% set attrs = {} %}
+				{% set styleString = '' %}
+				{% if item.background.overwrite %}
+					{# set attrs = {'style': 'background-color: ' ~ render_color(item.background.color) ~ ';'} #}
+					{% set styleString = styleString ~ "background-color:" ~ render_color(item.background.color) ~ ";"%}
+				{% endif %}
+				{% if item.border.overwrite %}
+					{% set styleString = styleString ~ "border-radius:" ~ item.border.border_radius ~ "px;"%}
+					{% set styleString = styleString ~ "border-color:" ~ render_color(item.border.border_color) ~ ";"%}
+				{% endif %}
+				{% set attrs = {'style': styleString } %}
+
+				<li class="glide__slide">
+					<div class="kl-slider-testimonial" {{ attrs | xmlattr }}>
+						<div>
+							{% call render_link(item.card_content.image.anchor) %}
+								{% if item.card_content.image.top_image.src %}
+									<div class="kl-slider-testimonial__header">
+										{{ render_image(item.card_content.image.top_image) }}
+									</div>
+								{% endif %}
+							{% endcall %}
+							<div class="kl-slider-testimonial__content">
+								{{ item.card_content.content }}
+							</div>
+						</div>
+						<div class="kl-slider-testimonial__footer">
+							<div class="kl-slider-testimonial__author">
+								{% if item.card_content.author_photo.src%}
+								<div class="kl-slider-testimonial__author-photo">
+									<img src="{{item.card_content.author_photo.src}}" alt="{{item.card_content.author_photo.alt}}">
+								</div>
+								{% endif %}
+								<div class="kl-slider-testimonial__author-content">
+									{{ item.card_content.author }}
+									<span class="kl-slider-testimonial__author-position">{{ item.card_content.position }}</span>
+								</div>
+							</div>
+							{% if item.primary_cta.type != 'none' %}
+							<div class="kl-slider-testimonial__button">
+								{% set suffixString = 'testimonial-' ~ loop.index0 %}
+								{{ render_button(item.primary_cta, suffix=suffixString) }}
+							</div>
+							{% endif %}
+						</div>
+					</div>
+				</li>
+				{% endfor %}
+			</ul>
+		</div>
+
+		{% if module.arrows_and_bullets.arrows.activate_arrows %}
+		<div class="glide__arrows" data-glide-el="controls">
+			<button class="glide__arrow glide__arrow--left" data-glide-dir="<">
+				<svg width="17" height="17" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.3 2.8l1 1-3.9 3.8h8.4V9H5.4l3.9 3.8-1 1-5.5-5.5 5.5-5.5z"/></svg>
+			</button>
+			<button class="glide__arrow glide__arrow--right" data-glide-dir=">">
+				<svg width="17" height="17" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.6 2.8l-1 1 4 3.8H3V9h8.4l-3.8 3.8 1 1L14 8.3 8.6 2.8z"/></svg>
+			</button>
+		</div>
+		{% endif %}
+		{% if module.arrows_and_bullets.bullets.activate_bullets %}
+		<div class="glide__bullets" data-glide-el="controls[nav]">
+			{% for item in module.testimonials %}
+				<button class="glide__bullet" data-glide-dir="={{loop.index0}}"></button>
+			{% endfor %}
+		</div>
+		{% endif %}
+	</div>
+</div>
+{% endcall %}
+{% require_css %}
+<style>
+{% if module.arrows_and_bullets.arrow.overwrite_arrow_color %}
+#{{name}}.kl-testimonial-slider-wrapper .glide__arrow{
+	background-color: {{render_color(module.arrows_and_bullets.arrow.arrow_background_color)}};
+}
+#{{name}}.kl-testimonial-slider-wrapper .glide__arrow svg path{
+	fill: {{render_color(module.arrows_and_bullets.arrow.arrow_color)}};
+}
+{% endif %}
+
+{% if module.arrows_and_bullets.bullets.overwrite_bullet_color %}
+#{{name}}.kl-testimonial-slider-wrapper .glide__bullet{
+	background-color: {{render_color(module.arrows_and_bullets.bullets.bullet_color_inactive)}}
+}
+
+#{{name}}.kl-testimonial-slider-wrapper .glide__bullet--active{
+	background-color: {{render_color(module.arrows_and_bullets.bullets.bullet_color_active)}}
+}
+{% endif %}
+</style>
+{% end_require_css %}

@@ -1,0 +1,18 @@
+<!--
+ templateType: section
+ label: Blog Subscribe
+ description: "Section used for Blog subscription in basic Home page"
+ isAvailableForNewContent: true
+ screenshotPath: ../images/section-previews/blog-subscription.png
+-->
+{% dnd_section full_width=True, padding={ top: 0, right: 0, bottom: 0, left: 0  } %}
+
+  {# dnd_module "blog-subscribe" path="../modules/Custom Blog Subscribe", label="Custom Blog Subscribe" #}
+  {# end_dnd_module #}
+
+  {% dnd_module "blog-subscribe" 
+    path="../modules/Global Blog Subscribe.module", 
+    label="Global Blog Subscribe" %}
+  {% end_dnd_module %}
+
+{% end_dnd_section %}

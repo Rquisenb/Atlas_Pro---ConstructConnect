@@ -1,0 +1,594 @@
+[ {
+  "id" : "e121d617-736b-f5c3-5619-9089f7a1f91c",
+  "name" : "logo",
+  "label" : "Logo",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "2e437009-4c5d-ab71-5e15-512097e59ec2",
+    "name" : "image",
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null
+    }
+  }, {
+    "id" : "9c72435d-46f2-6062-2d3a-16725c5b28ad",
+    "name" : "type",
+    "label" : "Type",
+    "required" : true,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "href", "Custom Link" ], [ "link", "HubSpot Link" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "href"
+  }, {
+    "id" : "52851bc6-5194-156f-c1b2-cad4a132eea3",
+    "name" : "link",
+    "label" : "Link",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "9c72435d-46f2-6062-2d3a-16725c5b28ad",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "link",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "type" : "EXTERNAL",
+        "href" : "",
+        "content_id" : null
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "6940bae8-c7e9-d201-8e2a-e325c7c0d488",
+    "name" : "href",
+    "label" : "Href",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "visibility" : {
+      "controlling_field" : "9c72435d-46f2-6062-2d3a-16725c5b28ad",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "href",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "placeholder" : "#",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : ""
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "image" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null
+    },
+    "type" : "href",
+    "link" : {
+      "url" : {
+        "type" : "EXTERNAL",
+        "href" : "",
+        "content_id" : null
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "href" : ""
+  }
+}, {
+  "id" : "32e7e516-0b10-3c7f-0e08-7f7e484839d0",
+  "name" : "custom_hubspot_menu",
+  "label" : "Custom HubSpot Menu",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+}, {
+  "id" : "9d926e79-b4f9-c7b3-7c95-971a4e91edac",
+  "name" : "hubspot_menu",
+  "label" : "HubSpot Menu",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "32e7e516-0b10-3c7f-0e08-7f7e484839d0",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "false",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "type" : "menu",
+  "display_width" : null
+}, {
+  "id" : "441a9357-8845-9fe4-110a-f3ba8e656f72",
+  "name" : "menu",
+  "label" : "Menu",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "32e7e516-0b10-3c7f-0e08-7f7e484839d0",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "type" : "simplemenu",
+  "display_width" : null,
+  "default" : [ {
+    "isPublished" : false,
+    "pageLinkId" : null,
+    "pageLinkName" : null,
+    "isDeleted" : null,
+    "categoryId" : null,
+    "subCategory" : null,
+    "contentType" : null,
+    "state" : null,
+    "linkLabel" : "PRODUCT",
+    "linkUrl" : "#",
+    "linkParams" : null,
+    "linkTarget" : null,
+    "type" : "URL_LINK",
+    "children" : [ ]
+  }, {
+    "isPublished" : false,
+    "pageLinkId" : null,
+    "pageLinkName" : null,
+    "isDeleted" : null,
+    "categoryId" : null,
+    "subCategory" : null,
+    "contentType" : null,
+    "state" : null,
+    "linkLabel" : "PRICING",
+    "linkUrl" : "#",
+    "linkParams" : null,
+    "linkTarget" : null,
+    "type" : "URL_LINK",
+    "children" : [ ]
+  }, {
+    "isPublished" : false,
+    "pageLinkId" : null,
+    "pageLinkName" : null,
+    "isDeleted" : null,
+    "categoryId" : null,
+    "subCategory" : null,
+    "contentType" : null,
+    "state" : null,
+    "linkLabel" : "BLOG",
+    "linkUrl" : "#",
+    "linkParams" : null,
+    "linkTarget" : null,
+    "type" : "URL_LINK",
+    "children" : [ ]
+  }, {
+    "isPublished" : false,
+    "pageLinkId" : null,
+    "pageLinkName" : null,
+    "isDeleted" : null,
+    "categoryId" : null,
+    "subCategory" : null,
+    "contentType" : null,
+    "state" : null,
+    "linkLabel" : "TEAM",
+    "linkUrl" : "#",
+    "linkParams" : null,
+    "linkTarget" : null,
+    "type" : "URL_LINK",
+    "children" : [ ]
+  } ]
+}, {
+  "id" : "c0152a5f-59d7-c85a-fcd3-d4e22037881f",
+  "name" : "primary_cta",
+  "label" : "Primary CTA",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "6b8e8c9c-6ca0-185d-ba80-043566df29ec",
+    "name" : "type",
+    "label" : "Type",
+    "required" : true,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "btn", "Button" ], [ "cta", "HubSpot CTA" ], [ "none", "None" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "btn"
+  }, {
+    "id" : "7a528494-617f-50ef-fe9c-9217e135a993",
+    "name" : "style",
+    "label" : "Style",
+    "required" : true,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "6b8e8c9c-6ca0-185d-ba80-043566df29ec",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "btn",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "filled", "Filled" ], [ "outlined", "Outlined" ], [ "arrow", "Arrow" ], [ "inherit", "Inherit" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "inherit"
+  }, {
+    "id" : "db76661d-a004-f7ca-3fef-59284b2f9cc4",
+    "name" : "text",
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "visibility" : {
+      "controlling_field" : "6b8e8c9c-6ca0-185d-ba80-043566df29ec",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "btn",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "placeholder" : "SIGN IN",
+    "allow_new_line" : false,
+    "show_emoji_picker" : true,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "SIGN IN"
+  }, {
+    "id" : "primary_cta.anchor",
+    "name" : "anchor",
+    "label" : "Anchor",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "6b8e8c9c-6ca0-185d-ba80-043566df29ec",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "btn",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "primary_cta.anchor.type",
+      "name" : "type",
+      "label" : "Type",
+      "required" : true,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "href", "Custom Link" ], [ "link", "HubSpot Link" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "href"
+    }, {
+      "id" : "primary_cta.anchor.link",
+      "name" : "link",
+      "label" : "Link",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "primary_cta.anchor.type",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "link",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION" ],
+      "show_advanced_rel_options" : false,
+      "type" : "link",
+      "display_width" : null,
+      "default" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }, {
+      "id" : "primary_cta.anchor.href",
+      "name" : "href",
+      "label" : "Href",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "visibility" : {
+        "controlling_field" : "primary_cta.anchor.type",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "href",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "placeholder" : "#",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "#"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "type" : "href",
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "href" : "#"
+    }
+  }, {
+    "id" : "3152f85e-8420-23da-ad53-ad8693e7eed5",
+    "name" : "cta",
+    "label" : "CTA",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "6b8e8c9c-6ca0-185d-ba80-043566df29ec",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "cta",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "cta",
+    "display_width" : null
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "type" : "btn",
+    "style" : "inherit",
+    "text" : "SIGN IN",
+    "link" : "#"
+  }
+}, {
+  "id" : "d768f108-1524-7e5c-589d-7dda9db7f67a",
+  "name" : "secondary_cta",
+  "label" : "Secondary CTA",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "280cfa1e-3ef0-0d34-d558-9e60b7430e16",
+    "name" : "type",
+    "label" : "Type",
+    "required" : true,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "btn", "Button" ], [ "cta", "HubSpot CTA" ], [ "none", "None" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "btn"
+  }, {
+    "id" : "0666906f-ea7e-2789-a2c8-afbf13404588",
+    "name" : "style",
+    "label" : "Style",
+    "required" : true,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "280cfa1e-3ef0-0d34-d558-9e60b7430e16",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "btn",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "filled", "Filled" ], [ "outlined", "Outlined" ], [ "arrow", "Arrow" ], [ "inherit", "Inherit" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "filled"
+  }, {
+    "id" : "4a0718fa-ee88-6b0a-7850-b424ac053770",
+    "name" : "text",
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "visibility" : {
+      "controlling_field" : "280cfa1e-3ef0-0d34-d558-9e60b7430e16",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "btn",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "placeholder" : "GET A DEMO",
+    "allow_new_line" : false,
+    "show_emoji_picker" : true,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "GET A DEMO"
+  }, {
+    "id" : "secondary_cta.anchor",
+    "name" : "anchor",
+    "label" : "Anchor",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "280cfa1e-3ef0-0d34-d558-9e60b7430e16",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "btn",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "secondary_cta.anchor.type",
+      "name" : "type",
+      "label" : "Type",
+      "required" : true,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "href", "Custom Link" ], [ "link", "HubSpot Link" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "href"
+    }, {
+      "id" : "secondary_cta.anchor.link",
+      "name" : "link",
+      "label" : "Link",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "secondary_cta.anchor.type",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "link",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION" ],
+      "show_advanced_rel_options" : false,
+      "type" : "link",
+      "display_width" : null,
+      "default" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }, {
+      "id" : "secondary_cta.anchor.href",
+      "name" : "href",
+      "label" : "Href",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "visibility" : {
+        "controlling_field" : "secondary_cta.anchor.type",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "href",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "placeholder" : "#",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "#"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "type" : "href",
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "href" : "#"
+    }
+  }, {
+    "id" : "secondary_cta.cta",
+    "name" : "cta",
+    "label" : "CTA",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "280cfa1e-3ef0-0d34-d558-9e60b7430e16",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "cta",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "cta",
+    "display_width" : null
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "type" : "btn",
+    "style" : "filled",
+    "text" : "GET A DEMO",
+    "link" : "#"
+  }
+}, {
+  "id" : "language_switcher",
+  "name" : "language_switcher",
+  "label" : "Language Switcher",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : false
+} ]

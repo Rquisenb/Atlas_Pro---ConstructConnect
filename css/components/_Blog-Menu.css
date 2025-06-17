@@ -1,0 +1,29 @@
+.kl-blog-menu__title {
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 10px;
+  background-color: {{theme.global_colors.primary_color.color}};
+  color: #ffffff;
+  border-top-right-radius: {{theme.cards.border_radius}}px;
+  border-top-left-radius: {{theme.cards.border_radius}}px;
+}
+
+.kl-blog-menu__list {
+  list-style-type: none;
+  padding-right: 10px;
+  padding-left: 10px;
+  font-size: .9rem;
+}
+
+.kl-blog-menu__list ul {
+  margin-bottom: 15px;
+}
+
+.kl-blog-menu__list a {
+  color: {{theme.typography.body_text.color}};
+  text-decoration: none;
+}
+
+.kl-blog-menu__list a:hover {
+  text-decoration: underline;
+}

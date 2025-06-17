@@ -1,0 +1,536 @@
+[ {
+  "id" : "74e4ecd0-460c-1894-652f-c7eae00a442a",
+  "name" : "animation",
+  "label" : "Animation on scroll",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "animation.enabled",
+    "name" : "enabled",
+    "label" : "Enabled",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "1549cd32-c29d-d91c-1407-32eb877d2589",
+    "name" : "effect",
+    "label" : "Effect",
+    "required" : true,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "fade", "Fade" ], [ "fade-up", "Fade up" ], [ "fade-down", "Fade down" ], [ "fade-left", "Fade left" ], [ "fade-right", "Fade right" ], [ "fade-up-right", "Fade up right" ], [ "fade-up-left", "Fade up left" ], [ "fade-down-right", "Fade down right" ], [ "fade-down-left", "Fade down left" ], [ "flip-up", "Flip up" ], [ "flip-down", "Flip down" ], [ "flip-left", "Flip left" ], [ "flip-right", "Flip right" ], [ "slide-up", "Slide up" ], [ "slide-down", "Slide down" ], [ "slide-left", "Slide left" ], [ "slide-right", "Slide right" ], [ "zoom-in", "Zoom in" ], [ "zoom-in-up", "Zoom in up" ], [ "zoom-in-down", "Zoom in down" ], [ "zoom-in-left", "Zoom in left" ], [ "zoom-in-right", "Zoom in right" ], [ "zoom-out", "Zoom out" ], [ "zoom-out-up", "Zoom out up" ], [ "zoom-out-down", "Zoom out down" ], [ "zoom-out-left", "Zoom out left" ], [ "zoom-out-right", "Zoom out right" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "fade-up"
+  }, {
+    "id" : "a881ff50-25b5-9c5f-48fc-b1a57d8aaa72",
+    "name" : "offset",
+    "label" : "Offset",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "min" : 0,
+    "step" : 1,
+    "suffix" : "px",
+    "type" : "number",
+    "display_width" : null,
+    "default" : 120
+  }, {
+    "id" : "8ac66be6-a7be-7760-8618-fa5459338fe2",
+    "name" : "delay",
+    "label" : "Delay",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "min" : 0,
+    "step" : 1,
+    "suffix" : "ms",
+    "type" : "number",
+    "display_width" : null,
+    "default" : 0
+  }, {
+    "id" : "156aba08-89f6-1ba7-c726-c8d98283008b",
+    "name" : "duration",
+    "label" : "Duration",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "min" : 0,
+    "step" : 1,
+    "suffix" : "ms",
+    "type" : "number",
+    "display_width" : null,
+    "default" : 400
+  }, {
+    "id" : "fd9c8c6b-3933-fe38-1936-0317acb3af84",
+    "name" : "easing",
+    "label" : "Easing",
+    "required" : true,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "linear", "Linear" ], [ "ease", "Ease" ], [ "ease-in", "Ease in" ], [ "ease-out", "Ease out" ], [ "ease-in-out", "Ease in out" ], [ "ease-in-back", "Ease in back" ], [ "ease-out-back", "Ease out back" ], [ "ease-in-out-back", "Ease in out back" ], [ "ease-in-sine", "Ease in sine" ], [ "ease-out-sine", "Ease out sine" ], [ "ease-in-out-sine", "Ease in out sine" ], [ "ease-in-quad", "Ease in quad" ], [ "ease-out-quad", "Ease out quad" ], [ "ease-in-out-quad", "Ease in out quad" ], [ "ease-in-cubic", "Ease in cubic" ], [ "ease-out-cubic", "Ease out cubic" ], [ "ease-in-out-cubic", "Ease in out cubic" ], [ "ease-in-quart", "Ease in quart" ], [ "ease-out-quart", "Ease out quart" ], [ "ease-in-out-quart", "Ease in out quart" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "ease-in-out"
+  }, {
+    "id" : "a635b0a2-5bac-f2f1-4b5c-00d9392cebaf",
+    "name" : "mirror",
+    "label" : "Mirror",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "6f28a452-eca3-4578-7486-cf04112d7b91",
+    "name" : "once",
+    "label" : "Once",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "44a08d30-02c9-4ac8-1c36-9000337d097c",
+    "name" : "anchor_placement",
+    "label" : "Anchor placement",
+    "required" : true,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "top-bottom", "Top-bottom" ], [ "top-center", "Top-center" ], [ "top-top", "Top top" ], [ "center-bottom", "Center bottom" ], [ "center-center", "Center center" ], [ "center-top", "Center top" ], [ "bottom-bottom", "Bottom bottom" ], [ "bottom-center", "Bottom center" ], [ "bottom-top", "Bottom top" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "top-bottom"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "enabled" : false,
+    "effect" : "fade-up",
+    "offset" : 120,
+    "delay" : 0,
+    "duration" : 400,
+    "easing" : "ease-in-out",
+    "mirror" : true,
+    "once" : false,
+    "anchor_placement" : "top-bottom"
+  }
+}, {
+  "id" : "38d3cfa1-a693-5a2d-9c9b-af98a9dfae83",
+  "name" : "items",
+  "label" : "Items",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 5
+  },
+  "children" : [ {
+    "id" : "d6679c02-3ae3-1758-9102-ac65c2a90667",
+    "name" : "image",
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : true,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "src" : ""
+    }
+  }, {
+    "id" : "f05c940b-f40e-ede5-93df-42c3bb0c04ae",
+    "name" : "type",
+    "label" : "Type",
+    "required" : true,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "href", "Custom Link" ], [ "link", "HubSpot Link" ], [ "none", "None" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "none"
+  }, {
+    "id" : "9025ec1e-6332-6efe-564a-3879bf2594f8",
+    "name" : "link",
+    "label" : "Link",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "f05c940b-f40e-ede5-93df-42c3bb0c04ae",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "link",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "41d7e691-f6b5-c471-1b8b-3b5f64ee5671",
+    "name" : "href",
+    "label" : "Href",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "visibility" : {
+      "controlling_field" : "f05c940b-f40e-ede5-93df-42c3bb0c04ae",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "href",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "placeholder" : "#",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "#"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "image" : {
+      "src" : ""
+    },
+    "type" : "href",
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "href" : "#"
+  }, {
+    "image" : {
+      "src" : ""
+    },
+    "type" : "href",
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "href" : "#"
+  }, {
+    "image" : {
+      "src" : ""
+    },
+    "type" : "href",
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "href" : "#"
+  }, {
+    "image" : {
+      "src" : ""
+    },
+    "type" : "href",
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "href" : "#"
+  }, {
+    "image" : {
+      "src" : ""
+    },
+    "type" : "href",
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "href" : "#"
+  } ]
+}, {
+  "id" : "720278aa-5481-744e-e888-576baa5a2fc2",
+  "name" : "glide",
+  "label" : "Slider animation",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "65161ac9-cd24-739d-658d-db85e38f6fa6",
+    "name" : "type",
+    "label" : "Type",
+    "help_text" : "Type of the movement",
+    "inline_help_text" : "",
+    "required" : true,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "slider", "Slider" ], [ "carousel", "Carousel" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "carousel"
+  }, {
+    "id" : "6ac19e79-bcca-e2a7-6798-28c7ae446b86",
+    "name" : "start_at",
+    "label" : "Start at",
+    "help_text" : "Start at specific slide number defined with zero-based index.",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "step" : 1,
+    "prefix" : "Position ",
+    "type" : "number",
+    "display_width" : null,
+    "default" : 0
+  }, {
+    "id" : "cf35b9aa-1490-3094-d744-5705b41ad7e2",
+    "name" : "per_view",
+    "label" : "Per view",
+    "help_text" : "A number of slides visible on the single viewport.",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "min" : 1,
+    "step" : 1,
+    "suffix" : " slides",
+    "type" : "number",
+    "display_width" : null,
+    "default" : 6
+  }, {
+    "id" : "50b862a9-4edb-876c-fdfe-b9093a2f3420",
+    "name" : "focus_at_center",
+    "label" : "Focus at center",
+    "help_text" : "Focus currently active slide at the center of the track.",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "1e50b983-3f3d-11db-3714-b832421739a1",
+    "name" : "gap",
+    "label" : "Gap",
+    "help_text" : "Size of the gap added between slides.",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "step" : 1,
+    "suffix" : "px",
+    "type" : "number",
+    "display_width" : null,
+    "default" : 32
+  }, {
+    "id" : "61f86b96-6f61-d082-8b3d-06d6795b402b",
+    "name" : "autoplay",
+    "label" : "Autoplay",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "10ce3e4f-8450-b415-a966-468bf898b7ae",
+    "name" : "autoplay_duration",
+    "label" : "Autoplay duration",
+    "help_text" : "Change slides after a specified interval",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "step" : 1,
+    "suffix" : " milliseconds",
+    "type" : "number",
+    "display_width" : null,
+    "default" : 2000
+  }, {
+    "id" : "9b620614-6209-9121-4e1e-2b9c322334c5",
+    "name" : "pause_on_hover",
+    "label" : "Pause on hover",
+    "help_text" : "Stop autoplay on mouseover event",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "5510b64f-c880-f624-bd7c-46a7e2b5a951",
+    "name" : "keyboard",
+    "label" : "Keyboard",
+    "help_text" : "Allow for changing slides with left and right keyboard arrows",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "66600e4b-2a4b-ebff-edb3-d401526fe312",
+    "name" : "bound",
+    "label" : "Bound",
+    "help_text" : "Stop running per view number of slides from the end. Use this option if you don't want to have an empty space after a slider.",
+    "inline_help_text" : "Works only with slider type and a non-centered focusAt setting.",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "e23d4d15-64f3-0659-54f4-7979422a113a",
+    "name" : "animation_duration",
+    "label" : "Animation duration",
+    "help_text" : "Duration of the animation in milliseconds",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "step" : 1,
+    "suffix" : " milliseconds",
+    "type" : "number",
+    "display_width" : null,
+    "default" : 400
+  }, {
+    "id" : "9837154c-4936-1611-9c5a-977e39e5c309",
+    "name" : "rewind",
+    "label" : "Rewind",
+    "help_text" : "Allows looping the slider type. Slider will rewind to the first/last slide when it's at the start/end.",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "4ff59ecd-85d8-fbef-8965-c97c5aaa3f33",
+    "name" : "rewind_duration",
+    "label" : "Rewind duration",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "step" : 1,
+    "suffix" : " milliseconds",
+    "type" : "number",
+    "display_width" : null,
+    "default" : 2000
+  }, {
+    "id" : "9a81f2ba-a1d4-bddc-d37c-7665c568b9fc",
+    "name" : "animation_timing",
+    "label" : "Animation timing function",
+    "help_text" : "Easing function for the animation",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "cubic-bezier(0.165, 0.840, 0.440, 1.000)", "Default" ], [ "linear", "Linear" ], [ "ease", "Ease" ], [ "ease-in", "Ease-in" ], [ "Ease-out", "Ease-out" ], [ "ease-in-out", "Ease-in-out" ], [ "bounce", "Bounce" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "cubic-bezier(0.165, 0.840, 0.440, 1.000)"
+  }, {
+    "id" : "f4d076b9-4683-e360-2ce2-20ab9355fae5",
+    "name" : "direction",
+    "label" : "Direction",
+    "help_text" : "Moving direction mode",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "ltr", "Left to right" ], [ "rtl", "Right to left" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "ltr"
+  }, {
+    "id" : "7b89349d-5e86-add3-53f0-8ef54454040c",
+    "name" : "peek",
+    "label" : "Peek",
+    "help_text" : "The distance value of the next and previous viewports which have to peek in the current view.",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "step" : 1,
+    "suffix" : "px",
+    "type" : "number",
+    "display_width" : null
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "type" : "slider",
+    "start_at" : 0,
+    "per_view" : 6,
+    "focus_at_center" : false,
+    "gap" : 32,
+    "autoplay" : true,
+    "autoplay_duration" : 2000,
+    "pause_on_hover" : false,
+    "keyboard" : true,
+    "bound" : false,
+    "animation_duration" : 400,
+    "rewind" : true,
+    "rewind_duration" : 2000,
+    "animation_timing" : "cubic-bezier(0.165, 0.840, 0.440, 1.000)",
+    "direction" : "ltr"
+  }
+} ]

@@ -1,0 +1,14 @@
+{% import '../macros.html' %}
+
+{% set image_src = module.image.src if module.image.src else get_asset_url('../../images/Dashboard.svg') %}
+
+<div class="kl-hero-03">
+  <div class="kl-hero-03__content">
+    {% call render_animation(module.animation) %}
+      {{ kl_rich_text(module) }}
+    {% endcall %}
+    <div class="kl-hero-03__image">
+      {{ render_image(module.image, '', image_src) }}
+    </div>
+  </div>
+</div>

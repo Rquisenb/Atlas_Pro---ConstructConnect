@@ -1,0 +1,24 @@
+<!--
+ templateType: section
+ label: Offer Section
+ description: "Section used for Offers in basic landing page"
+ isAvailableForNewContent: true
+ screenshotPath: ../images/section-previews/offer-section.png
+-->
+{% dnd_section %}
+
+  {% dnd_module path='../modules/Custom Rich Text', offset=0, width=4,
+    preheader='LEARN',
+    primary_cta={ type: 'btn', style: 'arrow', text: 'READ THE BLOG' }
+  %}
+    {% module_attribute 'content' %}
+        <h2>Align marketing metrics with revenue</h2>
+    {% end_module_attribute %}
+  {% end_dnd_module %}
+
+  {% dnd_module path='../modules/Offer Bar 01', offset=4, width=8,
+    image={ 'src': get_asset_url('../images/Guide.svg') }
+  %}
+  {% end_dnd_module %}
+
+{% end_dnd_section %}

@@ -1,0 +1,54 @@
+{% import '../macros.html' %}
+
+{% set alignment = module.justify_content|default('space-between', true) %}
+{% set attrs = { 'style': 'justify-content: %s;'|format(alignment) } %}
+
+{% call render_animation(module.animation) %}
+<div class="kl-features-02-wrapper">
+  <div class="kl-features-02" {{ attrs|xmlattr }}>
+
+    {% for item in module.features %}
+
+      {% set attrs = {} %}
+      {% if module.enable_max_width %}
+        {% do attrs.update({ 'style': 'max-width: %spx;'|format(module.max_width) }) %}
+      {% endif %}
+
+      <div class="kl-features-02__card" {{ attrs|xmlattr }}>
+
+        <div class="kl-features-02__card-header">
+          {% if item.figure.type == 'img' %}
+
+          {% if item.figure.image.src %}
+          <div class="kl-features-02__image">
+            {{ render_image(item.figure.image) }}
+          </div>
+          {% endif %}
+
+          {% elif item.figure.type == 'icon' %}
+
+            {% if item.figure.icon %}
+            <div class="kl-features-02__image">
+              {% icon name="{{ item.figure.icon.name }}" 
+                style="{{ item.figure.icon.type }}"
+                unicode="{{ item.figure.icon.unicode }}"
+                icon_set="{{ item.figure.icon.icon_set }}"
+              %}
+            </div>
+            {% endif %}
+
+          {% endif %}
+
+          <h4>{{ item.title }}</h4>
+        </div>
+
+        {% if item.description %}
+          <p>{{ item.description }}</p>
+        {% endif %}
+
+      </div>
+    {% endfor %}
+
+  </div>
+</div>
+{% endcall %}

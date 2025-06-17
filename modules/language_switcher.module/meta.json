@@ -1,0 +1,24 @@
+{
+  "content_tags" : [ {
+    "name" : "OTHER_INDUSTRY",
+    "source" : "MARKETPLACE"
+  }, {
+    "name" : "COMPATIBLE_PAGE",
+    "source" : "MARKETPLACE"
+  } ],
+  "extra_classes" : "widget-type-language_switcher",
+  "global" : false,
+  "content_types" : [ "LANDING_PAGE", "SITE_PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "master_language" : "en",
+  "placeholder" : {
+    "show_module_icon" : true,
+    "title" : "No language variant setup",
+    "description" : "This page does not have a language variant setup."
+  },
+  "categories" : [ "functionality" ],
+  "host_template_types" : [ "PAGE", "BLOG_POST", "BLOG_LISTING" ],
+  "module_id" : 186299869601,
+  "label" : "Language Switcher",
+  "icon" : "../../../mV0_d-web-default-modules_hubspot/img/icon/edited-language.svg",
+  "is_available_for_new_content" : true
+}

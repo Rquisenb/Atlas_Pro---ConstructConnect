@@ -1,0 +1,19 @@
+<!--
+  templateType: email_subscriptions_confirmation_page
+  isAvailableForNewContent: true
+  label: Atlas - email subscriptions confirmation
+  screenshotPath: ../../images/template-previews/subscriptions-confirmation.png
+-->
+{% extends '../layouts/base.html' %}
+
+{% block body %}
+<main class="body-container-wrapper">
+  <section class="systems-page systems-page--subscription-confirmation">
+    <div class="systems-page__content">
+      {% module 'subscriptions_confirmation'
+        path='@hubspot/email_subscriptions_confirmation',
+      %}
+    </div>
+  </section>
+</main>
+{% endblock body %}

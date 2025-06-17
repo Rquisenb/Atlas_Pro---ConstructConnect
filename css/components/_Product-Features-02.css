@@ -1,0 +1,60 @@
+.kl-features-02 {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0 -16px;
+}
+
+@media screen and (max-width: 530px) {
+  .kl-features-02 {
+    display: block;
+  }
+}
+
+.kl-features-02-wrapper {
+  overflow: hidden;
+}
+
+.kl-features-02__card {
+  flex-basis: 225px;
+  flex-grow: 1;
+  margin: 16px;
+  display: block;
+}
+
+.kl-features-02__card h4 {
+  margin: 0;
+  display: inline;
+  vertical-align: top;
+}
+
+.kl-features-02__card p {
+  font-weight: 500;
+  margin: 1rem 0 0;
+}
+
+.kl-features-02__card-header {
+  display: flex;
+}
+
+.kl-features-02__image {
+  min-height: 24px;
+  margin: 0 16px 0 0;
+  display: inline-block;
+}
+
+.kl-features-02__image img {
+  display: block;
+  width: auto;
+  max-height: 24px;
+}
+
+.kl-features-02__image > span {
+  display: block;
+}
+
+.kl-features-02__image svg {
+  max-height: 24px;
+  width: 24px;
+  fill: {{theme.global_colors.primary_color.color}};
+}

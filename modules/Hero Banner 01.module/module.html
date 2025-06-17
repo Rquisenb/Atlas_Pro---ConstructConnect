@@ -1,0 +1,13 @@
+{% import '../macros.html' %}
+
+{% set src   = module.image.src if module.image.src else get_asset_url('../../images/building.jpg') %}
+{% set attrs = { 'style': 'background-image: url("' ~ src ~ '");' if src else '' } %}
+
+<div class="kl-hero-01">
+  <div class="kl-hero-01__image" {{ attrs | xmlattr }}></div>
+  {% call render_animation(module.animation) %}
+  <div class="kl-hero-01__content">
+    {{ kl_rich_text(module) }}
+  </div>
+  {% endcall %}
+</div>

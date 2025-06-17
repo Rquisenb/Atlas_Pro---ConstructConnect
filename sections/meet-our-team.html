@@ -1,0 +1,53 @@
+<!--
+  templateType: section
+  label: Meet Our Team
+  description: "A section to show team members"
+  isAvailableForNewContent: true
+  screenshotPath: ../images/section-previews/meet-our-team.png
+-->
+{% dnd_section %}
+
+  {% dnd_column padding={ left: 0, right: 0 } %}
+
+    {% dnd_row padding={ bottom: 48 } %}
+
+      {% dnd_module path='../modules/Custom Rich Text', preheader='PEOPLE',
+      max_width={ enabled: true }
+      %}
+          {% module_attribute 'content' %}
+          <h2>Meet our team</h2>
+          {% end_module_attribute %}
+      {% end_dnd_module %}
+
+    {% end_dnd_row %}
+
+    {% dnd_row %}
+
+      {% dnd_module path='../modules/Three Column Card Grid',
+      cards=[{ 
+          image: { 'src': get_asset_url('../images/Danielle.jpg') },
+          content: '<h3>Danielle Santiago</h3>\n<p>Co-founder<br>CEO</p>'
+      }, { 
+          image: { 'src': get_asset_url('../images/Nicole.jpg') },
+          content: '<h3>Nicole Lu</h3>\n<p>Co-founder<br>CTO</p>'
+      }, { 
+          image: { 'src': get_asset_url('../images/Anthony.jpg') },
+          content: '<h3>Anthony Barr</h3>\n<p>Executive Director<br>COO</p>'
+      }, { 
+          image: { 'src': get_asset_url('../images/Holly.jpg') },
+          content: '<h3>Holly Reyes</h3>\n<p>Creative Director</p>'
+      }, { 
+          image: { 'src': get_asset_url('../images/Gabriel.jpg') },
+          content: '<h3>Gabriel Lewis</h3>\n<p>Product Lead</p>'
+      }, { 
+          image: { 'src': get_asset_url('../images/Theo.jpg') },
+          content: '<h3>Theo Patel</h3>\n<p>Senior Developer</p>'
+      }]
+      %}
+      {% end_dnd_module %}
+
+    {% end_dnd_row %}
+
+  {% end_dnd_column %}
+
+{% end_dnd_section %}

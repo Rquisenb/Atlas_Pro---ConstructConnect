@@ -1,0 +1,252 @@
+<!--
+  templateType: blog_post
+  isAvailableForNewContent: true
+  label: Blog post 2 with Contents Menu
+  screenshotPath: ../images/template-previews/blog-post.png
+-->
+{% extends './layouts/base.html' %}
+
+{% choice "stickyForm" label='Sticky Form', value='Global', choices='Global, Local', export_to_template_context=true %}
+
+{% block body %}
+
+<main class="body-container-wrapper">
+  <div class="body-container body-container--blog-post">
+
+    {# Blog header #}
+    <!--div class="blog-header blog-header--post" style="background-image: url('{{ content.featured_image }}');" ></div-->
+    {# End blog header #}
+
+
+    {# Blog post #}
+    <div class="content-wrapper blog-post__body-wrapper-2-menu ">
+      <article class="blog-post">
+
+        {% set featured_tag = content.topic_list | first %}
+        {% if featured_tag %}
+        <span class="blog-post__preheader">{{ featured_tag }}</span>
+        {% endif %}
+
+        <h1 class="blog-post__title">{{ content.name }}</h1>
+
+        {% if theme.blog.show_summary %}
+        <p class="blog-post__summary">{{ content.meta_description|striptags  }}</p>
+        {% endif %}
+
+        <div class="blog-post__meta">
+			<div class="blog-post__bio">
+			  {% if content.blog_post_author.avatar %}
+			  <div class="blog-post__avatar" 
+				   style="background-image: url('{{ content.blog_post_author.avatar }}');">
+			  </div>
+			  {% endif %}
+
+			  <div class="blog-post__author">
+				<a href="{{ blog_author_url(group.id, content.blog_post_author.slug) }}">
+				  {{ content.blog_post_author.display_name }}
+				</a>
+				<div class="blog-post__timestamp">
+				  {{ content.publish_date | datetimeformat('%b %e, %Y') }}
+				</div>
+			  </div>
+		   </div>
+        </div>
+
+          {% if content.tag_list %}
+          <div class="blog-post__tags">
+            {% for tag in content.tag_list | sort(False, False, "name")%}
+            <a class="blog-post__tag-link" href="{{ blog_tag_url(group.id, tag.slug) }}">{{ tag.name }}</a>
+            {% endfor %}
+          </div>
+          {% endif %}
+
+        <!--div class="blog-post__body-wrapper"-->
+		  <div class="blog-post__body-contents-wrapper">
+			  <div class="blog-post__menu absolute">
+				  {% module "Blog Contents Menu" path="../modules/Blog Menu.module" %}
+			  </div>
+			  <div class="blog-post__menu absolute right">
+				   <div class="blog-post__social-sharing">
+						{% module "Global Social Sharing" path="../modules/Global Social Sharing.module" 
+							facebook={
+								"enabled": true
+							}
+							linkedin={
+								"enabled": true
+							}
+							twitter={
+								"enabled": true
+							}
+							email={
+								"enabled": true
+							}
+							%}
+				   </div>
+				  <div class="blog-post__menu-form
+					  {% if widget_data.stickyForm.value == "Local"%}
+						local
+					  {% else %}
+					  	global
+					  {% endif %}
+				   ">
+					  <div class="global-form">
+						  {% module "global-form" path="../modules/Global Blog Sticky Form.module" label="Global Form" %}
+					  </div>
+					  <div class="local-form">
+						  {% module "local-sticky-form" path="../modules/Local Blog Sticky Form.module" label="Local Blog Sticky Form" %}
+					  </div>
+				  </div>
+			  </div>
+			  <div class="blog-header__image-featured">
+				  <img class="" src="{{content.featured_image}}" alt="{{content.featured_image_alt_text}}">
+			  </div>
+			  <div class="blog-post__body">
+				{{ content.post_body }}
+			  </div>
+		  </div>
+
+
+        <!--/div-->
+
+      </article>
+
+      {% if group.allow_comments %}
+      <div class="blog-comments">
+        {% module 'blog_comments' path='@hubspot/blog_comments', label="Blog comments" %}
+      </div>
+      {% endif %}
+
+    </div>
+    {# End blog post #}
+
+    {# Recent posts listing #}
+    {# This macro is used to format each recent post card and
+    gets passed to the 'related_blog_posts' tag below #}
+    {% macro recent_post(post) %}
+
+    <article class="blog-more-posts__post-wrapper">
+      <div class="blog-more-posts__post">
+        {% if post.featured_image and group.use_featured_image_in_summary %}
+        <a class="blog-more-posts__post-image" 
+           style="background-image: url('{{ post.featured_image }}');" 
+           href="{{ post.absolute_url }}">
+        </a>
+        {% endif %}
+        <div class="blog-more-posts__post-content">
+          <div>
+            {% set featured_tag = post.topic_list | first %}
+            {% if featured_tag %}
+            <span class="blog-more-posts__post-preheader">{{ featured_tag }}</span>
+            {% endif %}
+            <h3><a href="{{ post.absolute_url }}">{{ post.name }}</a></h3>
+            {% if content_group.show_summary_in_listing %}
+            <p>{{ post.meta_description | truncatehtml(150, '...', false) }}</p>
+            {% endif %}
+          </div>
+          <div class="blog-more-posts__post-meta">
+            <span class="blog-more-posts__post-author">
+              {{ post.blog_post_author }}
+            </span>
+            <span class="blog-more-posts__post-date">
+              {{ post.publish_date | datetimeformat('%b %e, %Y') }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    {% endmacro %}
+
+    <div class="content-wrapper">
+      <div class="blog-more">
+	    {% module "Global Blog Post Before Cards Text" path="../modules/Global Blog Post Before Cards Text.module" %}
+        <div class="blog-more-posts">
+          {% related_blog_posts limit=3, no_wrapper=True, post_formatter="recent_post" %}
+        </div>
+      </div>
+    </div>
+    {# End recent posts listing #}
+
+    {# module "blog-subscribe" path="../modules/Custom Blog Subscribe", label="Custom Blog Subscribe" #}
+    {% module "blog-subscribe" path="../modules/Global Blog Subscribe.module", label="Global Blog Subscribe" %}
+
+  </div>
+</main>
+{% endblock body %}
+{% require_js %}
+<script>
+class StickyMenu{
+	constructor(initElement){
+		this.initElement = initElement;
+	}
+	removeClass(className){
+		this.initElement.classList.remove(className);
+	}
+	addClass(className){
+		this.initElement.classList.add(className);
+	}
+
+
+	getElementCoordinates(){
+		return this.initElement.getBoundingClientRect();
+	}
+}
+class StickyMenuController{
+	constructor(initElements, initBodyContentsElement){
+		this.initElements = [];
+		this.bodyContentsElement = initBodyContentsElement;
+		initElements.forEach((element, index)=>{
+			this.initElements[index] = new StickyMenu(element);
+		})
+		this.lifecycle();
+	}
+	lifecycle(){
+		this.initializeScrollWatcher();
+	}
+	initializeScrollWatcher(){
+		const scrollYOffset = 100; 
+		this.initElements.forEach((element)=>{
+			if( this.getBottomYFromElement(this.bodyContentsElement) < (scrollYOffset + this.getHeightFromElement(element.initElement))){ // Bottom
+				element.removeClass('absolute');
+				element.removeClass('sticky');
+				element.addClass('absolute-bottom');
+			}else if(this.getTopYFromElement(this.bodyContentsElement) < scrollYOffset && this.getBottomYFromElement(this.bodyContentsElement)){ // Middle
+				element.removeClass('absolute');
+				element.removeClass('absolute-bottom');
+				element.addClass('sticky');
+			}else if(this.getTopYFromElement(this.bodyContentsElement) > scrollYOffset){// Top
+				element.removeClass('sticky');
+				element.removeClass('absolute-bottom');
+				element.addClass('absolute');
+			}
+		})
+		window.requestAnimationFrame(()=>{this.initializeScrollWatcher()});
+	}
+	getHeightFromElement(element){
+		return element.getBoundingClientRect().height;
+	}
+	getTopYFromElement(element){
+		return (element.getBoundingClientRect().y);
+	}
+	getBottomYFromElement(element){
+		return (element.getBoundingClientRect().y + element.getBoundingClientRect().height);
+	}
+}
+window.addEventListener('load', ()=>{
+	initialize();
+})
+window.addEventListener('resize', ()=>{
+	initialize();
+})
+function initialize(){
+
+	let mql = window.matchMedia('(min-width:767px)');
+	const __stickyMenu = document.querySelectorAll('.blog-post__menu');
+	if(mql.matches) {
+		const __blogContentsElement = document.querySelector('.blog-post__body-contents-wrapper');
+		const __stickyMenuController = new StickyMenuController(__stickyMenu, __blogContentsElement);
+	}
+}
+</script>
+{% end_require_Js%}
+

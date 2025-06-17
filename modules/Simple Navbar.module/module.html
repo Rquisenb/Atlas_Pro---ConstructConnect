@@ -1,0 +1,100 @@
+{% import '../macros.html' %}
+
+{% macro render_submenu(node) %}
+
+  {% if node.children %}
+    <ul class="kl-navbar-submenu">
+      {% for item in node.children %}
+        <li class="kl-navbar-submenu__item{% if item.children %} kl-navbar__parent{% endif %}">
+          {% set href = item.url | default('#') %}
+          <a class="kl-navbar-submenu__button" 
+             {% if item.linkTarget %}target="{{ item.linkTarget }}"{% endif %}
+             href="{{ href }}">
+            <span>{{ item.linkLabel|default(item.label, true) }}</span>
+          </a>
+          {{ render_submenu(item) }}
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+{% endmacro %}
+
+{% macro render_navbar_button(btn) -%}
+
+  {% if btn.style == 'inherit' %}
+    {{ render_button(btn, 'kl-navbar__button') }}
+  {% else %}
+    {{ render_button(btn) }}
+  {% endif %}
+
+{%- endmacro %}
+
+<header class="kl-header">
+
+
+  {% set node = module.custom_hubspot_menu ? module.menu : menu(module.hubspot_menu).children %}
+
+  <nav class="kl-navbar content-wrapper">
+
+    {% if module.logo.image.src %}
+      {% call render_link(module.logo) %}
+        {{ render_image(module.logo.image, 'kl-navbar__logo') }}
+      {% endcall %}
+    {% endif %}
+
+    <div class="kl-navbar__mobile">
+      {% if module.language_switcher %}
+        {% language_switcher "language_switcher" 
+          overrideable=false, 
+          display_mode='localized', 
+          label='Language Switcher' 
+        %}
+      {% endif %}
+      {% if node %}
+      <button class="hamburger hamburger--squeeze kl-navbar__hamburger" type="button">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
+      {% endif %}
+    </div>
+
+    <div class="kl-navbar__content">
+      
+      <ul class="kl-navbar__menu">
+        {% for item in node %}
+          <li class="kl-navbar__item{% if item.children %} kl-navbar__parent{% endif %}">
+            {% set href = item.url | default('#') %}
+            {% set path = href | regex_replace("^https?://[^/]+", "") %}
+            <a class="kl-navbar__button{# if request.path == path %} kl-navbar__button--active{% endif #}" 
+               {% if item.linkTarget %}target="{{ item.linkTarget }}"{% endif %}
+              href="{{ href }}">
+              <span>{{ item.linkLabel|default(item.label, true) }}</span>
+            </a>
+            <div class="kl-navbar-submenu-wrapper">
+              {{ render_submenu(item) }}
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+
+      <div class="kl-navbar__end">
+        {% if module.language_switcher %}
+          {% language_switcher "language_switcher" 
+            overrideable=false, 
+            display_mode='localized', 
+            label='Language Switcher' 
+          %}
+        {% endif %}
+        {{ render_navbar_button(module.primary_cta) }}
+        {{ render_navbar_button(module.secondary_cta) }}
+      </div>
+
+    </div>
+
+  </nav>
+
+</header>
+
+<div class="kl-header-placeholder"></div>

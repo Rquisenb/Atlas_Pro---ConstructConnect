@@ -1,0 +1,1394 @@
+[ {
+  "id" : "19d731a0-98e5-9557-74ad-f8969b9e1c34",
+  "name" : "header",
+  "label" : "Header",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "a4e750f7-17fd-84a0-5577-e3994c58a933",
+    "name" : "columns",
+    "label" : "Columns",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : 3
+    },
+    "children" : [ {
+      "id" : "78f52d5a-9436-7440-7655-129e0a0217e3",
+      "name" : "featured",
+      "label" : "Featured",
+      "required" : false,
+      "locked" : false,
+      "display" : "checkbox",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : false
+    }, {
+      "id" : "header.columns.column_background",
+      "name" : "column_background",
+      "label" : "Column background",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "header.columns.column_background.overwrite",
+        "name" : "overwrite",
+        "label" : "Overwrite",
+        "required" : false,
+        "locked" : false,
+        "display" : "checkbox",
+        "type" : "boolean",
+        "display_width" : null,
+        "default" : false
+      }, {
+        "id" : "header.columns.column_background.color",
+        "name" : "color",
+        "label" : "Color",
+        "required" : false,
+        "locked" : false,
+        "type" : "color",
+        "display_width" : null,
+        "default" : {
+          "color" : "#4678EE",
+          "opacity" : 100
+        }
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "display_width" : null,
+      "default" : {
+        "overwrite" : false,
+        "color" : {
+          "color" : "#4678EE",
+          "opacity" : 100
+        }
+      }
+    }, {
+      "id" : "d5bfe9d9-8ce8-fe21-99fb-cc47a831ba97",
+      "name" : "title",
+      "label" : "Title",
+      "required" : false,
+      "locked" : false,
+      "type" : "richtext",
+      "display_width" : null,
+      "default" : "<h3>Basic</h3>"
+    }, {
+      "id" : "10edcdcb-6e0e-849c-035a-5d1732c95f52",
+      "name" : "content",
+      "label" : "Content",
+      "required" : false,
+      "locked" : false,
+      "type" : "richtext",
+      "display_width" : null,
+      "default" : "<h4><span style=\"font-size: 32px;\">$30</span><span style=\"font-size: 14px;\">/mo</span></h4>\n<p>Set the foundation with all your team needs for basic data integrations.</p>"
+    }, {
+      "id" : "6b8e8c9c-6ca0-185d-ba80-043566df29ec",
+      "name" : "type",
+      "label" : "Button type",
+      "required" : true,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "btn", "Button" ], [ "cta", "HubSpot CTA" ], [ "payment", "Payment" ], [ "none", "None" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "btn"
+    }, {
+      "id" : "7a528494-617f-50ef-fe9c-9217e135a993",
+      "name" : "style",
+      "label" : "Button style",
+      "required" : true,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "6b8e8c9c-6ca0-185d-ba80-043566df29ec",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "\\b(btn|payment)\\b",
+        "property" : null,
+        "operator" : "MATCHES_REGEX",
+        "access" : null
+      },
+      "display" : "select",
+      "choices" : [ [ "filled", "Filled" ], [ "outlined", "Outlined" ], [ "arrow", "Arrow" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "outlined"
+    }, {
+      "id" : "db76661d-a004-f7ca-3fef-59284b2f9cc4",
+      "name" : "text",
+      "label" : "Button text",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "visibility" : {
+        "controlling_field" : "6b8e8c9c-6ca0-185d-ba80-043566df29ec",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "\\b(btn|payment)\\b",
+        "property" : null,
+        "operator" : "MATCHES_REGEX",
+        "access" : null
+      },
+      "placeholder" : "GET STARTED",
+      "allow_new_line" : false,
+      "show_emoji_picker" : true,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "GET STARTED"
+    }, {
+      "id" : "primary_cta.anchor",
+      "name" : "anchor",
+      "label" : "Anchor",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "6b8e8c9c-6ca0-185d-ba80-043566df29ec",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "btn",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "children" : [ {
+        "id" : "primary_cta.anchor.type",
+        "name" : "type",
+        "label" : "Type",
+        "required" : true,
+        "locked" : false,
+        "display" : "select",
+        "choices" : [ [ "href", "Custom Link" ], [ "link", "HubSpot Link" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
+        "preset" : null,
+        "type" : "choice",
+        "display_width" : null,
+        "default" : "href"
+      }, {
+        "id" : "primary_cta.anchor.link",
+        "name" : "link",
+        "label" : "Link",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : "primary_cta.anchor.type",
+          "controlling_field_path" : null,
+          "controlling_value_regex" : "link",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null
+        },
+        "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION" ],
+        "show_advanced_rel_options" : false,
+        "type" : "link",
+        "display_width" : null,
+        "default" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }, {
+        "id" : "primary_cta.anchor.href",
+        "name" : "href",
+        "label" : "Href",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "",
+        "visibility" : {
+          "controlling_field" : "primary_cta.anchor.type",
+          "controlling_field_path" : null,
+          "controlling_value_regex" : "href",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null
+        },
+        "placeholder" : "#",
+        "allow_new_line" : false,
+        "show_emoji_picker" : false,
+        "type" : "text",
+        "display_width" : null,
+        "default" : "#"
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "display_width" : null,
+      "default" : {
+        "type" : "href",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        },
+        "href" : "#"
+      }
+    }, {
+      "id" : "d12d6040-80d4-09f7-b004-15ec68b8d502-cta2",
+      "name" : "payment_group",
+      "label" : "Payment",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "header.columns.type",
+        "controlling_value_regex" : "payment",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "children" : [ {
+        "id" : "cb0f9e02-73ba-b355-a5b9-05f304ec99f5-cta2",
+        "name" : "payment",
+        "label" : "Payment Link",
+        "inline_help_text" : "note: Please choose a payment link for the button to generate.",
+        "required" : true,
+        "locked" : false,
+        "type" : "payment",
+        "display_width" : null,
+        "default" : { }
+      }, {
+        "id" : "3639227a-52d7-88c7-930e-fca2a1f7996e",
+        "name" : "checkout_location",
+        "label" : "Checkout location",
+        "required" : false,
+        "locked" : false,
+        "display" : "radio",
+        "choices" : [ [ "tab", "Open new Tab" ], [ "overlay", "sliding overlay" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
+        "preset" : null,
+        "type" : "choice",
+        "display_width" : null,
+        "default" : "tab"
+      }, {
+        "id" : "92b1d6de-3324-cf68-6263-7f33d5dd7729",
+        "name" : "sliding_direction",
+        "label" : "Sliding direction",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : null,
+          "controlling_field_path" : "header.columns.payment_group.checkout_location",
+          "controlling_value_regex" : "overlay",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null
+        },
+        "display" : "select",
+        "choices" : [ [ "bottom", "Bottom" ], [ "left", "Left" ], [ "right", "Right" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
+        "preset" : null,
+        "type" : "choice",
+        "display_width" : null,
+        "default" : "bottom"
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "display_width" : null,
+      "default" : {
+        "payment" : { },
+        "checkout_location" : "tab",
+        "sliding_direction" : "bottom"
+      }
+    }, {
+      "id" : "3152f85e-8420-23da-ad53-ad8693e7eed5",
+      "name" : "cta",
+      "label" : "CTA",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "6b8e8c9c-6ca0-185d-ba80-043566df29ec",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "cta",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "type" : "cta",
+      "display_width" : null
+    }, {
+      "id" : "8f2379dd-e171-4f51-9ea0-618b8c9b8e78",
+      "name" : "background",
+      "label" : "Button background",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "69c3be21-cd6c-8b13-7ecc-3d1395b396b9",
+        "name" : "overwrite",
+        "label" : "Overwrite",
+        "required" : false,
+        "locked" : false,
+        "display" : "checkbox",
+        "type" : "boolean",
+        "display_width" : null,
+        "default" : false
+      }, {
+        "id" : "6d744693-ac31-4b1b-aa40-cbac8bae34ac",
+        "name" : "color",
+        "label" : "Color",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : "69c3be21-cd6c-8b13-7ecc-3d1395b396b9",
+          "controlling_field_path" : null,
+          "controlling_value_regex" : "true",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null
+        },
+        "type" : "color",
+        "display_width" : null,
+        "default" : {
+          "color" : "#4678EE",
+          "opacity" : 100
+        }
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "display_width" : null,
+      "default" : {
+        "overwrite" : false,
+        "color" : {
+          "color" : "#4678EE",
+          "opacity" : 100
+        }
+      }
+    }, {
+      "id" : "77df801d-b2d6-4640-adad-032e665e9fd9",
+      "name" : "border",
+      "label" : "Button border",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "1005cb81-6679-4827-ba80-79c975739e3c",
+        "name" : "overwrite",
+        "label" : "Overwrite",
+        "required" : false,
+        "locked" : false,
+        "display" : "checkbox",
+        "type" : "boolean",
+        "display_width" : null,
+        "default" : false
+      }, {
+        "id" : "083b3fe5-3aff-439c-b838-c8eb843b4cb7",
+        "name" : "color",
+        "label" : "Color",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : "1005cb81-6679-4827-ba80-79c975739e3c",
+          "controlling_field_path" : null,
+          "controlling_value_regex" : "true",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null
+        },
+        "type" : "color",
+        "display_width" : null,
+        "default" : {
+          "color" : "#4678EE",
+          "opacity" : 100
+        }
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "display_width" : null,
+      "default" : {
+        "overwrite" : false,
+        "color" : {
+          "color" : "#4678EE",
+          "opacity" : 100
+        }
+      }
+    }, {
+      "id" : "f07b79b5-c8ae-4e1d-a0b6-4584f5283d3c",
+      "name" : "text_color",
+      "label" : "Button text color",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "f0f68502-6ff8-4f40-bc6e-cb08b43d91b3",
+        "name" : "overwrite",
+        "label" : "Overwrite",
+        "required" : false,
+        "locked" : false,
+        "display" : "checkbox",
+        "type" : "boolean",
+        "display_width" : null,
+        "default" : false
+      }, {
+        "id" : "e4d2bbca-eb91-4c3a-ab0f-a0027295e7ba",
+        "name" : "color",
+        "label" : "Color",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : "f0f68502-6ff8-4f40-bc6e-cb08b43d91b3",
+          "controlling_field_path" : null,
+          "controlling_value_regex" : "true",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null
+        },
+        "type" : "color",
+        "display_width" : null,
+        "default" : {
+          "color" : "#4678EE",
+          "opacity" : 100
+        }
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "display_width" : null,
+      "default" : {
+        "overwrite" : false,
+        "color" : {
+          "color" : "#4678EE",
+          "opacity" : 100
+        }
+      }
+    }, {
+      "id" : "9087f07a-12ac-7fed-ea32-10a9f95aa348",
+      "name" : "background_hover",
+      "label" : "Button background hover",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "599d3c13-7598-4727-a36c-120051b3daf4",
+        "name" : "overwrite",
+        "label" : "Overwrite",
+        "required" : false,
+        "locked" : false,
+        "display" : "checkbox",
+        "type" : "boolean",
+        "display_width" : null,
+        "default" : false
+      }, {
+        "id" : "d4c0ce4f-225e-4cf5-93b1-de6a3d163905",
+        "name" : "color",
+        "label" : "Color",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : "599d3c13-7598-4727-a36c-120051b3daf4",
+          "controlling_field_path" : null,
+          "controlling_value_regex" : "true",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null
+        },
+        "type" : "color",
+        "display_width" : null,
+        "default" : {
+          "color" : "#4678EE",
+          "opacity" : 100
+        }
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "display_width" : null,
+      "default" : {
+        "overwrite" : false,
+        "color" : {
+          "color" : "#4678EE",
+          "opacity" : 100
+        }
+      }
+    }, {
+      "id" : "69c45139-36d7-4c67-bd81-da4f6c993a35",
+      "name" : "border_hover",
+      "label" : "Button border hover",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "22959bc0-acd3-4948-99ca-231da8371c09",
+        "name" : "overwrite",
+        "label" : "Overwrite",
+        "required" : false,
+        "locked" : false,
+        "display" : "checkbox",
+        "type" : "boolean",
+        "display_width" : null,
+        "default" : false
+      }, {
+        "id" : "2aaa3472-eed3-4842-8341-483e9c8f4c78",
+        "name" : "color",
+        "label" : "Color",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : "22959bc0-acd3-4948-99ca-231da8371c09",
+          "controlling_field_path" : null,
+          "controlling_value_regex" : "true",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null
+        },
+        "type" : "color",
+        "display_width" : null,
+        "default" : {
+          "color" : "#4678EE",
+          "opacity" : 100
+        }
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "display_width" : null,
+      "default" : {
+        "overwrite" : false,
+        "color" : {
+          "color" : "#4678EE",
+          "opacity" : 100
+        }
+      }
+    }, {
+      "id" : "23150c0e-6727-4c85-8a81-225656fa6239",
+      "name" : "text_hover_color",
+      "label" : "Button text hover color",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "da6382f5-d3a3-4af5-8ce9-a8ceb85ce31e",
+        "name" : "overwrite",
+        "label" : "Overwrite",
+        "required" : false,
+        "locked" : false,
+        "display" : "checkbox",
+        "type" : "boolean",
+        "display_width" : null,
+        "default" : false
+      }, {
+        "id" : "7180f9c1-adae-413e-ab37-04b55e994195",
+        "name" : "color",
+        "label" : "Color",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : "da6382f5-d3a3-4af5-8ce9-a8ceb85ce31e",
+          "controlling_field_path" : null,
+          "controlling_value_regex" : "true",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null
+        },
+        "type" : "color",
+        "display_width" : null,
+        "default" : {
+          "color" : "#4678EE",
+          "opacity" : 100
+        }
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "display_width" : null,
+      "default" : {
+        "overwrite" : false,
+        "color" : {
+          "color" : "#4678EE",
+          "opacity" : 100
+        }
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : [ {
+      "featured" : false,
+      "column_background" : {
+        "overwrite" : false,
+        "color" : {
+          "color" : "#4678EE",
+          "opacity" : 100
+        }
+      },
+      "title" : "<h3>Basic</h3>",
+      "content" : "<h4><span style=\"font-size: 32px;\">$30</span><span style=\"font-size: 14px;\">/mo</span></h4>\n<p>Set the foundation with all your team needs for basic data integrations.</p>",
+      "type" : "btn",
+      "style" : "outlined",
+      "text" : "GET STARTED",
+      "anchor" : {
+        "type" : "href",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        },
+        "href" : "#"
+      },
+      "background" : {
+        "overwrite" : false,
+        "color" : {
+          "color" : "#4678EE",
+          "opacity" : 100
+        }
+      },
+      "border" : {
+        "overwrite" : false,
+        "color" : {
+          "color" : "#4678EE",
+          "opacity" : 100
+        }
+      },
+      "text_color" : {
+        "overwrite" : false,
+        "color" : {
+          "color" : "#4678EE",
+          "opacity" : 100
+        }
+      },
+      "background_hover" : {
+        "overwrite" : false,
+        "color" : {
+          "color" : "#4678EE",
+          "opacity" : 100
+        }
+      },
+      "border_hover" : {
+        "overwrite" : false,
+        "color" : {
+          "color" : "#4678EE",
+          "opacity" : 100
+        }
+      },
+      "text_hover_color" : {
+        "overwrite" : false,
+        "color" : {
+          "color" : "#4678EE",
+          "opacity" : 100
+        }
+      },
+      "alignment" : "center"
+    }, {
+      "featured" : false,
+      "column_background" : {
+        "overwrite" : false,
+        "color" : {
+          "color" : "#4678EE",
+          "opacity" : 100
+        }
+      },
+      "title" : "<h3>Basic</h3>",
+      "content" : "<h4><span style=\"font-size: 32px;\">$30</span><span style=\"font-size: 14px;\">/mo</span></h4>\n<p>Set the foundation with all your team needs for basic data integrations.</p>",
+      "type" : "btn",
+      "style" : "outlined",
+      "text" : "GET STARTED",
+      "anchor" : {
+        "type" : "href",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        },
+        "href" : "#"
+      },
+      "background" : {
+        "overwrite" : false,
+        "color" : {
+          "color" : "#4678EE",
+          "opacity" : 100
+        }
+      },
+      "border" : {
+        "overwrite" : false,
+        "color" : {
+          "color" : "#4678EE",
+          "opacity" : 100
+        }
+      },
+      "text_color" : {
+        "overwrite" : false,
+        "color" : {
+          "color" : "#4678EE",
+          "opacity" : 100
+        }
+      },
+      "background_hover" : {
+        "overwrite" : false,
+        "color" : {
+          "color" : "#4678EE",
+          "opacity" : 100
+        }
+      },
+      "border_hover" : {
+        "overwrite" : false,
+        "color" : {
+          "color" : "#4678EE",
+          "opacity" : 100
+        }
+      },
+      "text_hover_color" : {
+        "overwrite" : false,
+        "color" : {
+          "color" : "#4678EE",
+          "opacity" : 100
+        }
+      },
+      "alignment" : "center"
+    }, {
+      "featured" : false,
+      "column_background" : {
+        "overwrite" : false,
+        "color" : {
+          "color" : "#4678EE",
+          "opacity" : 100
+        }
+      },
+      "title" : "<h3>Basic</h3>",
+      "content" : "<h4><span style=\"font-size: 32px;\">$30</span><span style=\"font-size: 14px;\">/mo</span></h4>\n<p>Set the foundation with all your team needs for basic data integrations.</p>",
+      "type" : "btn",
+      "style" : "outlined",
+      "text" : "GET STARTED",
+      "anchor" : {
+        "type" : "href",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        },
+        "href" : "#"
+      },
+      "background" : {
+        "overwrite" : false,
+        "color" : {
+          "color" : "#4678EE",
+          "opacity" : 100
+        }
+      },
+      "border" : {
+        "overwrite" : false,
+        "color" : {
+          "color" : "#4678EE",
+          "opacity" : 100
+        }
+      },
+      "text_color" : {
+        "overwrite" : false,
+        "color" : {
+          "color" : "#4678EE",
+          "opacity" : 100
+        }
+      },
+      "background_hover" : {
+        "overwrite" : false,
+        "color" : {
+          "color" : "#4678EE",
+          "opacity" : 100
+        }
+      },
+      "border_hover" : {
+        "overwrite" : false,
+        "color" : {
+          "color" : "#4678EE",
+          "opacity" : 100
+        }
+      },
+      "text_hover_color" : {
+        "overwrite" : false,
+        "color" : {
+          "color" : "#4678EE",
+          "opacity" : 100
+        }
+      },
+      "alignment" : "center"
+    } ]
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "columns" : [ {
+      "featured" : false,
+      "column_background" : {
+        "overwrite" : false,
+        "color" : {
+          "color" : "#4678EE",
+          "opacity" : 100
+        }
+      },
+      "title" : "<h3>Basic</h3>",
+      "content" : "<h4><span style=\"font-size: 32px;\">$30</span><span style=\"font-size: 14px;\">/mo</span></h4>\n<p>Set the foundation with all your team needs for basic data integrations.</p>",
+      "type" : "btn",
+      "style" : "outlined",
+      "text" : "GET STARTED",
+      "anchor" : {
+        "type" : "href",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        },
+        "href" : "#"
+      },
+      "background" : {
+        "overwrite" : false,
+        "color" : {
+          "color" : "#4678EE",
+          "opacity" : 100
+        }
+      },
+      "border" : {
+        "overwrite" : false,
+        "color" : {
+          "color" : "#4678EE",
+          "opacity" : 100
+        }
+      },
+      "text_color" : {
+        "overwrite" : false,
+        "color" : {
+          "color" : "#4678EE",
+          "opacity" : 100
+        }
+      },
+      "background_hover" : {
+        "overwrite" : false,
+        "color" : {
+          "color" : "#4678EE",
+          "opacity" : 100
+        }
+      },
+      "border_hover" : {
+        "overwrite" : false,
+        "color" : {
+          "color" : "#4678EE",
+          "opacity" : 100
+        }
+      },
+      "text_hover_color" : {
+        "overwrite" : false,
+        "color" : {
+          "color" : "#4678EE",
+          "opacity" : 100
+        }
+      },
+      "alignment" : "center"
+    }, {
+      "featured" : false,
+      "column_background" : {
+        "overwrite" : false,
+        "color" : {
+          "color" : "#4678EE",
+          "opacity" : 100
+        }
+      },
+      "title" : "<h3>Basic</h3>",
+      "content" : "<h4><span style=\"font-size: 32px;\">$30</span><span style=\"font-size: 14px;\">/mo</span></h4>\n<p>Set the foundation with all your team needs for basic data integrations.</p>",
+      "type" : "btn",
+      "style" : "outlined",
+      "text" : "GET STARTED",
+      "anchor" : {
+        "type" : "href",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        },
+        "href" : "#"
+      },
+      "background" : {
+        "overwrite" : false,
+        "color" : {
+          "color" : "#4678EE",
+          "opacity" : 100
+        }
+      },
+      "border" : {
+        "overwrite" : false,
+        "color" : {
+          "color" : "#4678EE",
+          "opacity" : 100
+        }
+      },
+      "text_color" : {
+        "overwrite" : false,
+        "color" : {
+          "color" : "#4678EE",
+          "opacity" : 100
+        }
+      },
+      "background_hover" : {
+        "overwrite" : false,
+        "color" : {
+          "color" : "#4678EE",
+          "opacity" : 100
+        }
+      },
+      "border_hover" : {
+        "overwrite" : false,
+        "color" : {
+          "color" : "#4678EE",
+          "opacity" : 100
+        }
+      },
+      "text_hover_color" : {
+        "overwrite" : false,
+        "color" : {
+          "color" : "#4678EE",
+          "opacity" : 100
+        }
+      },
+      "alignment" : "center"
+    }, {
+      "featured" : false,
+      "column_background" : {
+        "overwrite" : false,
+        "color" : {
+          "color" : "#4678EE",
+          "opacity" : 100
+        }
+      },
+      "title" : "<h3>Basic</h3>",
+      "content" : "<h4><span style=\"font-size: 32px;\">$30</span><span style=\"font-size: 14px;\">/mo</span></h4>\n<p>Set the foundation with all your team needs for basic data integrations.</p>",
+      "type" : "btn",
+      "style" : "outlined",
+      "text" : "GET STARTED",
+      "anchor" : {
+        "type" : "href",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        },
+        "href" : "#"
+      },
+      "background" : {
+        "overwrite" : false,
+        "color" : {
+          "color" : "#4678EE",
+          "opacity" : 100
+        }
+      },
+      "border" : {
+        "overwrite" : false,
+        "color" : {
+          "color" : "#4678EE",
+          "opacity" : 100
+        }
+      },
+      "text_color" : {
+        "overwrite" : false,
+        "color" : {
+          "color" : "#4678EE",
+          "opacity" : 100
+        }
+      },
+      "background_hover" : {
+        "overwrite" : false,
+        "color" : {
+          "color" : "#4678EE",
+          "opacity" : 100
+        }
+      },
+      "border_hover" : {
+        "overwrite" : false,
+        "color" : {
+          "color" : "#4678EE",
+          "opacity" : 100
+        }
+      },
+      "text_hover_color" : {
+        "overwrite" : false,
+        "color" : {
+          "color" : "#4678EE",
+          "opacity" : 100
+        }
+      },
+      "alignment" : "center"
+    } ]
+  }
+}, {
+  "id" : "f8df1ec6-80ac-3050-8246-7d185490abd8",
+  "name" : "rows",
+  "label" : "Rows",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 8
+  },
+  "children" : [ {
+    "id" : "344a46bf-f928-d4d0-ff15-7d4a648d721d",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "Automatic Backups"
+  }, {
+    "id" : "ca49078c-0049-8ef8-76b9-04eb8bd270d4",
+    "name" : "columns",
+    "label" : "Columns",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : 3
+    },
+    "children" : [ {
+      "id" : "692773b7-87e7-0c6e-f9fc-6b360466644c",
+      "name" : "content",
+      "label" : "Content",
+      "required" : false,
+      "locked" : false,
+      "type" : "richtext",
+      "display_width" : null,
+      "default" : "<img src=\"https://f.hubspotusercontent30.net/hubfs/8823337/Blue-Check.svg\" alt=\"Blue-Check\" width=\"23\" loading=\"lazy\" style=\"width: 23px;\">"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : [ {
+      "content" : "<img src=\"https://f.hubspotusercontent30.net/hubfs/8823337/Blue-Check.svg\" alt=\"Blue-Check\" width=\"23\" loading=\"lazy\" style=\"width: 23px;\">"
+    }, {
+      "content" : "<img src=\"https://f.hubspotusercontent30.net/hubfs/8823337/Blue-Check.svg\" alt=\"Blue-Check\" width=\"23\" loading=\"lazy\" style=\"width: 23px;\">"
+    }, {
+      "content" : "<img src=\"https://f.hubspotusercontent30.net/hubfs/8823337/Blue-Check.svg\" alt=\"Blue-Check\" width=\"23\" loading=\"lazy\" style=\"width: 23px;\">"
+    } ]
+  }, {
+    "id" : "1497ac89-045e-0f40-1a7f-a03c6656e38f",
+    "name" : "highlight",
+    "label" : "Highlight",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "bed7d5b5-ebdf-a16c-6b5a-70c453c5c71b",
+      "name" : "enabled",
+      "label" : "Enabled",
+      "required" : false,
+      "locked" : false,
+      "display" : "checkbox",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : false
+    }, {
+      "id" : "f03ed46c-4b43-35de-63cf-34fc308aed5d",
+      "name" : "color",
+      "label" : "Color",
+      "required" : false,
+      "locked" : false,
+      "type" : "color",
+      "display_width" : null,
+      "default" : {
+        "color" : "#f2f5fb",
+        "opacity" : 100
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "enabled" : false,
+      "color" : {
+        "color" : "#f2f5fb",
+        "opacity" : 100
+      }
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "title" : "Automatic Backups",
+    "columns" : [ {
+      "content" : "<img src=\"https://f.hubspotusercontent30.net/hubfs/8823337/Blue-Check.svg\" alt=\"Blue-Check\" width=\"23\" loading=\"lazy\" style=\"width: 23px;\">"
+    }, {
+      "content" : "<img src=\"https://f.hubspotusercontent30.net/hubfs/8823337/Blue-Check.svg\" alt=\"Blue-Check\" width=\"23\" loading=\"lazy\" style=\"width: 23px;\">"
+    }, {
+      "content" : "<img src=\"https://f.hubspotusercontent30.net/hubfs/8823337/Blue-Check.svg\" alt=\"Blue-Check\" width=\"23\" loading=\"lazy\" style=\"width: 23px;\">"
+    } ],
+    "highlight" : {
+      "enabled" : false,
+      "color" : {
+        "color" : "#f2f5fb",
+        "opacity" : 100
+      }
+    },
+    "field_group" : { }
+  }, {
+    "title" : "iOS and Android Binary",
+    "columns" : [ {
+      "content" : "<img src=\"https://f.hubspotusercontent30.net/hubfs/8823337/Blue-Check.svg\" alt=\"Blue-Check\" width=\"23\" loading=\"lazy\" style=\"width: 23px;\">"
+    }, {
+      "content" : "<img src=\"https://f.hubspotusercontent30.net/hubfs/8823337/Blue-Check.svg\" alt=\"Blue-Check\" width=\"23\" loading=\"lazy\" style=\"width: 23px;\">"
+    }, {
+      "content" : "<img src=\"https://f.hubspotusercontent30.net/hubfs/8823337/Blue-Check.svg\" alt=\"Blue-Check\" width=\"23\" loading=\"lazy\" style=\"width: 23px;\">"
+    } ],
+    "highlight" : {
+      "enabled" : false,
+      "color" : {
+        "color" : "#f2f5fb",
+        "opacity" : 100
+      }
+    },
+    "field_group" : { }
+  }, {
+    "title" : "Connect your domain",
+    "columns" : [ {
+      "content" : "<img src=\"https://f.hubspotusercontent30.net/hubfs/8823337/Blue-Check.svg\" alt=\"Blue-Check\" width=\"23\" loading=\"lazy\" style=\"width: 23px;\">"
+    }, {
+      "content" : "<img src=\"https://f.hubspotusercontent30.net/hubfs/8823337/Blue-Check.svg\" alt=\"Blue-Check\" width=\"23\" loading=\"lazy\" style=\"width: 23px;\">"
+    }, {
+      "content" : "<img src=\"https://f.hubspotusercontent30.net/hubfs/8823337/Blue-Check.svg\" alt=\"Blue-Check\" width=\"23\" loading=\"lazy\" style=\"width: 23px;\">"
+    } ],
+    "highlight" : {
+      "enabled" : false,
+      "color" : {
+        "color" : "#f2f5fb",
+        "opacity" : 100
+      }
+    },
+    "field_group" : { }
+  }, {
+    "title" : "CMS assets",
+    "columns" : [ {
+      "content" : "<img src=\"https://f.hubspotusercontent30.net/hubfs/8823337/Blue-Check.svg\" alt=\"Blue-Check\" width=\"23\" loading=\"lazy\" style=\"width: 23px;\">"
+    }, {
+      "content" : "<img src=\"https://f.hubspotusercontent30.net/hubfs/8823337/Blue-Check.svg\" alt=\"Blue-Check\" width=\"23\" loading=\"lazy\" style=\"width: 23px;\">"
+    }, {
+      "content" : "<img src=\"https://f.hubspotusercontent30.net/hubfs/8823337/Blue-Check.svg\" alt=\"Blue-Check\" width=\"23\" loading=\"lazy\" style=\"width: 23px;\">"
+    } ],
+    "highlight" : {
+      "enabled" : false,
+      "color" : {
+        "color" : "#f2f5fb",
+        "opacity" : 100
+      }
+    },
+    "field_group" : { }
+  }, {
+    "title" : "Multilingual support",
+    "columns" : [ {
+      "content" : "No"
+    }, {
+      "content" : "No"
+    }, {
+      "content" : "No"
+    } ],
+    "highlight" : {
+      "enabled" : false,
+      "color" : {
+        "color" : "#f2f5fb",
+        "opacity" : 100
+      }
+    },
+    "field_group" : { }
+  }, {
+    "title" : "Image resizing",
+    "columns" : [ {
+      "content" : "Up to 3 images"
+    }, {
+      "content" : "Up to 50 images"
+    }, {
+      "content" : "Unlimited"
+    } ],
+    "highlight" : {
+      "enabled" : false,
+      "color" : {
+        "color" : "#f2f5fb",
+        "opacity" : 100
+      }
+    },
+    "field_group" : { }
+  }, {
+    "title" : "Push notifications",
+    "columns" : [ {
+      "content" : "No"
+    }, {
+      "content" : "Limited"
+    }, {
+      "content" : "Unlimited"
+    } ],
+    "highlight" : {
+      "enabled" : false,
+      "color" : {
+        "color" : "#f2f5fb",
+        "opacity" : 100
+      }
+    },
+    "field_group" : { }
+  }, {
+    "title" : "Real-time searching",
+    "columns" : [ {
+      "content" : "No"
+    }, {
+      "content" : "No"
+    }, {
+      "content" : "No"
+    } ],
+    "highlight" : {
+      "enabled" : false,
+      "color" : {
+        "color" : "#f2f5fb",
+        "opacity" : 100
+      }
+    },
+    "field_group" : { }
+  } ]
+}, {
+  "id" : "dcfae2e8-e9f3-4b2a-b623-07208cd92c87",
+  "name" : "features_background",
+  "label" : "Features background color",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "c535b56f-d242-41f9-94e9-1dba85bc7ff5",
+    "name" : "overwrite",
+    "label" : "Overwrite",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "32fcbe39-5c5c-40fe-ac35-3c9437fe0f71",
+    "name" : "color",
+    "label" : "Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "c535b56f-d242-41f9-94e9-1dba85bc7ff5",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#4678ee",
+      "opacity" : 100
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "overwrite" : false,
+    "color" : {
+      "color" : "#4678ee",
+      "opacity" : 100
+    }
+  }
+}, {
+  "id" : "b8613d18-e48a-44f3-ac0d-94ad1cc80505",
+  "name" : "features_text",
+  "label" : "Features text color",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "e3198695-5adf-4fe3-b755-f588777db887",
+    "name" : "overwrite",
+    "label" : "Overwrite",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "d6e6ca24-117a-4b01-8f78-f0d44e06507a",
+    "name" : "color",
+    "label" : "Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "e3198695-5adf-4fe3-b755-f588777db887",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#FFFFFF",
+      "opacity" : 100
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "overwrite" : false,
+    "color" : {
+      "color" : "#FFFFFF",
+      "opacity" : 100
+    }
+  }
+} ]

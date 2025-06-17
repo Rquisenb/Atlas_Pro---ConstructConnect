@@ -1,0 +1,160 @@
+.kl-card-grid > div {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -26px;
+  }
+  
+  .kl-card-grid__card-wrapper {
+    display: flex;
+    padding: 26px;
+  }
+  
+  /* 3-column layout */
+  .kl-card-grid--3-columns > div {
+    margin: -24px;
+  }
+  
+  .kl-card-grid--3-columns .kl-card-grid__card-wrapper {
+    flex-basis: calc(100% / 3);
+    padding: 24px;
+  }
+  
+  /* 4-column layout */
+  .kl-card-grid--4-columns > div {
+    margin: -24px -12px;
+  }
+  
+  .kl-card-grid--4-columns .kl-card-grid__card-wrapper {
+    flex-basis: calc(100% / 4);
+    padding: 24px 12px;
+  }
+  
+  /* Responsive breakpoints for both layouts */
+  @media screen and (max-width: 920px) {
+    .kl-card-grid--4-columns .kl-card-grid__card-wrapper {
+      flex-basis: calc(100% / 3);
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .kl-card-grid--3-columns .kl-card-grid__card-wrapper,
+    .kl-card-grid--4-columns .kl-card-grid__card-wrapper {
+      flex-basis: calc(100% / 2);
+    }
+  }
+  
+  @media screen and (max-width: 520px) {
+    .kl-card-grid--3-columns .kl-card-grid__card-wrapper,
+    .kl-card-grid--4-columns .kl-card-grid__card-wrapper {
+      flex-basis: 100%;
+    }
+  }
+  
+  .kl-card-grid__card {
+    width: 100%;
+    border: 0.5px solid rgba({{theme.cards.border_color.color|convert_rgb}}, {{theme.cards.border_color.opacity != null ? theme.cards.border_color.opacity / 100 : 1}});
+    box-shadow: 0px 11px 30px rgba({{theme.cards.box_shadow.color|convert_rgb}}, {{theme.cards.box_shadow.opacity != null ? theme.cards.box_shadow.opacity / 100 : 1}});
+    background-color: rgba({{theme.cards.background.color|convert_rgb}}, {{theme.cards.background.opacity != null ? theme.cards.background.opacity / 100 : 1}});
+    border-radius: {{theme.cards.border_radius}}px;
+    overflow: hidden;
+  }
+  
+  .kl-card-grid__image {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: block;
+    height: 260px;
+    width: 100%;
+  }
+  
+  .kl-card-grid__preheader {
+    font-family: {{theme.typography.preheader.font}}, sans-serif;
+    font-size: {{theme.typography.preheader.size}}{{theme.typography.preheader.size_unit}};
+    font-weight: bold;
+    color: {{theme.typography.preheader.color}};
+    display: block;
+    margin: 0 0 .5rem;
+  }
+  
+  .kl-card-grid__content {
+    display: block;
+    padding: 20px 24px;
+    color: {{theme.global_colors.text_color.color}};
+    text-decoration: none;
+  }
+  
+  .kl-card-grid__content h3, .kl-card-grid__content h4 {
+    margin: 0 0 .5rem;
+  }
+  
+  .kl-card-grid__content p {
+    margin: 0;
+  }
+  
+  .kl-card-grid__content:hover, .kl-card-grid__content:focus {
+    color: {{theme.global_colors.text_color.color}};
+    text-decoration: none;
+  }
+  
+  .kl-card-grid--4-columns .kl-card-grid__image {
+    height: 220px;
+  }
+  
+  .kl-card-grid .kl-card__search-container {
+    width: calc(33.33% - 38px);
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .kl-card-grid .kl-card__search-container label {
+    font-weight: 700;
+  }
+  
+  .kl-card-grid .kl-card__search-container input {
+    padding: 10px 15px;
+    border: 1px solid #dadada;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .kl-card-grid .kl-card__search-container {
+      width: calc(50% - 26px);
+    }
+  }
+  
+  @media screen and (max-width: 520px) {
+    .kl-card-grid .kl-card__search-container {
+      width: 100%;
+    }
+  }
+  
+  .kl-card-grid .kl-card__search__no-match {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: #efeff1;
+    padding: 52px 26px;
+    width: calc(100% - 52px);
+    border-radius: 3px;
+  }
+  
+  .kl-card-grid .kl-card__search__no-match span {
+    color: #8a8a8b;
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .kl-card-grid.kl-card-grid--search-active .kl-card-grid__card-wrapper {
+    display: none;
+    transition: 0.25s ease all 0.25s !important;
+    transform: scale(0);
+    opacity: 0.65;
+    will-change: transform;
+  }
+  
+  .kl-card-grid.kl-card-grid--search-active .kl-card-grid__card-wrapper.kl-card-grid--search__item-match {
+    display: flex;
+    transform: scale(1);
+    opacity: 1;
+  }
+  

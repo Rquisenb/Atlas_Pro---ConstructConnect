@@ -1,0 +1,36 @@
+.kl-card {
+  border: 0.5px solid rgba({{theme.cards.border_color.color|convert_rgb}}, {{theme.cards.border_color.opacity != null ? theme.cards.border_color.opacity / 100 : 1}});
+  box-shadow: 0px 11px 30px rgba({{theme.cards.box_shadow.color|convert_rgb}}, {{theme.cards.box_shadow.opacity != null ? theme.cards.box_shadow.opacity / 100 : 1}});
+  border-radius: {{theme.cards.border_radius}}px;
+  background-color: rgba({{theme.cards.background.color|convert_rgb}}, {{theme.cards.background.opacity != null ? theme.cards.background.opacity / 100 : 1}});
+  width: 100%;
+  padding: 32px 25px;
+  background-color: rgba({{theme.cards.background.color|convert_rgb}}, {{theme.cards.background.opacity != null ? theme.cards.background.opacity / 100 : 1}});
+}
+
+.kl-card__preheader {
+  font-family: {{theme.typography.preheader.font}}, sans-serif;
+  font-size: {{theme.typography.preheader.size}}{{theme.typography.preheader.size_unit}};
+  font-weight: bold;
+  color: {{theme.typography.preheader.color}};
+  display: block;
+  line-height: 1rem;
+  margin: 0 0 .75rem;
+}
+
+.kl-card__content h1, .kl-card__content h2, .kl-card__content h3, .kl-card__content h4, .kl-card__content h5, .kl-card__content h6 {
+  font-weight: bold;
+  margin: 0 0 1rem;
+}
+
+.kl-card__content p {
+  margin: 0 0 2rem;
+}
+
+.kl-card__image {
+  margin: 0 0 1.75rem;
+}
+
+.kl-card__form {
+  max-width: 600px;
+}

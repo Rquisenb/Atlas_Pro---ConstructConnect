@@ -1,0 +1,36 @@
+{% import '../macros.html' %}
+
+{# Check out macros.html file to see how this module is implemented #}
+{% call render_animation(module.animation) %}
+  {{ kl_rich_text(module) }}
+{% endcall %}
+
+{% if module.custom_bullet_list.enable %}
+  {% require_css %}
+    <style>
+      #{{name}}.kl-rich-text--custom-list-styles ul:not(.no-list) {
+        padding-left: 32px;
+      }
+
+      #{{name}}.kl-rich-text--custom-list-styles ul:not(.no-list) li {
+        position: relative;
+        list-style-type: none;
+        margin-bottom: 16px;
+      }
+
+      #{{name}}.kl-rich-text--custom-list-styles ul:not(.no-list) li:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -32px;
+        width: 22px;
+        height: 22px;
+        background-image: url({{module.custom_bullet_list.icon.src}});
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+    </style>
+  {% end_require_css %}
+{% endif %}

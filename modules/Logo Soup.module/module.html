@@ -1,0 +1,34 @@
+{% import '../macros.html' %}
+
+{% macro render_item(item) -%}
+
+  {# Path relative to macros.html #}
+  {% set default_src = get_asset_url('../images/Logo.svg') %}
+  {{ render_image(item.image, '', default_src) }}
+
+{%- endmacro %}
+
+{% set class = "kl-logos" %}
+
+{% if module.columns.overwrite %}
+  {% set class = class ~ " kl-logos--%s"|format(module.columns.count) %}
+{% endif %}
+
+
+{% set list_item_style = 'padding: %spx %spx;'|format(module.padding.top_bottom, module.padding.left_right) %}
+
+{% call render_animation(module.animation) %}
+<div class="{{ class }}">
+  {% for item in module.items %}
+  <div class="kl-logos__item" {% if module.padding.overwrite %}style="{{ list_item_style }}"{% endif %}>
+    {% if item.type == 'none' %}
+      {{ render_item(item) }}
+    {% else %}
+      {% call render_link(item) %}
+        {{ render_item(item) }}
+      {% endcall %}
+    {% endif %}
+  </div>
+  {% endfor %}
+</div>
+{% endcall %}

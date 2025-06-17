@@ -1,0 +1,10 @@
+{
+  "global" : true,
+  "content_types" : [ "BLOG_LISTING", "BLOG_POST" ],
+  "smart_type" : "NOT_SMART",
+  "host_template_types" : [ "BLOG_POST", "BLOG_LISTING" ],
+  "module_id" : 186299905057,
+  "label" : "Blog Posts",
+  "icon" : "https://www.kalungi.com/hubfs/Atlas/Module%20Logos/blog-posts.svg",
+  "is_available_for_new_content" : true
+}

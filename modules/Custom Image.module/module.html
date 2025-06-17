@@ -1,0 +1,125 @@
+{% import '../macros.html' %}
+
+{# Setting variables for easier access #}
+{% set _border_style = module.style.image_border.border_style %}
+{% set _border_radius = module.style.image_border.border_radius %}
+{% set _padding_and_margin = module.style.padding_and_margin.padding_and_margin %}
+{% set _image_zoom = module.image_zoom %}
+{% set _filter_style = module.style.image_filter %}
+{% set _link = module.link%}
+{% set _filter_options = [
+	{
+		"id":"blur",
+		"unit":"px",
+	},
+	{
+		"id":"contrast",
+		"unit":"%",
+	},
+	{
+		"id":"grayscale",
+		"unit":"%",
+	},
+	{
+		"id":"hue-rotate",
+		"unit":"deg",
+	},
+	{
+		"id":"invert",
+		"unit":"%",
+	},
+	{
+		"id":"opacity",
+		"unit":"%",
+	},
+	{
+		"id":"saturate",
+		"unit":"%",
+	},
+	{
+		"id":"sepia",
+		"unit":"%",
+	}
+]
+%}
+
+{% macro link_wrapper(link) %}
+{% if link.activate %}
+	<a href="{{link.link.url.href}}" {% if link.link.open_in_new_tab %}target="_blank"{% endif %} {% if link.link.no_follow %}rel="nofollow"{% endif %}>
+		{{caller()}}
+	</a>
+{% else %}
+	{{caller()}}
+{% endif %}
+{% endmacro %}
+{# Check out macros.html file to see how this module is implemented #}
+{% call render_animation(module.animation) %}
+{% call link_wrapper(_link) %}
+<div id="{{name}}" class=" kl-custom-image kl-alignment--{{ module.alignment }} kl-pointer-{{_link.activate}}" data-zoom="{{_image_zoom.image_zoom}}" >
+  {{ render_image(module.image, default_src="https://dummyimage.com/600x400/e0e0e0/000000&text=Custom+image+here") }}
+  <div class="kl-custom-image__filter kl-hidden" 
+	   {% if _border_style.overwrite_each_side%}
+		  data-border-top="{{_border_style.border_top.top.width.value}}"
+		  data-border-bottom="{{_border_style.border_bottom.bottom.width.value}}"
+		  data-border-left="{{_border_style.border_left.left.width.value}}"
+		  data-border-right="{{_border_style.border_right.right.width.value}}"
+	   {%else%}
+		  data-border-top="{{_border_style.border_style.top.width.value}}"
+		  data-border-bottom="{{_border_style.border_style.bottom.width.value}}"
+		  data-border-left="{{_border_style.border_style.left.width.value}}"
+		  data-border-right="{{_border_style.border_style.right.width.value}}"
+	   {%endif%}
+	  >
+		<div class="kl-custom-image__text kl-custom-image__text--vertical-{{module.text.vertical_alignment}}">
+			{{kl_rich_text(module.text)}}
+		</div>
+	  <span class="kl-custom-image__pointer hide" data-src="{{module.image.src}}"></span>
+	</div>
+</div>
+{% endcall %}
+{% endcall %}
+
+{% require_css %}
+<style>
+#{{name}}.kl-custom-image img, #{{name}}.kl-custom-image .kl-custom-image__filter{
+	{% if _border_radius.overwrite_each_corner %}
+	border-top-left-radius: {{_border_radius.border_top_left}}px;
+	border-top-right-radius: {{_border_radius.border_top_right}}px;
+	border-bottom-left-radius: {{_border_radius.border_bottom_left}}px;
+	border-bottom-right-radius: {{_border_radius.border_bottom_right}}px;
+	{% else %}
+	border-radius: {{_border_radius.border_radius_all}}px;
+	{% endif %}
+
+	{% if _border_style.overwrite_each_side %}
+	{{ _border_style.border_left.css | regex_replace("border","border-left")}}
+	{{ _border_style.border_right.css | regex_replace("border","border-right")}}
+	{{ _border_style.border_bottom.css | regex_replace("border","border-bottom")}}
+	{{ _border_style.border_top.css | regex_replace("border","border-top")}}
+	{% else %}
+	{{_border_style.border_style.css}};
+	{% endif %}
+}
+#{{name}}.kl-custom-image img{
+	filter: {{_filter_style.filter.filter_type}}({{_filter_style.filter.value}}{% for option in _filter_options %}{%if option.id == _filter_style.filter.filter_type %}{{option.unit}}{%endif%}{% endfor %});
+	box-shadow: 
+	{{module.style.box_shadow.offset_x}}px {{module.style.box_shadow.offset_y}}px {{module.style.box_shadow.blur_radius}}px {{module.style.box_shadow.spread_radius}}px {{module.style.box_shadow.shadow_color.css}};
+
+
+}
+#{{name}}.kl-custom-image .kl-custom-image__filter{
+	background-color: {{_filter_style.filter_color.css}};
+}
+#{{name}}.kl-custom-image .kl-custom-image__text{
+	{{_padding_and_margin.css}}
+}
+{% if _image_zoom.image_zoom %}
+#{{name}}.kl-custom-image .kl-custom-image__pointer{
+	background-size: {{_image_zoom.zoom_value}}%;
+	height: {{_image_zoom.height}}px;
+	width: {{_image_zoom.width}}px;
+	border-radius: {{_image_zoom.border_radius}}%;
+}
+{% endif %}
+</style>
+{% end_require_css %}

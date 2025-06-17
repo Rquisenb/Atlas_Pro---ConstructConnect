@@ -1,0 +1,9 @@
+{
+  "global" : false,
+  "content_types" : [ "LANDING_PAGE", "SITE_PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "host_template_types" : [ "PAGE", "BLOG_POST", "BLOG_LISTING" ],
+  "module_id" : 186299869579,
+  "label" : "Custom Rich Text",
+  "icon" : "https://f.hubspotusercontent40.net/hubfs/8071749/Custom%20rich%20text.svg",
+  "is_available_for_new_content" : true
+}

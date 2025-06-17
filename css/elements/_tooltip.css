@@ -1,0 +1,50 @@
+.kl-tooltip {
+  position: relative;
+}
+
+.kl-tooltip > div {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 100%;
+  min-width: 120px;
+  left: -22px;
+  width: max-content;
+  display: block;
+  max-width: 360px;
+  border-radius: 6px;
+  padding: 20px 16px;
+  margin-top: 12px;
+  background-color: white;
+  z-index: 9;
+  box-shadow: 0 8px 40px 0px #e6e6e6;
+}
+
+.kl-tooltip > div:after {
+  content: ' ';
+  position: absolute;
+  bottom: 100%;
+  /* At the top of the tooltip */
+  left: 32px;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent white transparent;
+}
+
+.kl-tooltip:hover > div {
+  visibility: visible;
+  opacity: 1;
+}
+
+.kl-tooltip--dark > div {
+  background-color: black;
+}
+
+.kl-tooltip--dark > div h1, .kl-tooltip--dark > div h2, .kl-tooltip--dark > div h3, .kl-tooltip--dark > div h4, .kl-tooltip--dark > div h5, .kl-tooltip--dark > div h6, .kl-tooltip--dark > div p {
+  color: white;
+}
+
+.kl-tooltip--dark > div:after {
+  border-color: transparent transparent black transparent;
+}

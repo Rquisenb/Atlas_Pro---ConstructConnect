@@ -1,0 +1,31 @@
+<!--
+  templateType: membership_login_page
+  isAvailableForNewContent: true
+  label: Atlas - membership login
+  screenshotPath: ../../images/template-previews/membership-login.png
+-->
+{% extends '../layouts/base.html' %}
+
+{% block body %}
+<main class="body-container-wrapper">
+
+  <section class="systems-page systems-page--membership">
+
+    <div class="systems-page__content">
+      <h1>Sign in to view this page</h1>
+      <p>This page is only available to people who have been given access.</p>
+      <div class="form-container">
+        {% member_login 'my_login'
+          email_label= 'Email',
+          password_label= 'Password',
+          remember_me_label= 'Stay signed in',
+          reset_password_text= 'Forgot your password?',
+          submit_button_text= 'SIGN IN'
+        %}
+      </div>
+    </div>
+
+  </section>
+
+</main>
+{% endblock %}

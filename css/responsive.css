@@ -1,0 +1,87 @@
+@media screen and (max-width: 767px) {
+  html {
+    font-size: {{theme.typography.mobile_typography.body_text.size}}{{theme.typography.body_text.size_unit}};
+  }
+}
+
+@media screen and (max-width: 767px) {
+  body {
+    font-family: {{theme.typography.mobile_typography.body_text.font}}, sans-serif;
+    color: {{theme.typography.mobile_typography.body_text.color}};
+  }
+}
+
+/* Paragraphs */
+@media screen and (max-width: 767px) {
+  p {
+    font-size: {{theme.typography.mobile_typography.body_text.size}}{{theme.typography.body_text.size_unit}};
+    line-height: {{theme.typography.mobile_typography.body_line_height}};
+  }
+}
+
+/* Headings */
+@media screen and (max-width: 767px) {
+  h1 {
+    font-family: {{theme.typography.mobile_typography.heading_one.font}}, sans-serif;
+    font-size: {{theme.typography.mobile_typography.heading_one.size}}{{theme.typography.mobile_typography.heading_one.size_unit}};
+    color: {{theme.typography.mobile_typography.heading_one.color}};
+    font-style: {{theme.typography.mobile_typography.heading_one.styles.get("font-style")}};
+    font-weight: {{theme.typography.mobile_typography.heading_one.styles.get("font-weight")}};
+    text-decoration: {{theme.typography.mobile_typography.heading_one.styles.get("text-decoration")}};
+  }
+}
+
+@media screen and (max-width: 767px) {
+  h2 {
+    font-family: {{theme.typography.mobile_typography.heading_two.font}}, sans-serif;
+    font-size: {{theme.typography.mobile_typography.heading_two.size}}{{theme.typography.mobile_typography.heading_two.size_unit}};
+    color: {{theme.typography.mobile_typography.heading_two.color}};
+    font-style: {{theme.typography.mobile_typography.heading_two.styles.get("font-style")}};
+    font-weight: {{theme.typography.mobile_typography.heading_two.styles.get("font-weight")}};
+    text-decoration: {{theme.typography.mobile_typography.heading_two.styles.get("text-decoration")}};
+  }
+}
+
+@media screen and (max-width: 767px) {
+  h3 {
+    font-family: {{theme.typography.mobile_typography.heading_three.font}}, sans-serif;
+    font-size: {{theme.typography.mobile_typography.heading_three.size}}{{theme.typography.mobile_typography.heading_three.size_unit}};
+    color: {{theme.typography.mobile_typography.heading_three.color}};
+    font-style: {{theme.typography.mobile_typography.heading_three.styles.get("font-style")}};
+    font-weight: {{theme.typography.mobile_typography.heading_three.styles.get("font-weight")}};
+    text-decoration: {{theme.typography.mobile_typography.heading_three.styles.get("text-decoration")}};
+  }
+}
+
+@media screen and (max-width: 767px) {
+  h4 {
+    font-family: {{theme.typography.mobile_typography.heading_four.font}}, sans-serif;
+    font-size: {{theme.typography.mobile_typography.heading_four.size}}{{theme.typography.mobile_typography.heading_four.size_unit}};
+    color: {{theme.typography.mobile_typography.heading_four.color}};
+    font-style: {{theme.typography.mobile_typography.heading_four.styles.get("font-style")}};
+    font-weight: {{theme.typography.mobile_typography.heading_four.styles.get("font-weight")}};
+    text-decoration: {{theme.typography.mobile_typography.heading_four.styles.get("text-decoration")}};
+  }
+}
+
+@media screen and (max-width: 767px) {
+  h5 {
+    font-family: {{theme.typography.mobile_typography.heading_five.font}}, sans-serif;
+    font-size: {{theme.typography.mobile_typography.heading_five.size}}{{theme.typography.mobile_typography.heading_five.size_unit}};
+    color: {{theme.typography.mobile_typography.heading_five.color}};
+    font-style: {{theme.typography.mobile_typography.heading_five.styles.get("font-style")}};
+    font-weight: {{theme.typography.mobile_typography.heading_five.styles.get("font-weight")}};
+    text-decoration: {{theme.typography.mobile_typography.heading_five.styles.get("text-decoration")}};
+  }
+}
+
+@media screen and (max-width: 767px) {
+  h6 {
+    font-family: {{theme.typography.mobile_typography.heading_six.font}}, sans-serif;
+    font-size: {{theme.typography.heading_six.size}}{{theme.typography.mobile_typography.heading_six.size_unit}};
+    color: {{theme.typography.mobile_typography.heading_six.color}};
+    font-style: {{theme.typography.mobile_typography.heading_six.styles.get("font-style")}};
+    font-weight: {{theme.typography.mobile_typography.heading_six.styles.get("font-weight")}};
+    text-decoration: {{theme.typography.mobile_typography.heading_six.styles.get("text-decoration")}};
+  }
+}

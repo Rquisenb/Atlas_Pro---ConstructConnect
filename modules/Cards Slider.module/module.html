@@ -1,0 +1,52 @@
+{% import '../macros.html' %}
+
+{% call render_animation(module.animation) %}
+<div class="kl-cards-slider-wrapper">
+  <div class="kl-cards-slider">
+    {% if module.sections|length > 1 %}
+    <span class="kl-cards-slider__arrow kl-cards-slider__arrow--prev">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 12"><path d="M1.0543 5.8945a.75.75 0 000 1.0606l4.773 4.773a.75.75 0 101.0606-1.0607L2.6453 6.4248l4.2426-4.2426a.75.75 0 00-1.0606-1.0607l-4.773 4.773zm13.9394-.2197H1.5847v1.5h13.409v-1.5z" /></svg>
+    </span>
+    {% endif %}
+    {% for s in module.sections %}
+      <div class="kl-cards-slider__card{{ loop.first ? ' kl-cards-slider__card--active' : '' }}">
+
+        <div class="kl-cards-slider__header">
+
+          {% if s.image.src %}
+            <div class="kl-cards-slider__image">
+              {% set sizeAttrs = 'width="{{ s.image.width }}" height="{{ s.image.height }}"' %}
+              {% if s.image.size_type == 'auto' %}
+                {% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+              {% elif s.image.size_type == 'auto_custom_max' %}
+                {% set sizeAttrs = 'width="100%" height="auto" style="max-width: {{ s.image.max_width }}px; max-height: {{ s.image.max_height }}px"' %}
+              {% endif %}
+              {% set loadingAttr = s.image.loading != 'disabled' ? 'loading="{{ s.image.loading }}"' : '' %}
+              <img src="{{ s.image.src }}" alt="{{ s.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+            </div>
+          {% endif %}
+
+          {% if s.header.type != 'none' %}
+            <div class="kl-cards-slider__button">
+              {{ render_button(s.header) }}
+            </div>
+          {% endif %}
+
+        </div>
+
+        <div class="kl-cards-slider__content">
+          {% for rich_text in s.content %}
+            <div>{{ rich_text }}</div>
+          {% endfor %}
+        </div>
+
+      </div>
+    {% endfor %}
+    {% if module.sections|length > 1 %}
+    <span class="kl-cards-slider__arrow kl-cards-slider__arrow--next">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 12"><path d="M14.7303 6.9551a.75.75 0 000-1.0606l-4.773-4.773a.75.75 0 10-1.0606 1.0607l4.2426 4.2426-4.2426 4.2426a.75.75 0 001.0607 1.0607l4.7729-4.773zM.791 7.1748H14.2v-1.5H.791v1.5z"/></svg>
+    </span>
+    {% endif %}
+  </div>
+</div>
+{% endcall %}

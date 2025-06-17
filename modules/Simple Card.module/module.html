@@ -1,0 +1,56 @@
+{% import '../macros.html' %}
+
+{% set attrs = {} %}
+{% set style = '' %}
+
+{% if module.background.overwrite %}
+  {% set style = style ~ 'background-color: ' ~ render_color(module.background.color) ~ ';' %}
+{% endif %}
+
+{% if module.box_shadow.overwrite %}
+  {% set style = style ~ 'box-shadow: 0px 11px 30px ' ~ render_color(module.box_shadow.color) ~ ';' %}
+{% endif %}
+
+{% if module.border_radius.overwrite %}
+  {% set style = style ~ 'border-radius: ' ~ module.border_radius.value ~ 'px;' %}
+{% endif %}
+
+{% if style %}
+  {% set attrs = { 'style': style } %}
+{% endif %}
+
+{% call render_animation(module.animation) %}
+<div class="kl-card" {{ attrs|xmlattr }}>
+
+  {%- if module.image.src -%}
+    {% call render_link(module.button.anchor) %}
+      <div class="kl-card__image">{{ render_image(module.image) }}</div>
+    {% endcall %}
+  {%- endif -%}
+
+  {% if module.preheader %}
+    <span class="kl-card__preheader">
+      {{ module.preheader }}
+    </span>
+  {% endif %}
+  <div class="kl-card__content">
+    {{ module.content }}
+  </div>
+
+  {{ render_button(module.button) }}
+
+  {% if module.form.enabled %}
+    <div class="kl-card__form">
+      {% form
+        form_to_use="{{ module.form.selector.form_id }}"
+        response_response_type="{{ module.form.selector.response_type }}"
+        response_message="{{ module.form.selector.message }}"
+        response_redirect_id="{{ module.form.selector.redirect_id }}"
+        response_redirect_url="{{module.form.selector.redirect_url}}"
+        gotowebinar_webinar_key="{{ module.form.selector.gotowebinar_webinar_key }}"
+      %}
+    </div>
+  {% endif %}
+
+</div>
+{% endcall %}

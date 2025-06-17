@@ -1,0 +1,115 @@
+.kl-timeline__entry {
+  position: relative;
+  padding-bottom: 50px;
+}
+
+.kl-timeline__entry h1, .kl-timeline__entry h2, .kl-timeline__entry h3, .kl-timeline__entry h4, .kl-timeline__entry h5 {
+  color: {{theme.global_colors.primary_color.color}};
+}
+
+.kl-timeline__entry p {
+  margin: 0 0 1rem;
+}
+
+.kl-timeline__entry--odd {
+  margin-right: 50%;
+  padding-right: 50px;
+  text-align: right;
+}
+
+.kl-timeline__entry--odd:before {
+  content: '';
+  background-color: #1C2630;
+  display: block;
+  position: absolute;
+  top: 10px;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  transform: translateX(4px);
+  right: 0;
+}
+
+@media screen and (max-width: 580px) {
+  .kl-timeline__entry--odd:before {
+    transform: translateX(-5px);
+    left: 0;
+  }
+}
+
+.kl-timeline__entry--odd:after {
+  content: '';
+  background-color: #1C2630;
+  display: block;
+  position: absolute;
+  top: 10px;
+  width: 1px;
+  height: 100%;
+  right: 0;
+}
+
+@media screen and (max-width: 580px) {
+  .kl-timeline__entry--odd:after {
+    left: 0;
+  }
+}
+
+.kl-timeline__entry--even {
+  margin-left: 50%;
+  padding-left: 50px;
+}
+
+.kl-timeline__entry--even:before {
+  content: '';
+  background-color: #1C2630;
+  display: block;
+  position: absolute;
+  top: 10px;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  transform: translateX(-5px);
+  left: -1px;
+}
+
+@media screen and (max-width: 580px) {
+  .kl-timeline__entry--even:before {
+    transform: translateX(-5px);
+    left: 0;
+  }
+}
+
+.kl-timeline__entry--even:after {
+  content: '';
+  background-color: #1C2630;
+  display: block;
+  position: absolute;
+  top: 10px;
+  width: 1px;
+  height: 100%;
+  left: -1px;
+}
+
+@media screen and (max-width: 580px) {
+  .kl-timeline__entry--even:after {
+    left: 0;
+  }
+}
+
+.kl-timeline__entry--last:after {
+  display: none;
+}
+
+@media screen and (max-width: 580px) {
+  .kl-timeline__entry {
+    margin: 0;
+    padding: 0 0 50px 50px;
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .kl-timeline__entry {
+    padding: 0 0 20px 20px;
+  }
+}

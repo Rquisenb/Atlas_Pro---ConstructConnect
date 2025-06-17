@@ -1,0 +1,133 @@
+.kl-pricing {
+  display: flex;
+  align-items: flex-start;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .kl-pricing {
+    display: block;
+  }
+}
+
+.kl-pricing__card {
+  position: relative;
+  padding: 36px 32px;
+  border: 0.5px solid rgba({{theme.cards.border_color.color|convert_rgb}}, {{theme.cards.border_color.opacity != null ? theme.cards.border_color.opacity / 100 : 1}});
+  box-shadow: 0px 11px 30px rgba({{theme.cards.box_shadow_light.color|convert_rgb}}, {{theme.cards.box_shadow_light.opacity != null ? theme.cards.box_shadow_light.opacity / 100 : 1}});
+  background-color: rgba({{theme.cards.background.color|convert_rgb}}, {{theme.cards.background.opacity != null ? theme.cards.background.opacity / 100 : 1}});
+  border-radius: {{theme.cards.border_radius}}px;
+  flex-basis: 346px;
+  flex-grow: 1;
+  transition: box-shadow .25s ease-in-out;
+}
+
+.kl-pricing__card--featured {
+  box-shadow: 0px 11px 30px rgba({{theme.cards.box_shadow.color|convert_rgb}}, {{theme.cards.box_shadow.opacity != null ? theme.cards.box_shadow.opacity / 100 : 1}});
+}
+
+.kl-pricing__card:hover {
+  box-shadow: 0px 11px 30px rgba({{theme.cards.box_shadow.color|convert_rgb}}, {{theme.cards.box_shadow.opacity != null ? theme.cards.box_shadow.opacity / 100 : 1}});
+}
+
+.kl-pricing__card + .kl-pricing__card {
+  margin-left: 72px;
+}
+
+@media screen and (max-width: 1024px) {
+  .kl-pricing__card + .kl-pricing__card {
+    margin-left: 16px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .kl-pricing__card + .kl-pricing__card {
+    margin: 24px 0 0;
+  }
+}
+
+.kl-pricing__badge {
+  font-family: {{theme.global_fonts.secondary_font.font}}, sans-serif;
+  font-size: 0.625rem;
+  font-weight: bold;
+  line-height: 1;
+  min-width: 120px;
+  padding: 10px 12px;
+  border-radius: 40px;
+  background-color: #EBF1FF;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.kl-pricing__icon {
+  height: 28px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin: 0 0 1.5rem;
+}
+
+.kl-pricing__icon img {
+  max-height: 100%;
+  display: block;
+}
+
+.kl-pricing__price {
+  color: {{theme.global_colors.primary_color.color}};
+}
+
+.kl-pricing__price h1, .kl-pricing__price h2, .kl-pricing__price h3, .kl-pricing__price h4, .kl-pricing__price h5, .kl-pricing__price h6 {
+  color: inherit;
+}
+
+.kl-pricing__description p {
+  font-size: 0.875rem;
+  margin: 0 0 0.75rem;
+}
+
+.kl-pricing__features {
+  text-align: left;
+  list-style: none;
+  margin: 0 0 2.625rem;
+  padding: 0;
+}
+
+.kl-pricing__features li {
+  font-size: 0.875rem;
+  margin: 0 0 1rem;
+  display: flex;
+}
+
+.kl-pricing__bullet {
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  margin: 2px 0.75rem 0 0;
+  flex-shrink: 0;
+}
+
+.kl-pricing__bullet img {
+  display: block;
+}
+
+.kl-pricing__button .button_cta {
+  width: 100%;
+}
+
+.kl-pricing__button .button_cta a {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.kl-pricing__button a {
+  width: 100%;
+}
+
+.kl-pricing hr {
+  margin: 1.75rem 0;
+  color: #F3F3F3;
+  background-color: #F3F3F3;
+  height: 2px;
+}

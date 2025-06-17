@@ -1,0 +1,150 @@
+{% import '../macros.html' %}
+
+{# Macro to render an image width object fit field options #}
+{% macro render_image_features(image) -%}
+
+  {% set className = 'kl-features-03__image' %}
+  {% set classes = [className] %}
+
+  {% set attrs = {} %}
+  {% set sizeAttrs = {} %}
+  {% set styleAttr = [] %}
+
+  {% if image.fit == 'cover' %}
+    {% do classes.append(className ~ '--cover') %}
+  {% elif image.fit == 'contain' %}
+    {% do classes.append(className ~ '--contain') %}
+  {% endif %}
+
+  {% set objectPosition = [] %}
+
+  {# Horizontal position #}
+  {% if image.horizontal_position == 'left' %}
+    {% do classes.append(className ~ '--left') %}
+  {% elif image.horizontal_position == 'center' %}
+    {% do classes.append(className ~ '--center') %}
+  {% elif image.horizontal_position == 'right' %}
+    {% do classes.append(className ~ '--right') %}
+  {% endif %}
+
+  {# Vertical position #}
+  {% if image.vertical_position == 'top' %}
+    {% do classes.append(className ~ '--top') %}
+  {% elif image.vertical_position == 'center' %}
+    {% do classes.append(className ~ '--middle') %}
+  {% elif image.vertical_position == 'bottom' %}
+    {% do classes.append(className ~ '--bottom') %}
+  {% endif %}
+
+  {% set sizeAttrs = { width: image.image.width, height: image.image.height } %}
+
+  {% if image.image.size_type == 'auto' %}
+    {% set sizeAttrs = { style: 'max-width: 100%; height: auto;' } %}
+    {% do styleAttr.append('max-width: 100%;') %}
+    {% do styleAttr.append('height: auto;') %}
+
+  {% elif image.image.size_type == 'auto_custom_max' %}
+    {% set sizeAttrs = { width: '100%', height: 'auto' } %}
+    {% do styleAttr.append('max-width: ' ~ image.image.max_width ~ 'px;') %}
+    {% do styleAttr.append('max-height: ' ~ image.image.max_height ~ 'px;') %}
+
+  {% endif %}
+
+  {% do attrs.update(sizeAttrs) %}
+  {% do attrs.update({ style: styleAttr|join(' ') }) %}
+
+  <div class="{{ classes|join(' ') }}">
+    <img src="{{ image.image.src }}" alt="{{ image.image.alt }}" {{ attrs|xmlattr }} />
+  </div>
+
+{%- endmacro %}
+
+{% call render_animation(module.animation) %}
+<div class="kl-features-04" id="{{name}}">
+	<div class="kl-features-04__wrapper">
+		<div class="kl-features-04__content">
+			<div class="kl-features-04__content-title">
+				{{ kl_rich_text(module.title_text)}}
+			</div>
+			<div class="kl-features-04__content-list">
+				{% for section in module.sections %}
+				<div class="kl-features-04__content-list-item" data-id="{{loop.index0}}">
+					<div class="kl-features-04__content-list-item__wrapper">
+						<div class="kl-features-04__content-list-item__image">
+							{% if section.section_logo.active_logo %}
+							<div class="kl-features-04__logo-inactive">
+								{{ render_image(section.section_logo.logo) }}
+							</div>
+
+							<div class="kl-features-04__logo-active">
+								{{ render_image(section.section_logo.logo_active) }}
+							</div>
+							{% else %}
+							<div class="kl-features-04__logo">
+								{{ render_image(section.section_logo.logo) }}
+							</div>
+							{% endif %}
+						</div>
+						<div class="kl-features-04__content-list-item__text">
+							<h3>{{section.title}}</h3>
+						</div>
+					</div>
+					<div class="kl-features-04__content-list-item responsive">
+						{{ render_image_features(section.image)}}
+						{{ section.content }}
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+		<div class="kl-features-04__card">
+			<div class="kl-features-04__card-wrapper">
+				{% for section in module.sections %}
+				<div class="kl-features-04__card-item" data-id="{{loop.index0}}">
+					<div class="kl-features-04__card-image">
+						{{ render_image_features(section.image)}}
+					</div>
+					{% if section.content || section.primary_cta.type != 'none' || section.secondary_cta.type != 'none' %}
+					<div class="kl-features-04__card-text">
+						{{ section.content }}
+						<div class="kl-features-04__card-buttons">
+							{{ render_button(section.primary_cta)}}
+							{{ render_button(section.secondary_cta)}}
+						</div>
+					</div>
+					{% endif %}
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>
+{% endcall %}
+{% require_css%}
+<style>
+	{% if module.background_color.overwrite_background %}
+	#{{name}} .kl-features-04__content-list-item.active, #{{name}} .kl-features-04__content-list-item:hover{
+		background-color: {{render_color(module.background_color.background_color)}};
+	}
+	{% endif %}
+	{% if module.font_color.overwrite_font %}
+	#{{name}} .kl-features-04__content-list-item.active h3, #{{name}} .kl-features-04__content-list-item:hover h3{
+		color: {{render_color(module.font_color.font_color)}};
+	}
+	{% endif %}
+
+	{% if module.drop_shadow.overwrite_dropshadow %}
+	#{{name}} .kl-features-04__card{
+		box-shadow: 0 11px 30px {{render_color(module.drop_shadow.dropshadow_color)}};
+	}
+	{% endif %}
+	{% if module.border.overwrite_border %}
+	#{{name}} .kl-features-04__card{
+		border-style: solid;
+		border-radius: {{module.border.border_radius}}px;
+		border-width: {{module.border.border_width}}px;
+		border-color: {{render_color(module.border.border_color)}};
+	}
+	{% endif %}
+</style>
+{% end_require_css%}

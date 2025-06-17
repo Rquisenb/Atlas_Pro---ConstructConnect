@@ -1,0 +1,25 @@
+{% import '../macros.html' %}
+
+<div class="blog-subscribe" style="background-color: {{ render_color(module.style.new_background_color) }};">
+  <div class="blog-subscribe__wrapper content-wrapper">
+    <div class="blog-subscribe__header">
+      {{ module.header }}
+    </div>
+    <div class="blog-subscribe__form">
+      {% if module.title %}
+        {% blog_subscribe "blog_subscribe"
+          select_blog='{{ module.blog }}',
+          title='{{ module.title }}',
+          response_message='{{ module.response }}'
+        %}
+      {% else %}
+        {% blog_subscribe "blog_subscribe"
+          select_blog='{{ module.blog }}',
+          no_title=true,
+          response_message='{{ module.response }}'
+        %}
+      {% endif %}
+    </div>
+  </div>
+</div>
+

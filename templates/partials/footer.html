@@ -1,0 +1,25 @@
+<!--
+  templateType: global_partial
+  label: Footer
+-->
+
+{% if theme.footer.type == 'normal' -%}
+
+  {% module "Footer" path="../../modules/Footer", label="Footer",
+    logo={ image: { 'src': get_asset_url('../../images/Logo-White.svg') } }
+  %}
+
+{% elif theme.footer.type == 'simple' %}
+
+  {% module "Simple Footer" path="../../modules/Simple Footer", label="Footer" %}
+
+{% else%}
+  {% dnd_area 'dnd_area_footer', label='Footer section' %}
+    {% dnd_section full_width=True, padding={ top: 0, right: 0, bottom: 0, left: 0  } %}
+
+      {% dnd_module path="../../modules/Simple Footer", label="Navbar with Menu" %}
+      {% end_dnd_module %}
+
+    {% end_dnd_section %}
+  {% end_dnd_area %}
+{% endif %}

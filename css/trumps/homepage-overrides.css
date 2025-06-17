@@ -1,0 +1,109 @@
+@media (max-width:400px) {
+  .kl-hero-02__content {
+    padding:0 20px
+  }
+  .kl-hero-02__content h1 {
+    font-size:36px
+  }
+  .kl-hero-02 {
+    padding:40px 0 300px
+  }
+  .dnd_area-row-0-background-layers {
+    background-position:70% bottom!important
+  }
+}
+.number-showcase {
+  display:flex;
+  flex-direction:column;
+  height:100%;
+  padding-top:40px
+}
+.number-showcase h4 {
+  font-size:22px!important
+}
+.number-showcase-heading {
+  font-family:montserrat,arial,helvetica,sans-serif!important;
+  font-size:6rem;
+  font-weight:700!important;
+  line-height:1;
+  margin:0 0 30px
+}
+.number-showcase-footer {
+  font-size:2em;
+  margin-top:auto;
+  text-align:right
+}
+.fancy-flip-card-content>div {
+  height:100%
+}
+@media screen and (max-width:1024px) {
+  .kl-hero-02__content {
+    padding:0 30px
+  }
+}
+@media screen and (max-width:768px) {
+  .kl-hero-02__content {
+    padding:0 20px
+  }
+  .row-depth-1.dnd_area-row-0-background-image {
+    background-position-x:75%!important
+  }
+}
+@media screen and (max-width:1024px) {
+  .kl-hero-02 h1 {
+    font-size:5vw
+  }
+  .kl-features-03__titles {
+    gap:20px
+  }
+}
+.kl-features-03__titles {
+  gap:30px
+}
+.kl-features-03__titles li {
+  background:#fff;
+  border:2px solid #dad8d7;
+  border-radius:10px;
+  flex:1;
+  padding:9px 18px;
+  position:relative;
+  text-align:center
+}
+
+.kl-features-03__titles li h4 {font-weight:bold}
+
+.kl-features-03__titles li:hover {
+  background:#f4f4f4
+}
+.kl-features-03__titles li.active,
+.kl-features-03__titles li.active:hover {
+  background:#ed7800;
+  border-color:#ed7800
+}
+.kl-features-03__titles li.active:after {
+  background:#ed7000;
+  bottom:-10px;
+  content:"";
+  height:20px;
+  left:calc(50% - 10px);
+  position:absolute;
+  transform:rotate(45deg);
+  width:20px
+}
+.kl-features-03__titles li.active h4:after {
+  display:none!important
+}
+.kl-features-03__titles li.active>h4 {
+  color:#fff!important
+}
+.kl-features-03__section {
+  background:#fff;
+  border-radius:4px
+}
+blockquote.large p {
+  font-family:montserrat,arial,helvetica,sans-serif;
+  font-size:24px
+}
+.kl-featured-card {
+  box-shadow:none
+}

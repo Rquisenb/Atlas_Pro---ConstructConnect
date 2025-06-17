@@ -1,0 +1,43 @@
+<!--
+  templateType: section
+  isAvailableForNewContent: true
+  label: Resources Three Cards
+  description: "Resources Three Cards Section"
+  screenshotPath: ../images/section-previews/resources-three-cards.png
+-->
+{% dnd_section background_color={ r: 243, g: 243, b: 243 } %}
+
+  {% dnd_module path='../modules/Simple Card', offset=0, width=4,
+      preheader='GUIDE',
+      button={ text: 'DOWNLOAD', style: 'arrow' }
+  %}
+
+    {% module_attribute 'content' %}
+      <h4>5 steps to managing effective KPIs for your SaaS marketing team</h4>
+    {% end_module_attribute %}
+
+  {% end_dnd_module %}
+
+  {% dnd_module path='../modules/Simple Card', offset=4, width=4, 
+    preheader='WEBINAR',
+    button={ text: 'DOWNLOAD', style: 'arrow' }
+  %}
+
+    {% module_attribute 'content' %}
+      <h4>How to create your first marketing dashboard</h4>
+    {% end_module_attribute %}
+
+  {% end_dnd_module %}
+
+  {% dnd_module path='../modules/Simple Card', offset=8, width=4,
+    preheader='WEBINAR',
+    button={ text: 'DOWNLOAD', style: 'arrow' }
+  %}
+
+    {% module_attribute 'content' %}
+      <h4>How to create your first marketing dashboard</h4>
+    {% end_module_attribute %}
+
+  {% end_dnd_module %}
+
+{% end_dnd_section %}

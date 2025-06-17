@@ -1,0 +1,27 @@
+<!--
+ templateType: section
+ label: FAQ Section
+ description: "Section used for FAQ in basic landing page"
+ isAvailableForNewContent: true
+ screenshotPath: ../images/section-previews/faq-section.png
+-->
+{% dnd_section %}
+
+  {% dnd_column padding={ 'left': 0, 'right': 0 }%}
+
+    {% dnd_row padding={ 'bottom': 48 } %}
+      {% dnd_module path='../modules/Custom Rich Text', preheader='FAQ' %}
+      {% module_attribute 'content' %}
+        <h2>Need clarification?</h2>
+      {% end_module_attribute %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+
+    {% dnd_row %}
+      {% dnd_module path='../modules/FAQ' %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+
+  {% end_dnd_column %}
+
+{% end_dnd_section %}

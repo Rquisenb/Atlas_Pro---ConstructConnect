@@ -1,0 +1,15 @@
+[ {
+  "id" : "d7ddf017-e25b-146a-f257-9407a6ac83b1",
+  "name" : "anchor",
+  "label" : "Anchor",
+  "required" : true,
+  "locked" : false,
+  "validation_regex" : "[^\\s]*",
+  "validation_error_message" : "",
+  "placeholder" : "about-us",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : ""
+} ]

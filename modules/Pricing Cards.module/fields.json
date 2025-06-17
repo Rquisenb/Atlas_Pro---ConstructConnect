@@ -1,0 +1,877 @@
+[ {
+  "id" : "74e4ecd0-460c-1894-652f-c7eae00a442a",
+  "name" : "animation",
+  "label" : "Animation on scroll",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "animation.enabled",
+    "name" : "enabled",
+    "label" : "Enabled",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "1549cd32-c29d-d91c-1407-32eb877d2589",
+    "name" : "effect",
+    "label" : "Effect",
+    "required" : true,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "fade", "Fade" ], [ "fade-up", "Fade up" ], [ "fade-down", "Fade down" ], [ "fade-left", "Fade left" ], [ "fade-right", "Fade right" ], [ "fade-up-right", "Fade up right" ], [ "fade-up-left", "Fade up left" ], [ "fade-down-right", "Fade down right" ], [ "fade-down-left", "Fade down left" ], [ "flip-up", "Flip up" ], [ "flip-down", "Flip down" ], [ "flip-left", "Flip left" ], [ "flip-right", "Flip right" ], [ "slide-up", "Slide up" ], [ "slide-down", "Slide down" ], [ "slide-left", "Slide left" ], [ "slide-right", "Slide right" ], [ "zoom-in", "Zoom in" ], [ "zoom-in-up", "Zoom in up" ], [ "zoom-in-down", "Zoom in down" ], [ "zoom-in-left", "Zoom in left" ], [ "zoom-in-right", "Zoom in right" ], [ "zoom-out", "Zoom out" ], [ "zoom-out-up", "Zoom out up" ], [ "zoom-out-down", "Zoom out down" ], [ "zoom-out-left", "Zoom out left" ], [ "zoom-out-right", "Zoom out right" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "fade-up"
+  }, {
+    "id" : "a881ff50-25b5-9c5f-48fc-b1a57d8aaa72",
+    "name" : "offset",
+    "label" : "Offset",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "min" : 0,
+    "step" : 1,
+    "suffix" : "px",
+    "type" : "number",
+    "display_width" : null,
+    "default" : 120
+  }, {
+    "id" : "8ac66be6-a7be-7760-8618-fa5459338fe2",
+    "name" : "delay",
+    "label" : "Delay",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "min" : 0,
+    "step" : 1,
+    "suffix" : "ms",
+    "type" : "number",
+    "display_width" : null,
+    "default" : 0
+  }, {
+    "id" : "156aba08-89f6-1ba7-c726-c8d98283008b",
+    "name" : "duration",
+    "label" : "Duration",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "min" : 0,
+    "step" : 1,
+    "suffix" : "ms",
+    "type" : "number",
+    "display_width" : null,
+    "default" : 400
+  }, {
+    "id" : "fd9c8c6b-3933-fe38-1936-0317acb3af84",
+    "name" : "easing",
+    "label" : "Easing",
+    "required" : true,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "linear", "Linear" ], [ "ease", "Ease" ], [ "ease-in", "Ease in" ], [ "ease-out", "Ease out" ], [ "ease-in-out", "Ease in out" ], [ "ease-in-back", "Ease in back" ], [ "ease-out-back", "Ease out back" ], [ "ease-in-out-back", "Ease in out back" ], [ "ease-in-sine", "Ease in sine" ], [ "ease-out-sine", "Ease out sine" ], [ "ease-in-out-sine", "Ease in out sine" ], [ "ease-in-quad", "Ease in quad" ], [ "ease-out-quad", "Ease out quad" ], [ "ease-in-out-quad", "Ease in out quad" ], [ "ease-in-cubic", "Ease in cubic" ], [ "ease-out-cubic", "Ease out cubic" ], [ "ease-in-out-cubic", "Ease in out cubic" ], [ "ease-in-quart", "Ease in quart" ], [ "ease-out-quart", "Ease out quart" ], [ "ease-in-out-quart", "Ease in out quart" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "ease-in-out"
+  }, {
+    "id" : "a635b0a2-5bac-f2f1-4b5c-00d9392cebaf",
+    "name" : "mirror",
+    "label" : "Mirror",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "6f28a452-eca3-4578-7486-cf04112d7b91",
+    "name" : "once",
+    "label" : "Once",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "44a08d30-02c9-4ac8-1c36-9000337d097c",
+    "name" : "anchor_placement",
+    "label" : "Anchor placement",
+    "required" : true,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "top-bottom", "Top-bottom" ], [ "top-center", "Top-center" ], [ "top-top", "Top top" ], [ "center-bottom", "Center bottom" ], [ "center-center", "Center center" ], [ "center-top", "Center top" ], [ "bottom-bottom", "Bottom bottom" ], [ "bottom-center", "Bottom center" ], [ "bottom-top", "Bottom top" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "top-bottom"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "enabled" : false,
+    "effect" : "fade-up",
+    "offset" : 120,
+    "delay" : 0,
+    "duration" : 400,
+    "easing" : "ease-in-out",
+    "mirror" : true,
+    "once" : false,
+    "anchor_placement" : "top-bottom"
+  }
+}, {
+  "id" : "cc850cf7-c584-5fdd-1c43-f3ad712de8d5",
+  "name" : "plans",
+  "label" : "Plans",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 3
+  },
+  "children" : [ {
+    "id" : "f711979c-d05b-2bef-4a0e-e2010cd96a70",
+    "name" : "header",
+    "label" : "Header",
+    "help_text" : "",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "placeholder" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Pro"
+  }, {
+    "id" : "470d67f5-ff8e-ecc7-3638-01d1d3a25a78",
+    "name" : "icon",
+    "label" : "Icon",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "disabled"
+    }
+  }, {
+    "id" : "774569a2-b6cd-03e8-9ba1-adf4c54f39cb",
+    "name" : "price",
+    "label" : "Price",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<h2>$85<span style=\"font-size: 14px;\">/mo</span></h2>"
+  }, {
+    "id" : "94edc4fd-6493-195c-42a9-6e119f77250f",
+    "name" : "description",
+    "label" : "Description",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<p>Flat fee for up to 200 users</p>\n<p>Set the foundation with all your team needs for basic data integrations.</p>"
+  }, {
+    "id" : "445bbae0-73ec-5d82-8517-7ca19c41bf15",
+    "name" : "features",
+    "label" : "Features",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : 5
+    },
+    "children" : [ {
+      "id" : "2cd81374-fd1f-728a-9489-836a25683c46",
+      "name" : "description",
+      "label" : "Description",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "placeholder" : "24/7 online support",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "24/7 online support"
+    }, {
+      "id" : "f5e6c747-af3f-a816-8c85-12fcc97db021",
+      "name" : "image",
+      "label" : "Image",
+      "required" : false,
+      "locked" : false,
+      "responsive" : true,
+      "resizable" : true,
+      "show_loading" : false,
+      "type" : "image",
+      "display_width" : null,
+      "default" : {
+        "size_type" : "auto",
+        "src" : "https://f.hubspotusercontent30.net/hubfs/8823337/Checkmark.svg",
+        "alt" : "Checkmark",
+        "loading" : "lazy",
+        "width" : 400,
+        "height" : 400,
+        "max_width" : 400,
+        "max_height" : 400
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : [ {
+      "description" : "Up to 200 users",
+      "image" : {
+        "size_type" : "auto",
+        "src" : "https://f.hubspotusercontent30.net/hubfs/8823337/Checkmark.svg",
+        "alt" : "Checkmark",
+        "loading" : "lazy",
+        "width" : 400,
+        "height" : 400,
+        "max_width" : 400,
+        "max_height" : 400
+      }
+    }, {
+      "description" : "Up to 35 automatic data pushes",
+      "image" : {
+        "size_type" : "auto",
+        "src" : "https://f.hubspotusercontent30.net/hubfs/8823337/Checkmark.svg",
+        "alt" : "Checkmark",
+        "loading" : "lazy",
+        "width" : 400,
+        "height" : 400,
+        "max_width" : 400,
+        "max_height" : 400
+      }
+    }, {
+      "description" : "Limited access to T2D3 API",
+      "image" : {
+        "size_type" : "auto",
+        "src" : "https://f.hubspotusercontent30.net/hubfs/8823337/Checkmark.svg",
+        "alt" : "Checkmark",
+        "loading" : "lazy",
+        "width" : 400,
+        "height" : 400,
+        "max_width" : 400,
+        "max_height" : 400
+      }
+    }, {
+      "description" : "Assign user-level permissions",
+      "image" : {
+        "size_type" : "auto",
+        "src" : "https://f.hubspotusercontent30.net/hubfs/8823337/Checkmark.svg",
+        "alt" : "Checkmark",
+        "loading" : "lazy",
+        "width" : 400,
+        "height" : 400,
+        "max_width" : 400,
+        "max_height" : 400
+      }
+    }, {
+      "description" : "3 solution templates",
+      "image" : {
+        "size_type" : "auto",
+        "src" : "https://f.hubspotusercontent30.net/hubfs/8823337/Checkmark.svg",
+        "alt" : "Checkmark",
+        "loading" : "lazy",
+        "width" : 400,
+        "height" : 400,
+        "max_width" : 400,
+        "max_height" : 400
+      }
+    } ]
+  }, {
+    "id" : "abb2a33b-f9c7-cd05-cb02-6cc44cb5ee52",
+    "name" : "button",
+    "label" : "Button",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "ed64997d-08d9-cac5-aa62-8f83541a39bd",
+      "name" : "type",
+      "label" : "Type",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "btn", "Button" ], [ "cta", "HubSpot CTA" ], [ "payment", "Payment" ], [ "none", "None" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "btn"
+    }, {
+      "id" : "02d46c73-19be-1a1c-980b-bee88975d314",
+      "name" : "style",
+      "label" : "Style",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "ed64997d-08d9-cac5-aa62-8f83541a39bd",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "none",
+        "property" : null,
+        "operator" : "NOT_EQUAL",
+        "access" : null
+      },
+      "display" : "select",
+      "choices" : [ [ "filled", "Filled" ], [ "outlined", "Outlined" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "filled"
+    }, {
+      "id" : "fe0321a0-5f23-bea1-829b-f9ac68ac10d4",
+      "name" : "text",
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "visibility" : {
+        "controlling_field" : "ed64997d-08d9-cac5-aa62-8f83541a39bd",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "\\b(btn|payment)\\b",
+        "property" : null,
+        "operator" : "MATCHES_REGEX",
+        "access" : null
+      },
+      "placeholder" : "TRY FOR FREE",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "TRY FOR FREE"
+    }, {
+      "id" : "39b4e83e-d338-0ab5-9973-9be466a6d798",
+      "name" : "anchor",
+      "label" : "Anchor",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "ed64997d-08d9-cac5-aa62-8f83541a39bd",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "btn",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "children" : [ {
+        "id" : "668879ea-c92c-d860-1b47-12e29ce36d31",
+        "name" : "type",
+        "label" : "Type",
+        "required" : true,
+        "locked" : false,
+        "display" : "select",
+        "choices" : [ [ "href", "Custom Link" ], [ "link", "HubSpot Link" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
+        "preset" : null,
+        "type" : "choice",
+        "display_width" : null,
+        "default" : "href"
+      }, {
+        "id" : "22b60b7b-87db-24b9-845f-4cea3d0ada65",
+        "name" : "link",
+        "label" : "Link",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : "668879ea-c92c-d860-1b47-12e29ce36d31",
+          "controlling_field_path" : null,
+          "controlling_value_regex" : "link",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null
+        },
+        "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION" ],
+        "show_advanced_rel_options" : false,
+        "type" : "link",
+        "display_width" : null,
+        "default" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }, {
+        "id" : "f310b2d9-0f98-ccbd-9ac3-d5fa6f90b467",
+        "name" : "href",
+        "label" : "Href",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "",
+        "visibility" : {
+          "controlling_field" : "668879ea-c92c-d860-1b47-12e29ce36d31",
+          "controlling_field_path" : null,
+          "controlling_value_regex" : "href",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null
+        },
+        "placeholder" : "#",
+        "allow_new_line" : false,
+        "show_emoji_picker" : false,
+        "type" : "text",
+        "display_width" : null,
+        "default" : "#"
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "display_width" : null,
+      "default" : {
+        "type" : "href",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        },
+        "href" : "#"
+      }
+    }, {
+      "id" : "3294bd5b-17d8-b78d-001c-d86b3231e35d",
+      "name" : "cta",
+      "label" : "CTA",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "ed64997d-08d9-cac5-aa62-8f83541a39bd",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "cta",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "type" : "cta",
+      "display_width" : null
+    }, {
+      "id" : "d12d6040-80d4-09f7-b004-15ec68b8d502",
+      "name" : "payment_group",
+      "label" : "Payment",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "plans.button.type",
+        "controlling_value_regex" : "payment",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "children" : [ {
+        "id" : "cb0f9e02-73ba-b355-a5b9-05f304ec99f5",
+        "name" : "payment",
+        "label" : "Payment Link",
+        "inline_help_text" : "note: Please choose a payment link for the button to generate.",
+        "required" : true,
+        "locked" : false,
+        "type" : "payment",
+        "display_width" : null,
+        "default" : { }
+      }, {
+        "id" : "3639227a-52d7-88c7-930e-fca2a1f7996e",
+        "name" : "checkout_location",
+        "label" : "Checkout location",
+        "required" : false,
+        "locked" : false,
+        "display" : "radio",
+        "choices" : [ [ "tab", "Open new Tab" ], [ "overlay", "sliding overlay" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
+        "preset" : null,
+        "type" : "choice",
+        "display_width" : null,
+        "default" : "tab"
+      }, {
+        "id" : "92b1d6de-3324-cf68-6263-7f33d5dd7729",
+        "name" : "sliding_direction",
+        "label" : "Sliding direction",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : null,
+          "controlling_field_path" : "plans.button.payment_group.checkout_location",
+          "controlling_value_regex" : "overlay",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null
+        },
+        "display" : "select",
+        "choices" : [ [ "bottom", "Bottom" ], [ "left", "Left" ], [ "right", "Right" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
+        "preset" : null,
+        "type" : "choice",
+        "display_width" : null,
+        "default" : "bottom"
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "display_width" : null,
+      "default" : {
+        "payment" : { },
+        "checkout_location" : "tab",
+        "sliding_direction" : "bottom"
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "type" : "btn",
+      "style" : "filled",
+      "text" : "TRY FOR FREE",
+      "anchor" : {
+        "type" : "href",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        },
+        "href" : "#"
+      },
+      "payment_group" : {
+        "checkout_location" : "tab"
+      }
+    }
+  }, {
+    "id" : "0eab3708-284e-87bd-5d64-4b644a278d2f",
+    "name" : "badge",
+    "label" : "Badge",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "placeholder" : "Most popular",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "display_width" : null
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "header" : "Basic",
+    "icon" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "disabled"
+    },
+    "price" : "<h2>$30<span style=\"font-size: 14px;\">/mo</span></h2>",
+    "description" : "<p>Flat fee for up to 200 users</p>\n<p>Set the foundation with all your team needs for basic data integrations.</p>",
+    "features" : [ {
+      "description" : "24/7 online support",
+      "image" : {
+        "size_type" : "auto",
+        "src" : "https://f.hubspotusercontent30.net/hubfs/8823337/Checkmark.svg",
+        "alt" : "Checkmark",
+        "loading" : "lazy",
+        "width" : 400,
+        "height" : 400,
+        "max_width" : 400,
+        "max_height" : 400
+      }
+    }, {
+      "description" : "24/7 online support",
+      "image" : {
+        "size_type" : "auto",
+        "src" : "https://f.hubspotusercontent30.net/hubfs/8823337/Checkmark.svg",
+        "alt" : "Checkmark",
+        "loading" : "lazy",
+        "width" : 400,
+        "height" : 400,
+        "max_width" : 400,
+        "max_height" : 400
+      }
+    }, {
+      "description" : "24/7 online support",
+      "image" : {
+        "size_type" : "auto",
+        "src" : "https://f.hubspotusercontent30.net/hubfs/8823337/Checkmark.svg",
+        "alt" : "Checkmark",
+        "loading" : "lazy",
+        "width" : 400,
+        "height" : 400,
+        "max_width" : 400,
+        "max_height" : 400
+      }
+    }, {
+      "description" : "24/7 online support",
+      "image" : {
+        "size_type" : "auto",
+        "src" : "https://f.hubspotusercontent30.net/hubfs/8823337/Checkmark.svg",
+        "alt" : "Checkmark",
+        "loading" : "lazy",
+        "width" : 400,
+        "height" : 400,
+        "max_width" : 400,
+        "max_height" : 400
+      }
+    }, {
+      "description" : "24/7 online support",
+      "image" : {
+        "size_type" : "auto",
+        "src" : "https://f.hubspotusercontent30.net/hubfs/8823337/Checkmark.svg",
+        "alt" : "Checkmark",
+        "loading" : "lazy",
+        "width" : 400,
+        "height" : 400,
+        "max_width" : 400,
+        "max_height" : 400
+      }
+    } ],
+    "button" : {
+      "type" : "btn",
+      "style" : "filled",
+      "text" : "TRY FOR FREE",
+      "anchor" : {
+        "type" : "href",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        },
+        "href" : "#"
+      },
+      "payment_group" : {
+        "checkout_location" : "tab"
+      }
+    }
+  }, {
+    "header" : "Pro",
+    "icon" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "disabled"
+    },
+    "price" : "<h2>$85<span style=\"font-size: 14px;\">/mo</span></h2>",
+    "description" : "<p>Flat fee for up to 200 users</p>\n<p>Set the foundation with all your team needs for basic data integrations.</p>",
+    "features" : [ {
+      "description" : "24/7 online support",
+      "image" : {
+        "size_type" : "auto",
+        "src" : "https://f.hubspotusercontent30.net/hubfs/8823337/Checkmark.svg",
+        "alt" : "Checkmark",
+        "loading" : "lazy",
+        "width" : 400,
+        "height" : 400,
+        "max_width" : 400,
+        "max_height" : 400
+      }
+    }, {
+      "description" : "24/7 online support",
+      "image" : {
+        "size_type" : "auto",
+        "src" : "https://f.hubspotusercontent30.net/hubfs/8823337/Checkmark.svg",
+        "alt" : "Checkmark",
+        "loading" : "lazy",
+        "width" : 400,
+        "height" : 400,
+        "max_width" : 400,
+        "max_height" : 400
+      }
+    }, {
+      "description" : "24/7 online support",
+      "image" : {
+        "size_type" : "auto",
+        "src" : "https://f.hubspotusercontent30.net/hubfs/8823337/Checkmark.svg",
+        "alt" : "Checkmark",
+        "loading" : "lazy",
+        "width" : 400,
+        "height" : 400,
+        "max_width" : 400,
+        "max_height" : 400
+      }
+    }, {
+      "description" : "24/7 online support",
+      "image" : {
+        "size_type" : "auto",
+        "src" : "https://f.hubspotusercontent30.net/hubfs/8823337/Checkmark.svg",
+        "alt" : "Checkmark",
+        "loading" : "lazy",
+        "width" : 400,
+        "height" : 400,
+        "max_width" : 400,
+        "max_height" : 400
+      }
+    }, {
+      "description" : "24/7 online support",
+      "image" : {
+        "size_type" : "auto",
+        "src" : "https://f.hubspotusercontent30.net/hubfs/8823337/Checkmark.svg",
+        "alt" : "Checkmark",
+        "loading" : "lazy",
+        "width" : 400,
+        "height" : 400,
+        "max_width" : 400,
+        "max_height" : 400
+      }
+    } ],
+    "button" : {
+      "type" : "btn",
+      "style" : "filled",
+      "text" : "TRY FOR FREE",
+      "anchor" : {
+        "type" : "href",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        },
+        "href" : "#"
+      },
+      "payment_group" : {
+        "checkout_location" : "tab"
+      }
+    },
+    "badge" : "Most popular"
+  }, {
+    "header" : "Enterprise",
+    "icon" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "disabled"
+    },
+    "price" : "<h2>Custom</h2>",
+    "description" : "<p>Get in touch for a custom quote</p>\n<p>Set the foundation with all your team needs for basic data integrations.</p>",
+    "features" : [ {
+      "description" : "24/7 online support",
+      "image" : {
+        "size_type" : "auto",
+        "src" : "https://f.hubspotusercontent30.net/hubfs/8823337/Checkmark.svg",
+        "alt" : "Checkmark",
+        "loading" : "lazy",
+        "width" : 400,
+        "height" : 400,
+        "max_width" : 400,
+        "max_height" : 400
+      }
+    }, {
+      "description" : "24/7 online support",
+      "image" : {
+        "size_type" : "auto",
+        "src" : "https://f.hubspotusercontent30.net/hubfs/8823337/Checkmark.svg",
+        "alt" : "Checkmark",
+        "loading" : "lazy",
+        "width" : 400,
+        "height" : 400,
+        "max_width" : 400,
+        "max_height" : 400
+      }
+    }, {
+      "description" : "24/7 online support",
+      "image" : {
+        "size_type" : "auto",
+        "src" : "https://f.hubspotusercontent30.net/hubfs/8823337/Checkmark.svg",
+        "alt" : "Checkmark",
+        "loading" : "lazy",
+        "width" : 400,
+        "height" : 400,
+        "max_width" : 400,
+        "max_height" : 400
+      }
+    }, {
+      "description" : "24/7 online support",
+      "image" : {
+        "size_type" : "auto",
+        "src" : "https://f.hubspotusercontent30.net/hubfs/8823337/Checkmark.svg",
+        "alt" : "Checkmark",
+        "loading" : "lazy",
+        "width" : 400,
+        "height" : 400,
+        "max_width" : 400,
+        "max_height" : 400
+      }
+    }, {
+      "description" : "24/7 online support",
+      "image" : {
+        "size_type" : "auto",
+        "src" : "https://f.hubspotusercontent30.net/hubfs/8823337/Checkmark.svg",
+        "alt" : "Checkmark",
+        "loading" : "lazy",
+        "width" : 400,
+        "height" : 400,
+        "max_width" : 400,
+        "max_height" : 400
+      }
+    } ],
+    "button" : {
+      "type" : "btn",
+      "style" : "filled",
+      "text" : "TRY FOR FREE",
+      "anchor" : {
+        "type" : "href",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        },
+        "href" : "#"
+      },
+      "payment_group" : {
+        "checkout_location" : "tab"
+      }
+    }
+  } ]
+} ]

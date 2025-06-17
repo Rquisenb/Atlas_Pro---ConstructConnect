@@ -1,0 +1,21 @@
+.dnd_area_footer-row-0-vertical-alignment .hs-menu-flow-vertical li a {display:block; padding: 9px 0;}
+
+.pre-header-banner {padding:20px; font-family:'montserrat',arial,sans-serif; font-size:16px; font-weight:bold;}
+.pre-header-banner.blue {background:#00A1E0;}
+.pre-header-banner.blue a {color:#fff!important;}
+
+/* Language Switcher */
+
+.globe_class {
+  background-position:0 0!important;
+  background-size:contain!important;
+  padding-left:20px;
+  width: auto!important;
+  cursor:pointer;
+  position: relative;
+  line-height: 1.2em;
+  font-weight: bold;
+}
+.globe_class:after {font-size: 14px; display: inline-block; pointer-events: all;}
+.globe_class:lang(en):after {content:'\00a0 EN'}
+.globe_class:lang(fr):after {content:'\00a0 FR'}

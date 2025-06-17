@@ -1,0 +1,668 @@
+[ {
+  "id" : "e121d617-736b-f5c3-5619-9089f7a1f91c",
+  "name" : "logo",
+  "label" : "Logo",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "2e437009-4c5d-ab71-5e15-512097e59ec2",
+    "name" : "image",
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null
+    }
+  }, {
+    "id" : "9c72435d-46f2-6062-2d3a-16725c5b28ad",
+    "name" : "type",
+    "label" : "Type",
+    "required" : true,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "href", "Custom Link" ], [ "link", "HubSpot Link" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "href"
+  }, {
+    "id" : "52851bc6-5194-156f-c1b2-cad4a132eea3",
+    "name" : "link",
+    "label" : "Link",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "9c72435d-46f2-6062-2d3a-16725c5b28ad",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "link",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "type" : "EXTERNAL",
+        "href" : "",
+        "content_id" : null
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "6940bae8-c7e9-d201-8e2a-e325c7c0d488",
+    "name" : "href",
+    "label" : "Href",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "visibility" : {
+      "controlling_field" : "9c72435d-46f2-6062-2d3a-16725c5b28ad",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "href",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "placeholder" : "#",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : ""
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "image" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null
+    },
+    "type" : "href",
+    "link" : {
+      "url" : {
+        "type" : "EXTERNAL",
+        "href" : "",
+        "content_id" : null
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "href" : ""
+  }
+}, {
+  "id" : "93df71bc-b5f1-d1a1-be25-8fe1c2410fa0",
+  "name" : "address",
+  "label" : "Address",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<p>Company<br>1234 5th AVE N.<br>Seattle, WA 98101</p>"
+}, {
+  "id" : "5c1370a4-4bfe-58d8-c0c8-92dd887f1d7b",
+  "name" : "social",
+  "label" : "Social Networks",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 4
+  },
+  "children" : [ {
+    "id" : "68b31da1-0725-384b-8f95-021eed4ebdf1",
+    "name" : "link",
+    "label" : "Link",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "#"
+  }, {
+    "id" : "4e4b9706-c623-80cc-2de2-b61a93e92e68",
+    "name" : "icon",
+    "label" : "Icon",
+    "required" : false,
+    "locked" : false,
+    "icon_set" : "fontawesome-6.4.2",
+    "type" : "icon",
+    "display_width" : null,
+    "default" : {
+      "name" : "twitter",
+      "unicode" : "f099",
+      "type" : "REGULAR"
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "link" : "#",
+    "icon" : {
+      "name" : "facebook-f",
+      "unicode" : "f39e",
+      "type" : "REGULAR"
+    }
+  }, {
+    "link" : "#",
+    "icon" : {
+      "name" : "twitter",
+      "unicode" : "f099",
+      "type" : "REGULAR"
+    }
+  }, {
+    "link" : "#",
+    "icon" : {
+      "name" : "instagram",
+      "unicode" : "f16d",
+      "type" : "REGULAR"
+    }
+  }, {
+    "link" : "#",
+    "icon" : {
+      "name" : "youtube",
+      "unicode" : "f167",
+      "type" : "REGULAR"
+    }
+  } ]
+}, {
+  "id" : "8f90be15-968c-b641-2654-a22583fd5f33",
+  "name" : "groups",
+  "label" : "Groups",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 4
+  },
+  "children" : [ {
+    "id" : "470f1248-9bfd-6114-beb8-5c8a82da2f52",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "placeholder" : "Product",
+    "allow_new_line" : false,
+    "show_emoji_picker" : true,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Product"
+  }, {
+    "id" : "b04cb084-a47a-1ae0-4cfa-b358b8d7bbe3",
+    "name" : "menu",
+    "label" : "Menu",
+    "required" : false,
+    "locked" : false,
+    "type" : "simplemenu",
+    "display_width" : null,
+    "default" : [ {
+      "isPublished" : false,
+      "pageLinkId" : null,
+      "pageLinkName" : null,
+      "isDeleted" : null,
+      "categoryId" : null,
+      "subCategory" : null,
+      "contentType" : null,
+      "state" : null,
+      "linkLabel" : "Login",
+      "linkUrl" : "#",
+      "linkParams" : null,
+      "linkTarget" : null,
+      "type" : "URL_LINK",
+      "children" : [ ]
+    }, {
+      "isPublished" : false,
+      "pageLinkId" : null,
+      "pageLinkName" : null,
+      "isDeleted" : null,
+      "categoryId" : null,
+      "subCategory" : null,
+      "contentType" : null,
+      "state" : null,
+      "linkLabel" : "Overview",
+      "linkUrl" : "#",
+      "linkParams" : null,
+      "linkTarget" : null,
+      "type" : "URL_LINK",
+      "children" : [ ]
+    }, {
+      "isPublished" : false,
+      "pageLinkId" : null,
+      "pageLinkName" : null,
+      "isDeleted" : null,
+      "categoryId" : null,
+      "subCategory" : null,
+      "contentType" : null,
+      "state" : null,
+      "linkLabel" : "Feedback",
+      "linkUrl" : "#",
+      "linkParams" : null,
+      "linkTarget" : null,
+      "type" : "URL_LINK",
+      "children" : [ ]
+    }, {
+      "isPublished" : false,
+      "pageLinkId" : null,
+      "pageLinkName" : null,
+      "isDeleted" : null,
+      "categoryId" : null,
+      "subCategory" : null,
+      "contentType" : null,
+      "state" : null,
+      "linkLabel" : "Meetings",
+      "linkUrl" : "#",
+      "linkParams" : null,
+      "linkTarget" : null,
+      "type" : "URL_LINK",
+      "children" : [ ]
+    }, {
+      "isPublished" : false,
+      "pageLinkId" : null,
+      "pageLinkName" : null,
+      "isDeleted" : null,
+      "categoryId" : null,
+      "subCategory" : null,
+      "contentType" : null,
+      "state" : null,
+      "linkLabel" : "Action Items",
+      "linkUrl" : "#",
+      "linkParams" : null,
+      "linkTarget" : null,
+      "type" : "URL_LINK",
+      "children" : [ ]
+    } ]
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "title" : "Product",
+    "menu" : [ {
+      "isPublished" : false,
+      "pageLinkId" : null,
+      "pageLinkName" : null,
+      "isDeleted" : null,
+      "categoryId" : null,
+      "subCategory" : null,
+      "contentType" : null,
+      "state" : null,
+      "linkLabel" : "Login",
+      "linkUrl" : "#",
+      "linkParams" : null,
+      "linkTarget" : null,
+      "type" : "URL_LINK",
+      "children" : [ ]
+    }, {
+      "isPublished" : false,
+      "pageLinkId" : null,
+      "pageLinkName" : null,
+      "isDeleted" : null,
+      "categoryId" : null,
+      "subCategory" : null,
+      "contentType" : null,
+      "state" : null,
+      "linkLabel" : "Overview",
+      "linkUrl" : "#",
+      "linkParams" : null,
+      "linkTarget" : null,
+      "type" : "URL_LINK",
+      "children" : [ ]
+    }, {
+      "isPublished" : false,
+      "pageLinkId" : null,
+      "pageLinkName" : null,
+      "isDeleted" : null,
+      "categoryId" : null,
+      "subCategory" : null,
+      "contentType" : null,
+      "state" : null,
+      "linkLabel" : "Another one",
+      "linkUrl" : "#",
+      "linkParams" : null,
+      "linkTarget" : null,
+      "type" : "URL_LINK",
+      "children" : [ ]
+    }, {
+      "isPublished" : false,
+      "pageLinkId" : null,
+      "pageLinkName" : null,
+      "isDeleted" : null,
+      "categoryId" : null,
+      "subCategory" : null,
+      "contentType" : null,
+      "state" : null,
+      "linkLabel" : "Meetings",
+      "linkUrl" : "#",
+      "linkParams" : null,
+      "linkTarget" : null,
+      "type" : "URL_LINK",
+      "children" : [ ]
+    }, {
+      "isPublished" : false,
+      "pageLinkId" : null,
+      "pageLinkName" : null,
+      "isDeleted" : null,
+      "categoryId" : null,
+      "subCategory" : null,
+      "contentType" : null,
+      "state" : null,
+      "linkLabel" : "Action Items",
+      "linkUrl" : "#",
+      "linkParams" : null,
+      "linkTarget" : null,
+      "type" : "URL_LINK",
+      "children" : [ ]
+    } ]
+  }, {
+    "title" : "Solutions",
+    "menu" : [ {
+      "isPublished" : false,
+      "pageLinkId" : null,
+      "pageLinkName" : null,
+      "isDeleted" : null,
+      "categoryId" : null,
+      "subCategory" : null,
+      "contentType" : null,
+      "state" : null,
+      "linkLabel" : "Team meetings",
+      "linkUrl" : "#",
+      "linkParams" : null,
+      "linkTarget" : null,
+      "type" : "URL_LINK",
+      "children" : [ ]
+    }, {
+      "isPublished" : false,
+      "pageLinkId" : null,
+      "pageLinkName" : null,
+      "isDeleted" : null,
+      "categoryId" : null,
+      "subCategory" : null,
+      "contentType" : null,
+      "state" : null,
+      "linkLabel" : "Remote meetings",
+      "linkUrl" : "#",
+      "linkParams" : null,
+      "linkTarget" : null,
+      "type" : "URL_LINK",
+      "children" : [ ]
+    }, {
+      "isPublished" : false,
+      "pageLinkId" : null,
+      "pageLinkName" : null,
+      "isDeleted" : null,
+      "categoryId" : null,
+      "subCategory" : null,
+      "contentType" : null,
+      "state" : null,
+      "linkLabel" : "Another one",
+      "linkUrl" : "#",
+      "linkParams" : null,
+      "linkTarget" : null,
+      "type" : "URL_LINK",
+      "children" : [ ]
+    }, {
+      "isPublished" : false,
+      "pageLinkId" : null,
+      "pageLinkName" : null,
+      "isDeleted" : null,
+      "categoryId" : null,
+      "subCategory" : null,
+      "contentType" : null,
+      "state" : null,
+      "linkLabel" : "Functional",
+      "linkUrl" : "#",
+      "linkParams" : null,
+      "linkTarget" : null,
+      "type" : "URL_LINK",
+      "children" : [ ]
+    }, {
+      "isPublished" : false,
+      "pageLinkId" : null,
+      "pageLinkName" : null,
+      "isDeleted" : null,
+      "categoryId" : null,
+      "subCategory" : null,
+      "contentType" : null,
+      "state" : null,
+      "linkLabel" : "Executive",
+      "linkUrl" : "#",
+      "linkParams" : null,
+      "linkTarget" : null,
+      "type" : "URL_LINK",
+      "children" : [ ]
+    } ]
+  }, {
+    "title" : "Resources",
+    "menu" : [ {
+      "isPublished" : false,
+      "pageLinkId" : null,
+      "pageLinkName" : null,
+      "isDeleted" : null,
+      "categoryId" : null,
+      "subCategory" : null,
+      "contentType" : null,
+      "state" : null,
+      "linkLabel" : "Blog",
+      "linkUrl" : "#",
+      "linkParams" : null,
+      "linkTarget" : null,
+      "type" : "URL_LINK",
+      "children" : [ ]
+    }, {
+      "isPublished" : false,
+      "pageLinkId" : null,
+      "pageLinkName" : null,
+      "isDeleted" : null,
+      "categoryId" : null,
+      "subCategory" : null,
+      "contentType" : null,
+      "state" : null,
+      "linkLabel" : "Podcast",
+      "linkUrl" : "#",
+      "linkParams" : null,
+      "linkTarget" : null,
+      "type" : "URL_LINK",
+      "children" : [ ]
+    }, {
+      "isPublished" : false,
+      "pageLinkId" : null,
+      "pageLinkName" : null,
+      "isDeleted" : null,
+      "categoryId" : null,
+      "subCategory" : null,
+      "contentType" : null,
+      "state" : null,
+      "linkLabel" : "Templates",
+      "linkUrl" : "#",
+      "linkParams" : null,
+      "linkTarget" : null,
+      "type" : "URL_LINK",
+      "children" : [ ]
+    }, {
+      "isPublished" : false,
+      "pageLinkId" : null,
+      "pageLinkName" : null,
+      "isDeleted" : null,
+      "categoryId" : null,
+      "subCategory" : null,
+      "contentType" : null,
+      "state" : null,
+      "linkLabel" : "Newsletter",
+      "linkUrl" : "#",
+      "linkParams" : null,
+      "linkTarget" : null,
+      "type" : "URL_LINK",
+      "children" : [ ]
+    }, {
+      "isPublished" : false,
+      "pageLinkId" : null,
+      "pageLinkName" : null,
+      "isDeleted" : null,
+      "categoryId" : null,
+      "subCategory" : null,
+      "contentType" : null,
+      "state" : null,
+      "linkLabel" : "Help center",
+      "linkUrl" : "#",
+      "linkParams" : null,
+      "linkTarget" : null,
+      "type" : "URL_LINK",
+      "children" : [ ]
+    } ]
+  }, {
+    "title" : "Company",
+    "menu" : [ {
+      "isPublished" : false,
+      "pageLinkId" : null,
+      "pageLinkName" : null,
+      "isDeleted" : null,
+      "categoryId" : null,
+      "subCategory" : null,
+      "contentType" : null,
+      "state" : null,
+      "linkLabel" : "Blog",
+      "linkUrl" : "#",
+      "linkParams" : null,
+      "linkTarget" : null,
+      "type" : "URL_LINK",
+      "children" : [ ]
+    }, {
+      "isPublished" : false,
+      "pageLinkId" : null,
+      "pageLinkName" : null,
+      "isDeleted" : null,
+      "categoryId" : null,
+      "subCategory" : null,
+      "contentType" : null,
+      "state" : null,
+      "linkLabel" : "Podcast",
+      "linkUrl" : "#",
+      "linkParams" : null,
+      "linkTarget" : null,
+      "type" : "URL_LINK",
+      "children" : [ ]
+    }, {
+      "isPublished" : false,
+      "pageLinkId" : null,
+      "pageLinkName" : null,
+      "isDeleted" : null,
+      "categoryId" : null,
+      "subCategory" : null,
+      "contentType" : null,
+      "state" : null,
+      "linkLabel" : "Templates",
+      "linkUrl" : "#",
+      "linkParams" : null,
+      "linkTarget" : null,
+      "type" : "URL_LINK",
+      "children" : [ ]
+    }, {
+      "isPublished" : false,
+      "pageLinkId" : null,
+      "pageLinkName" : null,
+      "isDeleted" : null,
+      "categoryId" : null,
+      "subCategory" : null,
+      "contentType" : null,
+      "state" : null,
+      "linkLabel" : "Newsletter",
+      "linkUrl" : "#",
+      "linkParams" : null,
+      "linkTarget" : null,
+      "type" : "URL_LINK",
+      "children" : [ ]
+    }, {
+      "isPublished" : false,
+      "pageLinkId" : null,
+      "pageLinkName" : null,
+      "isDeleted" : null,
+      "categoryId" : null,
+      "subCategory" : null,
+      "contentType" : null,
+      "state" : null,
+      "linkLabel" : "Help center",
+      "linkUrl" : "#",
+      "linkParams" : null,
+      "linkTarget" : null,
+      "type" : "URL_LINK",
+      "children" : [ ]
+    } ]
+  } ]
+}, {
+  "id" : "76422144-10df-e7d0-358c-25e1a4fe9e2b",
+  "name" : "legal",
+  "label" : "Legal",
+  "help_text" : "Use span tags to separate content into different columns",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<span>© 2020 Company</span> <span>All rights reserved</span> <span> <a href=\"#\">Privacy Policy</a></span>"
+}, {
+  "id" : "65ce3e63-69ca-fc90-632a-d550125be3db",
+  "name" : "padding",
+  "label" : "Padding",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "1d4d7f4f-1c9c-fbe8-fc81-20dd948450cd",
+    "name" : "overwrite",
+    "label" : "Overwrite",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "3364f67d-2588-4b36-c9a6-c3405e80bb4c",
+    "name" : "value",
+    "label" : "Value",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "min" : 0,
+    "step" : 1,
+    "suffix" : "px",
+    "type" : "number",
+    "display_width" : null,
+    "default" : 120
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "overwrite" : false,
+    "value" : 120
+  }
+} ]

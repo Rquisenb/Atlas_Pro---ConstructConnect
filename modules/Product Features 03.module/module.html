@@ -1,0 +1,131 @@
+{% import '../macros.html' %}
+
+{# Macro to render an image width object fit field options #}
+{% macro render_image(image) -%}
+
+  {% set className = 'kl-features-03__image' %}
+  {% set classes = [className] %}
+
+  {% set attrs = {} %}
+  {% set sizeAttrs = {} %}
+  {% set styleAttr = [] %}
+
+  {% if image.fit == 'cover' %}
+    {% do classes.append(className ~ '--cover') %}
+  {% elif image.fit == 'contain' %}
+    {% do classes.append(className ~ '--contain') %}
+  {% endif %}
+
+  {% set objectPosition = [] %}
+
+  {# Horizontal position #}
+  {% if image.horizontal_position == 'left' %}
+    {% do classes.append(className ~ '--left') %}
+  {% elif image.horizontal_position == 'center' %}
+    {% do classes.append(className ~ '--center') %}
+  {% elif image.horizontal_position == 'right' %}
+    {% do classes.append(className ~ '--right') %}
+  {% endif %}
+
+  {# Vertical position #}
+  {% if image.vertical_position == 'top' %}
+    {% do classes.append(className ~ '--top') %}
+  {% elif image.vertical_position == 'center' %}
+    {% do classes.append(className ~ '--middle') %}
+  {% elif image.vertical_position == 'bottom' %}
+    {% do classes.append(className ~ '--bottom') %}
+  {% endif %}
+
+  {% set sizeAttrs = { width: image.image.width, height: image.image.height } %}
+
+  {% if image.image.size_type == 'auto' %}
+    {% set sizeAttrs = { style: 'max-width: 100%; height: auto;' } %}
+    {% do styleAttr.append('max-width: 100%;') %}
+    {% do styleAttr.append('height: auto;') %}
+
+  {% elif image.image.size_type == 'auto_custom_max' %}
+    {% set sizeAttrs = { width: '100%', height: 'auto' } %}
+    {% do styleAttr.append('max-width: ' ~ image.image.max_width ~ 'px;') %}
+    {% do styleAttr.append('max-height: ' ~ image.image.max_height ~ 'px;') %}
+
+  {% endif %}
+
+  {% do attrs.update(sizeAttrs) %}
+  {% do attrs.update({ style: styleAttr|join(' ') }) %}
+
+  <div class="{{ classes|join(' ') }}">
+    <img src="{{ image.image.src }}" alt="{{ image.image.alt }}" {{ attrs|xmlattr }} />
+  </div>
+
+{%- endmacro %}
+
+{% call render_animation(module.animation) %}
+<div class="kl-features-03" id="{{name}}">
+
+  <ul class="kl-features-03__titles">
+    {% for s in module.sections %}
+      <li {% if loop.first %}class="active"{% endif %} data-index="{{ loop.index0 }}">
+        <h4>{{ s.title }}</h4>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <div class="kl-features-03__sections">
+    {% for s in module.sections %}
+      <div data-index="{{ loop.index0 }}" 
+           class="kl-features-03__section{{ loop.first ? ' active' : '' }}">
+
+        {% if s.image.image.src %}
+            {{ render_image(s.image) }}
+        {% endif %}
+
+        <div class="kl-features-03__content">
+          {{ kl_rich_text(s) }}
+        </div>
+
+      </div>
+    {% endfor %}
+  </div>
+
+</div>
+{% endcall %}
+
+{% require_js %}
+<script>
+(function () {
+  const ACTIVE_CLASS = 'active';
+  const ACTIVE_SELECTOR = '.' + ACTIVE_CLASS;
+
+  const SECTION_SELECTOR = '.kl-features-03__section';
+  const MODULE_ELEMENT = document.querySelector('#{{name}}');
+
+  const OPTIONS = '.kl-features-03__titles li';
+  const opts = MODULE_ELEMENT.querySelectorAll(OPTIONS);
+
+  opts.forEach(function (opt) {
+    const index = opt.dataset.index;
+    const query = SECTION_SELECTOR + `[data-index="${index}"]`;
+    const section = MODULE_ELEMENT.querySelector(query);
+	  //console.log(section);
+
+    opt.addEventListener('click', function () {
+      const current = MODULE_ELEMENT.querySelector(
+        SECTION_SELECTOR + ACTIVE_SELECTOR
+      );
+      const currentTitle = MODULE_ELEMENT.querySelector(
+        OPTIONS + `[data-index="${current.dataset.index}"]`
+      );
+
+      /* Remove ACTIVE_CLASS from current section and title*/
+      current.classList.remove(ACTIVE_CLASS);
+      currentTitle.classList.remove(ACTIVE_CLASS);
+
+      /* Add ACTIVE_CLASS from current section and title*/
+      section.classList.add(ACTIVE_CLASS);
+      opt.classList.add(ACTIVE_CLASS);
+
+    });
+  });
+})();
+</script>
+{% end_require_js %}

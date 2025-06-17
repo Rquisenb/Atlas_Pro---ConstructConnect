@@ -1,0 +1,26 @@
+{% import '../macros.html' %}
+
+{% call render_animation(module.animation) %}
+<div class="kl-offer-01">
+
+  <div class="kl-offer-01__content">
+    <div class="kl-offer-01__text">
+      <span class="kl-offer-01__preheader">{{ module.preheader }}</span>
+      <div>{{ module.content }}</div>
+    </div>
+    <div class="kl-offer-01__button">
+      {{ render_button(module.button) }}
+    </div>
+  </div>
+
+  {% if module.image.src %}
+    {% set loadingAttr = module.image.loading != 'disabled' ? 'loading="{{ module.image.loading }}"' : '' %}
+    <div class="kl-offer-01__image">
+    {% call render_link(module.button.anchor) %}
+      <img src="{{ module.image.src }}" alt="{{ module.image.alt }}" {{ loadingAttr }}>
+    {% endcall %}
+    </div>
+  {% endif %}
+
+</div>
+{% endcall %}

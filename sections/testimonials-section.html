@@ -1,0 +1,29 @@
+<!--
+ templateType: section
+ label: Testimonials Section
+ description: "Section used for Testimonials in basic landing page"
+ isAvailableForNewContent: true
+ screenshotPath: ../images/section-previews/testimonials-section.png
+-->
+{% dnd_section %}
+
+{% dnd_column padding={ 'left': 0, 'right': 0 }%}
+
+  {% dnd_row padding={ 'bottom': 48 } %}
+
+    {% dnd_module path='../modules/Custom Rich Text', preheader='TESTIMONIALS' %}
+      {% module_attribute 'content' %}
+        <h2>What our customers say</h2>
+      {% end_module_attribute %}
+    {% end_dnd_module %}
+
+  {% end_dnd_row %}
+
+  {% dnd_row %}
+    {% dnd_module path='../modules/Testimonials', label='Testimonials' %}
+    {% end_dnd_module %}
+  {% end_dnd_row %}
+
+{% end_dnd_column %}
+
+{% end_dnd_section %}

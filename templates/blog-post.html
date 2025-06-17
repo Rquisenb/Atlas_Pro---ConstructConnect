@@ -1,0 +1,152 @@
+<!--
+  templateType: blog_post
+  isAvailableForNewContent: true
+  label: Blog post
+  screenshotPath: ../images/template-previews/blog-post.png
+-->
+{% extends './layouts/base.html' %}
+
+{% block body %}
+<main class="body-container-wrapper">
+  <div class="body-container body-container--blog-post">
+
+    {# Blog header #}
+    <div class="blog-header blog-header--post"
+         style="background-image: url('{{ content.featured_image }}');" 
+         ></div>
+    {# End blog header #}
+
+    {# Blog post #}
+    <div class="content-wrapper">
+
+      <article class="blog-post">
+
+        {% set featured_tag = content.topic_list | first %}
+        {% if featured_tag %}
+        <span class="blog-post__preheader">{{ featured_tag }}</span>
+        {% endif %}
+
+        <h1 class="blog-post__title">{{ content.name }}</h1>
+
+        {% if theme.blog.show_summary %}
+        <p class="blog-post__summary">{{ content.meta_description|striptags  }}</p>
+        {% endif %}
+
+		<div class="blog-post__meta">
+			<div class="blog-post__bio">
+				{% if content.blog_post_author.avatar %}
+				<div class="blog-post__avatar" 
+					 style="background-image: url('{{ content.blog_post_author.avatar }}');">
+				</div>
+				{% endif %}
+
+				<div class="blog-post__author">
+					<a href="{{ blog_author_url(group.id, content.blog_post_author.slug) }}">
+						{{ content.blog_post_author.display_name }}
+					</a>
+					<div class="blog-post__timestamp">
+						{{ content.publish_date | datetimeformat('%b %e, %Y') }}
+					</div>
+				</div>
+			</div>
+		   <div class="blog-post__social-sharing">
+			    {% module "Social Sharing" path="../modules/Social Sharing.module" 
+					facebook={
+						"enabled": true
+					}
+					linkedin={
+						"enabled": true
+					}
+					twitter={
+						"enabled": true
+					}
+					email={
+						"enabled": true
+					}
+					%}
+		   </div>
+		</div>
+
+        <hr class="blog-post__divider" />
+
+        <div class="blog-post__body-wrapper">
+
+          <div class="blog-post__body">
+            {{ content.post_body }}
+          </div>
+
+          {% if content.tag_list %}
+          <div class="blog-post__tags">
+            {% for tag in content.tag_list %}
+            <a class="blog-post__tag-link" href="{{ blog_tag_url(group.id, tag.slug) }}">{{ tag.name }}</a>
+            {% endfor %}
+          </div>
+          {% endif %}
+
+        </div>
+
+      </article>
+
+      {% if group.allow_comments %}
+      <div class="blog-comments">
+        {% module 'blog_comments' path='@hubspot/blog_comments', label="Blog comments" %}
+      </div>
+      {% endif %}
+
+    </div>
+    {# End blog post #}
+
+    {# Recent posts listing #}
+    {# This macro is used to format each recent post card and
+    gets passed to the 'related_blog_posts' tag below #}
+    {% macro recent_post(post) %}
+
+    <article class="blog-more-posts__post-wrapper">
+      <div class="blog-more-posts__post">
+        {% if post.featured_image and group.use_featured_image_in_summary %}
+        <a class="blog-more-posts__post-image" 
+           style="background-image: url('{{ post.featured_image }}');" 
+           href="{{ post.absolute_url }}">
+        </a>
+        {% endif %}
+        <div class="blog-more-posts__post-content">
+          <div>
+            {% set featured_tag = post.topic_list | first %}
+            {% if featured_tag %}
+            <span class="blog-more-posts__post-preheader">{{ featured_tag }}</span>
+            {% endif %}
+            <h3><a href="{{ post.absolute_url }}">{{ post.name }}</a></h3>
+            {% if content_group.show_summary_in_listing %}
+            <p>{{ post.meta_description | truncatehtml(150, '...', false) }}</p>
+            {% endif %}
+          </div>
+          <div class="blog-more-posts__post-meta">
+            <span class="blog-more-posts__post-author">
+              {{ post.blog_post_author }}
+            </span>
+            <span class="blog-more-posts__post-date">
+              {{ post.publish_date | datetimeformat('%b %e, %Y') }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    {% endmacro %}
+
+    <div class="content-wrapper">
+      <div class="blog-more">
+	    {% module "Global Blog Post Before Cards Text" path="../modules/Global Blog Post Before Cards Text.module" %}
+        <div class="blog-more-posts">
+          {% related_blog_posts limit=3, no_wrapper=True, post_formatter="recent_post" %}
+        </div>
+      </div>
+    </div>
+    {# End recent posts listing #}
+
+    {# module "blog-subscribe" path="../modules/Custom Blog Subscribe", label="Custom Blog Subscribe" #}
+    {% module "blog-subscribe" path="../modules/Global Blog Subscribe.module", label="Global Blog Subscribe" %}
+
+  </div>
+</main>
+{% endblock body %}

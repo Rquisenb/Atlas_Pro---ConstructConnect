@@ -1,0 +1,65 @@
+{% import '../macros.html' %}
+
+{{ require_css("https://unpkg.com/@glidejs/glide@3.4.1/dist/css/glide.core.min.css") }}
+{{ require_js("https://unpkg.com/@glidejs/glide@3.4.1/dist/glide.min.js", "footer") }}
+
+{% macro render_item(item) -%}
+  {# Path relative to macros.html #}
+  {% set default_src = get_asset_url('../images/Logo.svg') %}
+  {{ render_image(item.image, '', default_src) }}
+{%- endmacro %}
+
+{% call render_animation(module.animation) %}
+<div class="kl-logo-slider">
+  {% call render_glide_slider(module.glide) %}
+  <div class="glide__track" data-glide-el="track">
+    <ul class="glide__slides">
+      {% for item in module.items %}
+      <li class="kl-logo-slider__slide glide__slide">
+        <div class="kl-logo-slider__item">
+          {% if item.type == 'none' %}
+            {{ render_item(item) }}
+          {% else %}
+            {% call render_link(item) %}
+              {{ render_item(item) }}
+            {% endcall %}
+          {% endif %}
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endcall %}
+</div>
+{% endcall %}
+
+{% require_js %}
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+
+    let query = '#glide-{{ name }}'
+    let elem = document.querySelector(query);
+
+    // Check if there are any slides
+    let slides = elem.querySelectorAll('.glide__slide');
+    if (slides.length === 0) {
+      console.log('No slides found, not initializing Glide');
+      return;
+    }
+
+    let opts = {
+      breakpoints: {
+        768: { perView: 5 },
+        480: { perView: 3 },
+        320: { perView: 2 }
+      }
+    }
+
+    if (elem.dataset)
+      Object.assign(opts, elem.dataset)
+
+    let glide = new Glide(query, opts);
+    glide.mutate().mount();
+  });
+</script>
+{% end_require_js %}

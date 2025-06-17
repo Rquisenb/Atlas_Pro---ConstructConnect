@@ -1,0 +1,30 @@
+{
+  "global" : false,
+  "content_types" : [ "LANDING_PAGE", "SITE_PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "host_template_types" : [ "PAGE", "BLOG_POST", "BLOG_LISTING" ],
+  "module_id" : 186298743103,
+  "other_assets" : [ {
+    "autoload" : false,
+    "path" : "../../../Atlas_Pro%20-%20ConstructConnect/images/facebook-color.png",
+    "name" : "facebook-color.png"
+  }, {
+    "autoload" : false,
+    "path" : "../../../Atlas_Pro%20-%20ConstructConnect/modules/mV0_hubspot/img/linkedin-color.png",
+    "name" : "linkedin-color.png"
+  }, {
+    "autoload" : false,
+    "path" : "../../../Atlas_Pro%20-%20ConstructConnect/modules/mV0_hubspot/img/twitter-color.png",
+    "name" : "twitter-color.png"
+  }, {
+    "autoload" : false,
+    "path" : "../../../Atlas_Pro%20-%20ConstructConnect/modules/mV0_hubspot/img/pinterest-color.png",
+    "name" : "pinterest-color.png"
+  }, {
+    "autoload" : false,
+    "path" : "../../../Atlas_Pro%20-%20ConstructConnect/modules/mV0_hubspot/img/email-color.png",
+    "name" : "email-color.png"
+  } ],
+  "label" : "Social Sharing",
+  "icon" : "https://www.kalungi.com/hubfs/Atlas/Module%20Logos/Share.svg",
+  "is_available_for_new_content" : true
+}

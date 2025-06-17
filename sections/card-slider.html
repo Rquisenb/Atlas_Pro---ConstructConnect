@@ -1,0 +1,63 @@
+<!--
+  templateType: section
+  label: Card slider
+  isAvailableForNewContent: true
+  description: "Section used for a Card Slider in basic Home page"
+  screenshotPath: ../images/section-previews/card-slider.png
+-->
+{% dnd_section 
+    background_image={
+      'backgroundPosition': 'MIDDLE_CENTER',
+      'backgroundSize': 'cover',
+      'imageUrl': get_asset_url('../images/Mountain.jpg')
+    }
+  %}
+
+  {% dnd_module path='../modules/Cards Slider'
+    sections=[ {
+      'image': { 'src': get_asset_url('../images/Logoipsum.svg') },
+      'header': { 
+        'type': 'btn',
+        'style': 'arrow',
+        'anchor': {
+          "type": "href",
+          "link": {
+            "url": { "content_id": null, "type": "EXTERNAL", "href": "" },
+            "open_in_new_tab": false,
+            "no_follow": false
+          },
+          "href": "#"
+        },
+        'text': 'READ FULL CASE STUDY'
+        },
+      'content': [
+        '<h5>SITUATION</h5><p>For years, Logoipsum manually tracked marketing metrics using Excel, Google sheets, and complex macros</p>',
+        '<h5>SOLUTION</h5><p>Logoipsum partnered with T2D3 to document their entire customer journey and map metrics at each stage</p>',
+        '<h5>IMPACT</h5><p>Logoipsum increased data accuracy by 76% and decreased manual data collection time by 4 hours per week</p>'
+      ]
+    }, {
+      'image': { 'src': get_asset_url('../images/HubSpot.svg') },
+      'header': { 
+        'type': 'btn',
+        'style': 'arrow',
+        'anchor': {
+          "type": "href",
+          "link": {
+            "url": { "content_id": null, "type": "EXTERNAL", "href": "" },
+            "open_in_new_tab": false,
+            "no_follow": false
+          },
+          "href": "#"
+        },
+        'text': 'READ FULL CASE STUDY'
+        },
+      'content': [
+        '<h5>SITUATION</h5><p>For days, HubSpot manually tracked marketing metrics using Excel, Google sheets, and complex macros</p>',
+        '<h5>SOLUTION</h5><p>Logoipsum partnered with T2D3 to document their entire customer journey and map metrics at each stage</p>',
+        '<h5>IMPACT</h5><p>Logoipsum increased data accuracy by 76% and decreased manual data collection time by 4 hours per week</p>'
+      ]
+    } ]
+  %}
+  {% end_dnd_module %}
+
+{% end_dnd_section %}

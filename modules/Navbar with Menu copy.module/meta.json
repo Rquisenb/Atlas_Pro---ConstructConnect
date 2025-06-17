@@ -1,0 +1,14 @@
+{
+  "global" : false,
+  "content_types" : [ "LANDING_PAGE", "SITE_PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "host_template_types" : [ "PAGE", "BLOG_POST", "BLOG_LISTING" ],
+  "module_id" : 187119081990,
+  "js_assets" : [ {
+    "autoload" : true,
+    "path" : "../../../@marketplace/kalungi_com/Atlas_Pro_SaaS_Website_Theme/js/main.js",
+    "name" : "main.js"
+  } ],
+  "label" : "Navbar with Menu",
+  "icon" : "https://f.hubspotusercontent40.net/hubfs/8071749/Navbar%20with%20menu.svg",
+  "is_available_for_new_content" : true
+}

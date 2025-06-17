@@ -1,0 +1,43 @@
+{% import '../macros.html' %}
+
+{# Check out macros.html file to see how this module is implemented #}
+{% call render_animation(module.animation) %}
+<div class="kl-content-toggle" id="{{name}}">
+	<h3 class="kl-content-toggle-label left">{{module.left_label}}</h3>
+	<div class="kl-content-toggle__wrapper">
+		<div class="kl-content-toggle__toggler left"></div>
+	</div>
+	<h3 class="kl-content-toggle-label right">{{module.right_label}}</h3>
+</div>
+{% endcall %}
+{% require_css %}
+<style>
+{% if module.active_color.overwrite %}
+#{{name}} .kl-content-toggle-label.active{
+	color: {{module.active_color.color.css}};
+}
+#{{name}} .kl-content-toggle__toggler{
+	background-color: {{module.active_color.color.css}};
+}
+{% endif %}
+{% if module.inactive_color.overwrite %}
+#{{name}} .kl-content-toggle-label{
+	color: {{module.inactive_color.color.css}};
+}
+#{{name}} .kl-content-toggle__wrapper{
+	background-color: {{module.inactive_color.color.css}};
+}
+{% endif %}
+
+#{{name}}.kl-content-toggle{
+	{% if module.alignment == "left" %}
+	justify-content: flex-start;
+	{% elif module.alignment == "center" %}
+	justify-content: center;
+	{% elif module.alignment == "right" %}
+	justify-content: flex-end;
+	{% endif %}
+}
+</style>
+{% end_require_css%}
+

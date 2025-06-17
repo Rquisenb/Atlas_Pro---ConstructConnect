@@ -1,0 +1,41 @@
+{% import '../macros.html' %}
+
+{% set image_src = module.image.src if module.image.src else get_asset_url('../../images/Dashboard.svg') %}
+
+{% macro alignment(group, class) -%}
+
+  {% set classes = [class] %}
+
+  {% if group.horizontal_alignment == 'left' %}
+    {% do classes.append(class ~ '--left') %}
+  {% elif group.horizontal_alignment == 'right' %}
+    {% do classes.append(class ~ '--right') %}
+  {% else %}
+    {% do classes.append(class ~ '--center') %}
+  {% endif %}
+
+  {% if group.vertical_alignment == 'top' %}
+    {% do classes.append(class ~ '--top') %}
+  {% elif group.vertical_alignment == 'bottom' %}
+    {% do classes.append(class ~ '--bottom') %}
+  {% else %}
+    {% do classes.append(class ~ '--middle') %}
+  {% endif %}
+
+  <div class="{{ classes|join(' ') }}">
+    {{ caller() }}
+  </div>
+
+{%- endmacro %}
+
+<div class="kl-hero-02">
+  <div class="kl-hero-02__content">
+    {% call render_animation(module.animation) %}
+      {{ kl_rich_text(module) }}
+    {% endcall %}
+    {% call alignment(module.image, 'kl-hero-02__image') %}
+      {# classes from the macro were beign passed to render_image function #}
+      {{ render_image(module.image.image, '', image_src) }}
+    {% endcall %}
+  </div>
+</div>

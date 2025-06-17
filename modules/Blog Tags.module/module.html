@@ -1,0 +1,25 @@
+{% import '../macros.html' %}
+
+{# Check out macros.html file to see how this module is implemented #}
+{% call render_animation(module.animation) %}
+        {% if theme.blog.tag_limit > 0 %}
+        <ul class="blog-tags">
+          {% if theme.blog.tag_limit > 1 %}
+          <li>
+            <a class="blog-tags__link{% if not tag %} blog-tags__link--current{% endif %}"
+               href="{{ blog_all_posts_url(group.id) }}">
+				{{module.all_text}}
+            </a>
+          </li>
+          {% endif %}
+          {% for item in blog_tags(group.id, theme.blog.tag_limit) %}
+          <li>
+            <a class="blog-tags__link{% if item.slug == tag %} blog-tags__link--current{% endif %}" 
+               href="{{ blog_tag_url(group.id, item.slug) }}">
+              {{ item }}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+{% endcall %}

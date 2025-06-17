@@ -1,0 +1,3 @@
+.kl-custom-anchor {
+  scroll-margin-top: {{theme.header.height}}px;
+}

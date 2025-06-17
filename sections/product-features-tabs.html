@@ -1,0 +1,31 @@
+<!--
+ templateType: section
+ label: Product Features Tabs Section
+ description: "Section used for Product Features Tabs in Product Page Template"
+ isAvailableForNewContent: true
+ screenshotPath: ../images/section-previews/product-features-tabs.png
+-->
+{% dnd_section %}
+
+  {% dnd_column padding={ left: 0, right: 0 } %}
+
+    {% dnd_row padding={ 'bottom': 64 } %}
+
+      {% dnd_module path='../modules/Custom Rich Text', preheader='OPTIMIZE YOUR NUMBERS' %}
+      {% module_attribute 'content' %}
+          <h2>Get the most out of your metrics</h2>
+      {% end_module_attribute %}
+      {% end_dnd_module %}
+
+    {% end_dnd_row %}
+
+    {% dnd_row %}
+
+      {% dnd_module path='../modules/Product Features 03' %}
+      {% end_dnd_module %}
+
+    {% end_dnd_row %}
+
+  {% end_dnd_column %}
+
+{% end_dnd_section %}

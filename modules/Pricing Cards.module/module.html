@@ -1,0 +1,37 @@
+{% import '../macros.html' %}
+
+{% call render_animation(module.animation) %}
+<div class="kl-pricing">
+  {% for item in module.plans %}
+    <div class="kl-pricing__card{% if item.badge %} kl-pricing__card--featured{% endif %}">
+      {% if item.badge %}
+        <span class="kl-pricing__badge">{{ item.badge }}</span>
+      {% endif %}
+      {% if item.icon.src %}
+        <div class="kl-pricing__icon">
+          <img src="{{ item.icon.src }}" alt="{{ item.icon.alt }}" />
+        </div>
+      {% endif %}
+      <h4>{{ item.header }}</h4>
+      <div class="kl-pricing__price">
+        {{ item.price }}
+      </div>
+      <div class="kl-pricing__description">
+        {{ item.description }}
+      </div>
+      <hr/>
+      <ul class="kl-pricing__features">
+        {% for feature in item.features %}
+          <li>
+            <span class="kl-pricing__bullet">{{ render_image(feature.image) }}</span>
+            <span>{{ feature.description }}</span>
+          </li>
+        {% endfor %}
+      </ul>
+      <div class="kl-pricing__button">
+        {{ render_button(item.button) }}
+      </div>
+    </div>
+  {% endfor %}
+</div>
+{% endcall %}

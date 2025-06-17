@@ -1,0 +1,116 @@
+{% import '../macros.html' %}
+
+{% set cell_attrs = {} %}
+
+{% if module.border.overwrite %}
+  {% do cell_attrs.update({ style: 'border-color: ' ~ render_color(module.border.color) ~ ';' }) %}
+{% endif %}
+
+<div class="kl-pricing-table-02" id="{{ name }}">
+
+  <ul class="kl-pricing-table-02__navbar">
+    {% for column in module.header.columns %}
+    <li class="kl-pricing-table-02__tab {% if loop.first %}kl-pricing-table-02__tab--active{% endif %}"
+        {{ cell_attrs|xmlattr }} >
+      {{ column.title }}
+    </li>
+    {% endfor %}
+  </ul>
+
+  <table>
+    <thead>
+      <tr>
+        <th class="kl-pricing-table-02__features" {{ cell_attrs|xmlattr }}></th>
+        {% for column in module.header.columns %}
+        <th class="kl-pricing-table-02__plans {% if not loop.first %}kl-pricing-table-02__hide{% endif %}"
+            {{ cell_attrs|xmlattr }} >
+          <div>
+            <div>
+              {{ column.title }}
+              {{ column.content }}
+            </div>
+            {% set suffix = '__button' ~ loop.index0 %}
+            {{ render_button(column, suffix=suffix) }}
+          </div>
+        </th>
+        {% endfor %}
+      </tr>
+    </thead>
+
+    <tbody>
+      {% for row in module.rows %}
+      <tr {% if row.highlight.enabled -%}
+        class="kl-pricing-table-02__highlight" 
+        style="background-color: {{ render_color(row.highlight.color) }}"
+        {%- endif %}>
+        <th scope="row" 
+            class="kl-pricing-table-02__features"
+            {{ cell_attrs|xmlattr }}>{{ row.title }}</th>
+        {% for column in row.columns %}
+        <td class="{% if not loop.first %}kl-pricing-table-02__hide{% endif %}"
+            {{ cell_attrs|xmlattr }}>{{ column.content }}</td>
+        {% endfor %}
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% require_js %}
+<script>
+  (function () {
+    const CLASS_NAME = 'kl-pricing-table-02';
+    const MODULE_ID = '{{ name }}'
+    const table = document.querySelector(`#${MODULE_ID}.${CLASS_NAME} > table`);
+    const tabs = document.querySelectorAll(`#${MODULE_ID} .${CLASS_NAME}__tab`);
+
+    function hideColumns(columns, ignoreIndex) {
+      columns.forEach((item) => item.classList.remove(`${CLASS_NAME}__hide`));
+      const items = Array.from(columns).filter(
+        (elem, index) => index != ignoreIndex
+      );
+      items.forEach((item) => item.classList.add(`${CLASS_NAME}__hide`));
+    }
+
+    function hideUnselected(ignoreIndex) {
+      const head = document.querySelectorAll(`#${MODULE_ID} .${CLASS_NAME}__plans`);
+      const rows = document.querySelectorAll(`#${MODULE_ID}.${CLASS_NAME} tbody tr`);
+
+      hideColumns(head, ignoreIndex);
+
+      rows.forEach((row) => {
+        const columns = row.querySelectorAll('td');
+        hideColumns(columns, ignoreIndex);
+      });
+    }
+
+    tabs.forEach(function (tab, tabIndex) {
+      tab.addEventListener('click', function () {
+        const currentTab = document.querySelector(`#${MODULE_ID} .${CLASS_NAME}__tab--active`);
+        if (currentTab) currentTab.classList.remove(`${CLASS_NAME}__tab--active`);
+
+        tab.classList.add(`${CLASS_NAME}__tab--active`);
+        hideUnselected(tabIndex);
+      });
+    });
+
+    function changeHeaderColumnSpan(e) {
+      const items = document.querySelectorAll(`#${MODULE_ID} .${CLASS_NAME}__plans`);
+
+      if (e.matches) {
+        items.forEach((item) => item.setAttribute('colspan', 2));
+      } else {
+        items.forEach((item) => item.setAttribute('colspan', 1));
+      }
+    }
+
+    const mql = window.matchMedia('(max-width: 920px)');
+    changeHeaderColumnSpan(mql);
+
+    try {
+      mql.addEventListener('change', changeHeaderColumnSpan);
+    } catch (err) {
+      mql.addListener(changeHeaderColumnSpan);
+    }
+  })();
+</script>
+{% end_require_js %}

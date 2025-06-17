@@ -1,0 +1,75 @@
+{% import '../macros.html' %}
+
+{% set padding = '120px 0' %}
+
+{% if module.padding.overwrite %}
+  {% set padding = module.padding.value ~ 'px 0' %}
+{% endif %}
+
+<footer class="kl-footer">
+  <div class="kl-footer__wrapper content-wrapper">
+    {% if module.logo.image.src or module.address or module.social or module.groups %}
+    <div class="kl-footer__content" {% if module.padding.overwrite %}style="padding: {{ padding }};"{% endif %}>
+
+      <div class="kl-footer__info">
+
+        {% if module.logo.image.src -%}
+          {% call render_link(module.logo) %}
+            {{ render_image(module.logo.image) }}
+          {% endcall %}
+        {%- endif %}
+
+        <div class="kl-footer__address">{{ module.address }}</div>
+        <ul class="kl-footer__social">
+          {% for s in module.social %}
+            <a href="{{ s.link }}">
+              {% icon name="{{ s.icon.name }}" style="{{ s.icon.type }}" unicode="{{ s.icon.unicode }}" icon_set="{{ s.icon.icon_set }}"  %}
+            </a>
+          {% endfor %}        
+        </ul>
+      </div>
+
+      <div class="kl-footer__menu">
+        {% for group in module.groups %}
+          <div class="kl-footer__group">
+		    {% if group.title %}
+			<h3>{{ group.title }}</h3>
+			{% endif %}
+            <ul>
+              {% for item in group.menu %}
+                <li>
+                  <a href="{{ item.url }}">{{ item.linkLabel }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endfor %}
+      </div>
+
+    </div>
+    {% endif %}
+
+    {% if module.legal %}
+    <div class="kl-footer__legal">
+      {{ module.legal }}
+    </div>
+    {% endif %}
+
+  </div>
+
+  {% if not theme.footer.hide_byline %}
+  <div class="kl-footer__byline-wrapper">
+    <div class="content-wrapper">
+      <div class="kl-footer__byline">
+        <span>
+          <a href="https://www.kalungi.com/atlas-hubspot-theme-for-b2b-saas-software">
+            Powered by Atlas - a B2B SaaS HubSpot theme
+            <!-- Made by: https://github.com/pipriles -->
+          </a>
+        </span>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+</footer>
+

@@ -1,0 +1,21 @@
+<!--
+  templateType: section
+  isAvailableForNewContent: true
+  label: Hero Banner 3
+  description: "Hero Banner 03 description"
+  screenshotPath: ../images/section-previews/hero-banner-3.png
+-->
+{% dnd_section full_width=True, padding={ top: 0, right: 0, bottom: 0, left: 0  } %}
+
+  {% dnd_module path="../modules/Hero Banner 03", label="Hero Banner",
+    preheader='EBOOK',
+    image={ 
+      'src': get_asset_url('../images/Dashboard.png'), 
+      'width': 884, 
+      'height': 717, 
+      'size_type': 'exact' 
+    }
+  %}
+  {% end_dnd_module %}
+
+{% end_dnd_section %}

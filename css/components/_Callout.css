@@ -1,0 +1,36 @@
+.kl-movable-wrapper {
+  position: relative;
+}
+
+.kl-movable-wrapper > .kl-movable {
+  position: absolute;
+  width: 100%;
+  left: 50%;
+  border-radius: {{theme.cards.border_radius}}px;
+  box-shadow: 0px 11px 30px rgba({{theme.cards.box_shadow.color|convert_rgb}}, {{theme.cards.box_shadow.opacity != null ? theme.cards.box_shadow.opacity / 100 : 1}});
+  background-color: rgba({{theme.cards.background.color|convert_rgb}}, {{theme.cards.background.opacity != null ? theme.cards.background.opacity / 100 : 1}});
+}
+
+.kl-movable-wrapper > .kl-movable .kl-row {
+  display: flex;
+  padding: 30px 0;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+@media screen and (max-width: 767px) {
+  .kl-movable-wrapper > .kl-movable .kl-row {
+    flex-wrap: wrap;
+  }
+}
+
+.kl-movable-wrapper > .kl-movable .kl-row .kl-column {
+  padding: 0 20px;
+}
+
+@media screen and (max-width: 767px) {
+  .kl-movable-wrapper > .kl-movable .kl-row .kl-column {
+    flex: 1 1 100%;
+    padding: 20px;
+  }
+}

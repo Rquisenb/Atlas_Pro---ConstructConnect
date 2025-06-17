@@ -1,0 +1,50 @@
+<!--
+  templateType: global_partial
+  label: Website header
+-->
+
+{% if theme.header.type == 'mega_menu' -%}
+
+  {% module "Navbar with Menu" path="../../modules/Navbar with menu", label="Navbar with Menu",
+    logo={ image: { 'src': get_asset_url('../../images/Logoipsum.svg') } }
+  %}
+
+{% elif theme.header.type == 'simple' %}
+
+  {% module "Navbar" path="../../modules/Simple Navbar", label="Simple Navbar",
+    logo={
+      image: { 'src': get_asset_url('../../images/Logoipsum.svg') }
+    },
+    menu=[ 
+      { "linkLabel": "PRODUCT", "linkUrl" : "/product" },
+      { "linkLabel": "PRICING", "linkUrl" : "/pricing" },
+      { "linkLabel": "RESOURCES", "linkUrl" : "/resources" },
+      { "linkLabel": "BLOG", "linkUrl" : "/blog" },
+      { "linkLabel": "ABOUT", "linkUrl" : "/about" }
+    ],
+    primary_cta={
+      type: 'btn',
+      style: 'inherit',
+      text: 'SIGN IN'
+    },
+    secondary_cta={
+      type: 'btn',
+      style: 'filled',
+      text: 'GET A DEMO'
+    }
+  %}
+{% else %}
+<div class="kl-dnd-header-area">
+{% dnd_area 'dnd_area_header_global', label="Header DND Area" %}
+    {% dnd_section full_width=True, padding={ top: 0, right: 0, bottom: 0, left: 0  } %}
+
+      {% dnd_module path="/Atlas_Pro - ConstructConnect/modules/Navbar with Menu", label="Navbar with Menu",
+        logo={ image: { 'src': get_asset_url('../../images/Logoipsum.svg') } }
+      %}
+      {% end_dnd_module %}
+
+    {% end_dnd_section %}
+{% end_dnd_area %}
+</div>
+<div class="kl-dnd-header-spacer"></div>
+{% endif %}

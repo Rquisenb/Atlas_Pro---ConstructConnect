@@ -1,0 +1,10 @@
+{
+  "global" : true,
+  "content_types" : [ "LANDING_PAGE", "SITE_PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "smart_type" : "NOT_SMART",
+  "host_template_types" : [ "PAGE", "BLOG_POST", "BLOG_LISTING" ],
+  "module_id" : 186299826806,
+  "label" : "Global Blog Subscribe",
+  "icon" : "https://f.hubspotusercontent40.net/hubfs/8071749/Blog%20subscription.svg",
+  "is_available_for_new_content" : true
+}

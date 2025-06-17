@@ -1,0 +1,10 @@
+body, html {
+  scroll-behavior: {{theme.scroll_behavior}};
+}
+
+a[data-hs-anchor="true"] {
+  display: block;
+  transform: translateY(-{{theme.header.height}}px);
+  position: relative;
+  z-index: -1;
+}

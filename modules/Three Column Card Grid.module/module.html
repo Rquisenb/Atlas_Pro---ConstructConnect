@@ -1,0 +1,86 @@
+{% import '../macros.html' %}
+
+{% set spacing = (module.spacing | int(52) ) // 2 %}
+
+<div class="kl-card-grid" id="{{name}}">
+  {% if module.card_search.enabled %}
+    <div class="kl-card__search-container" style="margin: 0 0 {{ spacing }}px;">
+      <label for="{{name}}_search">{{module.card_search.search_label}}</label>
+      <input type="search" id="{{name}}_search" name="{{name}}_search">
+    </div>
+  {% endif %}
+  <div style="margin: -{{ spacing }}px;">
+    {% for item in module.cards %}
+
+      <div class="kl-card-grid__card-wrapper"
+           {% if module.overwrite_spacing %} 
+             style="padding: {{ spacing }}px;"
+           {% endif %}
+        >
+        <div class="kl-card-grid__card">
+          {% if item.image.src %}
+            {% set style = 'background-image: url(%s);'|format(item.image.src) %}
+            {% call render_link(item.anchor, 'kl-card-grid__image', style, true) %}
+              <span class="kl-card-grid__image-description" role="img" aria-label="{{item.image.alt}}"> </span>
+            {% endcall %}
+          {% endif %}
+          <div class="kl-card-grid__content">
+            {% if item.preheader %}
+              <span class="kl-card-grid__preheader">{{ item.preheader }}</span>
+            {% endif %}
+            {{ item.content }}
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+    {% if module.card_search.enabled %}
+      <div class="kl-card__search__no-match" style="margin: {{ spacing }}px;">
+        <span>{{module.card_search.no_match_message}}</span>
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+{% if module.card_search.enabled %}
+  {% require_js %}
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const cardSelector = '#{{name}} .kl-card-grid__card-wrapper'
+        const matchClass = 'kl-card-grid--search__item-match'
+        const noMatchDiv = document.querySelector('#{{name}} .kl-card__search__no-match')
+
+        document.getElementById('{{name}}_search').addEventListener("input", e => {
+          if(e.target.value.length) {
+            document.getElementById('{{name}}').classList.add('kl-card-grid--search-active')
+            cardFilterWithStyle(cardSelector, e.target.value, matchClass, noMatchDiv)
+          } else {
+            document.getElementById('{{name}}').classList.remove('kl-card-grid--search-active')
+            noMatchDiv.style.display = ''
+          }
+        })
+
+        const cardFilterWithStyle = (searchItem, searchQuery, matchClass, noMatchDiv) => {
+          let matchCount = 0
+          Array.from(document.querySelectorAll(searchItem)).forEach( (item) => {
+            const itemSearchableText = item.innerHTML.toLowerCase().replaceAll(/<[^>]*>/g, ' ').replaceAll('\n', ' ').trim() + item.querySelector('.kl-card-grid__image-description')?.getAttribute('aria-label')
+              
+            if ( 
+              searchQuery.trim().length > 0 && itemSearchableText.includes(searchQuery.trim().toLowerCase()) 
+            ) {
+              item.classList.add(matchClass)
+              matchCount += 1
+            } else {
+              item.classList.remove(matchClass)
+            }
+          })
+
+          if(matchCount == 0) {
+            noMatchDiv.style.display = 'flex'
+          } else {
+            noMatchDiv.style.display = ''
+          }
+        }
+      });
+    </script>
+  {% end_require_js %}
+{% endif %}

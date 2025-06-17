@@ -1,0 +1,134 @@
+{% import '../macros.html' %}
+
+{% macro render_navbar_button(btn) -%}
+
+  {% if btn.style == 'inherit' %}
+    {{ render_button(btn, 'kl-navbar__button') }}
+  {% else %}
+    {{ render_button(btn) }}
+  {% endif %}
+
+{%- endmacro %}
+<header class="kl-header">
+  <nav class="kl-navbar content-wrapper">
+    {% if module.logo.image.src %}
+      {% call render_link(module.logo) %}
+        {{ render_image(module.logo.image, 'kl-navbar__logo') }}
+      {% endcall %}
+    {% endif %}
+
+    <div class="kl-navbar__mobile">
+      {% if module.language_switcher %}
+        {% language_switcher "language_switcher" 
+          overrideable=false, 
+          display_mode='localized', 
+          label='Language Switcher' 
+        %}
+      {% endif %}
+      {% if module.menu %}
+      <button class="hamburger hamburger--squeeze kl-navbar__hamburger" type="button">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
+      {% endif %}
+    </div>
+
+    <div class="kl-navbar__content">
+
+      <ul class="kl-navbar__menu">
+        {% for item in module.menu %}
+          <li class="kl-navbar__item">
+
+            {% set className = 'kl-navbar__button kl-navbar__dropdown' %}
+            {% if not item.entries and not item.description %}
+              {% set className = className ~ ' kl-navbar__leaf' %}
+            {% endif %}
+
+            {% call render_link(item, className) %}
+              <span>{{ item.title }}</span>
+            {% endcall %}
+
+            {# if item.entries and item.description #}
+			{% if item.entries or item.description %}
+			<div class="kl-navbar__panel">
+				<div class="kl-navbar__panel-wrapper">
+          <div class="kl-navbar__panel-top">
+             {% if item.content_area_left %}
+					<div class="content-area-left">
+							{{ item.content_area_left }}
+					</div>
+					{% endif %}
+					{% if item.description %}
+					<div class="kl-navbar__description kl-navbar__description--full">
+							{{ item.description }}
+					</div>
+					{% endif %}
+          {% if item.description_second_column %}
+					<div class="kl-navbar__description kl-navbar__description--full">
+							{{ item.description_second_column }}
+					</div>
+					{% endif %}
+          {% if item.description_third_column %}
+					<div class="kl-navbar__description kl-navbar__description--full">
+							{{ item.description_third_column }}
+					</div>
+					{% endif %}
+          {% if item.entries %}
+					<div class="kl-navbar__categories">
+						{% for entry in item.entries %}
+						<div class="kl-navbar__description">
+							{% call render_link(entry) %}
+							{{ entry.description }}
+							{% endcall %}
+						</div>
+						{% endfor %}
+					</div>
+          {% endif %}
+          {% if item.content_area_right %}
+					<div class="content-area-right">
+							{{ item.content_area_right }}
+					</div>
+					{% endif %}
+          </div>
+          {% if item.content_area_bottom_left or item.content_area_bottom_right %}
+            <div class="content-area-bottom">
+              {% if item.content_area_bottom_left %}
+                <div class="content-area-bottom-left">
+                {{ item.content_area_bottom_left }}
+              </div>
+              {% endif %}
+              {% if item.content_area_bottom_right %}
+              <div class="content-area-bottom-cta">
+                {{ item.content_area_bottom_right }}
+              </div>
+              {% endif %}
+            </div>
+					{% endif %}
+       </div>
+			</div>
+			{% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+
+      <div class="kl-navbar__end">
+        {{ render_navbar_button(module.tertiary_cta) }}
+        {{ render_navbar_button(module.secondary_cta) }}
+        {{ render_navbar_button(module.primary_cta) }}
+        {% if module.language_switcher %}
+          {% language_switcher "language_switcher" 
+            overrideable=false, 
+            display_mode='localized', 
+            label='Language Switcher' 
+          %}
+        {% endif %}
+      </div>
+
+    </div>
+
+  </nav>
+
+</header>
+
+<div class="kl-header-placeholder"></div>

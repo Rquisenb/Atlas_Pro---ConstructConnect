@@ -1,0 +1,33 @@
+/* Blog subscribe */
+.blog-subscribe {
+  background-color: #F0F5FF;
+  padding: 80px 0;
+}
+
+.blog-subscribe__wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 768px) {
+  .blog-subscribe__wrapper {
+    display: block;
+  }
+}
+
+.blog-subscribe__header {
+  flex-basis: 465px;
+  flex-grow: 1;
+  max-width: 680px;
+}
+
+.blog-subscribe__form {
+  flex-basis: 450px;
+  margin-left: 32px;
+}
+
+@media screen and (max-width: 768px) {
+  .blog-subscribe__form {
+    margin: 32px 0 0;
+  }
+}

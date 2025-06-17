@@ -1,0 +1,35 @@
+<!--
+ templateType: section
+ label: Product Features Bigger Section
+ description: "Section used for Product Features in Product Page Template"
+ isAvailableForNewContent: true
+ screenshotPath: ../images/section-previews/product-features-bigger.png
+-->
+{% dnd_section %}
+
+  {% dnd_column padding={ left: 0, right: 0 } %}
+
+    {% dnd_row padding={ 'bottom': 64 } %}
+
+      {% dnd_module path='../modules/Custom Rich Text', alignment='center',
+        preheader='POWERFUL FEATURES'
+        max_width={ enabled: true, value: 720 }
+      %}
+        {% module_attribute 'content' %}
+          <h2>Works with your team and your campaigns</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+        {% end_module_attribute %}
+      {% end_dnd_module %}
+
+    {% end_dnd_row %}
+
+    {% dnd_row %}
+
+      {% dnd_module path="../modules/Product Features 02" %}
+      {% end_dnd_module %}
+
+    {% end_dnd_row %}
+
+  {% end_dnd_column %}
+
+{% end_dnd_section %}

@@ -1,0 +1,62 @@
+<!--
+  templateType: error_page
+  isAvailableForNewContent: true
+  label: Atlas - 404 error
+  screenshotPath: ../../images/template-previews/404.png
+-->
+{% extends '../layouts/base.html' %}
+
+{% block body %}
+<main class="body-container-wrapper">
+
+  <section class="content-wrapper">
+    <div class="kl-error-page">
+      <span class="kl-error-page__preheader">ERROR 404</span>
+      <h1 class="kl-error-page__heading">Oops! Page not found.</h1>
+      <p>Let’s get you to where you need to be.</p>
+      <a class="button" href="/">GO HOME</a>
+    </div>
+  </section>
+
+  <section class="content-wrapper">
+    <div class="blog-more blog-more--centered">
+      <h2>Posts you may be interested in</h2>
+      <div class="blog-more-posts">
+        {% for post in blog_popular_posts('default', 3) %}
+
+          <article class="blog-more-posts__post-wrapper">
+            <div class="blog-more-posts__post">
+              {% if post.featured_image %}
+                <a class="blog-more-posts__post-image" 
+                   style="background-image: url('{{ post.featured_image }}');" 
+                   href="{{ post.absolute_url }}">
+                </a>
+              {% endif %}
+              <div class="blog-more-posts__post-content">
+                <div>
+                  {% set featured_tag = post.topic_list | first %}
+                  {% if featured_tag %}
+                    <span class="blog-more-posts__post-preheader">{{ featured_tag }}</span>
+                  {% endif %}
+                  <h3><a href="{{ post.absolute_url }}">{{ post.name }}</a></h3>
+                  <p>{{ post.meta_description | truncatehtml(150, '...', false) }}</p>
+                </div>
+                <div class="blog-more-posts__post-meta">
+                  <span class="blog-more-posts__post-author">
+                    {{ post.blog_post_author }}
+                  </span>
+                  <span class="blog-more-posts__post-date">
+                    {{ post.publish_date | datetimeformat('%b %e, %Y') }}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+</main>
+{% endblock body %}

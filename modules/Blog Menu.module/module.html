@@ -1,0 +1,25 @@
+{% import '../macros.html' %}
+
+{# Check out macros.html file to see how this module is implemented #}
+
+{% if module.show_menu %}
+{% call render_animation(module.animation) %}
+<div class="blog-post__menu-content">
+	<div class="kl-blog-menu">
+		<h4 class="kl-blog-menu__title">{{module.title}}</h4>	
+		<ul class="kl-blog-menu__list">
+			{% for anchor in module.anchors %}
+				<li><a href="{{anchor.anchor_link}}">{{anchor.anchor_text}}</a></li>
+				{% if anchor.child_anchors.anchor_text != "" %}
+				<ul>
+					{% for child_anchor in anchor.child_anchors %}
+						<li><a href="{{child_anchor.anchor_link}}">{{child_anchor.anchor_text}}</a></li>
+					{% endfor %}
+				</ul>
+				{% endif %}
+			{% endfor %}
+		</ul>
+	</div>
+</div>
+{% endcall %}
+{% endif %}

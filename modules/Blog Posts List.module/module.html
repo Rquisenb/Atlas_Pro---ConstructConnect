@@ -1,0 +1,116 @@
+{% import '../macros.html' %}
+
+{# Getting the blog information #}
+{% set contents = blog_recent_posts(module.blog | default('default'), module.number_of_posts )%}
+
+{# Check out macros.html file to see how this module is implemented #}
+{% call render_animation(module.animation) %}
+
+<section class="blog-index" id={{name}}>
+	{# Blog listing #}
+	{% for content in contents %}
+	{# On the blog listing page, the first post will be featured above older posts #}
+
+	<article class="blog-index__post-wrapper">
+		<div class="blog-index__post">
+			{% if content.featured_image and module.show_image %}
+			<a class="blog-index__post-image" 
+			   style="background-image: url('{{ content.featured_image }}');" 
+			   href="{{ content.absolute_url }}">
+			</a>
+			{% endif %}
+			<div class="blog-index__post-content">
+				<div>
+					{% set featured_tag = content.topic_list | first %}
+					{% if featured_tag and module.show_tag %}
+					<span class="blog-index__post-preheader">{{ featured_tag }}</span>
+					{% endif %}
+					<h3><a href="{{ content.absolute_url }}">{{ content.name }}</a></h3>
+					{% if module.show_summary %}
+					<p>{{ content.meta_description | default(content.post_summary, true) | truncatehtml(150, '...', false) }}</p>
+					{% endif %}
+				</div>
+				<div class="blog-index__post-meta">
+					{% if module.show_author %}
+					<span class="blog-index__post-author">
+						{{ content.blog_post_author }}
+					</span>
+					{% endif %}
+					{% if module.show_date %}
+					<span class="blog-index__post-date">
+						{{ content.publish_date | datetimeformat('%b %e, %Y') }}
+					</span>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</article>
+
+	{% endfor %}
+	{# End blog listing #}
+
+</section>
+{% endcall %}
+{% require_css %}
+<style>
+/* This will calculate the width of the columns */
+
+#{{name}}.blog-index .blog-index__post-wrapper{
+	/* This calculates the width for each column */
+	flex-basis: calc((100% - 2%*({{module.number_of_columns}} - 1))/{{module.number_of_columns}});
+}
+#{{name}}.blog-index .blog-index__post-wrapper{
+	padding-left: 0;
+	padding-right: 0;
+}
+#{{name}}.blog-index .blog-index__post-wrapper{
+	margin-left: 1%;
+	margin-right: 1%;
+}
+{% if module.number_of_columns > 1 %}
+#{{name}}.blog-index .blog-index__post-wrapper:nth-child({{module.number_of_columns}}n-{{module.number_of_columns - 1}}){
+		margin-left: 0;
+	}
+	#{{name}}.blog-index .blog-index__post-wrapper:nth-child({{module.number_of_columns}}n){
+		margin-right: 0;
+	}
+{% elif module.number_of_columns == 1 %}
+	#{{name}}.blog-index .blog-index__post-wrapper{
+		margin-left: 0;
+		margin-right: 0;
+	}
+{% endif %}
+@media screen and (max-width:1000px){
+
+{% if module.number_of_columns > 1 %}
+	#{{name}}.blog-index .blog-index__post-wrapper{
+		flex-basis: 49%;
+	}
+	#{{name}}.blog-index .blog-index__post-wrapper:nth-child(odd){
+		margin-left: 0;
+		margin-right: 1%;
+	}
+	#{{name}}.blog-index .blog-index__post-wrapper:nth-child(even){
+		margin-left: 1%;
+		margin-right: 0;
+	}
+{% endif %}
+}
+@media screen and (max-width:767px){
+	#{{name}}.blog-index .blog-index__post-wrapper{
+		flex-basis: 100%;
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+/* END --- This will calculate the width of the columns */
+
+/* This will overwrite the meta container (for the author and the date) */
+#{{name}}.blog-index .blog-index__post-meta{
+	justify-content: space-between;
+}
+#{{name}}.blog-index .blog-index__post-meta .blog-index__post-date{
+	margin: 0;
+}
+</style>
+{% end_require_css %}

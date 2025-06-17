@@ -1,0 +1,70 @@
+[ {
+  "id" : "d5968dfd-bac5-4447-37ec-cd70f4f8deb6",
+  "name" : "header",
+  "label" : "Header",
+  "help_text" : "",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<h3>Get notified on new marketing insights</h3>\n<p>Be the first to know about new B2B SaaS Marketing insights to build or refine your marketing function with the tools and knowledge of today’s industry.</p>"
+}, {
+  "id" : "f30c2cc5-f3db-c5c2-3915-6a2da34fbba1",
+  "name" : "blog",
+  "label" : "Blog",
+  "required" : false,
+  "locked" : false,
+  "placeholder" : "Select blog to display",
+  "type" : "blog",
+  "display_width" : null
+}, {
+  "id" : "376af833-0e9c-624f-dd1f-4f3c69024cf6",
+  "name" : "title",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "placeholder" : "Title to display above form",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "display_width" : null
+}, {
+  "id" : "81058043-60b7-b261-f15c-5c342c8d2196",
+  "name" : "response",
+  "label" : "Response",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<p>Thanks for subscribing!</p>"
+}, {
+  "id" : "style",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : true,
+  "children" : [ {
+    "id" : "style.new_background_color",
+    "name" : "new_background_color",
+    "label" : "Background_color",
+    "required" : false,
+    "locked" : false,
+    "aliases_mapping" : {
+      "property_aliases_paths" : {
+        "new_background_color" : [ "background_color" ]
+      }
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#F0F5FF",
+      "opacity" : 100
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null
+} ]

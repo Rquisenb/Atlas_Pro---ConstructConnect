@@ -1,0 +1,10 @@
+[ {
+  "id" : "82d58b3f-a353-f9a0-81d2-3d0ae1540d51",
+  "name" : "legal",
+  "label" : "Legal",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<span>© 2020 Company</span> <span>All rights reserved</span> <span> <a href=\"#\">Privacy Policy</a></span>"
+} ]

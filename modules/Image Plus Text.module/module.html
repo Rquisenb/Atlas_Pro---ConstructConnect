@@ -1,0 +1,45 @@
+{% import '../macros.html' %}
+
+{% set image_src = module.background_image.image.src if module.background_image.image.src else get_asset_url('../../images/building.jpg') %}
+{# Check out macros.html file to see how this module is implemented #}
+{% call render_animation(module.animation) %}
+<div class="kl-wide-section" id="{{name}}">
+	<div class="kl-wide-section__wrapper">
+		<div class="kl-wide-section__image">
+		</div>
+		<div class="kl-wide-section__text">
+			<div class="kl-wide-section__text-content">
+				{{ kl_rich_text(module) }}
+			</div>
+		</div>
+	</div>
+</div>
+{% endcall %}
+
+{% require_css %}
+<style>
+{% if module.switch_sides %}
+#{{name}} .kl-wide-section__wrapper{
+	flex-direction: row-reverse;
+}
+{% endif %}
+#{{name}} .kl-wide-section__image{
+	background-color: {{module.style.new_image_background_color.css}};	
+	background-image: url({{image_src}});
+	background-size: {{module.background_image.size}}
+}
+#{{name}} .kl-wide-section__text{
+	background-color: {{module.style.new_text_background_color.css}};	
+	padding-top: {{module.padding.padding_top}}px;
+	padding-bottom: {{module.padding.padding_bottom}}px;
+	padding-left: {{module.padding.padding_left}}px;
+	padding-right: {{module.padding.padding_right}}px;
+}
+@media screen and (max-width:767px){
+	#{{name}} .kl-wide-section__image{
+		min-height: {{module.background_image.min_height}}px;
+	}
+}
+</style>
+{% end_require_css %}
+

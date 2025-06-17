@@ -1,0 +1,310 @@
+[ {
+  "id" : "74e4ecd0-460c-1894-652f-c7eae00a442a",
+  "name" : "animation",
+  "label" : "Animation on scroll",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "animation.enabled",
+    "name" : "enabled",
+    "label" : "Enabled",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "1549cd32-c29d-d91c-1407-32eb877d2589",
+    "name" : "effect",
+    "label" : "Effect",
+    "required" : true,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "fade", "Fade" ], [ "fade-up", "Fade up" ], [ "fade-down", "Fade down" ], [ "fade-left", "Fade left" ], [ "fade-right", "Fade right" ], [ "fade-up-right", "Fade up right" ], [ "fade-up-left", "Fade up left" ], [ "fade-down-right", "Fade down right" ], [ "fade-down-left", "Fade down left" ], [ "flip-up", "Flip up" ], [ "flip-down", "Flip down" ], [ "flip-left", "Flip left" ], [ "flip-right", "Flip right" ], [ "slide-up", "Slide up" ], [ "slide-down", "Slide down" ], [ "slide-left", "Slide left" ], [ "slide-right", "Slide right" ], [ "zoom-in", "Zoom in" ], [ "zoom-in-up", "Zoom in up" ], [ "zoom-in-down", "Zoom in down" ], [ "zoom-in-left", "Zoom in left" ], [ "zoom-in-right", "Zoom in right" ], [ "zoom-out", "Zoom out" ], [ "zoom-out-up", "Zoom out up" ], [ "zoom-out-down", "Zoom out down" ], [ "zoom-out-left", "Zoom out left" ], [ "zoom-out-right", "Zoom out right" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "fade-up"
+  }, {
+    "id" : "a881ff50-25b5-9c5f-48fc-b1a57d8aaa72",
+    "name" : "offset",
+    "label" : "Offset",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "min" : 0,
+    "step" : 1,
+    "suffix" : "px",
+    "type" : "number",
+    "display_width" : null,
+    "default" : 120
+  }, {
+    "id" : "8ac66be6-a7be-7760-8618-fa5459338fe2",
+    "name" : "delay",
+    "label" : "Delay",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "min" : 0,
+    "step" : 1,
+    "suffix" : "ms",
+    "type" : "number",
+    "display_width" : null,
+    "default" : 0
+  }, {
+    "id" : "156aba08-89f6-1ba7-c726-c8d98283008b",
+    "name" : "duration",
+    "label" : "Duration",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "min" : 0,
+    "step" : 1,
+    "suffix" : "ms",
+    "type" : "number",
+    "display_width" : null,
+    "default" : 400
+  }, {
+    "id" : "fd9c8c6b-3933-fe38-1936-0317acb3af84",
+    "name" : "easing",
+    "label" : "Easing",
+    "required" : true,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "linear", "Linear" ], [ "ease", "Ease" ], [ "ease-in", "Ease in" ], [ "ease-out", "Ease out" ], [ "ease-in-out", "Ease in out" ], [ "ease-in-back", "Ease in back" ], [ "ease-out-back", "Ease out back" ], [ "ease-in-out-back", "Ease in out back" ], [ "ease-in-sine", "Ease in sine" ], [ "ease-out-sine", "Ease out sine" ], [ "ease-in-out-sine", "Ease in out sine" ], [ "ease-in-quad", "Ease in quad" ], [ "ease-out-quad", "Ease out quad" ], [ "ease-in-out-quad", "Ease in out quad" ], [ "ease-in-cubic", "Ease in cubic" ], [ "ease-out-cubic", "Ease out cubic" ], [ "ease-in-out-cubic", "Ease in out cubic" ], [ "ease-in-quart", "Ease in quart" ], [ "ease-out-quart", "Ease out quart" ], [ "ease-in-out-quart", "Ease in out quart" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "ease-in-out"
+  }, {
+    "id" : "a635b0a2-5bac-f2f1-4b5c-00d9392cebaf",
+    "name" : "mirror",
+    "label" : "Mirror",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "6f28a452-eca3-4578-7486-cf04112d7b91",
+    "name" : "once",
+    "label" : "Once",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "44a08d30-02c9-4ac8-1c36-9000337d097c",
+    "name" : "anchor_placement",
+    "label" : "Anchor placement",
+    "required" : true,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "top-bottom", "Top-bottom" ], [ "top-center", "Top-center" ], [ "top-top", "Top top" ], [ "center-bottom", "Center bottom" ], [ "center-center", "Center center" ], [ "center-top", "Center top" ], [ "bottom-bottom", "Bottom bottom" ], [ "bottom-center", "Bottom center" ], [ "bottom-top", "Bottom top" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "top-bottom"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "effect" : "fade-up",
+    "offset" : 120,
+    "delay" : 0,
+    "duration" : 400,
+    "easing" : "ease-in-out",
+    "mirror" : true,
+    "once" : false,
+    "anchor_placement" : "top-bottom"
+  }
+}, {
+  "id" : "05ed3cfa-e767-b71f-7636-c06489c9390d",
+  "name" : "features",
+  "label" : "Features",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 4
+  },
+  "children" : [ {
+    "id" : "8d6245c2-5b4e-e9bc-0a4a-888e4f584789",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "placeholder" : "Reliable system",
+    "allow_new_line" : false,
+    "show_emoji_picker" : true,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Reliable system"
+  }, {
+    "id" : "a6af430c-9f90-56a0-dc64-bf5f0fb668a2",
+    "name" : "description",
+    "label" : "Description",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "placeholder" : "From direct integrations with card networks and banks to checkout flows in the browser, we operate on and optimize at every level of the financial stack.",
+    "allow_new_line" : false,
+    "show_emoji_picker" : true,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "From direct integrations with card networks and banks to checkout flows in the browser, we operate on and optimize at every level of the financial stack."
+  }, {
+    "id" : "dcc19c00-07ac-c211-fccf-99e3fc3fb962",
+    "name" : "figure",
+    "label" : "Figure",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "e594917f-a0cb-eb50-9dbd-2f8cf9c0f8e3",
+      "name" : "type",
+      "label" : "Type",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "img", "Image" ], [ "icon", "Icon" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "img"
+    }, {
+      "id" : "8457830b-f57f-476a-95cb-1c98612dbd9a",
+      "name" : "image",
+      "label" : "Image",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "e594917f-a0cb-eb50-9dbd-2f8cf9c0f8e3",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "img",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "responsive" : true,
+      "resizable" : false,
+      "show_loading" : false,
+      "type" : "image",
+      "display_width" : null,
+      "default" : {
+        "size_type" : "auto",
+        "src" : "",
+        "alt" : null,
+        "loading" : "disabled"
+      }
+    }, {
+      "id" : "67cd9eeb-432b-ceb0-710b-bc9a731f3cdb",
+      "name" : "icon",
+      "label" : "Icon",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "e594917f-a0cb-eb50-9dbd-2f8cf9c0f8e3",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "icon",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "icon_set" : "fontawesome-5.0.10",
+      "type" : "icon",
+      "display_width" : null,
+      "default" : { }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "type" : "img",
+      "image" : {
+        "size_type" : "auto",
+        "src" : "",
+        "alt" : null,
+        "loading" : "disabled"
+      },
+      "icon" : { }
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "figure" : {
+      "type" : "img",
+      "image" : {
+        "size_type" : "auto",
+        "src" : "",
+        "alt" : null,
+        "loading" : "disabled"
+      },
+      "icon" : { }
+    },
+    "title" : "Reliable system",
+    "description" : "From direct integrations with card networks and banks to checkout flows in the browser, we operate on and optimize at every level of the financial stack."
+  }, {
+    "figure" : {
+      "type" : "img",
+      "image" : {
+        "size_type" : "auto",
+        "src" : "",
+        "alt" : null,
+        "loading" : "disabled"
+      },
+      "icon" : { }
+    },
+    "title" : "Reliable system",
+    "description" : "From direct integrations with card networks and banks to checkout flows in the browser, we operate on and optimize at every level of the financial stack."
+  }, {
+    "figure" : {
+      "type" : "img",
+      "image" : {
+        "size_type" : "auto",
+        "src" : "",
+        "alt" : null,
+        "loading" : "disabled"
+      },
+      "icon" : { }
+    },
+    "title" : "Reliable system",
+    "description" : "From direct integrations with card networks and banks to checkout flows in the browser, we operate on and optimize at every level of the financial stack."
+  }, {
+    "figure" : {
+      "type" : "img",
+      "image" : {
+        "size_type" : "auto",
+        "src" : "",
+        "alt" : null,
+        "loading" : "disabled"
+      },
+      "icon" : { }
+    },
+    "title" : "Reliable system",
+    "description" : "From direct integrations with card networks and banks to checkout flows in the browser, we operate on and optimize at every level of the financial stack."
+  } ]
+} ]

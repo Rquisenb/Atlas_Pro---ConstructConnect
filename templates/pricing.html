@@ -1,0 +1,34 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Pricing
+  screenshotPath: ../images/template-previews/pricing.png
+-->
+{% extends './layouts/base.html' %}
+
+{% block body %}
+<main class="body-container-wrapper">
+  {% dnd_area 'dnd_area' class='body-container body-container--pricing', label='Main section' %}
+
+    {# Pricing cards section #}
+    {% include_dnd_partial path='../sections/main-pricing.html' %}
+
+    {# FAQ section #}
+    {% include_dnd_partial path='../sections/faq-section.html' %}
+
+    {% dnd_section background_color={ r: 241, g: 244, b: 249 } %}
+
+      {% dnd_module path='../modules/Custom Rich Text', alignment='center',
+        primary_cta={ type: 'btn', style: 'filled', text: 'GET A DEMO' },
+        secondary_cta={ type: 'btn', style: 'outlined', text: 'TRY FREE' }
+      %}
+        {% module_attribute 'content' %}
+          <h2>One tool for all your metrics</h2>
+        {% end_module_attribute %}
+      {% end_dnd_module %}
+
+    {% end_dnd_section %}
+
+  {% end_dnd_area %}
+</main>
+{% endblock body %}

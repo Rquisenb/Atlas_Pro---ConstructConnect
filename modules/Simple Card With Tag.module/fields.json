@@ -144,6 +144,49 @@
   "display_width" : null,
   "default" : ""
 }, {
+  "id" : "pill_text",
+  "name" : "pill_text",
+  "label" : "Pill Tag Text",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "NEW"
+}, {
+  "id" : "pill_background_color",
+  "name" : "pill_background_color",
+  "label" : "Pill Tag Background Color",
+  "required" : false,
+  "locked" : false,
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : "#01304a",
+    "opacity" : 100
+  }
+}, {
+  "id" : "pill_link",
+  "name" : "pill_link",
+  "label" : "Pill Tag Link",
+  "required" : false,
+  "locked" : false,
+  "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+  "show_advanced_rel_options" : false,
+  "type" : "link",
+  "display_width" : null,
+  "default" : {
+    "url" : {
+      "content_id" : null,
+      "type" : "EXTERNAL",
+      "href" : ""
+    },
+    "open_in_new_tab" : false,
+    "no_follow" : false
+  }
+}, {
   "id" : "67c8e7f0-ba30-2ee2-9cab-fa7e5c23adfd",
   "name" : "content",
   "label" : "Content",

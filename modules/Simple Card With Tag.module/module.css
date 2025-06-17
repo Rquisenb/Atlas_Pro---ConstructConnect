@@ -12,7 +12,8 @@
 
 /* Make cards equal height - specific to Simple Card With Tag module only */
 .simple-card-with-tag {
-    height: 300px;
+    min-height: 300px;
+    max-height: 100%;
     display: flex;
     flex-direction: column;
 }

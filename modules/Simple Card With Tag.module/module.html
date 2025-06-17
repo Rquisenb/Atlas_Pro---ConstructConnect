@@ -13,11 +13,25 @@
 {% if style %}
 {% set attrs = { 'style': style } %}
 {% endif %}
+
+{% set pill_style = 'background-color: ' ~ render_color(module.pill_background_color) ~ ';' %}
+
 {% call render_animation(module.animation) %}
 <div class="kl-card simple-card-with-tag" {{ attrs|xmlattr }}>
-  <div class="cc-pill-tag">
-    {{ module.pill_text }}
-  </div>
+  {% if module.pill_link.url.href %}
+    <a href="{{ module.pill_link.url.href }}" 
+       {% if module.pill_link.open_in_new_tab %}target="_blank"{% endif %}
+       {% if module.pill_link.no_follow %}rel="nofollow"{% endif %}
+       class="cc-pill-tag-link">
+      <div class="cc-pill-tag" style="{{ pill_style }}">
+        {{ module.pill_text }}
+      </div>
+    </a>
+  {% else %}
+    <div class="cc-pill-tag" style="{{ pill_style }}">
+      {{ module.pill_text }}
+    </div>
+  {% endif %}
   {%- if module.image.src -%}
   {% call render_link(module.button.anchor) %}
   <div class="kl-card__image">{{ render_image(module.image) }}</div>

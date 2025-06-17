@@ -1,0 +1,33 @@
+.cc-pill-tag {
+    background-color: #01304a;
+    color: white;
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-size: 13px;
+    width: fit-content;
+}
+
+/* Make cards equal height - specific to Simple Card With Tag module only */
+.simple-card-with-tag {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.simple-card-with-tag .kl-card__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.simple-card-with-tag .kl-card__content > *:last-child {
+    margin-bottom: 0;
+}
+
+/* Ensure buttons align at bottom */
+.simple-card-with-tag .kl-button {
+    margin-top: auto;
+}

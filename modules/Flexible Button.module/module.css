@@ -1,0 +1,349 @@
+/* Flexible Button Module Styles */
+
+.flexible-button-container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+
+.flexible-button {
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  box-sizing: border-box;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Icon styling */
+.flexible-button.has-icon {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.flexible-button.has-icon img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+  filter: brightness(0) invert(1); /* Make icon white by default */
+}
+
+.flexible-button.has-icon:hover img {
+  transform: scale(1.1);
+}
+
+/* Button text styling */
+.flexible-button .button-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Hover Effects - CSS Classes for Customization */
+.flexible-button:hover {
+  transition: ease-in-out 0.3s;
+}
+
+/* Focus states for accessibility */
+.flexible-button:focus {
+  outline: 2px solid #007cba;
+  outline-offset: 2px;
+}
+
+.flexible-button:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Active state */
+.flexible-button:active {
+  transform: scale(0.98) !important;
+  transition: transform 0.1s ease !important;
+}
+
+/* Disabled state */
+.flexible-button[disabled],
+.flexible-button.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Loading state */
+.flexible-button.loading {
+  position: relative;
+  color: transparent !important;
+}
+
+.flexible-button.loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+  .flexible-button {
+    font-size: 14px !important;
+    padding: 10px 20px !important;
+  }
+  
+  .flexible-button.has-icon img {
+    width: 18px !important;
+    height: 18px !important;
+  }
+  
+  .flexible-button-container {
+    padding: 8px 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .flexible-button {
+    font-size: 13px !important;
+    padding: 8px 16px !important;
+    width: 100% !important;
+  }
+  
+  .flexible-button.has-icon img {
+    width: 16px !important;
+    height: 16px !important;
+  }
+  
+  .flexible-button-container {
+    padding: 5px 0;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .flexible-button {
+    border: 2px solid currentColor !important;
+  }
+  
+  .flexible-button:focus {
+    outline: 3px solid currentColor !important;
+    outline-offset: 2px;
+  }
+  
+  .flexible-button.has-icon img {
+    filter: none !important;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .flexible-button {
+    transition: none !important;
+  }
+  
+  .flexible-button:hover {
+    transform: none !important;
+  }
+  
+  .flexible-button:active {
+    transform: none !important;
+  }
+  
+  .flexible-button.has-icon img {
+    transition: none !important;
+  }
+  
+  .flexible-button.has-icon:hover img {
+    transform: none !important;
+  }
+}
+
+/* Print styles */
+@media print {
+  .flexible-button {
+    background-color: transparent !important;
+    color: #000 !important;
+    border: 1px solid #000 !important;
+    box-shadow: none !important;
+  }
+  
+  .flexible-button:hover {
+    background-color: transparent !important;
+    color: #000 !important;
+    transform: none !important;
+  }
+  
+  .flexible-button.has-icon img {
+    filter: none !important;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .flexible-button {
+    /* Default dark mode adjustments can be overridden by user settings */
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .flexible-button {
+    min-height: 44px; /* Minimum touch target size */
+    min-width: 44px;
+  }
+  
+  .flexible-button:hover {
+    /* Disable hover effects on touch devices */
+    transform: none !important;
+  }
+  
+  .flexible-button.has-icon:hover img {
+    transform: none !important;
+  }
+}
+
+/* Internet Explorer support */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .flexible-button {
+    display: inline-block;
+    zoom: 1;
+  }
+  
+  .flexible-button.has-icon {
+    display: inline-flex !important;
+  }
+}
+
+/* Safari specific fixes */
+@supports (-webkit-appearance: none) {
+  .flexible-button {
+    -webkit-appearance: none;
+    -webkit-border-radius: inherit;
+  }
+}
+
+/* Firefox specific fixes */
+@-moz-document url-prefix() {
+  .flexible-button {
+    line-height: normal;
+  }
+}
+
+/* Ensure proper rendering in HubSpot page editor */
+.hs-page-editor .flexible-button {
+  pointer-events: auto;
+}
+
+/* Animation for button appearance */
+@keyframes buttonFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.flexible-button {
+  animation: buttonFadeIn 0.3s ease-out;
+}
+
+/* Enhanced hover effects for modern browsers */
+@supports (backdrop-filter: blur(1px)) {
+  .flexible-button:hover {
+    backdrop-filter: brightness(1.1);
+  }
+}
+
+/* Custom scrollbar for button text if needed */
+.flexible-button::-webkit-scrollbar {
+  display: none;
+}
+
+.flexible-button {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Ensure proper text rendering */
+.flexible-button {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Support for RTL languages */
+[dir="rtl"] .flexible-button {
+  text-align: right;
+}
+
+/* Ensure button works with screen readers */
+.flexible-button[aria-label] {
+  position: relative;
+}
+
+/* Support for button groups */
+.flexible-button-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.flexible-button-group .flexible-button {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Ensure proper stacking context */
+.flexible-button {
+  z-index: 1;
+  position: relative;
+}
+
+/* Support for button with icons */
+.flexible-button.has-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.flexible-button.has-icon::before,
+.flexible-button.has-icon::after {
+  flex-shrink: 0;
+}
+
+/* Ensure proper button sizing in flex containers */
+.flexible-button {
+  flex-shrink: 0;
+  align-self: flex-start;
+}
+
+/* Icon-specific responsive adjustments */
+@media screen and (max-width: 320px) {
+  .flexible-button.has-icon {
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .flexible-button.has-icon img {
+    width: 14px !important;
+    height: 14px !important;
+  }
+}

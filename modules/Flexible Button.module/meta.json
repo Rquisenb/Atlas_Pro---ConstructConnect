@@ -1,0 +1,14 @@
+{
+  "label": "Flexible Button",
+  "css_assets": [],
+  "external_js": [],
+  "global": false,
+  "help_text": "A highly customizable button module with extensive styling options including colors, fonts, padding, effects, and responsive design.",
+  "host_template_types": ["PAGE", "BLOG_POST", "BLOG_LISTING"],
+  "icon": "https://cdn2.hubspot.net/hubfs/6326501/boilerplate/Module%20Icons/button.svg",
+  "js_assets": [],
+  "other_assets": [],
+  "smart_type": "NOT_SMART",
+  "tags": ["button", "cta", "call-to-action", "flexible", "customizable"],
+  "is_available_for_new_content": true
+} 

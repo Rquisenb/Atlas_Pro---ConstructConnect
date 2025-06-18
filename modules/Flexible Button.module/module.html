@@ -1,0 +1,123 @@
+{% import '../macros.html' %}
+
+{% set button_text = module.button_text | default('Click me') %}
+{% set button_link = module.button_link | default({}) %}
+
+{% set icon_image = module.button_icon.image | default({}) %}
+{% set icon_size = module.button_icon.size | default(20) %}
+{% set icon_position = module.button_icon.position | default('left') %}
+{% set icon_spacing = module.button_icon.spacing | default(8) %}
+{% set has_icon = icon_image.src and icon_image.src != '' %}
+
+{% set bg_color = module.button_styling.background_color.color | default('#01304A') %}
+{% set hover_bg_color = module.button_styling.hover_background_color.color | default('#024a7a') %}
+{% set text_color = module.button_styling.text_color.color | default('#ffffff') %}
+{% set hover_text_color = module.button_styling.hover_text_color.color | default('#ffffff') %}
+{% set border_color = module.button_styling.border_color.color | default('#01304A') %}
+{% set hover_border_color = module.button_styling.hover_border_color.color | default('#024a7a') %}
+{% set border_width = module.button_styling.border_width | default(0) %}
+{% set border_radius = module.button_styling.border_radius | default(6) %}
+{% set padding_top = module.button_styling.padding_top | default(12) %}
+{% set padding_bottom = module.button_styling.padding_bottom | default(12) %}
+{% set padding_left = module.button_styling.padding_left | default(24) %}
+{% set padding_right = module.button_styling.padding_right | default(24) %}
+{% set margin_top = module.button_styling.margin_top | default(0) %}
+{% set margin_bottom = module.button_styling.margin_bottom | default(0) %}
+{% set margin_left = module.button_styling.margin_left | default(0) %}
+{% set margin_right = module.button_styling.margin_right | default(0) %}
+{% set font_family = module.button_styling.font_family | default('montserrat') %}
+{% set font_size = module.button_styling.font_size | default(16) %}
+{% set font_weight = module.button_styling.font_weight | default('500') %}
+{% set text_transform = module.button_styling.text_transform | default('none') %}
+{% set letter_spacing = module.button_styling.letter_spacing | default(0) %}
+{% set line_height = module.button_styling.line_height | default(1.2) %}
+
+{% set shadow_enabled = module.button_effects.shadow_enabled | default(true) %}
+{% set shadow_color = module.button_effects.shadow_color.color | default('#000000') %}
+{% set shadow_opacity = module.button_effects.shadow_opacity | default(20) %}
+{% set shadow_blur = module.button_effects.shadow_blur | default(8) %}
+{% set hover_scale = module.button_effects.hover_scale | default(1.05) %}
+{% set transition_duration = module.button_effects.transition_duration | default(0.3) %}
+
+{% set alignment = module.button_alignment | default('center') %}
+{% set width_type = module.button_width | default('auto') %}
+{% set custom_width = module.custom_width | default(200) %}
+
+{% set font_family_css = {
+  'montserrat': 'Montserrat, sans-serif',
+  'arial': 'Arial, sans-serif',
+  'helvetica': 'Helvetica, sans-serif',
+  'georgia': 'Georgia, serif',
+  'times': 'Times New Roman, serif',
+  'verdana': 'Verdana, sans-serif',
+  'tahoma': 'Tahoma, sans-serif',
+  'trebuchet': 'Trebuchet MS, sans-serif',
+  'courier': 'Courier New, monospace',
+  'impact': 'Impact, sans-serif'
+} %}
+
+{% set alignment_css = {
+  'left': 'flex-start',
+  'center': 'center',
+  'right': 'flex-end'
+} %}
+
+{% set width_css = {
+  'auto': 'auto',
+  'full': '100%',
+  'custom': custom_width ~ 'px'
+} %}
+
+<div class="flexible-button-container" style="display: flex; justify-content: {{ alignment_css[alignment] }}; width: 100%;">
+  <a href="{{ button_link.url.href | default('#') }}" 
+     {% if button_link.open_in_new_tab %}target="_blank"{% endif %}
+     {% if button_link.no_follow %}rel="nofollow"{% endif %}
+     class="flexible-button{% if has_icon %} has-icon{% endif %}"
+     style="
+       display: inline-flex;
+       align-items: center;
+       justify-content: center;
+       background-color: {{ bg_color }};
+       color: {{ text_color }};
+       border: {{ border_width }}px solid {{ border_color }};
+       border-radius: {{ border_radius }}px;
+       padding: {{ padding_top }}px {{ padding_right }}px {{ padding_bottom }}px {{ padding_left }}px;
+       margin: {{ margin_top }}px {{ margin_right }}px {{ margin_bottom }}px {{ margin_left }}px;
+       font-family: {{ font_family_css[font_family] }};
+       font-size: {{ font_size }}px;
+       font-weight: {{ font_weight }};
+       text-transform: {{ text_transform }};
+       letter-spacing: {{ letter_spacing }}px;
+       line-height: {{ line_height }};
+       text-decoration: none;
+       text-align: center;
+       width: {{ width_css[width_type] }};
+       {% if shadow_enabled %}box-shadow: 0 2px {{ shadow_blur }}px rgba({{ shadow_color|convert_rgb }}, {{ shadow_opacity / 100 }});{% endif %}
+       transition: all {{ transition_duration }}s ease;
+       cursor: pointer;
+       user-select: none;
+       -webkit-user-select: none;
+       -moz-user-select: none;
+       -ms-user-select: none;
+       {% if has_icon %}gap: {{ icon_spacing }}px;{% endif %}
+     "
+     onmouseover="this.style.backgroundColor='{{ hover_bg_color }}'; this.style.color='{{ hover_text_color }}'; this.style.borderColor='{{ hover_border_color }}'; this.style.transform='scale({{ hover_scale }})';"
+     onmouseout="this.style.backgroundColor='{{ bg_color }}'; this.style.color='{{ text_color }}'; this.style.borderColor='{{ border_color }}'; this.style.transform='scale(1)';">
+    
+    {% if has_icon and icon_position == 'left' %}
+      <img src="{{ icon_image.src }}" 
+           alt="{{ icon_image.alt | default('Button icon') }}"
+           style="width: {{ icon_size }}px; height: {{ icon_size }}px; object-fit: contain; flex-shrink: 0;"
+           loading="lazy">
+    {% endif %}
+    
+    <span class="button-text">{{ button_text }}</span>
+    
+    {% if has_icon and icon_position == 'right' %}
+      <img src="{{ icon_image.src }}" 
+           alt="{{ icon_image.alt | default('Button icon') }}"
+           style="width: {{ icon_size }}px; height: {{ icon_size }}px; object-fit: contain; flex-shrink: 0;"
+           loading="lazy">
+    {% endif %}
+  </a>
+</div> 

@@ -27,11 +27,13 @@
            {% endif %}
         >
         <div class="kl-card-grid__card" 
-             style="background-color: {{ bg_color }}; 
-                    background-color: rgba({{ bg_color|convert_rgb }}, {{ bg_opacity / 100 }}); 
-                    border-color: {{ border_color }}; 
-                    border-radius: {{ border_radius }}px;
-                    {% if bg_blur > 0 %}backdrop-filter: blur({{ bg_blur }}px);{% endif %}">
+             {% if module.enable_card_styling %}
+               style="background-color: {{ bg_color }}; 
+                      background-color: rgba({{ bg_color|convert_rgb }}, {{ bg_opacity / 100 }}); 
+                      border-color: {{ border_color }}; 
+                      border-radius: {{ border_radius }}px;
+                      {% if bg_blur > 0 %}backdrop-filter: blur({{ bg_blur }}px);{% endif %}"
+             {% endif %}>
           {% if item.image.src %}
             {% set style = 'background-image: url(%s);'|format(item.image.src) %}
             {% call render_link(item.anchor, 'kl-card-grid__image', style, true) %}

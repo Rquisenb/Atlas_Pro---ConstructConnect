@@ -2,7 +2,7 @@
 
 .six-column-grid-flex {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1450px;
   margin: 0 auto;
   padding: 20px;
 }
@@ -407,7 +407,7 @@
 /* Base grid layout */
 .kl-card-grid {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1450px;
   margin: 0 auto;
 }
 

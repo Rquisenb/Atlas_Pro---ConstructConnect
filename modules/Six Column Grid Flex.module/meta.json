@@ -1,0 +1,14 @@
+{
+  "label": "Six Column Grid Flex",
+  "css_assets": [],
+  "external_js": [],
+  "global": false,
+  "help_text": "A flexible six-column grid layout module for displaying content in a responsive grid format.",
+  "host_template_types": ["PAGE", "BLOG_POST", "BLOG_LISTING"],
+  "icon": "https://cdn2.hubspot.net/hubfs/6326501/boilerplate/Module%20Icons/grid-3x2-white.svg",
+  "js_assets": [],
+  "other_assets": [],
+  "smart_type": "NOT_SMART",
+  "tags": ["grid", "layout", "flex", "responsive"],
+  "is_available_for_new_content": true
+}

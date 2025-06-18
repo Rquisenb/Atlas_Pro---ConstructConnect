@@ -276,4 +276,69 @@
     "search_label" : "Search Cards",
     "no_match_message" : "Nothing found."
   }
+}, {
+  "id" : "card_styling",
+  "name" : "card_styling",
+  "label" : "Card Styling",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "card_styling.top_border_enabled",
+    "name" : "top_border_enabled",
+    "label" : "Enable Top Border",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "card_styling.top_border_width",
+    "name" : "top_border_width",
+    "label" : "Top Border Width (px)",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "card_styling.top_border_enabled",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "text",
+    "min" : 1,
+    "max" : 20,
+    "step" : 1,
+    "type" : "number",
+    "display_width" : null,
+    "default" : 3
+  }, {
+    "id" : "card_styling.top_border_color",
+    "name" : "top_border_color",
+    "label" : "Top Border Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "card_styling.top_border_enabled",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : "#000000"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "top_border_enabled" : false,
+    "top_border_width" : 3,
+    "top_border_color" : "#000000"
+  }
 } ]

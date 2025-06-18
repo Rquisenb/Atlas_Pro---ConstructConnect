@@ -19,7 +19,10 @@
              style="padding: {{ spacing }}px;"
            {% endif %}
         >
-        <div class="kl-card-grid__card">
+        <div class="kl-card-grid__card"
+             {% if module.card_styling.top_border_enabled %}
+               style="border-top: {{ module.card_styling.top_border_width }}px solid {{ module.card_styling.top_border_color }};"
+             {% endif %}>
           {% if item.image.src %}
             {% set style = 'background-image: url(%s);'|format(item.image.src) %}
             {% call render_link(item.anchor, 'kl-card-grid__image', style, true) %}

@@ -1,0 +1,339 @@
+[
+  {
+    "id": "custom_name",
+    "name": "custom_name",
+    "label": "Custom Name",
+    "required": false,
+    "locked": false,
+    "validation_regex": "",
+    "allow_new_line": false,
+    "show_emoji_picker": false,
+    "type": "text",
+    "display_width": null,
+    "placeholder": "Enter a custom name for this grid"
+  },
+  {
+    "id": "cards",
+    "name": "cards",
+    "label": "Cards",
+    "required": false,
+    "locked": false,
+    "occurrence": {
+      "min": 1,
+      "max": 6,
+      "sorting_label_field": null,
+      "default": 6
+    },
+    "children": [
+      {
+        "id": "image",
+        "name": "image",
+        "label": "Image",
+        "required": false,
+        "locked": false,
+        "responsive": true,
+        "resizable": false,
+        "show_loading": false,
+        "type": "image",
+        "display_width": null,
+        "default": {
+          "size_type": "auto",
+          "src": "",
+          "alt": null,
+          "loading": "disabled"
+        }
+      },
+      {
+        "id": "preheader",
+        "name": "preheader",
+        "label": "Preheader",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "display_width": null
+      },
+      {
+        "id": "content",
+        "name": "content",
+        "label": "Content",
+        "required": false,
+        "locked": false,
+        "type": "richtext",
+        "display_width": null,
+        "default": "<h3>Card Title</h3>\n<p>Card content goes here.</p>"
+      },
+      {
+        "id": "anchor",
+        "name": "anchor",
+        "label": "Anchor",
+        "required": false,
+        "locked": false,
+        "children": [
+          {
+            "id": "anchor.type",
+            "name": "type",
+            "label": "Type",
+            "required": true,
+            "locked": false,
+            "display": "select",
+            "choices": [
+              ["href", "Custom Link"],
+              ["link", "HubSpot Link"],
+              ["none", "None"]
+            ],
+            "multiple": false,
+            "reordering_enabled": true,
+            "preset": null,
+            "type": "choice",
+            "display_width": null,
+            "default": "none"
+          },
+          {
+            "id": "anchor.link",
+            "name": "link",
+            "label": "Link",
+            "required": false,
+            "locked": false,
+            "visibility": {
+              "controlling_field": "anchor.type",
+              "controlling_field_path": null,
+              "controlling_value_regex": "link",
+              "property": null,
+              "operator": "EQUAL",
+              "access": null
+            },
+            "supported_types": ["EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION"],
+            "show_advanced_rel_options": false,
+            "type": "link",
+            "display_width": null,
+            "default": {
+              "url": {
+                "content_id": null,
+                "type": "EXTERNAL",
+                "href": ""
+              },
+              "open_in_new_tab": false,
+              "no_follow": false
+            }
+          },
+          {
+            "id": "anchor.href",
+            "name": "href",
+            "label": "Href",
+            "required": false,
+            "locked": false,
+            "validation_regex": "",
+            "visibility": {
+              "controlling_field": "anchor.type",
+              "controlling_field_path": null,
+              "controlling_value_regex": "href",
+              "property": null,
+              "operator": "EQUAL",
+              "access": null
+            },
+            "placeholder": "#",
+            "allow_new_line": false,
+            "show_emoji_picker": false,
+            "type": "text",
+            "display_width": null,
+            "default": "#"
+          }
+        ],
+        "tab": "CONTENT",
+        "expanded": false,
+        "group_occurrence_meta": null,
+        "type": "group",
+        "display_width": null,
+        "default": {
+          "type": "none",
+          "link": {
+            "url": {
+              "content_id": null,
+              "type": "EXTERNAL",
+              "href": ""
+            },
+            "open_in_new_tab": false,
+            "no_follow": false
+          },
+          "href": "#"
+        }
+      }
+    ],
+    "tab": "CONTENT",
+    "expanded": false,
+    "group_occurrence_meta": null,
+    "type": "group",
+    "display_width": null,
+    "default": [
+      {
+        "image": {
+          "size_type": "auto",
+          "src": "",
+          "alt": null,
+          "loading": "disabled"
+        },
+        "preheader": "CARD 1",
+        "content": "<h3>Card Title 1</h3>\n<p>First card content.</p>"
+      },
+      {
+        "image": {
+          "size_type": "auto",
+          "src": "",
+          "alt": null,
+          "loading": "disabled"
+        },
+        "preheader": "CARD 2",
+        "content": "<h3>Card Title 2</h3>\n<p>Second card content.</p>"
+      },
+      {
+        "image": {
+          "size_type": "auto",
+          "src": "",
+          "alt": null,
+          "loading": "disabled"
+        },
+        "preheader": "CARD 3",
+        "content": "<h3>Card Title 3</h3>\n<p>Third card content.</p>"
+      },
+      {
+        "image": {
+          "size_type": "auto",
+          "src": "",
+          "alt": null,
+          "loading": "disabled"
+        },
+        "preheader": "CARD 4",
+        "content": "<h3>Card Title 4</h3>\n<p>Fourth card content.</p>"
+      },
+      {
+        "image": {
+          "size_type": "auto",
+          "src": "",
+          "alt": null,
+          "loading": "disabled"
+        },
+        "preheader": "CARD 5",
+        "content": "<h3>Card Title 5</h3>\n<p>Fifth card content.</p>"
+      },
+      {
+        "image": {
+          "size_type": "auto",
+          "src": "",
+          "alt": null,
+          "loading": "disabled"
+        },
+        "preheader": "CARD 6",
+        "content": "<h3>Card Title 6</h3>\n<p>Sixth card content.</p>"
+      }
+    ]
+  },
+  {
+    "id": "overwrite_spacing",
+    "name": "overwrite_spacing",
+    "label": "Overwrite Spacing",
+    "required": false,
+    "locked": false,
+    "display": "checkbox",
+    "type": "boolean",
+    "display_width": null,
+    "default": false
+  },
+  {
+    "id": "spacing",
+    "name": "spacing",
+    "label": "Spacing",
+    "required": false,
+    "locked": false,
+    "visibility": {
+      "controlling_field": "overwrite_spacing",
+      "controlling_field_path": null,
+      "controlling_value_regex": "true",
+      "property": null,
+      "operator": "EQUAL",
+      "access": null
+    },
+    "display": "text",
+    "min": 0,
+    "step": 1,
+    "type": "number",
+    "display_width": null,
+    "default": 26
+  },
+  {
+    "id": "card_search",
+    "name": "card_search",
+    "label": "Card Search",
+    "required": false,
+    "locked": false,
+    "children": [
+      {
+        "id": "card_search.enabled",
+        "name": "enabled",
+        "label": "Enabled",
+        "inline_help_text": "Enable text search for cards in this Card Grid",
+        "required": false,
+        "locked": false,
+        "display": "checkbox",
+        "type": "boolean",
+        "display_width": null,
+        "default": false
+      },
+      {
+        "id": "card_search.search_label",
+        "name": "search_label",
+        "label": "Search Input Label",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "visibility": {
+          "controlling_field": "card_search.enabled",
+          "controlling_field_path": null,
+          "controlling_value_regex": "true",
+          "property": null,
+          "operator": "EQUAL",
+          "access": null
+        },
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "display_width": null,
+        "default": "Search Cards"
+      },
+      {
+        "id": "card_search.no_match_message",
+        "name": "no_match_message",
+        "label": "Empty results message",
+        "help_text": "This is the message that will display when there are no results that match the current search text",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "visibility": {
+          "controlling_field": "card_search.enabled",
+          "controlling_field_path": null,
+          "controlling_value_regex": "true",
+          "property": null,
+          "operator": "EQUAL",
+          "access": null
+        },
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "display_width": null,
+        "default": "Nothing found."
+      }
+    ],
+    "tab": "CONTENT",
+    "expanded": false,
+    "group_occurrence_meta": null,
+    "type": "group",
+    "display_width": null,
+    "default": {
+      "enabled": false,
+      "search_label": "Search Cards",
+      "no_match_message": "Nothing found."
+    }
+  }
+]

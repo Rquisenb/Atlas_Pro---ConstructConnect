@@ -1,0 +1,45 @@
+{% import '../macros.html' %}
+
+{% set custom_name = module.custom_name | default(name) %}
+{% set spacing = (module.spacing | int(26) ) // 2 %}
+{% set card_count = module.cards|length %}
+{% set column_class = 'kl-card-grid--' ~ card_count ~ '-columns' %}
+
+<div class="kl-card-grid {{ column_class }}" id="{{ custom_name }}" data-module-id="{{ name }}">
+  {% if module.card_search.enabled %}
+    <div class="kl-card__search-container" style="margin: 0 0 {{ spacing * 2 }}px;">
+      <label for="{{ custom_name }}_search">{{ module.card_search.search_label }}</label>
+      <input type="search" id="{{ custom_name }}_search" name="{{ custom_name }}_search">
+    </div>
+  {% endif %}
+  <div {% if module.overwrite_spacing %}style="margin: -{{ spacing }}px;"{% endif %}>
+    {% for item in module.cards %}
+
+      <div class="kl-card-grid__card-wrapper"
+           {% if module.overwrite_spacing %} 
+             style="padding: {{ spacing }}px;"
+           {% endif %}
+        >
+        <div class="kl-card-grid__card">
+          {% if item.image.src %}
+            {% set style = 'background-image: url(%s);'|format(item.image.src) %}
+            {% call render_link(item.anchor, 'kl-card-grid__image', style, true) %}
+              <span class="kl-card-grid__image-description" role="img" aria-label="{{item.image.alt}}"> </span>
+            {% endcall %}
+          {% endif %}
+          <div class="kl-card-grid__content">
+            {% if item.preheader %}
+              <span class="kl-card-grid__preheader">{{ item.preheader }}</span>
+            {% endif %}
+            {{ item.content }}
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+    {% if module.card_search.enabled %}
+      <div class="kl-card__search__no-match" style="margin: {{ spacing * 2 }}px {{ spacing }}px;">
+        <span>{{ module.card_search.no_match_message }}</span>
+      </div>
+    {% endif %}
+  </div>
+</div>

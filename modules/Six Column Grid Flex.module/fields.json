@@ -335,5 +335,99 @@
       "search_label": "Search Cards",
       "no_match_message": "Nothing found."
     }
+  },
+  {
+    "id": "card_styling",
+    "name": "card_styling",
+    "label": "Card Styling",
+    "required": false,
+    "locked": false,
+    "children": [
+      {
+        "id": "card_styling.background_color",
+        "name": "background_color",
+        "label": "Background Color",
+        "required": false,
+        "locked": false,
+        "type": "color",
+        "display_width": null,
+        "default": {
+          "color": "#ffffff"
+        }
+      },
+      {
+        "id": "card_styling.background_opacity",
+        "name": "background_opacity",
+        "label": "Background Opacity",
+        "required": false,
+        "locked": false,
+        "display": "slider",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "type": "number",
+        "display_width": null,
+        "default": 100,
+        "help_text": "Set the opacity of the background color (0-100%)"
+      },
+      {
+        "id": "card_styling.border_color",
+        "name": "border_color",
+        "label": "Border Color",
+        "required": false,
+        "locked": false,
+        "type": "color",
+        "display_width": null,
+        "default": {
+          "color": "#e0e0e0"
+        }
+      },
+      {
+        "id": "card_styling.border_radius",
+        "name": "border_radius",
+        "label": "Border Radius",
+        "required": false,
+        "locked": false,
+        "display": "text",
+        "min": 0,
+        "max": 50,
+        "step": 1,
+        "type": "number",
+        "display_width": null,
+        "default": 8,
+        "help_text": "Set the border radius in pixels (0-50px)"
+      },
+      {
+        "id": "card_styling.background_blur",
+        "name": "background_blur",
+        "label": "Background Blur",
+        "required": false,
+        "locked": false,
+        "display": "slider",
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "type": "number",
+        "display_width": null,
+        "default": 0,
+        "help_text": "Set the background blur effect in pixels (0-20px)"
+      }
+    ],
+    "tab": "STYLE",
+    "expanded": false,
+    "group_occurrence_meta": null,
+    "type": "group",
+    "display_width": null,
+    "default": {
+      "background_color": {
+        "color": "#ffffff"
+      },
+      "background_opacity": 100,
+      "border_color": {
+        "color": "#e0e0e0"
+      },
+      "border_radius": 8,
+      "background_blur": 0
+    }
   }
 ]

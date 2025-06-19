@@ -41,8 +41,7 @@
         >
         <div class="kl-card-grid__card" 
              {% if module.enable_card_styling %}
-               style="background-color: {{ bg_color }}; 
-                      background-color: rgba({{ bg_color|convert_rgb }}, {{ bg_opacity / 100 }}); 
+               style="{% if bg_opacity > 0 %}background-color: rgba({{ bg_color|convert_rgb }}, {{ bg_opacity / 100 }});{% endif %}
                       border-color: {{ border_color }}; 
                       border-radius: {{ border_radius }}px;
                       {% if bg_blur > 0 %}backdrop-filter: blur({{ bg_blur }}px);{% endif %}"

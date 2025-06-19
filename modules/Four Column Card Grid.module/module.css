@@ -77,6 +77,32 @@
     margin: 0 0 .5rem;
   }
   
+  .kl-card-grid__preheader-icon {
+    display: block;
+    margin: 0 0 .5rem;
+  }
+  
+  .kl-card-grid__preheader-icon img {
+    width: auto;
+    height: auto;
+    display: inline-block;
+    border-radius: 2px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .kl-card-grid__preheader-icon img {
+      max-width: 20px !important;
+      max-height: 20px !important;
+    }
+  }
+  
+  @media screen and (max-width: 520px) {
+    .kl-card-grid__preheader-icon img {
+      max-width: 18px !important;
+      max-height: 18px !important;
+    }
+  }
+  
   .kl-card-grid__content {
     display: block;
     padding: 20px 24px;

@@ -39,6 +39,53 @@
     "type" : "text",
     "display_width" : null
   }, {
+    "id" : "preheader_icon",
+    "name" : "preheader_icon",
+    "label" : "Preheader Icon/Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "disabled"
+    },
+    "help_text" : "Upload an icon or image to display in place of or alongside the preheader text"
+  }, {
+    "id" : "preheader_icon_size",
+    "name" : "preheader_icon_size",
+    "label" : "Preheader Icon Size",
+    "required" : false,
+    "locked" : false,
+    "display" : "slider",
+    "min" : 12,
+    "max" : 80,
+    "step" : 2,
+    "type" : "number",
+    "display_width" : null,
+    "default" : 24,
+    "help_text" : "Set the size of the preheader icon in pixels (12-80px)"
+  }, {
+    "id" : "preheader_icon_alignment",
+    "name" : "preheader_icon_alignment",
+    "label" : "Preheader Icon Alignment",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "left", "Left" ], [ "center", "Center" ], [ "right", "Right" ] ],
+    "multiple" : false,
+    "reordering_enabled" : false,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "center",
+    "help_text" : "Choose the alignment for the preheader icon"
+  }, {
     "id" : "174299bf-5c1f-fa32-da81-e8fa8586d9b9",
     "name" : "content",
     "label" : "Content",

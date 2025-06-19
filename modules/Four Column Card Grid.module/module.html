@@ -30,7 +30,13 @@
             {% endcall %}
           {% endif %}
           <div class="kl-card-grid__content">
-            {% if item.preheader %}
+            {% if item.preheader_icon.src %}
+              <div class="kl-card-grid__preheader-icon" style="text-align: {{ item.preheader_icon_alignment | default('center') }};">
+                <img src="{{ item.preheader_icon.src }}" 
+                     alt="{{ item.preheader_icon.alt | default('Preheader icon') }}"
+                     style="max-width: {{ item.preheader_icon_size | default(24) }}px; max-height: {{ item.preheader_icon_size | default(24) }}px; width: auto; height: auto;">
+              </div>
+            {% elif item.preheader %}
               <span class="kl-card-grid__preheader">{{ item.preheader }}</span>
             {% endif %}
             {{ item.content }}

@@ -1,0 +1,44 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Centered Buttons Template
+  description: "Template for displaying multiple buttons centered on the same line"
+  screenshotPath: ../images/template-previews/centered-buttons-template.png
+-->
+
+{% extends './layouts/base.html' %}
+
+{% block header %}
+  {% dnd_area 'dnd_area_header', label='Header section' %}
+    {% dnd_section full_width=True, padding={ top: 0, right: 0, bottom: 0, left: 0  } %}
+
+      {% dnd_module path="../modules/Navbar with Menu", label="Navbar with Menu",
+        logo={ image: { 'src': get_asset_url('../images/Logoipsum.svg') } }
+      %}
+      {% end_dnd_module %}
+
+    {% end_dnd_section %}
+  {% end_dnd_area %}
+{% endblock header %}
+
+{% block body %}
+<main class="body-container-wrapper">
+  {% dnd_area 'dnd_area' class='body-container body-container--centered-buttons', label='Main section' %}
+
+    {# Centered Buttons Section #}
+    {% include_dnd_partial path='../sections/centered-buttons-section.html' %}
+
+  {% end_dnd_area %}
+</main>
+{% endblock body %}
+
+{% block footer %}
+  {% dnd_area 'dnd_area_footer', label='Footer section' %}
+    {% dnd_section full_width=True, padding={ top: 0, right: 0, bottom: 0, left: 0  } %}
+
+      {% dnd_module path="../modules/Simple Footer", label="Footer" %}
+      {% end_dnd_module %}
+
+    {% end_dnd_section %}
+  {% end_dnd_area %}
+{% endblock footer %} 

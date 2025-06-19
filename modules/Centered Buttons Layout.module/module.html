@@ -1,0 +1,44 @@
+{% import '../macros.html' %}
+
+{% set max_width = module.max_width | default(800) %}
+{% set center_container = module.center_container | default(true) %}
+{% set button_spacing = module.button_spacing | default(20) %}
+{% set button_alignment = module.button_alignment | default('center') %}
+{% set background_color = module.background_color.color | default('#ffffff') %}
+{% set padding_top = module.padding_top | default(40) %}
+{% set padding_bottom = module.padding_bottom | default(40) %}
+{% set padding_left = module.padding_left | default(20) %}
+{% set padding_right = module.padding_right | default(20) %}
+
+{% set alignment_css = {
+  'left': 'flex-start',
+  'center': 'center',
+  'right': 'flex-end',
+  'space-between': 'space-between',
+  'space-around': 'space-around',
+  'space-evenly': 'space-evenly'
+} %}
+
+<div class="centered-buttons-layout-container" 
+     style="
+       max-width: {{ max_width }}px;
+       margin: 0 auto;
+       background-color: {{ background_color }};
+       padding: {{ padding_top }}px {{ padding_right }}px {{ padding_bottom }}px {{ padding_left }}px;
+       {% if not center_container %}margin-left: 0;{% endif %}
+     ">
+  
+  <div class="centered-buttons-layout-wrapper"
+       style="
+         display: flex;
+         justify-content: {{ alignment_css[button_alignment] }};
+         align-items: center;
+         flex-wrap: wrap;
+         gap: {{ button_spacing }}px;
+       ">
+    
+    {# This is where users will add their Flexible Button modules #}
+    {# The module will be used as a container, and users can drag Flexible Button modules into it #}
+    
+  </div>
+</div> 

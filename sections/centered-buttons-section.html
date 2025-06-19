@@ -1,0 +1,39 @@
+<!--
+  templateType: section
+  isAvailableForNewContent: true
+  label: Centered Buttons Section
+  description: "Section for displaying multiple buttons centered on the same line with configurable max width"
+  screenshotPath: ../images/section-previews/centered-buttons-section.png
+-->
+{% dnd_section 
+  padding={ 'top': 60, 'bottom': 60 },
+  background_color={ 'color': '#ffffff' }
+%}
+
+  {# Container with max width and centering #}
+  <div class="centered-buttons-section-container" 
+       style="
+         max-width: 800px;
+         margin: 0 auto;
+         padding: 0 20px;
+       ">
+    
+    {# Buttons wrapper with flex layout #}
+    <div class="centered-buttons-section-wrapper"
+         style="
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           flex-wrap: wrap;
+           gap: 20px;
+         ">
+      
+      {# Drag and drop area for buttons #}
+      {% dnd_area 'centered_buttons_area', label='Centered Buttons Area' %}
+        {# This area will allow users to drag and drop Flexible Button modules #}
+      {% end_dnd_area %}
+      
+    </div>
+  </div>
+
+{% end_dnd_section %} 

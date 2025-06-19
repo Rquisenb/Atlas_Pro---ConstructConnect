@@ -1,0 +1,79 @@
+{% import '../macros.html' %}
+
+{% set max_width = module.container_styling.max_width | default(800) %}
+{% set center_container = module.container_styling.center_container | default(true) %}
+{% set button_spacing = module.container_styling.button_spacing | default(20) %}
+{% set button_alignment = module.container_styling.button_alignment | default('center') %}
+{% set background_color = module.container_styling.background_color.color | default('#ffffff') %}
+{% set padding_top = module.container_styling.padding_top | default(40) %}
+{% set padding_bottom = module.container_styling.padding_bottom | default(40) %}
+{% set padding_left = module.container_styling.padding_left | default(20) %}
+{% set padding_right = module.container_styling.padding_right | default(20) %}
+
+{% set alignment_css = {
+  'left': 'flex-start',
+  'center': 'center',
+  'right': 'flex-end',
+  'space-between': 'space-between',
+  'space-around': 'space-around',
+  'space-evenly': 'space-evenly'
+} %}
+
+<div class="centered-buttons-container" 
+     style="
+       max-width: {{ max_width }}px;
+       margin: 0 auto;
+       background-color: {{ background_color }};
+       padding: {{ padding_top }}px {{ padding_right }}px {{ padding_bottom }}px {{ padding_left }}px;
+       {% if not center_container %}margin-left: 0;{% endif %}
+     ">
+  
+  <div class="centered-buttons-wrapper"
+       style="
+         display: flex;
+         justify-content: {{ alignment_css[button_alignment] }};
+         align-items: center;
+         flex-wrap: wrap;
+         gap: {{ button_spacing }}px;
+       ">
+    
+    {% for button in module.buttons %}
+      <div class="centered-button-item">
+        {% module path='../modules/Flexible Button.module' %}
+          {% module_attribute 'button_text' %}
+            {{ button.button_text | default('Click me') }}
+          {% end_module_attribute %}
+          
+          {% module_attribute 'button_link' %}
+            {{ button.button_link | default({}) }}
+          {% end_module_attribute %}
+          
+          {% module_attribute 'button_styling' %}
+            {{ button.button_styling | default({}) }}
+          {% end_module_attribute %}
+          
+          {% module_attribute 'button_effects' %}
+            {{ button.button_effects | default({}) }}
+          {% end_module_attribute %}
+          
+          {% module_attribute 'button_icon' %}
+            {{ button.button_icon | default({}) }}
+          {% end_module_attribute %}
+          
+          {% module_attribute 'button_alignment' %}
+            center
+          {% end_module_attribute %}
+          
+          {% module_attribute 'button_width' %}
+            auto
+          {% end_module_attribute %}
+          
+          {% module_attribute 'custom_width' %}
+            200
+          {% end_module_attribute %}
+        {% end_module %}
+      </div>
+    {% endfor %}
+    
+  </div>
+</div> 

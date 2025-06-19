@@ -11,7 +11,20 @@
 {% set border_radius = module.card_styling.border_radius | default(8) %}
 {% set bg_blur = module.card_styling.background_blur | default(0) %}
 
-<div class="kl-card-grid {{ column_class }}" id="{{ custom_name }}" data-module-id="{{ name }}">
+{# Container width settings #}
+{% set max_width = module.container_width.max_width | default(1450) %}
+{% set width_unit = module.container_width.width_unit | default('px') %}
+{% set center_container = module.container_width.center_container | default(true) %}
+{% set container_style = '' %}
+
+{% if module.enable_container_width %}
+  {% set container_style = 'max-width: ' ~ max_width ~ width_unit ~ ';' %}
+  {% if center_container %}
+    {% set container_style = container_style ~ ' margin: 0 auto;' %}
+  {% endif %}
+{% endif %}
+
+<div class="kl-card-grid {{ column_class }}" id="{{ custom_name }}" data-module-id="{{ name }}" {% if container_style %}style="{{ container_style }}"{% endif %}>
   {% if module.card_search.enabled %}
     <div class="kl-card__search-container" style="margin: 0 0 {{ spacing * 2 }}px;">
       <label for="{{ custom_name }}_search">{{ module.card_search.search_label }}</label>

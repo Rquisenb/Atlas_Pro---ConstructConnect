@@ -407,8 +407,28 @@
 /* Base grid layout */
 .kl-card-grid {
   width: 100%;
-  max-width: 1450px;
+  /* Default max-width removed to allow custom control via module settings */
   margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Container width override when custom settings are enabled */
+.kl-card-grid[style*="max-width"] {
+  /* When inline styles are applied via module settings, they take precedence */
+}
+
+/* Responsive container adjustments */
+@media screen and (max-width: 768px) {
+  .kl-card-grid {
+    padding: 15px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .kl-card-grid {
+    padding: 10px;
+  }
 }
 
 .kl-card-grid__card-wrapper {

@@ -504,5 +504,115 @@
       "border_radius": 8,
       "background_blur": 0
     }
+  },
+  {
+    "id": "enable_container_width",
+    "name": "enable_container_width",
+    "label": "Enable Custom Container Width",
+    "required": false,
+    "locked": false,
+    "display": "checkbox",
+    "type": "boolean",
+    "display_width": null,
+    "default": false,
+    "help_text": "Check this box to enable custom max-width settings for the grid container"
+  },
+  {
+    "id": "container_width",
+    "name": "container_width",
+    "label": "Container Width Settings",
+    "required": false,
+    "locked": false,
+    "visibility": {
+      "controlling_field": "enable_container_width",
+      "controlling_field_path": null,
+      "controlling_value_regex": "true",
+      "property": null,
+      "operator": "EQUAL",
+      "access": null
+    },
+    "children": [
+      {
+        "id": "container_width.max_width",
+        "name": "max_width",
+        "label": "Max Width",
+        "required": false,
+        "locked": false,
+        "visibility": {
+          "controlling_field": "enable_container_width",
+          "controlling_field_path": null,
+          "controlling_value_regex": "true",
+          "property": null,
+          "operator": "EQUAL",
+          "access": null
+        },
+        "display": "text",
+        "min": 200,
+        "max": 2000,
+        "step": 10,
+        "type": "number",
+        "display_width": null,
+        "default": 1450,
+        "help_text": "Set the maximum width of the grid container in pixels (200-2000px)"
+      },
+      {
+        "id": "container_width.width_unit",
+        "name": "width_unit",
+        "label": "Width Unit",
+        "required": false,
+        "locked": false,
+        "visibility": {
+          "controlling_field": "enable_container_width",
+          "controlling_field_path": null,
+          "controlling_value_regex": "true",
+          "property": null,
+          "operator": "EQUAL",
+          "access": null
+        },
+        "display": "select",
+        "choices": [
+          ["px", "Pixels (px)"],
+          ["%", "Percentage (%)"],
+          ["vw", "Viewport Width (vw)"],
+          ["rem", "Root EM (rem)"]
+        ],
+        "multiple": false,
+        "reordering_enabled": true,
+        "preset": null,
+        "type": "choice",
+        "display_width": null,
+        "default": "px"
+      },
+      {
+        "id": "container_width.center_container",
+        "name": "center_container",
+        "label": "Center Container",
+        "required": false,
+        "locked": false,
+        "visibility": {
+          "controlling_field": "enable_container_width",
+          "controlling_field_path": null,
+          "controlling_value_regex": "true",
+          "property": null,
+          "operator": "EQUAL",
+          "access": null
+        },
+        "display": "checkbox",
+        "type": "boolean",
+        "display_width": null,
+        "default": true,
+        "help_text": "Center the container horizontally on the page"
+      }
+    ],
+    "tab": "STYLE",
+    "expanded": false,
+    "group_occurrence_meta": null,
+    "type": "group",
+    "display_width": null,
+    "default": {
+      "max_width": 1450,
+      "width_unit": "px",
+      "center_container": true
+    }
   }
 ]

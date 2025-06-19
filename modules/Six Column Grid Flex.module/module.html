@@ -12,9 +12,9 @@
 {% set bg_blur = module.card_styling.background_blur | default(0) %}
 
 {# Container width settings #}
-{% set max_width = module.container_width.max_width | default(1450) %}
-{% set width_unit = module.container_width.width_unit | default('px') %}
-{% set center_container = module.container_width.center_container | default(true) %}
+{% set max_width = module.container_max_width | default(1450) %}
+{% set width_unit = module.container_width_unit | default('px') %}
+{% set center_container = module.container_center | default(true) %}
 {% set container_style = '' %}
 
 {% if module.enable_container_width %}

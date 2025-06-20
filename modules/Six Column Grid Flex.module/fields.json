@@ -66,6 +66,219 @@
         "default": "<h3>Card Title</h3>\n<p>Card content goes here.</p>"
       },
       {
+        "id": "button",
+        "name": "button",
+        "label": "Button",
+        "required": false,
+        "locked": false,
+        "children": [
+          {
+            "id": "button.type",
+            "name": "type",
+            "label": "Type",
+            "required": false,
+            "locked": false,
+            "display": "select",
+            "choices": [
+              ["btn", "Button"],
+              ["cta", "HubSpot CTA"],
+              ["none", "None"]
+            ],
+            "multiple": false,
+            "reordering_enabled": true,
+            "preset": null,
+            "type": "choice",
+            "display_width": null,
+            "default": "btn"
+          },
+          {
+            "id": "button.style",
+            "name": "style",
+            "label": "Style",
+            "required": false,
+            "locked": false,
+            "display": "select",
+            "choices": [
+              ["filled", "Filled"],
+              ["outlined", "Outlined"],
+              ["arrow", "Arrow"]
+            ],
+            "multiple": false,
+            "reordering_enabled": true,
+            "preset": null,
+            "type": "choice",
+            "display_width": null,
+            "default": "arrow"
+          },
+          {
+            "id": "button.text",
+            "name": "text",
+            "label": "Text",
+            "required": false,
+            "locked": false,
+            "validation_regex": "",
+            "visibility": {
+              "controlling_field": "button.type",
+              "controlling_field_path": null,
+              "controlling_value_regex": "btn",
+              "property": null,
+              "operator": "EQUAL",
+              "access": null
+            },
+            "placeholder": "LEARN MORE",
+            "allow_new_line": false,
+            "show_emoji_picker": false,
+            "type": "text",
+            "display_width": null,
+            "default": "LEARN MORE"
+          },
+          {
+            "id": "button.anchor",
+            "name": "anchor",
+            "label": "Anchor",
+            "required": false,
+            "locked": false,
+            "visibility": {
+              "controlling_field": "button.type",
+              "controlling_field_path": null,
+              "controlling_value_regex": "btn",
+              "property": null,
+              "operator": "EQUAL",
+              "access": null
+            },
+            "children": [
+              {
+                "id": "button.anchor.type",
+                "name": "type",
+                "label": "Type",
+                "required": true,
+                "locked": false,
+                "display": "select",
+                "choices": [
+                  ["href", "Custom Link"],
+                  ["link", "HubSpot Link"],
+                  ["none", "None"]
+                ],
+                "multiple": false,
+                "reordering_enabled": true,
+                "preset": null,
+                "type": "choice",
+                "display_width": null,
+                "default": "href"
+              },
+              {
+                "id": "button.anchor.link",
+                "name": "link",
+                "label": "Link",
+                "required": false,
+                "locked": false,
+                "visibility": {
+                  "controlling_field": "button.anchor.type",
+                  "controlling_field_path": null,
+                  "controlling_value_regex": "link",
+                  "property": null,
+                  "operator": "EQUAL",
+                  "access": null
+                },
+                "supported_types": ["EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION"],
+                "show_advanced_rel_options": false,
+                "type": "link",
+                "display_width": null,
+                "default": {
+                  "url": {
+                    "content_id": null,
+                    "type": "EXTERNAL",
+                    "href": ""
+                  },
+                  "open_in_new_tab": false,
+                  "no_follow": false
+                }
+              },
+              {
+                "id": "button.anchor.href",
+                "name": "href",
+                "label": "Href",
+                "required": false,
+                "locked": false,
+                "validation_regex": "",
+                "visibility": {
+                  "controlling_field": "button.anchor.type",
+                  "controlling_field_path": null,
+                  "controlling_value_regex": "href",
+                  "property": null,
+                  "operator": "EQUAL",
+                  "access": null
+                },
+                "placeholder": "#",
+                "allow_new_line": false,
+                "show_emoji_picker": false,
+                "type": "text",
+                "display_width": null,
+                "default": "#"
+              }
+            ],
+            "tab": "CONTENT",
+            "expanded": false,
+            "group_occurrence_meta": null,
+            "type": "group",
+            "display_width": null,
+            "default": {
+              "type": "href",
+              "link": {
+                "url": {
+                  "content_id": null,
+                  "type": "EXTERNAL",
+                  "href": ""
+                },
+                "open_in_new_tab": false,
+                "no_follow": false
+              },
+              "href": "#"
+            }
+          },
+          {
+            "id": "button.cta",
+            "name": "cta",
+            "label": "CTA",
+            "required": false,
+            "locked": false,
+            "visibility": {
+              "controlling_field": "button.type",
+              "controlling_field_path": null,
+              "controlling_value_regex": "cta",
+              "property": null,
+              "operator": "EQUAL",
+              "access": null
+            },
+            "type": "cta",
+            "display_width": null
+          }
+        ],
+        "tab": "CONTENT",
+        "expanded": false,
+        "group_occurrence_meta": null,
+        "type": "group",
+        "display_width": null,
+        "default": {
+          "type": "btn",
+          "style": "arrow",
+          "text": "LEARN MORE",
+          "anchor": {
+            "type": "href",
+            "link": {
+              "url": {
+                "content_id": null,
+                "type": "EXTERNAL",
+                "href": ""
+              },
+              "open_in_new_tab": false,
+              "no_follow": false
+            },
+            "href": "#"
+          }
+        }
+      },
+      {
         "id": "anchor",
         "name": "anchor",
         "label": "Anchor",
@@ -176,7 +389,25 @@
           "loading": "disabled"
         },
         "preheader": "CARD 1",
-        "content": "<h3>Card Title 1</h3>\n<p>First card content.</p>"
+        "content": "<h3>Card Title 1</h3>\n<p>First card content.</p>",
+        "button": {
+          "type": "btn",
+          "style": "arrow",
+          "text": "LEARN MORE",
+          "anchor": {
+            "type": "href",
+            "link": {
+              "url": {
+                "content_id": null,
+                "type": "EXTERNAL",
+                "href": ""
+              },
+              "open_in_new_tab": false,
+              "no_follow": false
+            },
+            "href": "#"
+          }
+        }
       },
       {
         "image": {
@@ -186,7 +417,25 @@
           "loading": "disabled"
         },
         "preheader": "CARD 2",
-        "content": "<h3>Card Title 2</h3>\n<p>Second card content.</p>"
+        "content": "<h3>Card Title 2</h3>\n<p>Second card content.</p>",
+        "button": {
+          "type": "btn",
+          "style": "arrow",
+          "text": "LEARN MORE",
+          "anchor": {
+            "type": "href",
+            "link": {
+              "url": {
+                "content_id": null,
+                "type": "EXTERNAL",
+                "href": ""
+              },
+              "open_in_new_tab": false,
+              "no_follow": false
+            },
+            "href": "#"
+          }
+        }
       },
       {
         "image": {
@@ -196,7 +445,25 @@
           "loading": "disabled"
         },
         "preheader": "CARD 3",
-        "content": "<h3>Card Title 3</h3>\n<p>Third card content.</p>"
+        "content": "<h3>Card Title 3</h3>\n<p>Third card content.</p>",
+        "button": {
+          "type": "btn",
+          "style": "arrow",
+          "text": "LEARN MORE",
+          "anchor": {
+            "type": "href",
+            "link": {
+              "url": {
+                "content_id": null,
+                "type": "EXTERNAL",
+                "href": ""
+              },
+              "open_in_new_tab": false,
+              "no_follow": false
+            },
+            "href": "#"
+          }
+        }
       },
       {
         "image": {
@@ -206,7 +473,25 @@
           "loading": "disabled"
         },
         "preheader": "CARD 4",
-        "content": "<h3>Card Title 4</h3>\n<p>Fourth card content.</p>"
+        "content": "<h3>Card Title 4</h3>\n<p>Fourth card content.</p>",
+        "button": {
+          "type": "btn",
+          "style": "arrow",
+          "text": "LEARN MORE",
+          "anchor": {
+            "type": "href",
+            "link": {
+              "url": {
+                "content_id": null,
+                "type": "EXTERNAL",
+                "href": ""
+              },
+              "open_in_new_tab": false,
+              "no_follow": false
+            },
+            "href": "#"
+          }
+        }
       },
       {
         "image": {
@@ -216,7 +501,25 @@
           "loading": "disabled"
         },
         "preheader": "CARD 5",
-        "content": "<h3>Card Title 5</h3>\n<p>Fifth card content.</p>"
+        "content": "<h3>Card Title 5</h3>\n<p>Fifth card content.</p>",
+        "button": {
+          "type": "btn",
+          "style": "arrow",
+          "text": "LEARN MORE",
+          "anchor": {
+            "type": "href",
+            "link": {
+              "url": {
+                "content_id": null,
+                "type": "EXTERNAL",
+                "href": ""
+              },
+              "open_in_new_tab": false,
+              "no_follow": false
+            },
+            "href": "#"
+          }
+        }
       },
       {
         "image": {
@@ -226,7 +529,25 @@
           "loading": "disabled"
         },
         "preheader": "CARD 6",
-        "content": "<h3>Card Title 6</h3>\n<p>Sixth card content.</p>"
+        "content": "<h3>Card Title 6</h3>\n<p>Sixth card content.</p>",
+        "button": {
+          "type": "btn",
+          "style": "arrow",
+          "text": "LEARN MORE",
+          "anchor": {
+            "type": "href",
+            "link": {
+              "url": {
+                "content_id": null,
+                "type": "EXTERNAL",
+                "href": ""
+              },
+              "open_in_new_tab": false,
+              "no_follow": false
+            },
+            "href": "#"
+          }
+        }
       }
     ]
   },

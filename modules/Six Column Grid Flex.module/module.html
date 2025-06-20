@@ -45,6 +45,7 @@
               <span class="kl-card-grid__preheader">{{ item.preheader }}</span>
             {% endif %}
             {{ item.content }}
+            {{ render_button(item.button, suffix='card-button') }}
           </div>
         </div>
       </div>

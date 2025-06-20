@@ -1,8 +1,12 @@
 // GIF to Static Image Replacement Script
 // This script finds icon-compete.gif images, allows them to play once, then replaces with static image
 
+console.log('=== GIF Replacement Script Loading ===');
+
 (function() {
   'use strict';
+  
+  console.log('=== GIF Replacement Script Starting ===');
   
   // Configuration - you can modify these values
   const GIF_FILENAMES = [
@@ -20,76 +24,100 @@
   const REPLACEMENT_DELAY = 2000; // Delay in milliseconds before replacing (adjust as needed)
   
   function replaceGifWithStatic() {
-    // Process each GIF filename
-    GIF_FILENAMES.forEach(function(gifFilename, gifIndex) {
-      // Find all img elements that contain the current GIF filename
-      const gifImages = document.querySelectorAll(`img[src*="${gifFilename}"]`);
+    try {
+      console.log('=== GIF Replacement Script Running ===');
+      console.log('Looking for GIFs:', GIF_FILENAMES);
       
-      console.log(`Found ${gifImages.length} images containing "${gifFilename}"`);
+      let totalImagesFound = 0;
       
-      if (gifImages.length === 0) {
-        return; // No matching GIFs found for this filename
-      }
-      
-      gifImages.forEach(function(img, index) {
-        // Skip if already processed
-        if (img.dataset.gifReplaced === 'true') {
-          console.log(`Image ${index + 1} (${gifFilename}) already processed, skipping`);
-          return;
+      // Process each GIF filename
+      GIF_FILENAMES.forEach(function(gifFilename, gifIndex) {
+        // Find all img elements that contain the current GIF filename
+        const gifImages = document.querySelectorAll(`img[src*="${gifFilename}"]`);
+        
+        console.log(`Found ${gifImages.length} images containing "${gifFilename}"`);
+        totalImagesFound += gifImages.length;
+        
+        if (gifImages.length === 0) {
+          // Try alternative selectors for debugging
+          const allImages = document.querySelectorAll('img');
+          console.log(`Debug: Found ${allImages.length} total images on page`);
+          allImages.forEach(function(img, i) {
+            if (img.src && img.src.includes('.gif')) {
+              console.log(`Debug: Found GIF image ${i}:`, img.src);
+            }
+          });
+          return; // No matching GIFs found for this filename
         }
         
-        console.log(`Processing image ${index + 1} (${gifFilename}):`, img.src);
-        
-        // Mark as processed to prevent double replacement
-        img.dataset.gifReplaced = 'true';
-        
-        // Store original src for potential fallback
-        const originalSrc = img.src;
-        
-        // Set a timeout to replace the GIF after it has time to play
-        setTimeout(function() {
-          console.log(`Replacing image ${index + 1} (${gifFilename}) with static image`);
+        gifImages.forEach(function(img, index) {
+          // Skip if already processed
+          if (img.dataset.gifReplaced === 'true') {
+            console.log(`Image ${index + 1} (${gifFilename}) already processed, skipping`);
+            return;
+          }
           
-          // Create a new image element to preload the static image
-          const staticImg = new Image();
+          console.log(`Processing image ${index + 1} (${gifFilename}):`, img.src);
           
-          staticImg.onload = function() {
-            console.log(`Static image loaded successfully for image ${index + 1} (${gifFilename})`);
+          // Mark as processed to prevent double replacement
+          img.dataset.gifReplaced = 'true';
+          
+          // Store original src for potential fallback
+          const originalSrc = img.src;
+          
+          // Set a timeout to replace the GIF after it has time to play
+          setTimeout(function() {
+            console.log(`Replacing image ${index + 1} (${gifFilename}) with static image:`, STATIC_IMAGE_URLS[gifIndex]);
             
-            // Replace the src with the static image
-            img.src = STATIC_IMAGE_URLS[gifIndex];
+            // Create a new image element to preload the static image
+            const staticImg = new Image();
             
-            // Also replace the srcset with SVG versions to ensure proper display at all screen sizes
-            if (img.srcset) {
-              // Create new srcset with SVG at different sizes
-              const svgSrcset = [
-                `${STATIC_IMAGE_URLS[gifIndex]}?width=51&height=51 51w`,
-                `${STATIC_IMAGE_URLS[gifIndex]}?width=101&height=101 101w`,
-                `${STATIC_IMAGE_URLS[gifIndex]}?width=152&height=152 152w`,
-                `${STATIC_IMAGE_URLS[gifIndex]}?width=202&height=202 202w`,
-                `${STATIC_IMAGE_URLS[gifIndex]}?width=253&height=253 253w`,
-                `${STATIC_IMAGE_URLS[gifIndex]}?width=303&height=303 303w`
-              ].join(', ');
-              img.srcset = svgSrcset;
-              console.log(`Updated srcset for image ${index + 1} (${gifFilename}):`, svgSrcset);
-            }
+            staticImg.onload = function() {
+              console.log(`Static image loaded successfully for image ${index + 1} (${gifFilename})`);
+              
+              // Replace the src with the static image
+              img.src = STATIC_IMAGE_URLS[gifIndex];
+              console.log(`Successfully replaced ${gifFilename} with static image`);
+              
+              // Also replace the srcset with SVG versions to ensure proper display at all screen sizes
+              if (img.srcset) {
+                // Create new srcset with SVG at different sizes
+                const svgSrcset = [
+                  `${STATIC_IMAGE_URLS[gifIndex]}?width=51&height=51 51w`,
+                  `${STATIC_IMAGE_URLS[gifIndex]}?width=101&height=101 101w`,
+                  `${STATIC_IMAGE_URLS[gifIndex]}?width=152&height=152 152w`,
+                  `${STATIC_IMAGE_URLS[gifIndex]}?width=202&height=202 202w`,
+                  `${STATIC_IMAGE_URLS[gifIndex]}?width=253&height=253 253w`,
+                  `${STATIC_IMAGE_URLS[gifIndex]}?width=303&height=303 303w`
+                ].join(', ');
+                img.srcset = svgSrcset;
+                console.log(`Updated srcset for image ${index + 1} (${gifFilename}):`, svgSrcset);
+              }
+              
+              // Preserve any existing classes, alt text, and other attributes
+              // The img element itself is replaced in the DOM, but we keep all attributes
+            };
             
-            // Preserve any existing classes, alt text, and other attributes
-            // The img element itself is replaced in the DOM, but we keep all attributes
-          };
-          
-          staticImg.onerror = function() {
-            // If static image fails to load, keep the original GIF
-            console.warn('Static image failed to load, keeping original GIF:', STATIC_IMAGE_URLS[gifIndex]);
-            img.dataset.gifReplaced = 'false'; // Allow retry
-          };
-          
-          // Start loading the static image
-          staticImg.src = STATIC_IMAGE_URLS[gifIndex];
-          
-        }, REPLACEMENT_DELAY);
+            staticImg.onerror = function() {
+              // If static image fails to load, keep the original GIF
+              console.warn('Static image failed to load, keeping original GIF:', STATIC_IMAGE_URLS[gifIndex]);
+              img.dataset.gifReplaced = 'false'; // Allow retry
+            };
+            
+            // Start loading the static image
+            staticImg.src = STATIC_IMAGE_URLS[gifIndex];
+            
+          }, REPLACEMENT_DELAY);
+        });
       });
-    });
+      
+      console.log(`Total images found and processed: ${totalImagesFound}`);
+      if (totalImagesFound === 0) {
+        console.warn('No GIF images found! Check if the filenames match exactly.');
+      }
+    } catch (error) {
+      console.error('Error in replaceGifWithStatic:', error);
+    }
   }
   
   // Run the replacement function when DOM is ready
@@ -106,12 +134,12 @@
     setTimeout(replaceGifWithStatic, 100);
   });
   
-  // Optional: Run periodically to catch any dynamically added images
-  // Uncomment the following lines if you need to handle dynamically loaded content
-  /*
+  // Run periodically to catch any dynamically added images
+  // This is important for HubSpot modules that might load content dynamically
   setInterval(function() {
     replaceGifWithStatic();
-  }, 5000); // Check every 5 seconds
-  */
+  }, 3000); // Check every 3 seconds
+  
+  console.log('=== GIF Replacement Script Loaded Successfully ===');
   
 })();

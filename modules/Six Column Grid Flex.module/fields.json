@@ -73,7 +73,7 @@
         "locked": false,
         "children": [
           {
-            "id": "button.type",
+            "id": "4944e04c-d5af-bd55-8f7e-11d8019abb87",
             "name": "type",
             "label": "Type",
             "required": false,
@@ -92,7 +92,7 @@
             "default": "btn"
           },
           {
-            "id": "button.style",
+            "id": "db9ab9e6-53bb-8216-4590-5093892cb2f7",
             "name": "style",
             "label": "Style",
             "required": false,
@@ -111,14 +111,14 @@
             "default": "arrow"
           },
           {
-            "id": "button.text",
+            "id": "1c8f4d41-9a43-eb01-895c-2b8287cf9e91",
             "name": "text",
             "label": "Text",
             "required": false,
             "locked": false,
             "validation_regex": "",
             "visibility": {
-              "controlling_field": "button.type",
+              "controlling_field": "4944e04c-d5af-bd55-8f7e-11d8019abb87",
               "controlling_field_path": null,
               "controlling_value_regex": "btn",
               "property": null,
@@ -133,13 +133,13 @@
             "default": "LEARN MORE"
           },
           {
-            "id": "button.anchor",
+            "id": "39b4e83e-d338-0ab5-9973-9be466a6d798",
             "name": "anchor",
             "label": "Anchor",
             "required": false,
             "locked": false,
             "visibility": {
-              "controlling_field": "button.type",
+              "controlling_field": "4944e04c-d5af-bd55-8f7e-11d8019abb87",
               "controlling_field_path": null,
               "controlling_value_regex": "btn",
               "property": null,
@@ -148,7 +148,7 @@
             },
             "children": [
               {
-                "id": "button.anchor.type",
+                "id": "668879ea-c92c-d860-1b47-12e29ce36d31",
                 "name": "type",
                 "label": "Type",
                 "required": true,
@@ -167,13 +167,13 @@
                 "default": "href"
               },
               {
-                "id": "button.anchor.link",
+                "id": "22b60b7b-87db-24b9-845f-4cea3d0ada65",
                 "name": "link",
                 "label": "Link",
                 "required": false,
                 "locked": false,
                 "visibility": {
-                  "controlling_field": "button.anchor.type",
+                  "controlling_field": "668879ea-c92c-d860-1b47-12e29ce36d31",
                   "controlling_field_path": null,
                   "controlling_value_regex": "link",
                   "property": null,
@@ -195,14 +195,14 @@
                 }
               },
               {
-                "id": "button.anchor.href",
+                "id": "f310b2d9-0f98-ccbd-9ac3-d5fa6f90b467",
                 "name": "href",
                 "label": "Href",
                 "required": false,
                 "locked": false,
                 "validation_regex": "",
                 "visibility": {
-                  "controlling_field": "button.anchor.type",
+                  "controlling_field": "668879ea-c92c-d860-1b47-12e29ce36d31",
                   "controlling_field_path": null,
                   "controlling_value_regex": "href",
                   "property": null,
@@ -237,13 +237,13 @@
             }
           },
           {
-            "id": "button.cta",
+            "id": "2a6a6d6c-ee74-ab21-dd06-0901536a4906",
             "name": "cta",
             "label": "CTA",
             "required": false,
             "locked": false,
             "visibility": {
-              "controlling_field": "button.type",
+              "controlling_field": "4944e04c-d5af-bd55-8f7e-11d8019abb87",
               "controlling_field_path": null,
               "controlling_value_regex": "cta",
               "property": null,

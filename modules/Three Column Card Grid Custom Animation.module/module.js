@@ -5,77 +5,90 @@
   'use strict';
   
   // Configuration - you can modify these values
-  const GIF_FILENAME = 'icon-compete-1.gif';
-  const STATIC_IMAGE_URL = 'https://www.constructconnect.com/hubfs/GIFs_SVGs/project_data_icon_svg.svg'; // Replace with your static image URL
+  const GIF_FILENAMES = [
+    'icon-compete-1.gif',
+    'bid.gif', 
+    'data-icon.gif'
+  ];
+  
+  const STATIC_IMAGE_URLS = [
+    'https://www.constructconnect.com/hubfs/GIFs_SVGs/project_data_icon_svg.svg',
+    'https://2347101.fs1.hubspotusercontent-na1.net/hubfs/2347101/icons_landing%20page_Project%20Data%20copy.svg', // Replace with your second static image URL
+    'https://2347101.fs1.hubspotusercontent-na1.net/hubfs/2347101/icons_landing%20page_Project%20Data.svg'  // Replace with your third static image URL
+  ];
+  
   const REPLACEMENT_DELAY = 2000; // Delay in milliseconds before replacing (adjust as needed)
   
   function replaceGifWithStatic() {
-    // Find all img elements that contain the target GIF filename
-    const gifImages = document.querySelectorAll(`img[src*="${GIF_FILENAME}"]`);
-    
-    console.log(`Found ${gifImages.length} images containing "${GIF_FILENAME}"`);
-    
-    if (gifImages.length === 0) {
-      return; // No matching GIFs found
-    }
-    
-    gifImages.forEach(function(img, index) {
-      // Skip if already processed
-      if (img.dataset.gifReplaced === 'true') {
-        console.log(`Image ${index + 1} already processed, skipping`);
-        return;
+    // Process each GIF filename
+    GIF_FILENAMES.forEach(function(gifFilename, gifIndex) {
+      // Find all img elements that contain the current GIF filename
+      const gifImages = document.querySelectorAll(`img[src*="${gifFilename}"]`);
+      
+      console.log(`Found ${gifImages.length} images containing "${gifFilename}"`);
+      
+      if (gifImages.length === 0) {
+        return; // No matching GIFs found for this filename
       }
       
-      console.log(`Processing image ${index + 1}:`, img.src);
-      
-      // Mark as processed to prevent double replacement
-      img.dataset.gifReplaced = 'true';
-      
-      // Store original src for potential fallback
-      const originalSrc = img.src;
-      
-      // Set a timeout to replace the GIF after it has time to play
-      setTimeout(function() {
-        console.log(`Replacing image ${index + 1} with static image`);
+      gifImages.forEach(function(img, index) {
+        // Skip if already processed
+        if (img.dataset.gifReplaced === 'true') {
+          console.log(`Image ${index + 1} (${gifFilename}) already processed, skipping`);
+          return;
+        }
         
-        // Create a new image element to preload the static image
-        const staticImg = new Image();
+        console.log(`Processing image ${index + 1} (${gifFilename}):`, img.src);
         
-        staticImg.onload = function() {
-          console.log(`Static image loaded successfully for image ${index + 1}`);
+        // Mark as processed to prevent double replacement
+        img.dataset.gifReplaced = 'true';
+        
+        // Store original src for potential fallback
+        const originalSrc = img.src;
+        
+        // Set a timeout to replace the GIF after it has time to play
+        setTimeout(function() {
+          console.log(`Replacing image ${index + 1} (${gifFilename}) with static image`);
           
-          // Replace the src with the static image
-          img.src = STATIC_IMAGE_URL;
+          // Create a new image element to preload the static image
+          const staticImg = new Image();
           
-          // Also replace the srcset with SVG versions to ensure proper display at all screen sizes
-          if (img.srcset) {
-            // Create new srcset with SVG at different sizes
-            const svgSrcset = [
-              `${STATIC_IMAGE_URL}?width=51&height=51 51w`,
-              `${STATIC_IMAGE_URL}?width=101&height=101 101w`,
-              `${STATIC_IMAGE_URL}?width=152&height=152 152w`,
-              `${STATIC_IMAGE_URL}?width=202&height=202 202w`,
-              `${STATIC_IMAGE_URL}?width=253&height=253 253w`,
-              `${STATIC_IMAGE_URL}?width=303&height=303 303w`
-            ].join(', ');
-            img.srcset = svgSrcset;
-            console.log(`Updated srcset for image ${index + 1}:`, svgSrcset);
-          }
+          staticImg.onload = function() {
+            console.log(`Static image loaded successfully for image ${index + 1} (${gifFilename})`);
+            
+            // Replace the src with the static image
+            img.src = STATIC_IMAGE_URLS[gifIndex];
+            
+            // Also replace the srcset with SVG versions to ensure proper display at all screen sizes
+            if (img.srcset) {
+              // Create new srcset with SVG at different sizes
+              const svgSrcset = [
+                `${STATIC_IMAGE_URLS[gifIndex]}?width=51&height=51 51w`,
+                `${STATIC_IMAGE_URLS[gifIndex]}?width=101&height=101 101w`,
+                `${STATIC_IMAGE_URLS[gifIndex]}?width=152&height=152 152w`,
+                `${STATIC_IMAGE_URLS[gifIndex]}?width=202&height=202 202w`,
+                `${STATIC_IMAGE_URLS[gifIndex]}?width=253&height=253 253w`,
+                `${STATIC_IMAGE_URLS[gifIndex]}?width=303&height=303 303w`
+              ].join(', ');
+              img.srcset = svgSrcset;
+              console.log(`Updated srcset for image ${index + 1} (${gifFilename}):`, svgSrcset);
+            }
+            
+            // Preserve any existing classes, alt text, and other attributes
+            // The img element itself is replaced in the DOM, but we keep all attributes
+          };
           
-          // Preserve any existing classes, alt text, and other attributes
-          // The img element itself is replaced in the DOM, but we keep all attributes
-        };
-        
-        staticImg.onerror = function() {
-          // If static image fails to load, keep the original GIF
-          console.warn('Static image failed to load, keeping original GIF:', STATIC_IMAGE_URL);
-          img.dataset.gifReplaced = 'false'; // Allow retry
-        };
-        
-        // Start loading the static image
-        staticImg.src = STATIC_IMAGE_URL;
-        
-      }, REPLACEMENT_DELAY);
+          staticImg.onerror = function() {
+            // If static image fails to load, keep the original GIF
+            console.warn('Static image failed to load, keeping original GIF:', STATIC_IMAGE_URLS[gifIndex]);
+            img.dataset.gifReplaced = 'false'; // Allow retry
+          };
+          
+          // Start loading the static image
+          staticImg.src = STATIC_IMAGE_URLS[gifIndex];
+          
+        }, REPLACEMENT_DELAY);
+      });
     });
   }
   

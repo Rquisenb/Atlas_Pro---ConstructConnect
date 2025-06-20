@@ -21,7 +21,7 @@ console.log('=== GIF Replacement Script Loading ===');
     'https://2347101.fs1.hubspotusercontent-na1.net/hubfs/2347101/icons_landing%20page_Project%20Data.svg'  // Replace with your third static image URL
   ];
   
-  const REPLACEMENT_DELAY = 2000; // Delay in milliseconds before replacing (adjust as needed)
+  const REPLACEMENT_DELAY = 2000; 
   
   function replaceGifWithStatic() {
     try {
@@ -134,11 +134,6 @@ console.log('=== GIF Replacement Script Loading ===');
     setTimeout(replaceGifWithStatic, 100);
   });
   
-  // Run periodically to catch any dynamically added images
-  // This is important for HubSpot modules that might load content dynamically
-  setInterval(function() {
-    replaceGifWithStatic();
-  }, 3000); // Check every 3 seconds
   
   console.log('=== GIF Replacement Script Loaded Successfully ===');
   

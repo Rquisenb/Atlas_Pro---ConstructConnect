@@ -93,9 +93,6 @@ console.log('=== GIF Replacement Script Loading ===');
                 img.srcset = svgSrcset;
                 console.log(`Updated srcset for image ${index + 1} (${gifFilename}):`, svgSrcset);
               }
-              
-              // Preserve any existing classes, alt text, and other attributes
-              // The img element itself is replaced in the DOM, but we keep all attributes
             };
             
             staticImg.onerror = function() {
@@ -133,8 +130,5 @@ console.log('=== GIF Replacement Script Loading ===');
     // Small delay to ensure all images are loaded
     setTimeout(replaceGifWithStatic, 100);
   });
-  
-  
   console.log('=== GIF Replacement Script Loaded Successfully ===');
-  
 })();

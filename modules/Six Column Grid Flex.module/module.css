@@ -252,22 +252,18 @@
 
 /* Card styling with consistent heights */
 .kl-card-grid__card {
+  background: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  height: 100%;
-  box-shadow: 0px 11px 30px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  overflow: hidden;
-  /* Ensure backdrop-filter works properly */
-  transform: translateZ(0);
-  will-change: transform;
-  /* Fallback for browsers that don't support backdrop-filter */
-  background-clip: padding-box;
 }
 
 .kl-card-grid__card:hover {
-  transform: translateY(-4px) translateZ(0);
-  box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
 }
 
 .kl-card-grid__image {
@@ -307,25 +303,30 @@
 }
 
 .kl-card-grid__content {
+  padding: 20px;
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 20px;
-  color: inherit;
 }
 
 .kl-card-grid__content h3, .kl-card-grid__content h4 {
   margin-top: 0;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .kl-card-grid__content p {
-  margin-bottom: 12px;
-  line-height: 1.6;
+  margin-bottom: 15px;
 }
 
 .kl-card-grid__content:hover, .kl-card-grid__content:focus {
-  color: inherit;
+  outline: none;
+}
+
+/* Button container styles for bottom alignment */
+.kl-card-grid__content .button,
+.kl-card-grid__content .button_cta {
+  margin-top: auto;
+  align-self: flex-start;
 }
 
 /* Search functionality styles */

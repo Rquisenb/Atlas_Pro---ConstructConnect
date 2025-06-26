@@ -416,15 +416,6 @@
   flex-grow: 1;
 }
 
-.kl-card-grid__image {
-  width: 100%;
-  height: auto;
-}
-
-.kl-card-grid__content {
-  flex: 1;
-}
-
 .kl-card-grid > div {
   display: flex;
   flex-wrap: wrap;

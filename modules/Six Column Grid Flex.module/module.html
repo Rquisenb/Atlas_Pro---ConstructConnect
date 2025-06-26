@@ -26,25 +26,19 @@
              style="padding: {{ spacing }}px;"
            {% endif %}
         >
-        <div class="kl-card-grid__card" 
-             {% if module.enable_card_styling %}
-               style="background-color: {{ bg_color }}; 
-                      background-color: rgba({{ bg_color|convert_rgb }}, {{ bg_opacity / 100 }}); 
-                      border-color: {{ border_color }}; 
-                      border-radius: {{ border_radius }}px;
-                      {% if bg_blur > 0 %}backdrop-filter: blur({{ bg_blur }}px);{% endif %}"
-             {% endif %}>
+        <div class="kl-card-grid__card">
           {% if item.image.src %}
-            {% set style = 'background-image: url(%s);'|format(item.image.src) %}
-            {% call render_link(item.anchor, 'kl-card-grid__image', style, true) %}
-              <span class="kl-card-grid__image-description" role="img" aria-label="{{item.image.alt}}"> </span>
-            {% endcall %}
+            <div class="kl-card-grid__image">
+              {{ render_image(item.image, '', '') }}
+            </div>
           {% endif %}
           <div class="kl-card-grid__content">
             {% if item.preheader %}
               <span class="kl-card-grid__preheader">{{ item.preheader }}</span>
             {% endif %}
-            {{ item.content }}
+            <div class="kl-card-grid__content-text">
+              {{ item.content }}
+            </div>
             {{ render_button(item.button, suffix='card-button') }}
           </div>
         </div>

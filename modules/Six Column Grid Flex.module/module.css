@@ -420,3 +420,24 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.kl-card-grid__content-text {
+  flex: 1;
+  min-height: 0;
+}
+
+.kl-card-grid__content-text h1,
+.kl-card-grid__content-text h2,
+.kl-card-grid__content-text h3,
+.kl-card-grid__content-text h4,
+.kl-card-grid__content-text h5,
+.kl-card-grid__content-text h6 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.kl-card-grid__content-text p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}

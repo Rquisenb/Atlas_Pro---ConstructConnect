@@ -52,7 +52,8 @@
         "display": "select",
         "choices": [
           ["image", "Image"],
-          ["video", "Video Embed"]
+          ["video_embed", "Video Embed (Custom)"],
+          ["hubspot_video", "HubSpot Video Embed"]
         ],
         "multiple": false,
         "reordering_enabled": true,
@@ -76,7 +77,24 @@
         "visibility": {
           "controlling_field": "media_type",
           "controlling_field_path": null,
-          "controlling_value_regex": "video",
+          "controlling_value_regex": "video_embed",
+          "property": null,
+          "operator": "EQUAL",
+          "access": null
+        }
+      },
+      {
+        "id": "hubspot_video",
+        "name": "hubspot_video",
+        "label": "HubSpot Video",
+        "required": false,
+        "locked": false,
+        "type": "video",
+        "display_width": null,
+        "visibility": {
+          "controlling_field": "media_type",
+          "controlling_field_path": null,
+          "controlling_value_regex": "hubspot_video",
           "property": null,
           "operator": "EQUAL",
           "access": null

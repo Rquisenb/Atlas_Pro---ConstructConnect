@@ -41,7 +41,7 @@
               {{ render_image(item.image, '', '') }}
             </div>
           {% endif %}
-          {% if item.media_type == 'video' and item.video_url %}
+          {% if item.media_type == 'video_embed' and item.video_url %}
             <div class="kl-card-grid__video">
               <iframe 
                 src="{{ item.video_url | replace('watch?v=', 'embed/') | replace('youtu.be/', 'youtube.com/embed/') }}"
@@ -50,6 +50,11 @@
                 frameborder="0" 
                 allowfullscreen>
               </iframe>
+            </div>
+          {% endif %}
+          {% if item.media_type == 'hubspot_video' and item.hubspot_video %}
+            <div class="kl-card-grid__video">
+              {% video item.hubspot_video %}
             </div>
           {% endif %}
           <div class="kl-card-grid__content">

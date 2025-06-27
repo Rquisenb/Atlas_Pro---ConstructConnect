@@ -60,6 +60,17 @@
         }
       },
       {
+        "id": "video_thumbnail",
+        "name": "video_thumbnail",
+        "label": "Video Thumbnail (Optional)",
+        "type": "image",
+        "visibility": {
+          "controlling_field": "media_type",
+          "controlling_value_regex": "video_embed",
+          "operator": "EQUAL"
+        }
+      },
+      {
         "id": "title",
         "name": "title",
         "label": "Title",
@@ -807,6 +818,70 @@
         "display_width": null,
         "default": 0,
         "help_text": "Set the background blur effect in pixels (0-20px)"
+      },
+      {
+        "id": "card_styling.drop_shadow",
+        "name": "drop_shadow",
+        "label": "Drop Shadow",
+        "required": false,
+        "locked": false,
+        "visibility": {
+          "controlling_field": "enable_card_styling",
+          "controlling_field_path": null,
+          "controlling_value_regex": "true",
+          "property": null,
+          "operator": "EQUAL",
+          "access": null
+        },
+        "display": "checkbox",
+        "type": "boolean",
+        "display_width": null,
+        "default": true,
+        "help_text": "Enable or disable the drop shadow on cards"
+      },
+      {
+        "id": "card_styling.shadow_color",
+        "name": "shadow_color",
+        "label": "Shadow Color",
+        "required": false,
+        "locked": false,
+        "visibility": {
+          "controlling_field": "enable_card_styling",
+          "controlling_field_path": null,
+          "controlling_value_regex": "true",
+          "property": null,
+          "operator": "EQUAL",
+          "access": null
+        },
+        "type": "color",
+        "display_width": null,
+        "default": {
+          "color": "#000000"
+        },
+        "help_text": "Choose the color of the drop shadow"
+      },
+      {
+        "id": "card_styling.shadow_opacity",
+        "name": "shadow_opacity",
+        "label": "Shadow Opacity",
+        "required": false,
+        "locked": false,
+        "visibility": {
+          "controlling_field": "enable_card_styling",
+          "controlling_field_path": null,
+          "controlling_value_regex": "true",
+          "property": null,
+          "operator": "EQUAL",
+          "access": null
+        },
+        "display": "slider",
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "type": "number",
+        "display_width": null,
+        "default": 15,
+        "help_text": "Set the shadow opacity percentage (0-100%)"
       },
       {
         "id": "card_styling.padding_top",

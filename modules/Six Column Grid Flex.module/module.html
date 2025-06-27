@@ -11,6 +11,9 @@
 {% set border_radius = module.card_styling.border_radius | default(8) %}
 {% set bg_blur = module.card_styling.background_blur | default(0) %}
 {% set card_padding = module.card_styling.padding | default(20) %}
+{% set drop_shadow = module.card_styling.drop_shadow | default(true) %}
+{% set shadow_color = module.card_styling.shadow_color.color | default('#000000') %}
+{% set shadow_opacity = module.card_styling.shadow_opacity | default(15) %}
 
 <div class="kl-card-grid {{ column_class }}" id="{{ custom_name }}" data-module-id="{{ name }}">
   {% if module.card_search.enabled %}
@@ -34,7 +37,8 @@
                       border-color: {{ border_color }}; 
                       border-radius: {{ border_radius }}px;
                       padding: {{ card_padding }}px;
-                      {% if bg_blur > 0 %}backdrop-filter: blur({{ bg_blur }}px);{% endif %}"
+                      {% if bg_blur > 0 %}backdrop-filter: blur({{ bg_blur }}px);{% endif %}
+                      {% if drop_shadow %}box-shadow: 0 4px 12px rgba({{ shadow_color|convert_rgb }}, {{ shadow_opacity / 100 }});{% endif %}"
              {% endif %}>
           {% if item.title %}
             <div class="kl-card-grid__title">{{ item.title }}</div>
@@ -46,16 +50,41 @@
           {% endif %}
           {% if item.media_type == 'video_embed' and item.video_url %}
             <div class="kl-card-grid__video">
-              {% if 'youtube.com' in item.video_url or 'youtu.be' in item.video_url or 'vimeo.com' in item.video_url %}
-                <iframe 
-                  src="{{ item.video_url | replace('watch?v=', 'embed/') | replace('youtu.be/', 'youtube.com/embed/') }}"
-                  width="100%" height="315" frameborder="0" allowfullscreen>
-                </iframe>
+              {% if item.video_thumbnail.src %}
+                <div class="kl-card-grid__video-thumbnail" data-video-url="{{ item.video_url }}">
+                  {{ render_image(item.video_thumbnail, 'kl-card-grid__video-thumbnail-img', '') }}
+                  <div class="kl-card-grid__video-play-button">
+                    <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                      <circle cx="30" cy="30" r="30" fill="rgba(0,0,0,0.7)"/>
+                      <path d="M25 20L40 30L25 40V20Z" fill="white"/>
+                    </svg>
+                  </div>
+                </div>
+                <div class="kl-card-grid__video-player" style="display: none;">
+                  {% if 'youtube.com' in item.video_url or 'youtu.be' in item.video_url or 'vimeo.com' in item.video_url %}
+                    <iframe 
+                      src="{{ item.video_url | replace('watch?v=', 'embed/') | replace('youtu.be/', 'youtube.com/embed/') }}"
+                      width="100%" height="315" frameborder="0" allowfullscreen>
+                    </iframe>
+                  {% else %}
+                    <video controls width="100%" height="315">
+                      <source src="{{ item.video_url }}">
+                      Your browser does not support the video tag.
+                    </video>
+                  {% endif %}
+                </div>
               {% else %}
-                <video controls width="100%" height="315">
-                  <source src="{{ item.video_url }}">
-                  Your browser does not support the video tag.
-                </video>
+                {% if 'youtube.com' in item.video_url or 'youtu.be' in item.video_url or 'vimeo.com' in item.video_url %}
+                  <iframe 
+                    src="{{ item.video_url | replace('watch?v=', 'embed/') | replace('youtu.be/', 'youtube.com/embed/') }}"
+                    width="100%" height="315" frameborder="0" allowfullscreen>
+                  </iframe>
+                {% else %}
+                  <video controls width="100%" height="315">
+                    <source src="{{ item.video_url }}">
+                    Your browser does not support the video tag.
+                  </video>
+                {% endif %}
               {% endif %}
             </div>
           {% endif %}
@@ -93,3 +122,21 @@
     {% endif %}
   </div>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const videoThumbnails = document.querySelectorAll('.kl-card-grid__video-thumbnail');
+  
+  videoThumbnails.forEach(function(thumbnail) {
+    thumbnail.addEventListener('click', function() {
+      const videoContainer = this.closest('.kl-card-grid__video');
+      const thumbnailDiv = this;
+      const playerDiv = videoContainer.querySelector('.kl-card-grid__video-player');
+      
+      // Hide thumbnail and show player
+      thumbnailDiv.style.display = 'none';
+      playerDiv.style.display = 'block';
+    });
+  });
+});
+</script>

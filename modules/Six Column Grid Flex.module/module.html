@@ -37,7 +37,7 @@
                       {% if bg_blur > 0 %}backdrop-filter: blur({{ bg_blur }}px);{% endif %}"
              {% endif %}>
           {% if item.title %}
-            <div class="kl-card-grid__title kl-card-grid__title--{{ item.title_alignment | default('left') }}">{{ item.title }}</div>
+            <div class="kl-card-grid__title">{{ item.title }}</div>
           {% endif %}
           {% if item.media_type == 'image' and item.image.src %}
             <div class="kl-card-grid__image">

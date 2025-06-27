@@ -331,18 +331,6 @@
   color: #333;
 }
 
-.kl-card-grid__title--left {
-  text-align: left;
-}
-
-.kl-card-grid__title--center {
-  text-align: center;
-}
-
-.kl-card-grid__title--right {
-  text-align: right;
-}
-
 .kl-card-grid__content {
   padding: 20px;
   flex: 1;

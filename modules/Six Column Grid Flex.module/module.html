@@ -10,6 +10,7 @@
 {% set border_color = module.card_styling.border_color.color | default('#e0e0e0') %}
 {% set border_radius = module.card_styling.border_radius | default(8) %}
 {% set bg_blur = module.card_styling.background_blur | default(0) %}
+{% set card_padding = module.card_styling.padding | default(20) %}
 
 <div class="kl-card-grid {{ column_class }}" id="{{ custom_name }}" data-module-id="{{ name }}">
   {% if module.card_search.enabled %}
@@ -26,10 +27,29 @@
              style="padding: {{ spacing }}px;"
            {% endif %}
         >
-        <div class="kl-card-grid__card">
+        <div class="kl-card-grid__card" 
+             {% if module.enable_card_styling %}
+               style="background-color: {{ bg_color }}; 
+                      background-color: rgba({{ bg_color|convert_rgb }}, {{ bg_opacity / 100 }}); 
+                      border-color: {{ border_color }}; 
+                      border-radius: {{ border_radius }}px;
+                      padding: {{ card_padding }}px;
+                      {% if bg_blur > 0 %}backdrop-filter: blur({{ bg_blur }}px);{% endif %}"
+             {% endif %}>
           {% if item.image.src %}
             <div class="kl-card-grid__image">
               {{ render_image(item.image, '', '') }}
+            </div>
+          {% endif %}
+          {% if item.media_type == 'video' and item.video_url %}
+            <div class="kl-card-grid__video">
+              <iframe 
+                src="{{ item.video_url | replace('watch?v=', 'embed/') | replace('youtu.be/', 'youtube.com/embed/') }}"
+                width="100%" 
+                height="315" 
+                frameborder="0" 
+                allowfullscreen>
+              </iframe>
             </div>
           {% endif %}
           <div class="kl-card-grid__content">

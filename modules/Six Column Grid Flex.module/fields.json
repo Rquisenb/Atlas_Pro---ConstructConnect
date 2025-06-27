@@ -44,6 +44,45 @@
         }
       },
       {
+        "id": "media_type",
+        "name": "media_type",
+        "label": "Media Type",
+        "required": false,
+        "locked": false,
+        "display": "select",
+        "choices": [
+          ["image", "Image"],
+          ["video", "Video Embed"]
+        ],
+        "multiple": false,
+        "reordering_enabled": true,
+        "preset": null,
+        "type": "choice",
+        "display_width": null,
+        "default": "image"
+      },
+      {
+        "id": "video_url",
+        "name": "video_url",
+        "label": "Video URL",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "display_width": null,
+        "placeholder": "https://www.youtube.com/watch?v=...",
+        "visibility": {
+          "controlling_field": "media_type",
+          "controlling_field_path": null,
+          "controlling_value_regex": "video",
+          "property": null,
+          "operator": "EQUAL",
+          "access": null
+        }
+      },
+      {
         "id": "preheader",
         "name": "preheader",
         "label": "Preheader",
@@ -786,6 +825,98 @@
         "help_text": "Set the background blur effect in pixels (0-20px)"
       },
       {
+        "id": "card_styling.padding_top",
+        "name": "padding_top",
+        "label": "Padding Top",
+        "required": false,
+        "locked": false,
+        "visibility": {
+          "controlling_field": "enable_card_styling",
+          "controlling_field_path": null,
+          "controlling_value_regex": "true",
+          "property": null,
+          "operator": "EQUAL",
+          "access": null
+        },
+        "display": "slider",
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "type": "number",
+        "display_width": null,
+        "default": 20,
+        "help_text": "Set the top padding in pixels (0-100px)"
+      },
+      {
+        "id": "card_styling.padding_right",
+        "name": "padding_right",
+        "label": "Padding Right",
+        "required": false,
+        "locked": false,
+        "visibility": {
+          "controlling_field": "enable_card_styling",
+          "controlling_field_path": null,
+          "controlling_value_regex": "true",
+          "property": null,
+          "operator": "EQUAL",
+          "access": null
+        },
+        "display": "slider",
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "type": "number",
+        "display_width": null,
+        "default": 20,
+        "help_text": "Set the right padding in pixels (0-100px)"
+      },
+      {
+        "id": "card_styling.padding_bottom",
+        "name": "padding_bottom",
+        "label": "Padding Bottom",
+        "required": false,
+        "locked": false,
+        "visibility": {
+          "controlling_field": "enable_card_styling",
+          "controlling_field_path": null,
+          "controlling_value_regex": "true",
+          "property": null,
+          "operator": "EQUAL",
+          "access": null
+        },
+        "display": "slider",
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "type": "number",
+        "display_width": null,
+        "default": 20,
+        "help_text": "Set the bottom padding in pixels (0-100px)"
+      },
+      {
+        "id": "card_styling.padding_left",
+        "name": "padding_left",
+        "label": "Padding Left",
+        "required": false,
+        "locked": false,
+        "visibility": {
+          "controlling_field": "enable_card_styling",
+          "controlling_field_path": null,
+          "controlling_value_regex": "true",
+          "property": null,
+          "operator": "EQUAL",
+          "access": null
+        },
+        "display": "slider",
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "type": "number",
+        "display_width": null,
+        "default": 20,
+        "help_text": "Set the left padding in pixels (0-100px)"
+      },
+      {
         "id": "card_styling.text_size",
         "name": "text_size",
         "label": "Text Size",
@@ -823,7 +954,11 @@
         "color": "#e0e0e0"
       },
       "border_radius": 8,
-      "background_blur": 0
+      "background_blur": 0,
+      "padding_top": 20,
+      "padding_right": 20,
+      "padding_bottom": 20,
+      "padding_left": 20
     }
   }
 ]

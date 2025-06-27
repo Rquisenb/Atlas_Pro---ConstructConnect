@@ -89,8 +89,9 @@
         "label": "HubSpot Video",
         "required": false,
         "locked": false,
-        "type": "video",
+        "type": "file",
         "display_width": null,
+        "file_type": "VIDEO",
         "visibility": {
           "controlling_field": "media_type",
           "controlling_field_path": null,

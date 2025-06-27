@@ -54,7 +54,10 @@
           {% endif %}
           {% if item.media_type == 'hubspot_video' and item.hubspot_video %}
             <div class="kl-card-grid__video">
-              {% video item.hubspot_video %}
+              <video controls width="100%" height="200">
+                <source src="{{ item.hubspot_video.url }}" type="{{ item.hubspot_video.mime_type }}">
+                Your browser does not support the video tag.
+              </video>
             </div>
           {% endif %}
           <div class="kl-card-grid__content">

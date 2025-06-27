@@ -36,6 +36,9 @@
                       padding: {{ card_padding }}px;
                       {% if bg_blur > 0 %}backdrop-filter: blur({{ bg_blur }}px);{% endif %}"
              {% endif %}>
+          {% if item.title %}
+            <h3 class="kl-card-grid__title">{{ item.title }}</h3>
+          {% endif %}
           {% if item.image.src %}
             <div class="kl-card-grid__image">
               {{ render_image(item.image, '', '') }}
@@ -67,7 +70,17 @@
             <div class="kl-card-grid__content-text">
               {{ item.content }}
             </div>
-            {{ render_button(item.button, suffix='card-button') }}
+            {% if item.button and item.button.type != 'none' %}
+              <div class="kl-card-grid__button">
+                {% if item.button.type == 'btn' %}
+                  <a href="{{ item.button.anchor.href | default('#') }}" class="button button--{{ item.button.style }}">
+                    {{ item.button.text | default('Learn More') }}
+                  </a>
+                {% elif item.button.type == 'cta' and item.button.cta %}
+                  {% cta guid="{{ item.button.cta }}" %}
+                {% endif %}
+              </div>
+            {% endif %}
           </div>
         </div>
       </div>

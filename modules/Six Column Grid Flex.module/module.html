@@ -37,30 +37,31 @@
                       {% if bg_blur > 0 %}backdrop-filter: blur({{ bg_blur }}px);{% endif %}"
              {% endif %}>
           {% if item.title %}
-            <h3 class="kl-card-grid__title">{{ item.title }}</h3>
+            <div class="kl-card-grid__title kl-card-grid__title--{{ item.title_alignment | default('left') }}">{{ item.title }}</div>
           {% endif %}
-          {% if item.image.src %}
+          {% if item.media_type == 'image' and item.image.src %}
             <div class="kl-card-grid__image">
               {{ render_image(item.image, '', '') }}
             </div>
           {% endif %}
           {% if item.media_type == 'video_embed' and item.video_url %}
             <div class="kl-card-grid__video">
-              <iframe 
-                src="{{ item.video_url | replace('watch?v=', 'embed/') | replace('youtu.be/', 'youtube.com/embed/') }}"
-                width="100%" 
-                height="315" 
-                frameborder="0" 
-                allowfullscreen>
-              </iframe>
+              {% if 'youtube.com' in item.video_url or 'youtu.be' in item.video_url or 'vimeo.com' in item.video_url %}
+                <iframe 
+                  src="{{ item.video_url | replace('watch?v=', 'embed/') | replace('youtu.be/', 'youtube.com/embed/') }}"
+                  width="100%" height="315" frameborder="0" allowfullscreen>
+                </iframe>
+              {% else %}
+                <video controls width="100%" height="315">
+                  <source src="{{ item.video_url }}">
+                  Your browser does not support the video tag.
+                </video>
+              {% endif %}
             </div>
           {% endif %}
           {% if item.media_type == 'hubspot_video' and item.hubspot_video %}
             <div class="kl-card-grid__video">
-              <video controls width="100%" height="200">
-                <source src="{{ item.hubspot_video.url }}" type="{{ item.hubspot_video.mime_type }}">
-                Your browser does not support the video tag.
-              </video>
+              {% video item.hubspot_video %}
             </div>
           {% endif %}
           <div class="kl-card-grid__content">

@@ -26,41 +26,38 @@
     },
     "children": [
       {
-        "id": "image",
-        "name": "image",
-        "label": "Image",
-        "required": false,
-        "locked": false,
-        "responsive": true,
-        "resizable": false,
-        "show_loading": false,
-        "type": "image",
-        "display_width": null,
-        "default": {
-          "size_type": "auto",
-          "src": "",
-          "alt": null,
-          "loading": "disabled"
-        }
-      },
-      {
         "id": "media_type",
         "name": "media_type",
         "label": "Media Type",
-        "required": false,
-        "locked": false,
-        "display": "select",
+        "type": "choice",
         "choices": [
           ["image", "Image"],
-          ["video_embed", "Video Embed (Custom)"],
-          ["hubspot_video", "HubSpot Video Embed"]
+          ["video_embed", "Video"]
         ],
-        "multiple": false,
-        "reordering_enabled": true,
-        "preset": null,
-        "type": "choice",
-        "display_width": null,
         "default": "image"
+      },
+      {
+        "id": "image",
+        "name": "image",
+        "label": "Image",
+        "type": "image",
+        "visibility": {
+          "controlling_field": "media_type",
+          "controlling_value_regex": "image",
+          "operator": "EQUAL"
+        }
+      },
+      {
+        "id": "video_url",
+        "name": "video_url",
+        "label": "Video URL",
+        "type": "text",
+        "placeholder": "Paste a YouTube, Vimeo, or HubSpot video file URL",
+        "visibility": {
+          "controlling_field": "media_type",
+          "controlling_value_regex": "video_embed",
+          "operator": "EQUAL"
+        }
       },
       {
         "id": "title",
@@ -71,48 +68,21 @@
         "validation_regex": "",
         "allow_new_line": false,
         "show_emoji_picker": false,
-        "type": "text",
+        "type": "richtext",
         "display_width": null,
         "placeholder": "Enter card title"
       },
       {
-        "id": "video_url",
-        "name": "video_url",
-        "label": "Video URL",
-        "required": false,
-        "locked": false,
-        "validation_regex": "",
-        "allow_new_line": false,
-        "show_emoji_picker": false,
-        "type": "text",
-        "display_width": null,
-        "placeholder": "https://www.youtube.com/watch?v=...",
-        "visibility": {
-          "controlling_field": "media_type",
-          "controlling_field_path": null,
-          "controlling_value_regex": "video_embed",
-          "property": null,
-          "operator": "EQUAL",
-          "access": null
-        }
-      },
-      {
-        "id": "hubspot_video",
-        "name": "hubspot_video",
-        "label": "HubSpot Video",
-        "required": false,
-        "locked": false,
-        "type": "file",
-        "display_width": null,
-        "file_type": "VIDEO",
-        "visibility": {
-          "controlling_field": "media_type",
-          "controlling_field_path": null,
-          "controlling_value_regex": "hubspot_video",
-          "property": null,
-          "operator": "EQUAL",
-          "access": null
-        }
+        "id": "title_alignment",
+        "name": "title_alignment",
+        "label": "Title Alignment",
+        "type": "choice",
+        "choices": [
+          ["left", "Left"],
+          ["center", "Center"],
+          ["right", "Right"]
+        ],
+        "default": "left"
       },
       {
         "id": "preheader",

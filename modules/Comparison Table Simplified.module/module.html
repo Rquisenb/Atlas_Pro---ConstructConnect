@@ -1,0 +1,225 @@
+    <style>
+
+        table {
+            border: none !important;
+        }
+
+        tr {
+            background-color: #fff !important;
+        }
+       
+        .cc-check-icon-filled {
+            color: rgba(237, 112, 0, 1.0);
+        }
+        .cc-check-icon-outline {
+            color: #93c5fd; 
+        }
+        .cc-x-icon-red {
+            color: rgb(239 68 68); 
+        }
+
+        .cc-body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        @media (min-width: 640px) {
+            .cc-body {
+                padding: 1.5rem;
+            }
+        }
+        @media (min-width: 1024px) {
+            .cc-body {
+                padding: 2rem;
+            }
+        }
+
+        .cc-container {
+            width: 100%;
+            max-width: 56rem;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #fff;
+            border-radius: 0.75rem;
+            border: 1px solid #e5e5e5;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,.1), 0 4px 6px -2px rgba(0,0,0,.05);
+            overflow: hidden;
+        }
+
+        .cc-table-wrapper {
+            overflow-x: auto;
+        }
+
+        .cc-comparison-table {
+            width: 100% !important;
+            text-align: left !important;
+            border-collapse: collapse !important;
+            border-spacing: 0 !important;
+        }
+        
+        .cc-comparison-table thead tr {
+            border-bottom: 1px solid #e5e7eb !important;
+        }
+        
+        .cc-comparison-table tbody tr {
+            border-bottom: 1px solid #e5e7eb !important;
+        }
+
+        .cc-comparison-table tbody tr:last-child {
+            border-bottom: none !important;
+        }
+
+        .cc-comparison-table th {
+            padding: 1.5rem !important;
+            font-size: .875rem !important;
+            font-weight: 700 !important;
+            color: #4B5563 !important;
+            text-transform: uppercase !important;
+            letter-spacing: .05em !important;
+            text-align: center !important;
+            border: none !important;
+            background-color: #ffffff !important;
+        }
+
+        .cc-comparison-table th.cc-features-col {
+            width: 50% !important;
+            text-align: left !important;
+        }
+        
+        .cc-comparison-table td {
+            padding: 1rem 1.5rem !important;
+            color: #374151 !important;
+            border: none !important;
+        }
+
+        .cc-comparison-table .cc-text-center {
+            text-align: center !important;
+        }
+        
+        .cc-comparison-table .cc-icon-container {
+            width: 1.5rem !important;
+            height: 1.5rem !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+        
+        .cc-comparison-table .cc-font-bold {
+            font-weight: 700 !important;
+        }
+        
+        .cc-comparison-table .cc-text-gray-400 {
+            color: #9CA3AF !important;
+        }
+
+        .cc-comparison-table .cc-px-3 {
+             padding-left: 0.75rem !important; 
+             padding-right: 0.75rem !important;
+        }
+
+        .cc-comparison-table .cc-no-x-padding {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+    </style>
+
+    <!-- Main container for the table -->
+    <div class="cc-container">
+        <div class="cc-table-wrapper">
+            <table class="cc-comparison-table">
+                <!-- Table Header -->
+                <thead>
+                    <tr>
+                        <!-- Empty cell for alignment -->
+                        <th class="cc-features-col">Features</th>
+                        <!-- STACK column header -->
+                        <th>ConstructConnect</th>
+                        <!-- PlanSwift column header -->
+                        <th>Competitors</th>
+                    </tr>
+                </thead>
+
+                <!-- Table Body -->
+                <tbody>
+                    <!-- Section: Takeoff & Estimating -->
+                    <tr>
+                        <td>Active Project Database Size</td>
+                        <td class="cc-text-center">
+                            <div class="cc-font-bold cc-check-icon-filled">
+                                <p>825,000+</p>
+                            </div>
+                        </td>
+                        <td class="cc-text-center cc-text-gray-400">
+                            <div class="">
+                                <p>Varies</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>BBB A+ Certification</td>
+                        <td class="cc-text-center">
+                            <div class="cc-check-icon-filled cc-icon-container">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
+                            </div>
+                        </td>
+                        <td class="cc-text-center">
+                             <div class="cc-x-icon-red cc-icon-container">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.28 7.22a.75.75 0 00-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 101.06 1.06L10 11.06l1.72 1.72a.75.75 0 101.06-1.06L11.06 10l1.72-1.72a.75.75 0 00-1.06-1.06L10 8.94 8.28 7.22z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Integrated Takeoff & Estimating</td>
+                        <td class="cc-text-center">
+                            <div class="cc-check-icon-filled cc-icon-container">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
+                            </div>
+                        </td>
+                        <td class="cc-text-center">
+                             <div class="cc-text-gray-400">
+                                <p>LIMITED</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Private Project Access</td>
+                        <td class="cc-text-center">
+                            <div class="cc-check-icon-filled cc-icon-container">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
+                            </div>
+                        </td>
+                        <td class="cc-text-center cc-px-3">
+                            <div class="cc-text-gray-400">
+                                <p>LIMITED</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Real-Time Data Updates</td>
+                        <td class="cc-text-center">
+                           <div class="cc-check-icon-filled cc-icon-container">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
+                            </div>
+                        </td>
+                         <td class="cc-text-center">
+                            <div class="cc-text-gray-400">
+                                <p>Varies</p>
+                            </div>
+                         </td>
+                    </tr>
+                     <tr>
+                        <td>Years in Business</td>
+                        <td class="cc-text-center">
+                            <div class="cc-check-icon-filled cc-font-bold">
+                                <p>100+</p>
+                            </div>
+                        </td>
+                        <td class="cc-text-center">
+                            <div class="cc-text-gray-400">
+                                <p>Varies</p>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>

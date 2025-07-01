@@ -167,18 +167,25 @@
 
 /* Six Column Grid Flex - Extended Card Grid Styles */
 
+.kl-card-grid {
+  width: 100%;
+  max-width: 1450px;
+  margin: 0 auto;
+}
+
 .kl-card-grid > div {
   display: flex;
   flex-wrap: wrap;
   margin: -26px;
+  align-items: stretch;
 }
 
 .kl-card-grid__card-wrapper {
   display: flex;
-  flex-basis: calc(100% / 3);
+  flex: 1 1 calc(100% / 3);
   padding: 26px;
+  align-items: stretch;
 }
-
 /* 4 Column Layout */
 .kl-card-grid--4-columns > div {
   margin: -24px -12px;
@@ -252,18 +259,19 @@
 
 /* Card styling with consistent heights */
 .kl-card-grid__card {
-  background: #ffffff;
+  background: #fff;
+  border: 1px solid #e0e0e0;
   border-radius: 8px;
   overflow: hidden;
-  transition: all 0.3s ease;
   height: 100%;
   display: flex;
   flex-direction: column;
+  transition: all 0.3s ease;
 }
 
 .kl-card-grid__card:hover {
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
   transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .kl-card-grid__image {
@@ -271,12 +279,14 @@
   overflow: hidden;
   border-radius: inherit;
   margin-bottom: 20px;
+  flex-shrink: 0;
 }
 
 .kl-card-grid__image img {
   transition: transform 0.3s ease;
   width: 100%;
-  height: auto;
+  height: 200px;
+  object-fit: cover;
   display: block;
 }
 
@@ -290,6 +300,8 @@
   border-radius: inherit;
   margin-bottom: 20px;
   width: 100%;
+  flex-shrink: 0;
+  height: 200px;
 }
 
 .kl-card-grid__video iframe {
@@ -305,6 +317,7 @@
   cursor: pointer;
   border-radius: inherit;
   overflow: hidden;
+  height: 200px;
 }
 
 .kl-card-grid__video-thumbnail-img {
@@ -329,6 +342,15 @@
 .kl-card-grid__video-player {
   width: 100%;
   height: 200px;
+}
+
+.kl-card-grid__video-player iframe,
+.kl-card-grid__video-player video {
+  width: 100%;
+  height: 200px;
+  border: none;
+  border-radius: inherit;
+  display: block;
 }
 
 /* Responsive video sizing */
@@ -367,6 +389,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
 }
 
 .kl-card-grid__content h3, .kl-card-grid__content h4 {
@@ -471,16 +494,6 @@
   margin: 0 auto;
 }
 
-.kl-card-grid__card-wrapper {
-  display: flex;
-  flex-grow: 1;
-}
-
-.kl-card-grid > div {
-  display: flex;
-  flex-wrap: wrap;
-}
-
 .kl-card-grid__content-text {
   flex: 1;
   min-height: 0;
@@ -503,6 +516,7 @@
 
 .kl-card-grid__button {
   margin-top: 15px;
+  flex-shrink: 0;
 }
 
 .kl-card-grid__button .button {

@@ -122,21 +122,3 @@
     {% endif %}
   </div>
 </div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const videoThumbnails = document.querySelectorAll('.kl-card-grid__video-thumbnail');
-  
-  videoThumbnails.forEach(function(thumbnail) {
-    thumbnail.addEventListener('click', function() {
-      const videoContainer = this.closest('.kl-card-grid__video');
-      const thumbnailDiv = this;
-      const playerDiv = videoContainer.querySelector('.kl-card-grid__video-player');
-      
-      // Hide thumbnail and show player
-      thumbnailDiv.style.display = 'none';
-      playerDiv.style.display = 'block';
-    });
-  });
-});
-</script>
